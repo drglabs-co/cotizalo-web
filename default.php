@@ -2,7 +2,9 @@
 <html lang="es">
     <head>
         <title>Página por defecto</title>
-        <link rel="icon" type="image/x-icon" href="https://hpanel.hostinger.com/favicons/hostinger.png">
+        <link rel="icon" type="image/png" href="/assets/logos/ISOTIPO/Cotizalo-5.png?v=2">
+        <link rel="shortcut icon" href="/assets/logos/ISOTIPO/Cotizalo-5.png?v=2">
+        <link rel="apple-touch-icon" href="/assets/logos/ISOTIPO/Cotizalo-5.png?v=2">
         <meta charset="utf-8">
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
         <meta content="Página por defecto" name="description">
