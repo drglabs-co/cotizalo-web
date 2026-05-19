@@ -9,6 +9,7 @@
     <!-- Google Fonts for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="<?php echo home_url('/assets/logos/ISOTIPO/Cotizalo-5.png'); ?>">
     <?php wp_head(); ?>
 </head>
 
