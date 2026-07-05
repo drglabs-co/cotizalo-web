@@ -532,10 +532,6 @@
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Hasta 3 usuarios
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Exportación a PDF
                         </li>
                         <li>
@@ -573,10 +569,6 @@
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Cotizaciones ilimitadas
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Hasta 10 usuarios
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -623,10 +615,6 @@
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Usuarios ilimitados
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Multi-empresa / Sub-cuentas
                         </li>
                         <li>
@@ -657,7 +645,7 @@
             <div class="admin-box animate-on-scroll fade-in-up">
                 <h2>Cuenta de Administrador</h2>
                 <div class="admin-divider"></div>
-                <p>El plan Empresarial incluye una poderosa cuenta de administrador con control total sobre usuarios, accesos y reportes de toda tu organización.</p>
+                <p>El plan Empresarial incluye una poderosa cuenta de administrador con control total sobre accesos y reportes de toda tu organización.</p>
                 <div class="admin-features-grid">
                     <div class="admin-feature-item">
                         <div class="icon-wrap">
