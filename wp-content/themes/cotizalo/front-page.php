@@ -9,10 +9,13 @@
     <!-- Google Fonts for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/x-icon" href="<?php echo esc_url( home_url('/favicon.ico') ); ?>">
-    <link rel="icon" type="image/png" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
-    <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
-    <link rel="apple-touch-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+    <link rel="icon" type="image/x-icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
+    <link rel="icon" type="image/png"
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+    <link rel="shortcut icon"
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+    <link rel="apple-touch-icon"
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <?php wp_head(); ?>
 </head>
 
@@ -50,7 +53,8 @@
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10">
             <div class="hero-content animate-on-scroll fade-in-up">
-                <h1 class="display-title"><?php echo esc_html(get_theme_mod('hero_title', 'Tu portal web para cotizaciones.')); ?></h1>
+                <h1 class="display-title">
+                    <?php echo esc_html(get_theme_mod('hero_title', 'Tu portal web para cotizaciones.')); ?></h1>
                 <p class="hero-subtitle">
                     <?php echo esc_html(get_theme_mod('hero_subtitle', 'Olvida el Excel. Una identidad técnica, segura y seria, ideal para microempresas.')); ?>
                 </p>
@@ -173,7 +177,8 @@
                     <?php echo esc_html(get_theme_mod('cta_desc', 'Únete a la revolución de las ventas digitales y asombra a tus clientes con propuestas modernas.')); ?>
                 </p>
                 <div class="hero-buttons">
-                    <a href="/signup" class="btn btn-primary btn-lg">Comienza tu Prueba Gratuita</a>
+                    <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Comienza tu Prueba
+                        Gratuita</a>
                 </div>
             </div>
         </div>
@@ -262,7 +267,7 @@
             // Mobile menu toggle
             const mobileBtn = document.querySelector('.mobile-menu-btn');
             const navContainer = document.querySelector('.nav-container');
-            if(mobileBtn && navContainer) {
+            if (mobileBtn && navContainer) {
                 mobileBtn.addEventListener('click', () => {
                     mobileBtn.classList.toggle('open');
                     header.classList.toggle('menu-open');
