@@ -459,7 +459,7 @@
             <div class="animate-on-scroll fade-in-up">
                 <p
                     style="font-size:0.875rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:1rem;">
-                    Plan de Suscripción (Límite de Almacenamiento)
+                    Plan de Suscripción
                 </p>
                 <h1>Precios simples y transparentes</h1>
                 <p>Sin costos ocultos. Sin contratos. Cancela cuando quieras.</p>
