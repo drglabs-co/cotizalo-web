@@ -536,7 +536,7 @@
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Soporte prioritario
+                            Soporte por email
                         </li>
                     </ul>
                     <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-basico">
@@ -568,19 +568,11 @@
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Plantillas personalizadas
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Reportes avanzados
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Integraciones API
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Soporte 24/7
+                            Soporte por email
                         </li>
                     </ul>
                     <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-profesional">
@@ -623,7 +615,7 @@
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Soporte dedicado
+                            Soporte por email
                         </li>
                     </ul>
                     <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-empresarial">
@@ -635,7 +627,7 @@
         </div>
     </section>
 
-    <!-- ==================== ADMIN ACCOUNT ==================== -->
+    <!-- ==================== ADMIN ACCOUNT ==================== 
     <section class="admin-section">
         <div class="container">
             <div class="admin-box animate-on-scroll fade-in-up">
@@ -665,7 +657,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ==================== GUARANTEE STRIP ==================== -->
     <div class="guarantee-strip">
