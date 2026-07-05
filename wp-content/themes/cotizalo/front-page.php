@@ -59,9 +59,9 @@
                     <?php echo esc_html(get_theme_mod('hero_subtitle', 'Olvida el Excel. Una identidad técnica, segura y seria, ideal para microempresas.')); ?>
                 </p>
                 <div class="hero-buttons">
-                    <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', '/signup')); ?>"
+                    <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', '/precios')); ?>"
                         class="btn btn-primary btn-lg group">
-                        <?php echo esc_html(get_theme_mod('hero_btn_text', 'Crear tu primera cotización')); ?>
+                        <?php echo esc_html(get_theme_mod('hero_btn_text', 'Crea tu primera cotización')); ?>
                         <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
