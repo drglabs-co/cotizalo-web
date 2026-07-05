@@ -160,6 +160,7 @@
                     <h3><?php echo esc_html(get_theme_mod('feat_3_title', 'Presupuesto Organizado')); ?></h3>
                     <p><?php echo esc_html(get_theme_mod('feat_3_desc', 'Diseño web y móvil integrado que permite llevar el control de todo tu negocio desde la palma de tu mano.')); ?>
                     </p>
+                </div>
                 <!-- Feature 4 -->
                 <div class="feature-card animate-on-scroll fade-in-up delay-300">
                     <div class="feature-icon">
