@@ -28,11 +28,11 @@
             <ul class="nav-links">
                 <li><a href="#features" class="nav-item">Características</a></li>
                 <li><a href="#how-it-works" class="nav-item">Cómo Funciona</a></li>
-                <li><a href="#pricing" class="nav-item">Precios</a></li>
+                <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
+                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
