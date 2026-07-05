@@ -11,11 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
     <link rel="icon" type="image/png"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="shortcut icon"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="apple-touch-icon"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <?php wp_head(); ?>
 </head>
 

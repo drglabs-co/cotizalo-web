@@ -4,9 +4,10 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
-    <link rel="icon" type="image/png" href="/assets/logos/ISOTIPO/Cotizalo-5.png?v=2">
-    <link rel="shortcut icon" href="/assets/logos/ISOTIPO/Cotizalo-5.png?v=2">
-    <link rel="apple-touch-icon" href="/assets/logos/ISOTIPO/Cotizalo-5.png?v=2">
+    <link rel="icon" type="image/x-icon" href="<?php echo esc_url( home_url('/favicon.ico') ); ?>">
+    <link rel="icon" type="image/png" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+    <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+    <link rel="apple-touch-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -25,8 +26,8 @@
                 <li><a href="#how-it-works">Aprender Más</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="/signup" class="btn btn-primary btn-nav" style="margin-left: 10px;">Crear Cuenta Free</a>
+                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
+                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav" style="margin-left: 10px;">Crear Cuenta Free</a>
             </div>
         </div>
     </header>
@@ -39,7 +40,7 @@
                 <h1 class="text-gradient">Transforma la forma en que cotizas tus servicios.</h1>
                 <p>Olvida el Excel y el Word. Con Cotízalo, emite propuestas profesionales en segundos, controla tus ventas y asombra a tus clientes desde el primer momento.</p>
                 <div class="hero-buttons">
-                    <a href="/signup" class="btn btn-primary">Empieza Gratis Ahora</a>
+                    <a href="https://app.cotizalo.net/signup" class="btn btn-primary">Empieza Gratis Ahora</a>
                     <a href="#features" class="btn btn-secondary">Ver Características</a>
                 </div>
             </div>
@@ -105,7 +106,7 @@
             <div class="cta-box">
                 <h2 style="margin-bottom: 1rem;">¿Listo para digitalizar tus ventas?</h2>
                 <p style="max-width: 600px; margin: 0 auto 2rem; color: #fff; opacity: 0.8;">Únete a cientos de empresas que ya automatizan sus procesos de cotización y ahorran horas semanales administrando envíos.</p>
-                <a href="/signup" class="btn btn-primary" style="background: white; color: var(--primary-color); box-shadow: none;">Crear cuenta Gratis</a>
+                <a href="https://app.cotizalo.net/signup" class="btn btn-primary" style="background: white; color: var(--primary-color); box-shadow: none;">Crear cuenta Gratis</a>
             </div>
         </div>
     </section>
