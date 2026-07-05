@@ -119,3 +119,19 @@ function cotizalo_customize_register( $wp_customize ) {
     $wp_customize->add_control('cta_desc', array('label' => __('Descripción CTA', 'cotizalo'), 'section' => 'cotizalo_cta_section', 'type' => 'textarea'));
 }
 add_action('customize_register', 'cotizalo_customize_register');
+
+/**
+ * Serve /precios/ without needing a WordPress page in the database.
+ * Intercepts the request at template_redirect and loads our custom template.
+ */
+add_action( 'template_redirect', function () {
+    $uri = trim( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
+
+    if ( $uri === 'precios' ) {
+        $template = get_template_directory() . '/page-precios.php';
+        if ( file_exists( $template ) ) {
+            include $template;
+            exit;
+        }
+    }
+} );
