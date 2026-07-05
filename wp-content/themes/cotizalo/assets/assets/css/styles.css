@@ -59,6 +59,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -372,6 +373,15 @@ header.scrolled {
 
 .glass-mockup:hover {
   transform: rotateY(-5deg) rotateX(2deg);
+}
+
+@media (max-width: 768px) {
+  .glass-mockup {
+    transform: none; /* Mejor visualización plana en móviles para evitar scroll */
+  }
+  .mockup-sidebar {
+    display: none; /* Oculta el sidebar interno en móviles para que quepa bien el contenido del mockup */
+  }
 }
 
 .mockup-header {
