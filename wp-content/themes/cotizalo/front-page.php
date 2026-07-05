@@ -125,7 +125,7 @@
                 </p>
             </div>
 
-            <div class="features-grid">
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); max-width: 1000px; margin: 0 auto;">
                 <!-- Feature 1 -->
                 <div class="feature-card animate-on-scroll fade-in-up delay-100">
                     <div class="feature-icon">
