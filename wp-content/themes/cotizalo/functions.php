@@ -27,7 +27,7 @@ add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
 function cotizalo_remove_wp_favicon() {
     remove_action( 'wp_head', 'wp_site_icon', 99 );
 }
-add_action( 'after_setup_theme', 'cotizalo_remove_wp_favicon' );
+add_action( 'init', 'cotizalo_remove_wp_favicon' );
 
 function cotizalo_custom_favicon() {
     $uri = get_template_directory_uri();
