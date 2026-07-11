@@ -22,6 +22,22 @@ function cotizalo_scripts() {
 add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
 
 /**
+ * Override WordPress favicon: remove wp_site_icon and inject our own.
+ */
+function cotizalo_remove_wp_favicon() {
+    remove_action( 'wp_head', 'wp_site_icon', 99 );
+}
+add_action( 'after_setup_theme', 'cotizalo_remove_wp_favicon' );
+
+function cotizalo_custom_favicon() {
+    $uri = get_template_directory_uri();
+    echo '<link rel="icon" type="image/png" href="' . esc_url( $uri ) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
+    echo '<link rel="shortcut icon" href="' . esc_url( $uri ) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
+    echo '<link rel="apple-touch-icon" href="' . esc_url( $uri ) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
+}
+add_action( 'wp_head', 'cotizalo_custom_favicon', 1 );
+
+/**
  * Register Customizer Settings
  */
 function cotizalo_customize_register( $wp_customize ) {
