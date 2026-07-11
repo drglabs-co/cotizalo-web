@@ -81,6 +81,7 @@
                     alt="Cotízalo Logo" id="brand-logo">
             </a>
             <ul class="nav-links">
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item nav-item--active">¿Qué es Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#how-it-works" class="nav-item">Cómo Funciona</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
@@ -166,7 +167,7 @@
                 <div class="footer-links">
                     <h4>Compañía</h4>
                     <ul>
-                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="#">Contacto</a></li>
                     </ul>
                 </div>

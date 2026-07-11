@@ -18,11 +18,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
     <link rel="icon" type="image/png"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="shortcut icon"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="apple-touch-icon"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <?php wp_head(); ?>
     <style>
         /* ============================================================
@@ -435,10 +435,10 @@
                     alt="Cotízalo Logo" id="brand-logo">
             </a>
             <ul class="nav-links">
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#how-it-works" class="nav-item">Cómo Funciona</a></li>
-                <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item"
-                        style="opacity:1; border-bottom: 2px solid #fff; padding-bottom: 2px;">Precios</a></li>
+                <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item nav-item--active">Precios</a></li>
             </ul>
             <div class="nav-buttons">
                 <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
@@ -765,7 +765,7 @@
         </div>
     </div>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -788,7 +788,7 @@
                 <div class="footer-links">
                     <h4>Compañía</h4>
                     <ul>
-                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="#">Contacto</a></li>
                     </ul>
                 </div>
