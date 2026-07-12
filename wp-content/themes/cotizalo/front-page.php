@@ -443,7 +443,7 @@
                 <div class="footer-brand">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="logo mb-1">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png"
-                            alt="Cotízalo Logo" style="height: 140px; width: auto; object-fit: contain;"
+                            alt="Cotízalo Logo" style="height: 48px; width: auto; object-fit: contain;"
                             id="footer-logo">
                     </a>
                     <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
