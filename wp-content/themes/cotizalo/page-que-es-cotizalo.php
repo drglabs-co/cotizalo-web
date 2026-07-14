@@ -85,6 +85,7 @@
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#how-it-works" class="nav-item">Cómo Funciona</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
+                <li><a href="<?php echo esc_url(home_url('/manual/')); ?>" class="nav-item">Manual</a></li>
             </ul>
             <div class="nav-buttons">
                 <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
