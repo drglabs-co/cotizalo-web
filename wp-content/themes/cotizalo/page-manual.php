@@ -725,10 +725,34 @@
                 <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
             </div>
 
+            <div class="sidebar-section-title">Cotizaciones</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#agregar-cotizacion" class="sidebar-link active" data-target="agregar-cotizacion">
+                        <i class="fa-solid fa-plus"></i> Agregar Cotización
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#editar-cotizacion" class="sidebar-link" data-target="editar-cotizacion">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Cotización
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#aprobar-cotizacion" class="sidebar-link" data-target="aprobar-cotizacion">
+                        <i class="fa-solid fa-square-check"></i> Aprobar y Gestionar
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#eliminar-cotizacion" class="sidebar-link" data-target="eliminar-cotizacion">
+                        <i class="fa-solid fa-trash-can"></i> Eliminar Cotización
+                    </a>
+                </li>
+            </ul>
+
             <div class="sidebar-section-title">Recibos</div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu-item">
-                    <a href="#agregar-recibo" class="sidebar-link active" data-target="agregar-recibo">
+                    <a href="#agregar-recibo" class="sidebar-link" data-target="agregar-recibo">
                         <i class="fa-solid fa-plus"></i> Agregar Recibo
                     </a>
                 </li>
@@ -867,6 +891,460 @@
 
         <!-- Central Main Content Block -->
         <main class="content-box">
+
+            <!-- Section: Agregar Cotización -->
+            <section id="agregar-cotizacion" class="doc-section search-target">
+                <h2><i class="fa-solid fa-plus"></i> Agregar Cotización</h2>
+                <p>Crea propuestas y cotizaciones personalizadas para tus clientes detallando los productos, servicios, precios y condiciones comerciales:</p>
+
+                <!-- Browser Mockup (Listado Principal) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/quotations</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Cotizaciones.png"
+                            alt="Listado de Cotizaciones">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Abrir Formulario de Creación</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Crear Cotización</strong> ubicado en la esquina superior derecha del listado.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Seleccionar o Registrar Cliente</strong>
+                                <p>Escribe el nombre del cliente en el campo de búsqueda. Si es un cliente nuevo, haz clic en la opción <strong style="display: inline;">+ Nuevo Cliente</strong> dentro de los resultados para darlo de alta rápidamente.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Grid de Registro de Cliente Rápido -->
+                    <div class="mockup-grid-2col">
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Buscador: Cliente Nuevo</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Cliente.png"
+                                    alt="Opción de Cliente Nuevo en Cotización">
+                            </div>
+                        </div>
+
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Modal: Cliente Nuevo Rápido</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Cliente_1.png"
+                                    alt="Modal de Cliente Nuevo Rápido en Cotización">
+                            </div>
+                        </div>
+                    </div>
+
+                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Configurar Detalles Generales</strong>
+                                <p>Selecciona el perfil de cotización (Folio/Prefijo), asigna un título o concepto de referencia, fecha de vencimiento y selecciona una plantilla predeterminada de encabezado o pie de página.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <strong>Agregar Conceptos y Productos</strong>
+                                <p>Busca los productos o servicios en tu catálogo e indica las cantidades. Si requieres añadir un producto o servicio no catalogado, haz clic en <strong style="display: inline;">+ Nuevo Producto</strong> en el buscador para crearlo rápidamente al vuelo.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Grid de Registro de Producto Rápido -->
+                    <div class="mockup-grid-2col">
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Buscador: Producto Nuevo</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Producto.png"
+                                    alt="Opción de Producto Nuevo en Cotización">
+                            </div>
+                        </div>
+
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Modal: Producto Rápido</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Producto_1.png"
+                                    alt="Modal de Producto Rápido en Cotización">
+                            </div>
+                        </div>
+                    </div>
+
+                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                        <li class="step-item">
+                            <span class="step-number">5</span>
+                            <div class="step-content">
+                                <strong>Aplicar Descuentos y Vincular Recibos (Opcional)</strong>
+                                <p>Si necesitas otorgar condiciones especiales, puedes aplicar un porcentaje de descuento global. Asimismo, puedes vincular un recibo de anticipo existente de ese cliente para que se refleje y reste del saldo total de la cotización.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Descuentos y Recibos) -->
+                    <div class="browser-mockup narrow">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Formulario: Descuentos y Saldo</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Descuento_Cotización.png"
+                                alt="Sección de Descuento y Anticipo Vinculado">
+                        </div>
+                    </div>
+
+                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                        <li class="step-item">
+                            <span class="step-number">6</span>
+                            <div class="step-content">
+                                <strong>Guardar y Registrar Cotización</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Crear Cotización</strong> para registrar la propuesta en tu portal de ventas.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Formulario Completo) -->
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/quotations/new</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion.png"
+                                alt="Formulario de Nueva Cotización">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Editar Cotización -->
+            <section id="editar-cotizacion" class="doc-section search-target">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Editar Cotización</h2>
+                <p>Actualiza conceptos, montos, plazos o el cliente asociado de tus propuestas comerciales activas:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Editar</strong>
+                                <p>Despliega el menú de <strong style="display: inline;">Acciones</strong> de la cotización que deseas modificar en la lista y haz clic en <strong style="display: inline;">Editar</strong>.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Modificar los Datos</strong>
+                                <p>Realiza los ajustes requeridos en los conceptos, descuentos o plazos directamente en el formulario.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Guardar Cambios</strong>
+                                <p>Haz clic en <strong style="display: inline;">Guardar Cambios</strong> para registrar la información actualizada.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Editar Cotización) -->
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/quotations/edit</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Editar_Cotizacion.png"
+                                alt="Editar Cotización Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Aprobar y Gestionar Cotizaciones -->
+            <section id="aprobar-cotizacion" class="doc-section search-target">
+                <h2><i class="fa-solid fa-square-check"></i> Aprobar y Gestionar Cotizaciones</h2>
+                <p>Administra los ciclos de vida de tus cotizaciones, compártelas con tus clientes y mantén el control de su estatus operativo:</p>
+
+                <!-- Sub-sección: Galería de Acciones -->
+                <div style="margin-top: 2rem;">
+                    <h3>Galería de Acciones Disponibles</h3>
+                    <p>En el menú desplegable de <strong style="display: inline;">Acciones <i class="fas fa-caret-down"></i></strong> de cada fila en el listado, dispones de opciones completas para gestionar y compartir tu propuesta:</p>
+
+                    <div class="mockup-grid-2col" style="align-items: center;">
+                        <div>
+                            <ul class="feature-list">
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-eye"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Visualizar PDF</strong>
+                                        <p>Genera y visualiza la cotización en formato de impresión PDF oficial listo para su descarga.</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-link"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Link de Aprobación</strong>
+                                        <p>Copia el enlace único de la propuesta para compartirlo con tu cliente y permitirle aceptarla en línea de forma interactiva.</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-brands fa-whatsapp"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Compartir por WhatsApp</strong>
+                                        <p>Abre WhatsApp directamente con un mensaje pre-redactado y el enlace de la cotización para tu cliente.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Menú: Acciones de Cotización</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Menu_Acciones_Cotizacion.png"
+                                    alt="Menú de Acciones de Cotización">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-sección: Agendar en Calendario -->
+                <div style="margin-top: 3rem; border-top: 1px dashed var(--stripe-border); padding-top: 2rem;">
+                    <h3>Integración y Agenda en Calendarios</h3>
+                    <p>Desde el mismo menú de acciones, puedes programar la cotización en tus plataformas de calendario preferidas (Google Calendar, Outlook, Office 365, Yahoo, Apple Calendar o descarga de archivo ICS) para agendar la fecha de surtido de los productos o servicios:</p>
+
+                    <div class="mockup-grid-2col" style="align-items: center;">
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Acciones: Agregar a Calendario</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Menu_Acciones_Cotizacion_Calendario.png"
+                                    alt="Opciones de Calendario en Cotización">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="info-box">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div>
+                                    <strong>Planificación Sencilla:</strong> Al agendar la cotización, se pre-cargan los datos clave de la cotización (como el folio y el cliente) en el evento del calendario para que tu equipo esté coordinado.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-sección: Estados de la Cotización -->
+                <div style="margin-top: 3rem; border-top: 1px dashed var(--stripe-border); padding-top: 2rem;">
+                    <h3>Estados y Flujo de Aprobación</h3>
+                    <p>Las cotizaciones cambian de estado de acuerdo a su progreso operativo:</p>
+                    
+                    <div class="mockup-grid-2col" style="align-items: center;">
+                        <div>
+                            <ul class="feature-list">
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-clock" style="color: #f59e0b;"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Pendiente</strong>
+                                        <p>La propuesta ha sido creada y enviada, pero está a la espera de respuesta del cliente.</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-check" style="color: #28a745;"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Aceptada (Aprobada)</strong>
+                                        <p>Cuando el cliente firma en línea, el estado cambia automáticamente a <strong style="color: #28a745;">ACEPTADA</strong>. La fila se marca con una palomita verde, bloqueando la posibilidad de volver a aprobarla o modificar su aceptación.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Estado de la Cotización</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Estado_Cotizacion.png"
+                                    alt="Estados de la Cotización en Listado">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-sección: Firma Digital del Cliente y Metadata en PDF -->
+                <div style="margin-top: 3rem; border-top: 1px dashed var(--stripe-border); padding-top: 2rem;">
+                    <h3>Portal de Aprobación del Cliente y Metadata de Aceptación</h3>
+                    <p>Cuando compartes el enlace de aprobación con tu cliente, este accede a una interfaz dedicada donde puede revisar la propuesta, escribir su nombre, correo y firmar de manera digital directamente en pantalla:</p>
+
+                    <div class="browser-mockup narrow">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Portal del Cliente: Aprobación de Propuesta</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Aprovacion_Cotizacion.png"
+                                alt="Portal de Aprobación de Cotización">
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 2.5rem;">Visualización de PDF y Registro de Seguridad</h4>
+                    <p>El PDF de la cotización cambia de acuerdo con su estatus de aprobación:</p>
+
+                    <div class="mockup-grid-2col">
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">PDF: Sin Aprobar (Pendiente)</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Vista_PDF.png"
+                                    alt="Vista PDF de Cotización Pendiente">
+                            </div>
+                        </div>
+
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">PDF: Aprobada (Metadata)</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Vista_PDF_Aprobada.png"
+                                    alt="Vista PDF de Cotización Aprobada con Firma y Metadatos">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <strong>Metadatos de Aceptación:</strong> En las cotizaciones aceptadas, el visor PDF integra automáticamente un recuadro de seguridad al pie del documento. Este incluye: la <strong>Firma Digital</strong> del cliente, <strong>Fecha y Hora</strong> exacta de aceptación, <strong>Dirección IP</strong> de conexión, y los <strong>Nombres/Correos</strong> registrados en la aprobación en línea.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Eliminar Cotización -->
+            <section id="eliminar-cotizacion" class="doc-section search-target">
+                <h2><i class="fa-solid fa-trash-can"></i> Eliminar Cotización</h2>
+                <p>Retira de forma permanente propuestas comerciales creadas por error:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Eliminar</strong>
+                                <p>Identifica la propuesta en la lista principal, despliega el menú de <strong style="display: inline;">Acciones</strong> de su fila y haz clic en <strong style="display: inline;">Eliminar</strong>.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Confirmar la Acción</strong>
+                                <p>En el cuadro de confirmación, presiona el botón <strong style="display: inline;">Confirmar</strong> para retirar permanentemente el folio de tu catálogo.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Eliminar Confirmación) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Confirmación de Eliminación</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Eliminar_Cotizacion.png"
+                                alt="Eliminar Cotización Confirmación">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Section: Agregar Recibo -->
             <section id="agregar-recibo" class="doc-section search-target">
