@@ -150,4 +150,12 @@ add_action( 'template_redirect', function () {
             exit;
         }
     }
+
+    if ( $uri === 'soporte' ) {
+        $template = get_template_directory() . '/page-soporte.php';
+        if ( file_exists( $template ) ) {
+            include $template;
+            exit;
+        }
+    }
 } );

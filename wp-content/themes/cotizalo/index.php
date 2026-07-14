@@ -411,7 +411,7 @@
                 <ul class="nav-links">
                     <li><a href="#">Términos</a></li>
                     <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-bottom">
