@@ -723,10 +723,29 @@
                 <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
             </div>
 
+            <div class="sidebar-section-title">Clientes</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#agregar-cliente" class="sidebar-link active" data-target="agregar-cliente">
+                        <i class="fa-solid fa-plus"></i> Agregar Cliente
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#editar-cliente" class="sidebar-link" data-target="editar-cliente">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Cliente
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#eliminar-cliente" class="sidebar-link" data-target="eliminar-cliente">
+                        <i class="fa-solid fa-trash-can"></i> Eliminar Cliente
+                    </a>
+                </li>
+            </ul>
+
             <div class="sidebar-section-title">Categorías</div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu-item">
-                    <a href="#agregar-categoria" class="sidebar-link active" data-target="agregar-categoria">
+                    <a href="#agregar-categoria" class="sidebar-link" data-target="agregar-categoria">
                         <i class="fa-solid fa-plus"></i> Agregar Categoría
                     </a>
                 </li>
@@ -827,6 +846,159 @@
 
         <!-- Central Main Content Block -->
         <main class="content-box">
+
+            <!-- Section: Agregar Cliente -->
+            <section id="agregar-cliente" class="doc-section search-target">
+                <h2><i class="fa-solid fa-plus"></i> Agregar Cliente</h2>
+                <p>Registra y administra la información de tus clientes para facilitar la emisión de cotizaciones personalizadas:</p>
+
+                <!-- Browser Mockup (Listado Principal) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/customers</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/customers/Clientes.png"
+                            alt="Listado de Clientes">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Abrir el Formulario</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Añadir Cliente</strong> ubicado en la esquina superior derecha del listado para abrir la ventana modal de registro.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Ingresar Datos del Cliente</strong>
+                                <p>Completa los campos obligatorios y opcionales del cliente: <strong>Nombre de la Empresa</strong>, <strong>Persona de Contacto</strong>, <strong>Correo</strong>, <strong>Teléfono</strong> (seleccionando la región correspondiente), <strong>Dirección</strong> (con opción de autocompletado) y <strong>RFC / Tax ID</strong>.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Guardar el Cliente</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para registrar el cliente en el sistema. El correo electrónico y el RFC deben ser únicos en la plataforma.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    
+                    <!-- Browser Mockup (Agregar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Añadir Cliente</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/customers/Agregar_Clientes.png"
+                                alt="Añadir Cliente Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Editar Cliente -->
+            <section id="editar-cliente" class="doc-section search-target">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Editar Cliente</h2>
+                <p>Modifica los datos de contacto, dirección o facturación de tus clientes registrados para mantener tu base de datos al día:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Editar</strong>
+                                <p>Ubica al cliente en la lista y haz clic en el botón <strong style="display: inline;">Editar</strong> (icono de lápiz) en su respectiva fila de acciones.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Actualizar la Información</strong>
+                                <p>Modifica los campos necesarios como la persona de contacto, teléfono, dirección o datos fiscales en el formulario modal.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Guardar Cambios</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para aplicar y actualizar los cambios en el perfil del cliente.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Editar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Editar Cliente</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/customers/Editar_Clientes.png"
+                                alt="Editar Cliente Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Eliminar Cliente -->
+            <section id="eliminar-cliente" class="doc-section search-target">
+                <h2><i class="fa-solid fa-trash-can"></i> Eliminar Cliente</h2>
+                <p>Remueve de forma definitiva los registros de clientes que ya no requieras conservar en tu plataforma:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Eliminar</strong>
+                                <p>Ubica al cliente en el catálogo y haz clic en el botón <strong style="display: inline;">Eliminar</strong> (icono de papelera) en la columna de acciones.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Confirmar la Acción</strong>
+                                <p>En la ventana modal de confirmación, presiona el botón <strong style="display: inline;">Confirmar</strong> para retirar permanentemente al cliente de tu catálogo operativo.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Eliminar Confirmación) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Confirmación de Eliminación</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/customers/Eliminar_Cliente.png"
+                                alt="Eliminar Cliente Confirmación">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Section: Agregar Categoría -->
             <section id="agregar-categoria" class="doc-section search-target">
