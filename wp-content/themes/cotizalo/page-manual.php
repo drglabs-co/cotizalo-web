@@ -656,13 +656,27 @@
                     </a>
                 </li>
                 <li class="sidebar-menu-item">
-                    <a href="#unidades" class="sidebar-link" data-target="unidades">
-                        <i class="fa-solid fa-ruler-combined"></i> Unidades
+                    <a href="#zona-peligro" class="sidebar-link" data-target="zona-peligro">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-section-title">Unidades</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#agregar-unidad" class="sidebar-link" data-target="agregar-unidad">
+                        <i class="fa-solid fa-plus"></i> Agregar Unidad
                     </a>
                 </li>
                 <li class="sidebar-menu-item">
-                    <a href="#zona-peligro" class="sidebar-link" data-target="zona-peligro">
-                        <i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro
+                    <a href="#editar-unidad" class="sidebar-link" data-target="editar-unidad">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Unidad
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#eliminar-unidad" class="sidebar-link" data-target="eliminar-unidad">
+                        <i class="fa-solid fa-trash-can"></i> Eliminar Unidad
                     </a>
                 </li>
             </ul>
