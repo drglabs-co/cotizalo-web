@@ -484,7 +484,7 @@
             font-weight: 700;
         }
 
-        .step-content > strong {
+        .step-content>strong {
             display: block;
             font-size: 1rem;
             color: var(--stripe-text-main);
@@ -718,7 +718,8 @@
                         <span class="step-number">4</span>
                         <div class="step-content">
                             <strong>Guardar Cambios</strong>
-                            <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para aplicar los cambios</p>
+                            <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para aplicar los
+                                cambios</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -726,14 +727,23 @@
                         <div class="step-content">
                             <strong>Cambio de Contraseña</strong>
                             <p>Si necesitas actualizar tus credenciales, ingresa tu contraseña actual y la nueva
-                                contraseña. Haz clic en el botón <strong style="display: inline;">Actualizar Contraseña</strong> para aplicar los cambios y actualizar el acceso.</p>
-                            <p style="margin-top: 0.5rem; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.9rem; color: var(--stripe-text-main);">La nueva contraseña debe cumplir con los siguientes requisitos:</p>
-                            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0.5rem; font-size: 0.9rem; line-height: 1.6; color: var(--stripe-text-muted);">
-                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> Mínimo 10 caracteres</li>
-                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 letra mayúscula</li>
-                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 letra minúscula</li>
-                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 número</li>
-                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 carácter especial (!@#$%^&*)</li>
+                                contraseña. Haz clic en el botón <strong style="display: inline;">Actualizar
+                                    Contraseña</strong> para aplicar los cambios y actualizar el acceso.</p>
+                            <p
+                                style="margin-top: 0.5rem; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.9rem; color: var(--stripe-text-main);">
+                                La nueva contraseña debe cumplir con los siguientes requisitos:</p>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0.5rem 0 0 0.5rem; font-size: 0.9rem; line-height: 1.6; color: var(--stripe-text-muted);">
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> Mínimo
+                                    10 caracteres</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 letra
+                                    mayúscula</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 letra
+                                    minúscula</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1
+                                    número</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1
+                                    carácter especial (!@#$%^&*)</li>
                             </ul>
                         </div>
                     </li>
@@ -809,7 +819,8 @@
                         <span class="step-number">6</span>
                         <div class="step-content">
                             <strong>Guardar Configuración</strong>
-                            <p>Haz clic en el botón <strong>Guardar Configuración</strong> al final de la página para guardar y aplicar de forma definitiva todos los cambios en tu portal.</p>
+                            <p>Haz clic en el botón <strong>Guardar Configuración</strong> al final de la página para
+                                guardar y aplicar de forma definitiva todos los cambios en tu portal.</p>
                         </div>
                     </li>
                 </ol>
@@ -824,7 +835,9 @@
                 <div class="info-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>Restricciones de Downgrade:</strong> No se permiten downgrades si tus datos almacenados superan la capacidad del plan inferior que deseas contratar, a fin de proteger tu información contra pérdidas accidentales.
+                        <strong>Restricciones de Downgrade:</strong> No se permiten downgrades si tus datos almacenados
+                        superan la capacidad del plan inferior que deseas contratar, a fin de proteger tu información
+                        contra pérdidas accidentales.
                     </div>
                 </div>
 
@@ -850,14 +863,17 @@
                         <span class="step-number">•</span>
                         <div class="step-content">
                             <strong>Verificar Fecha de Próximo Pago</strong>
-                            <p>Revisa la fecha programada para el próximo cobro de tu suscripción y mantén un seguimiento claro de tus ciclos de facturación.</p>
+                            <p>Revisa la fecha programada para el próximo cobro de tu suscripción y mantén un
+                                seguimiento claro de tus ciclos de facturación.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">•</span>
                         <div class="step-content">
                             <strong>Actualizar Plan (Upgrade)</strong>
-                            <p>Si deseas aumentar tus límites, primero selecciona el plan deseado de la lista y luego haz clic en el botón <strong style="display: inline;">Cambiar Plan</strong> para realizar el cambio de forma inmediata.</p>
+                            <p>Si deseas aumentar tus límites, primero selecciona el plan deseado de la lista y luego
+                                haz clic en el botón <strong style="display: inline;">Cambiar Plan</strong> para
+                                realizar el cambio de forma inmediata.</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -880,7 +896,8 @@
                 <div class="info-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>Nota:</strong> Solo las suscripciones <strong>Profesional</strong> y <strong>Empresarial</strong> podrán generar perfiles adicionales a los que vienen por defecto.
+                        <strong>Nota:</strong> Solo las suscripciones <strong>Profesional</strong> y
+                        <strong>Empresarial</strong> podrán generar perfiles adicionales a los que vienen por defecto.
                     </div>
                 </div>
 
@@ -906,7 +923,9 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Crear un Nuevo Perfil</strong>
-                            <p>Haz clic en el botón de <strong style="font-weight: 600; color: var(--stripe-blue);">Agregar Perfil</strong> dentro de la sección de perfiles de cotización para abrir el formulario de configuración.</p>
+                            <p>Haz clic en el botón de <strong
+                                    style="font-weight: 600; color: var(--stripe-blue);">Agregar Perfil</strong> dentro
+                                de la sección de perfiles de cotización para abrir el formulario de configuración.</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -930,7 +949,8 @@
                         <span class="step-number">4</span>
                         <div class="step-content">
                             <strong>Guardar Nuevo Perfil</strong>
-                            <p>Haz clic en el botón <strong style="display: inline;">Guardar Nuevo Perfil</strong> para registrar y aplicar todos los cambios en tu perfil de cotización.</p>
+                            <p>Haz clic en el botón <strong style="display: inline;">Guardar Nuevo Perfil</strong> para
+                                registrar y aplicar todos los cambios en tu perfil de cotización.</p>
                         </div>
                     </li>
                 </ol>
@@ -961,7 +981,8 @@
                 <div class="info-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>Nota:</strong> Solo las suscripciones <strong>Profesional</strong> y <strong>Empresarial</strong> podrán generar plantillas adicionales a las que vienen por defecto.
+                        <strong>Nota:</strong> Solo las suscripciones <strong>Profesional</strong> y
+                        <strong>Empresarial</strong> podrán generar plantillas adicionales a las que vienen por defecto.
                     </div>
                 </div>
 
@@ -1005,7 +1026,8 @@
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Guardar Plantilla</strong>
-                            <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para almacenar y aplicar de forma definitiva tu nueva plantilla.</p>
+                            <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para almacenar y
+                                aplicar de forma definitiva tu nueva plantilla.</p>
                         </div>
                     </li>
                 </ol>
@@ -1044,7 +1066,8 @@
                 <div class="info-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>Nota:</strong> El usuario principal no será eliminado hasta que se destruya toda la suscripción.
+                        <strong>Nota:</strong> El usuario principal no será eliminado hasta que se destruya toda la
+                        suscripción.
                     </div>
                 </div>
 
@@ -1071,7 +1094,8 @@
                         <div class="step-content">
                             <strong>Agregar Nuevo Usuario</strong>
                             <p>Registra un nuevo usuario ingresando su información básica (Nombre, Correo Electrónico y
-                                una Contraseña inicial provisional) dando clic en el boton <strong style="display: inline;">Agregar Usuario</strong>.</p>
+                                una Contraseña inicial provisional) dando clic en el boton <strong
+                                    style="display: inline;">Agregar Usuario</strong>.</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -1086,7 +1110,8 @@
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Guardar Nuevo Usuario</strong>
-                            <p>Haz clic en el botón <strong style="display: inline;">Crear Usuario</strong> para confirmar la creación del nuevo usuario y aplicar los cambios.</p>
+                            <p>Haz clic en el botón <strong style="display: inline;">Crear Usuario</strong> para
+                                confirmar la creación del nuevo usuario y aplicar los cambios.</p>
                         </div>
                     </li>
                 </ol>
@@ -1111,9 +1136,6 @@
             <!-- Section: Zona de Peligro -->
             <section id="zona-peligro" class="doc-section search-target">
                 <h2><i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro</h2>
-                <p>Herramientas y acciones críticas que afectan de manera permanente tu cuenta e información
-                    corporativa:</p>
-
                 <div class="warning-box">
                     <h4><i class="fa-solid fa-triangle-exclamation"></i> Dar de Baja la Cuenta (Cancelación Definitiva)
                     </h4>
