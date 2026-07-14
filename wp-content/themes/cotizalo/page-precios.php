@@ -39,6 +39,8 @@
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="apple-touch-icon"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <?php wp_head(); ?>
     <style>
         /* ============================================================
@@ -438,6 +440,46 @@
                 padding: 0 1.5rem;
             }
         }
+
+        /* Payment methods section */
+        .payment-methods-wrap {
+            margin-top: 4.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .payment-methods-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-dark-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0;
+        }
+
+        .payment-methods-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.25rem;
+        }
+
+        .payment-methods-icons i {
+            font-size: 2.75rem;
+            color: var(--primary);
+            opacity: 0.7;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .payment-methods-icons i:hover {
+            opacity: 1;
+            transform: translateY(-3px) scale(1.08);
+            color: var(--primary);
+            filter: drop-shadow(0 4px 6px rgba(18, 58, 44, 0.15));
+        }
     </style>
 </head>
 
@@ -710,6 +752,17 @@
                 </div>
 
             </div><!-- /.plans-grid -->
+
+            <!-- Payment Methods -->
+            <div class="payment-methods-wrap animate-on-scroll fade-in-up">
+                <p class="payment-methods-title">Aceptamos principales tarjetas de crédito y débito</p>
+                <div class="payment-methods-icons">
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-amex" title="American Express"></i>
+                </div>
+            </div>
+
         </div>
     </section>
 
