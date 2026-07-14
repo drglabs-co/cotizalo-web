@@ -587,7 +587,7 @@
         }
 
         /* Responsive Layout styling */
-        @media (max-width: 1100px) {
+        @media (max-width: 768px) {
             .manual-workspace {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
