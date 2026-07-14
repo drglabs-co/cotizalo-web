@@ -404,7 +404,7 @@
             }
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 1100px) {
             .manual-workspace {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
