@@ -136,15 +136,49 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--stripe-text-muted);
-            margin-bottom: 0.75rem;
-            padding-left: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.35rem 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sidebar-section-title:hover {
+            background-color: var(--stripe-primary-light);
+            color: var(--stripe-primary);
+        }
+
+        .sidebar-section-title .toggle-icon {
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+            color: var(--stripe-text-muted);
+        }
+
+        .sidebar-section-title.collapsed .toggle-icon {
+            transform: rotate(-90deg);
         }
 
         .sidebar-menu {
             list-style: none;
             padding: 0 0 0 0.75rem;
-            margin: 0.5rem 0 0 0.5rem;
+            margin: 0 0 0 0.5rem;
             border-left: 1.5px solid var(--stripe-border);
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin-bottom 0.35s ease;
+            max-height: 800px;
+            overflow: hidden;
+            opacity: 1;
+        }
+
+        .sidebar-menu.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+            pointer-events: none;
         }
 
         .sidebar-menu-item {
@@ -1441,12 +1475,50 @@
                     sidebarLinks.forEach(link => {
                         if (link.getAttribute('data-target') === currentActiveId) {
                             link.classList.add('active');
+                            
+                            // Auto-expand parent menu when item is active
+                            const parentMenu = link.closest('.sidebar-menu');
+                            if (parentMenu && parentMenu.classList.contains('collapsed')) {
+                                parentMenu.classList.remove('collapsed');
+                                const title = parentMenu.previousElementSibling;
+                                if (title && title.classList.contains('sidebar-section-title')) {
+                                    title.classList.remove('collapsed');
+                                }
+                            }
                         } else {
                             link.classList.remove('active');
                         }
                     });
                 }
             }
+
+            // -----------------------------------------------------
+            // Collapsible Sidebar Sections
+            // -----------------------------------------------------
+            const sectionTitles = document.querySelectorAll('.sidebar-section-title');
+            sectionTitles.forEach(title => {
+                const menu = title.nextElementSibling;
+                const hasActive = menu && menu.querySelector('.sidebar-link.active');
+
+                // Dynamic chevron toggle indicator
+                const icon = document.createElement('i');
+                icon.className = 'fa-solid fa-chevron-down toggle-icon';
+                title.appendChild(icon);
+
+                // Initial state: collapse if it doesn't contain active element
+                if (menu && menu.classList.contains('sidebar-menu') && !hasActive) {
+                    title.classList.add('collapsed');
+                    menu.classList.add('collapsed');
+                }
+
+                // Click event to toggle collapse
+                title.addEventListener('click', () => {
+                    if (menu && menu.classList.contains('sidebar-menu')) {
+                        title.classList.toggle('collapsed');
+                        menu.classList.toggle('collapsed');
+                    }
+                });
+            });
 
             window.addEventListener('scroll', updateScrollSpy);
             updateScrollSpy(); // Initial call
