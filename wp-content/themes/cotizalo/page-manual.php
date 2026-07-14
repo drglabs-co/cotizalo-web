@@ -39,7 +39,6 @@
             --stripe-bg-light: #ffffff;
             --stripe-bg-alt: #f8fafc;
             --stripe-sidebar-w: 280px;
-            --stripe-toc-w: 240px;
         }
 
         body {
@@ -70,13 +69,13 @@
             margin: 0 auto;
         }
 
-        /* 3-Column Workspace */
+        /* 2-Column Workspace */
         .manual-workspace {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2.5rem 1.5rem;
             display: grid;
-            grid-template-columns: var(--stripe-sidebar-w) 1fr var(--stripe-toc-w);
+            grid-template-columns: var(--stripe-sidebar-w) 1fr;
             gap: 3rem;
             align-items: start;
         }
@@ -143,8 +142,9 @@
 
         .sidebar-menu {
             list-style: none;
-            padding: 0;
-            margin: 0;
+            padding: 0 0 0 0.75rem;
+            margin: 0.5rem 0 0 0.5rem;
+            border-left: 1.5px solid var(--stripe-border);
         }
 
         .sidebar-menu-item {
@@ -537,71 +537,7 @@
             opacity: 1;
         }
 
-        /* Right Sidebar (TOC) */
-        .manual-toc {
-            position: sticky;
-            top: calc(var(--nav-height) + 2rem);
-            max-height: calc(100vh - var(--nav-height) - 4rem);
-            overflow-y: auto;
-            border-left: 1px solid var(--stripe-border);
-            padding-left: 1.25rem;
-        }
-
-        .toc-title {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--stripe-text-muted);
-            margin-bottom: 0.75rem;
-        }
-
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc-item {
-            margin-bottom: 0.5rem;
-        }
-
-        .toc-link {
-            font-size: 0.85rem;
-            color: var(--stripe-text-muted);
-            display: block;
-            transition: all 0.2s ease;
-            line-height: 1.4;
-        }
-
-        .toc-link:hover {
-            color: var(--stripe-primary);
-        }
-
-        .toc-link.active {
-            color: var(--stripe-primary);
-            font-weight: 600;
-        }
-
-        /* Sticky header overrides on scroll */
-        .scrolled .manual-sidebar,
-        .scrolled .manual-toc {
-            top: calc(var(--nav-height) + 1.5rem);
-            max-height: calc(100vh - var(--nav-height) - 3rem);
-        }
-
         /* Responsive Layout styling */
-        @media (max-width: 1200px) {
-            .manual-workspace {
-                grid-template-columns: var(--stripe-sidebar-w) 1fr;
-                gap: 2rem;
-            }
-
-            .manual-toc {
-                display: none;
-            }
-        }
-
         @media (max-width: 1100px) {
             .manual-workspace {
                 grid-template-columns: 1fr;
@@ -671,7 +607,7 @@
                 <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
             </div>
 
-            <div class="sidebar-section-title">Manual de Ayuda</div>
+            <div class="sidebar-section-title">Configuración</div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu-item">
                     <a href="#preferencias" class="sidebar-link active" data-target="preferencias">
@@ -1087,25 +1023,7 @@
 
         </main>
 
-        <!-- Right Table of Contents (TOC) -->
-        <aside class="manual-toc">
-            <div class="toc-title">En esta página</div>
-            <ul class="toc-list">
-                <li class="toc-item"><a href="#preferencias" class="toc-link active"
-                        data-target="preferencias">Preferencias</a></li>
-                <li class="toc-item"><a href="#config-global" class="toc-link" data-target="config-global">Configuración
-                        Global</a></li>
-                <li class="toc-item"><a href="#plan-suscripcion" class="toc-link" data-target="plan-suscripcion">Plan de
-                        Suscripción</a></li>
-                <li class="toc-item"><a href="#perfiles" class="toc-link" data-target="perfiles">Perfiles de
-                        Cotización</a></li>
-                <li class="toc-item"><a href="#plantillas" class="toc-link" data-target="plantillas">Plantillas</a></li>
-                <li class="toc-item"><a href="#usuarios" class="toc-link" data-target="usuarios">Gestión de Usuarios</a>
-                </li>
-                <li class="toc-item"><a href="#zona-peligro" class="toc-link" data-target="zona-peligro">Zona de
-                        Peligro</a></li>
-            </ul>
-        </aside>
+
 
     </div>
 
@@ -1180,8 +1098,7 @@
 
             // -----------------------------------------------------
             // Smooth Scroll navigation
-            // -----------------------------------------------------
-            const links = document.querySelectorAll('.sidebar-link, .toc-link');
+            const links = document.querySelectorAll('.sidebar-link');
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1203,7 +1120,6 @@
             // -----------------------------------------------------
             const sections = document.querySelectorAll('.doc-section');
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
-            const tocLinks = document.querySelectorAll('.toc-link');
 
             function updateScrollSpy() {
                 let currentActiveId = '';
@@ -1222,14 +1138,6 @@
 
                 if (currentActiveId) {
                     sidebarLinks.forEach(link => {
-                        if (link.getAttribute('data-target') === currentActiveId) {
-                            link.classList.add('active');
-                        } else {
-                            link.classList.remove('active');
-                        }
-                    });
-
-                    tocLinks.forEach(link => {
                         if (link.getAttribute('data-target') === currentActiveId) {
                             link.classList.add('active');
                         } else {
