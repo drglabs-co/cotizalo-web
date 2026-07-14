@@ -723,10 +723,29 @@
                 <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
             </div>
 
+            <div class="sidebar-section-title">Categorías</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#agregar-categoria" class="sidebar-link active" data-target="agregar-categoria">
+                        <i class="fa-solid fa-plus"></i> Agregar Categoría
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#editar-categoria" class="sidebar-link" data-target="editar-categoria">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Categoría
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#eliminar-categoria" class="sidebar-link" data-target="eliminar-categoria">
+                        <i class="fa-solid fa-trash-can"></i> Eliminar Categoría
+                    </a>
+                </li>
+            </ul>
+
             <div class="sidebar-section-title">Productos</div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu-item">
-                    <a href="#agregar-producto" class="sidebar-link active" data-target="agregar-producto">
+                    <a href="#agregar-producto" class="sidebar-link" data-target="agregar-producto">
                         <i class="fa-solid fa-plus"></i> Agregar Producto
                     </a>
                 </li>
@@ -808,6 +827,159 @@
 
         <!-- Central Main Content Block -->
         <main class="content-box">
+
+            <!-- Section: Agregar Categoría -->
+            <section id="agregar-categoria" class="doc-section search-target">
+                <h2><i class="fa-solid fa-plus"></i> Agregar Categoría</h2>
+                <p>Organiza tus productos y servicios en diferentes categorías para facilitar su gestión y filtrado en tus cotizaciones:</p>
+
+                <!-- Browser Mockup (Listado Principal) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/categories</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/category/Categorias.png"
+                            alt="Listado de Categorías">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Abrir el Formulario</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">+ Agregar Categoría</strong> ubicado en la esquina superior derecha del listado para abrir el formulario modal de registro.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Ingresar Nombre de la Categoría</strong>
+                                <p>Define el <strong>Nombre</strong> descriptivo de la categoría (ej. Equipos, Licencias, Servicios de Consultoría) que agrupará tus productos relacionados.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Registrar Categoría</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Agregar</strong> para registrar y habilitar la nueva categoría en tu catálogo.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    
+                    <!-- Browser Mockup (Agregar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Agregar Categoría</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/category/Agregar_Categoria.png"
+                                alt="Agregar Categoría Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Editar Categoría -->
+            <section id="editar-categoria" class="doc-section search-target">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Editar Categoría</h2>
+                <p>Modifica el nombre de una categoría existente de manera rápida para actualizar la clasificación de tus productos:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Editar</strong>
+                                <p>Ubica la categoría que deseas modificar en la lista y haz clic en el botón <strong style="display: inline;">Editar</strong> en su respectiva fila.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Actualizar el Nombre</strong>
+                                <p>Edita el campo de texto con el nuevo nombre descriptivo de la categoría.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Guardar Cambios</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> en la modal para registrar y aplicar la actualización de inmediato.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Editar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Editar Categoría</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/category/Editar_Categoria.png"
+                                alt="Editar Categoría Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Eliminar Categoría -->
+            <section id="eliminar-categoria" class="doc-section search-target">
+                <h2><i class="fa-solid fa-trash-can"></i> Eliminar Categoría</h2>
+                <p>Retira de forma definitiva las categorías que ya no necesites en tu catálogo operativo:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Eliminar</strong>
+                                <p>Ubica la categoría en la lista y haz clic en el botón <strong style="display: inline;">Eliminar</strong> (icono de papelera) en su fila de acciones.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Confirmar la Acción</strong>
+                                <p>En la modal de advertencia, confirma la acción haciendo clic en <strong style="display: inline;">Confirmar</strong> para retirar definitivamente la categoría de tu base de datos.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Eliminar Confirmación) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Confirmación de Eliminación</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/category/Eliminar_Categoria.png"
+                                alt="Eliminar Categoría Confirmación">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Section: Agregar Producto -->
             <section id="agregar-producto" class="doc-section search-target">
