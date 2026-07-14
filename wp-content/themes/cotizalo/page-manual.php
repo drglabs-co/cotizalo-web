@@ -471,6 +471,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin: 1.5rem 0 2rem;
+            align-items: start;
         }
 
         .feature-grid-2col {
@@ -1019,7 +1020,7 @@
                             <span class="step-number">5</span>
                             <div class="step-content">
                                 <strong>Aplicar Descuentos y Vincular Recibos (Opcional)</strong>
-                                <p>Si necesitas otorgar condiciones especiales, puedes aplicar un porcentaje de descuento global. Asimismo, puedes vincular un recibo de anticipo existente de ese cliente para que se refleje y reste del saldo total de la cotización.</p>
+                                <p>Si necesitas otorgar condiciones especiales, puedes aplicar un descuento global al final del listado de partidas. Este descuento se puede definir en <strong>Porcentaje (%)</strong> o en <strong>Cantidad Fija ($)</strong> de dinero. Asimismo, puedes vincular un recibo de anticipo existente de ese cliente para que se refleje y reste del saldo total de la cotización.</p>
                             </div>
                         </li>
                     </ol>
@@ -1035,7 +1036,7 @@
                             <div class="browser-url">Formulario: Descuentos y Saldo</div>
                         </div>
                         <div class="browser-content doc-image-container">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Descuento_Cotización.png"
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Descuento_Cotizacion.png"
                                 alt="Sección de Descuento y Anticipo Vinculado">
                         </div>
                     </div>
