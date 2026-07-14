@@ -356,6 +356,12 @@
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
         }
 
+        .browser-mockup.narrow {
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .browser-header {
             background: #f1f5f9;
             border-bottom: 1px solid var(--stripe-border);
@@ -656,7 +662,7 @@
                 <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de cotizaciones:</p>
 
                 <!-- Browser Mockup -->
-                <div class="browser-mockup">
+                <div class="browser-mockup narrow">
                     <div class="browser-header">
                         <div class="browser-dots">
                             <span class="browser-dot red"></span>
@@ -716,7 +722,7 @@
                 <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las cotizaciones y PDFs generados:</p>
 
                 <!-- Browser Mockup -->
-                <div class="browser-mockup">
+                <div class="browser-mockup narrow">
                     <div class="browser-header">
                         <div class="browser-dots">
                             <span class="browser-dot red"></span>
@@ -869,7 +875,7 @@
                 </ol>
 
                 <!-- Browser Mockup (Configuración del Formulario) -->
-                <div class="browser-mockup">
+                <div class="browser-mockup narrow">
                     <div class="browser-header">
                         <div class="browser-dots">
                             <span class="browser-dot red"></span>
@@ -923,7 +929,7 @@
                 </ol>
 
                 <!-- Browser Mockup (Configuración del Formulario) -->
-                <div class="browser-mockup">
+                <div class="browser-mockup narrow">
                     <div class="browser-header">
                         <div class="browser-dots">
                             <span class="browser-dot red"></span>
@@ -984,7 +990,7 @@
                 </ol>
 
                 <!-- Browser Mockup (Configuración del Formulario) -->
-                <div class="browser-mockup">
+                <div class="browser-mockup narrow">
                     <div class="browser-header">
                         <div class="browser-dots">
                             <span class="browser-dot red"></span>
