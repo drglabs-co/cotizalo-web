@@ -339,6 +339,36 @@
             top: 0;
         }
 
+        /* Document Screenshots styling */
+        .doc-image-container {
+            margin-top: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--stripe-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            background: #ffffff;
+            max-width: 100%;
+        }
+
+        .doc-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .doc-images-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .doc-images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Right Sidebar (TOC) */
         .manual-toc {
             position: sticky;
@@ -557,6 +587,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Preferencias_de_Usuario.png" alt="Preferencias de Usuario">
+                </div>
             </section>
 
             <!-- Section: Configuración Global -->
@@ -607,6 +640,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Configuracion_Global.png" alt="Configuración Global">
+                </div>
             </section>
 
             <!-- Section: Plan de Suscripción -->
@@ -649,6 +685,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plan_de_Suscripcion.png" alt="Plan de Suscripción">
+                </div>
             </section>
 
             <!-- Section: Perfiles de Cotización -->
@@ -683,6 +722,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="doc-images-grid">
+                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png" alt="Perfiles de Cotización - Listado">
+                    </div>
+                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_2.png" alt="Perfiles de Cotización - Formulario">
+                    </div>
+                </div>
             </section>
 
             <!-- Section: Plantillas de Documentos -->
@@ -707,6 +754,14 @@
                             <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas,
                                 hipervínculos, o incrustar imágenes en tus textos.</p>
                         </div>
+                    </div>
+                </div>
+                <div class="doc-images-grid">
+                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png" alt="Plantillas de Documentos - Listado">
+                    </div>
+                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_2.png" alt="Plantillas de Documentos - Formulario">
                     </div>
                 </div>
             </section>
@@ -741,6 +796,14 @@
                             <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o
                                 predeterminar bajo qué marca pueden realizar presupuestos.</p>
                         </div>
+                    </div>
+                </div>
+                <div class="doc-images-grid">
+                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png" alt="Gestión de Usuarios - Listado">
+                    </div>
+                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png" alt="Gestión de Usuarios - Formulario">
                     </div>
                 </div>
             </section>
