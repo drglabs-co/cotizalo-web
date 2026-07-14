@@ -1146,15 +1146,9 @@
                         <div class="browser-url">app.cotizalo.net/settings/users/new</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png"
-                            alt="Gestión de Usuarios - Formulario">
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: Unidades -->
-            <section id="unidades" class="doc-section search-target">
-                <h2><i class="fa-solid fa-ruler-combined"></i> Unidades</h2>
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_            <!-- Section: Agregar Unidad -->
+            <section id="agregar-unidad" class="doc-section search-target">
+                <h2><i class="fa-solid fa-plus"></i> Agregar Unidad</h2>
                 <p>Administra las unidades de medida o de venta (ej. Horas, Kilogramos, Litros, Piezas) que se utilizarán para catalogar y cotizar tus productos o servicios en el portal:</p>
 
                 <!-- Browser Mockup (Listado Principal) -->
@@ -1173,9 +1167,7 @@
                     </div>
                 </div>
 
-                <!-- Agregar Unidad -->
-                <div style="margin-top: 2.5rem;">
-                    <h3>Agregar Unidad</h3>
+                <div style="margin-top: 2rem;">
                     <ol class="steps-flow">
                         <li class="step-item">
                             <span class="step-number">1</span>
@@ -1216,10 +1208,14 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Editar Unidad -->
-                <div style="margin-top: 3rem;">
-                    <h3>Editar Unidad</h3>
+            <!-- Section: Editar Unidad -->
+            <section id="editar-unidad" class="doc-section search-target">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Editar Unidad</h2>
+                <p>Modifica el nombre o la abreviatura de una unidad existente para mantener tu catálogo actualizado:</p>
+
+                <div style="margin-top: 2rem;">
                     <ol class="steps-flow">
                         <li class="step-item">
                             <span class="step-number">1</span>
@@ -1260,10 +1256,14 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Eliminar Unidad -->
-                <div style="margin-top: 3rem;">
-                    <h3>Eliminar Unidad</h3>
+            <!-- Section: Eliminar Unidad -->
+            <section id="eliminar-unidad" class="doc-section search-target">
+                <h2><i class="fa-solid fa-trash-can"></i> Eliminar Unidad</h2>
+                <p>Retira las unidades que ya no utilices en tus cotizaciones y productos de forma definitiva:</p>
+
+                <div style="margin-top: 2rem;">
                     <ol class="steps-flow">
                         <li class="step-item">
                             <span class="step-number">1</span>
@@ -1293,6 +1293,11 @@
                         </div>
                         <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/units/Eliminar_unidades.png"
+                                alt="Eliminar Unidad Confirmación">
+                        </div>
+                    </div>
+                </div>
+            </section>s.png"
                                 alt="Eliminar Unidad Confirmación">
                         </div>
                     </div>
