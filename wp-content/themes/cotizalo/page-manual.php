@@ -10,9 +10,25 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario y Ayuda Oficial | Cotízalo</title>
     <meta name="description"
-        content="Manual de usuario y ayuda oficial de Cotízalo. Aprende cómo configurar y utilizar todas las secciones de tu portal de cotizaciones.">
-    <title>Manual de Usuario | Cotízalo</title>
+        content="Aprende paso a paso cómo configurar tu cuenta, agregar clientes, crear tu catálogo de productos y enviar cotizaciones profesionales con la ayuda oficial de Cotízalo.">
+    <meta name="keywords" content="manual de usuario cotizalo, ayuda cotizalo, como hacer una cotizacion, tutorial cotizalo, guia de usuario cotizaciones">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo esc_url( home_url( $_SERVER['REQUEST_URI'] ) ); ?>">
+    <meta property="og:title" content="Manual de Usuario y Ayuda Oficial | Cotízalo">
+    <meta property="og:description" content="Aprende paso a paso cómo configurar tu cuenta, agregar clientes, crear tu catálogo de productos y enviar cotizaciones profesionales con la ayuda oficial de Cotízalo.">
+    <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manual de Usuario y Ayuda Oficial | Cotízalo">
+    <meta name="twitter:description" content="Aprende paso a paso cómo configurar tu cuenta, agregar clientes, crear tu catálogo de productos y enviar cotizaciones profesionales con la ayuda oficial de Cotízalo.">
+    <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->

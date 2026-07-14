@@ -73,9 +73,25 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Técnico y Contacto | Cotízalo México</title>
     <meta name="description"
-        content="Contacta al soporte técnico de Cotízalo. Completa el formulario para reportar un problema, dudas de facturación o ayuda en general.">
-    <title>Soporte y Ayuda | Cotízalo</title>
+        content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
+    <meta name="keywords" content="soporte cotizalo, contacto cotizalo, ayuda tecnica cotizalo, atencion a clientes cotizalo, ayuda cotizaciones">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo esc_url( home_url( $_SERVER['REQUEST_URI'] ) ); ?>">
+    <meta property="og:title" content="Soporte Técnico y Contacto | Cotízalo México">
+    <meta property="og:description" content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
+    <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Soporte Técnico y Contacto | Cotízalo México">
+    <meta name="twitter:description" content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
+    <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->

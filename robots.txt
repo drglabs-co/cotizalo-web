@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cotizalo.net/sitemap.xml
+
+# Disallow admin and internal WP paths
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /wp-signup.php
+Disallow: /wp-cron.php
+Disallow: /xmlrpc.php
