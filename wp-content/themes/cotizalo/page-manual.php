@@ -436,6 +436,52 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Steps Flow Styling for Instructions */
+        .steps-flow {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0.15rem;
+            width: 1.85rem;
+            height: 1.85rem;
+            background: var(--stripe-primary);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .step-content strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--stripe-text-main);
+            margin-bottom: 0.35rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--stripe-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
 
         /* Lightbox Overlay for Image Zoom */
         .image-lightbox {
@@ -689,37 +735,44 @@
                     </div>
                 </div>
 
-                <!-- Feature Grid 2 Columns -->
-                <div class="feature-grid-2col">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-language"></i></div>
-                        <div class="feature-text">
+                <!-- Steps Flow List -->
+                <ol class="steps-flow">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Acceso a Preferencias</strong>
+                            <p>Dirígete a la sección de <strong>Configuración</strong> en el menú lateral izquierdo de tu panel y selecciona la opción **Preferencias**.</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
                             <strong>Seleccionar Idioma</strong>
-                            <p>Elige entre inglés y español para cambiar de inmediato todo el idioma visual de la interfaz del panel.</p>
+                            <p>Elige tu idioma preferido (inglés o español) en la primera opción. Toda la interfaz del panel cambiará de inmediato.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-clock"></i></div>
-                        <div class="feature-text">
-                            <strong>Zona Horaria</strong>
-                            <p>Configura tu zona horaria para registrar de forma precisa las horas de creación de cotizaciones y firmas de clientes.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Configurar Zona Horaria</strong>
+                            <p>Selecciona tu ciudad o zona horaria local. Esto garantiza que las fechas y horas de creación y firmas en tus cotizaciones coincidan correctamente con tu horario local.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-star"></i></div>
-                        <div class="feature-text">
-                            <strong>Perfil de Cotización Predeterminado</strong>
-                            <p>Si manejas múltiples perfiles de marcas, aquí puedes establecer cuál se cargará por defecto al crear nuevos presupuestos.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Definir Perfil Predeterminado</strong>
+                            <p>Si manejas múltiples marcas o secuencias de cotizaciones, define aquí cuál perfil se cargará por defecto de forma automática en cada cotización nueva.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-key"></i></div>
-                        <div class="feature-text">
-                            <strong>Cambiar Contraseña</strong>
-                            <p>Actualiza de forma rápida y segura las credenciales de seguridad para tu acceso personal.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <strong>Cambio de Contraseña</strong>
+                            <p>Si necesitas actualizar tus credenciales, ingresa tu contraseña actual y la nueva contraseña. Guarda los cambios para actualizar el acceso.</p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </section>
 
             <!-- Section: Configuración Global -->
@@ -742,43 +795,44 @@
                     </div>
                 </div>
 
-                <!-- Feature Grid 2 Columns -->
-                <div class="feature-grid-2col">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-address-book"></i></div>
-                        <div class="feature-text">
-                            <strong>Datos de Contacto</strong>
-                            <p>Configura el Nombre Oficial de la Empresa, Eslogan corporativo, RFC, Teléfono de contacto, Correo de soporte y URL de tu Sitio Web.</p>
+                <!-- Steps Flow List -->
+                <ol class="steps-flow">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Completar Datos de Contacto</strong>
+                            <p>Ingresa la información oficial de tu empresa: Nombre, Eslogan comercial, RFC, Teléfono, Correo electrónico de soporte y URL de tu sitio web. Esta información se usará en el encabezado de tus cotizaciones.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-image"></i></div>
-                        <div class="feature-text">
-                            <strong>Logotipo de la Empresa</strong>
-                            <p>Sube tu logotipo en formato PNG o JPG. Este reemplazará automáticamente los logos genéricos en la barra lateral del portal y los PDFs.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Subir el Logotipo Oficial</strong>
+                            <p>Sube la imagen de tu logo en formato PNG o JPG. Este logotipo sustituirá de inmediato a los logos genéricos en toda la plataforma y PDFs.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-percent"></i></div>
-                        <div class="feature-text">
-                            <strong>Impuestos Locales</strong>
-                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje correspondiente (ej. 16.00%) aplicable de manera global.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Configurar Impuestos Locales</strong>
+                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje a cobrar (ej. 16.00%). El desglose se aplicará de forma automática en cada cotización.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-calculator"></i></div>
-                        <div class="feature-text">
-                            <strong>Función Dividida (Grupos / Días)</strong>
-                            <p>Activa esta casilla para poder dividir el monto total de la cotización entre un número determinado de personas, días o huéspedes en tu plantilla.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Habilitar Función Dividida (Opcional)</strong>
+                            <p>Activa esta casilla si necesitas dividir los totales de tus cotizaciones por cantidad de días, huéspedes o personas directamente en el formulario.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
-                        <div class="feature-text">
-                            <strong>Descuento Unitario</strong>
-                            <p>Habilita la opción de colocar descuentos individuales a cada partida o producto de manera independiente, adicional al descuento general del total.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <strong>Habilitar Descuentos Unitarios (Opcional)</strong>
+                            <p>Activa esta opción para permitir aplicar descuentos independientes a partidas o productos específicos en tus cotizaciones, además del descuento general.</p>
                         </div>
-                    </div>
+                    </li>
+                </ol>
             </section>
 
             <!-- Section: Plan de Suscripción -->
@@ -801,37 +855,37 @@
                     </div>
                 </div>
 
-                <!-- Feature Grid 2 Columns -->
-                <div class="feature-grid-2col">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-info"></i></div>
-                        <div class="feature-text">
-                            <strong>Plan Activo</strong>
-                            <p>Monitorea qué tipo de cuenta tienes contratada (ej. Profesional o Empresarial) y el espacio de almacenamiento consumido.</p>
+                <!-- Steps Flow List -->
+                <ol class="steps-flow">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Verificar Estado de Suscripción</strong>
+                            <p>Visualiza el estado de tu plan actual y supervisa el consumo de almacenamiento en gigabytes para no exceder los límites del plan.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-up"></i></div>
-                        <div class="feature-text">
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
                             <strong>Actualizar Plan (Upgrade)</strong>
-                            <p>Mejora tu plan en cualquier momento para ampliar la capacidad de almacenamiento, el límite de cotizaciones y desbloquear herramientas premium.</p>
+                            <p>Si deseas aumentar tus límites, haz clic en el botón de actualización para seleccionar un plan mayor de forma instantánea.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-lock"></i></div>
-                        <div class="feature-text">
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
                             <strong>Restricciones de Downgrade</strong>
-                            <p>Para evitar la pérdida accidental de datos e historial, no se permite cambiar a un plan inferior si tu espacio actual supera los límites del plan al que deseas cambiar.</p>
+                            <p>Recuerda que no se permiten downgrades si tus datos almacenados superan la capacidad del plan inferior que deseas contratar, a fin de proteger tu información contra pérdidas accidentales.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
-                        <div class="feature-text">
-                            <strong>Facturación de Stripe</strong>
-                            <p>Accede de forma directa y segura al portal de Stripe para actualizar tus métodos de pago, ver cobros y descargar tus facturas históricas.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Administración de Pagos en Stripe</strong>
+                            <p>Accede directamente al portal del cliente de Stripe de forma cifrada para añadir o editar tarjetas de crédito/débito, revisar tu historial de cobros y descargar tus facturas oficiales.</p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </section>
 
             <!-- Section: Perfiles de Cotización -->
@@ -869,30 +923,30 @@
                     </div>
                 </div>
 
-                <!-- Feature Grid 2 Columns -->
-                <div class="feature-grid-2col">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-font"></i></div>
-                        <div class="feature-text">
-                            <strong>Nombre e Identificación</strong>
-                            <p>Establece un nombre interno único para identificar el perfil durante el desarrollo de una cotización.</p>
+                <!-- Steps Flow List -->
+                <ol class="steps-flow">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Crear un Nuevo Perfil</strong>
+                            <p>Haz clic en el botón de creación de perfil dentro de la pestaña para abrir el formulario de configuración.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-hashtag"></i></div>
-                        <div class="feature-text">
-                            <strong>Prefijos y Secuencias de Folio</strong>
-                            <p>Asigna un prefijo alfanumérico para tus folios. Cada perfil llevará su propio consecutivo numérico independiente que se iniciará automáticamente en 1.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Establecer Identificación y Folios</strong>
+                            <p>Asigna un nombre interno descriptivo y define un prefijo alfanumérico único para identificar las cotizaciones de esta marca. La secuencia de folio numérico iniciará en 1 para este perfil de forma automática.</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-paste"></i></div>
-                        <div class="feature-text">
-                            <strong>Plantillas Vinculadas</strong>
-                            <p>Elige de forma predeterminada los Encabezados, Pies de Página y Cláusulas legales que deberán cargarse cuando utilices este perfil.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Vincular Plantillas Predeterminadas</strong>
+                            <p>Selecciona los Encabezados, Pies de Página y Cláusulas Legales específicos que se cargarán automáticamente al cotizar bajo este perfil operativo.</p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </section>
 
             <!-- Section: Plantillas de Documentos -->
@@ -930,23 +984,23 @@
                     </div>
                 </div>
 
-                <!-- Feature Grid 2 Columns -->
-                <div class="feature-grid-2col">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-folder-open"></i></div>
-                        <div class="feature-text">
-                            <strong>Tipos de Plantilla</strong>
-                            <p>Organiza tus plantillas y textos guardados clasificándolos en Encabezados, Pies de Página, o Términos y Condiciones Legales.</p>
+                <!-- Steps Flow List -->
+                <ol class="steps-flow">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Registrar una Nueva Plantilla</strong>
+                            <p>Accede al gestor de plantillas y haz clic en crear. Selecciona el Tipo de Plantilla: Encabezado (presentación), Pie de Página (agradecimientos/firmas), o Términos y Condiciones (cláusulas contractuales).</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
-                        <div class="feature-text">
-                            <strong>Editor de Texto Enriquecido</strong>
-                            <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas, hipervínculos, o incrustar imágenes en tus textos.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Diseñar el Contenido</strong>
+                            <p>Utiliza el editor de texto enriquecido integrado para dar formato, crear tablas organizadoras, añadir alineaciones personalizadas e incrustar imágenes en el cuerpo del texto.</p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </section>
 
             <!-- Section: Gestión de Usuarios -->
@@ -991,23 +1045,23 @@
                     </div>
                 </div>
 
-                <!-- Feature Grid 2 Columns -->
-                <div class="feature-grid-2col">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-user-plus"></i></div>
-                        <div class="feature-text">
-                            <strong>Administración Completa</strong>
-                            <p>Invita colaboradores, actualiza información general, modifica contraseñas o desactiva credenciales de acceso de forma inmediata.</p>
+                <!-- Steps Flow List -->
+                <ol class="steps-flow">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Invitar y Crear Colaboradores</strong>
+                            <p>Registra un nuevo usuario ingresando su información básica (Nombre, Correo Electrónico y una Contraseña inicial provisional).</p>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-shield"></i></div>
-                        <div class="feature-text">
-                            <strong>Asignación de Perfil de Cotización</strong>
-                            <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o predeterminar bajo qué marca pueden realizar presupuestos.</p>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Asignar Perfil de Operación</strong>
+                            <p>Vincula al colaborador a uno de tus perfiles de cotización específicos. Esto limitará su alcance para que solo pueda emitir presupuestos bajo la marca o entidad asignada.</p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </section>
 
             <!-- Section: Zona de Peligro -->
