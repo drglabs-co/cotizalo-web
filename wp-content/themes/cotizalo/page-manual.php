@@ -587,7 +587,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="doc-image-container animate-on-scroll fade-in-up">
+                <div class="doc-image-container">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Preferencias_de_Usuario.png" alt="Preferencias de Usuario">
                 </div>
             </section>
@@ -640,7 +640,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="doc-image-container animate-on-scroll fade-in-up">
+                <div class="doc-image-container">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Configuracion_Global.png" alt="Configuración Global">
                 </div>
             </section>
@@ -685,7 +685,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="doc-image-container animate-on-scroll fade-in-up">
+                <div class="doc-image-container">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plan_de_Suscripcion.png" alt="Plan de Suscripción">
                 </div>
             </section>
@@ -723,10 +723,10 @@
                     </div>
                 </div>
                 <div class="doc-images-grid">
-                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <div class="doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png" alt="Perfiles de Cotización - Listado">
                     </div>
-                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <div class="doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_2.png" alt="Perfiles de Cotización - Formulario">
                     </div>
                 </div>
@@ -757,10 +757,10 @@
                     </div>
                 </div>
                 <div class="doc-images-grid">
-                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <div class="doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png" alt="Plantillas de Documentos - Listado">
                     </div>
-                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <div class="doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_2.png" alt="Plantillas de Documentos - Formulario">
                     </div>
                 </div>
@@ -799,10 +799,10 @@
                     </div>
                 </div>
                 <div class="doc-images-grid">
-                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <div class="doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png" alt="Gestión de Usuarios - Listado">
                     </div>
-                    <div class="doc-image-container animate-on-scroll fade-in-up">
+                    <div class="doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png" alt="Gestión de Usuarios - Formulario">
                     </div>
                 </div>
