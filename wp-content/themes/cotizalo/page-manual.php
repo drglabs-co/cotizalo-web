@@ -587,6 +587,50 @@
         }
 
         /* Responsive Layout styling */
+        .mobile-sidebar-toggle {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            background: var(--stripe-primary);
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(18, 58, 44, 0.3);
+            z-index: 998;
+            cursor: pointer;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .mobile-sidebar-toggle:hover {
+            background-color: var(--stripe-primary-hover);
+            transform: scale(1.05);
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 14, 26, 0.4);
+            backdrop-filter: blur(2px);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .manual-workspace {
                 grid-template-columns: 1fr;
@@ -594,13 +638,30 @@
             }
 
             .manual-sidebar {
-                position: static;
+                position: fixed;
+                top: 0;
+                left: -300px;
+                width: 280px;
+                height: 100vh;
+                background: #ffffff;
+                box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+                z-index: 1000;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 2rem 1.5rem;
+                overflow-y: auto;
                 max-height: none;
-                margin-bottom: 1.5rem;
+            }
+
+            .manual-sidebar.open {
+                left: 0;
             }
 
             .content-box {
-                padding: 1.75rem;
+                padding: 1.5rem;
+            }
+
+            .mobile-sidebar-toggle {
+                display: flex;
             }
         }
     </style>
@@ -1581,8 +1642,42 @@
                     closeLightbox();
                 }
             });
+
+            // -----------------------------------------------------
+            // Mobile Sidebar Toggle and Drawer Engine
+            // -----------------------------------------------------
+            const manualSidebar = document.querySelector('.manual-sidebar');
+            const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
+            
+            if (sidebarToggle && manualSidebar) {
+                const overlay = document.createElement('div');
+                overlay.className = 'sidebar-overlay';
+                document.body.appendChild(overlay);
+
+                sidebarToggle.addEventListener('click', () => {
+                    manualSidebar.classList.toggle('open');
+                    overlay.classList.toggle('active');
+                });
+
+                overlay.addEventListener('click', () => {
+                    manualSidebar.classList.remove('open');
+                    overlay.classList.remove('active');
+                });
+
+                const links = manualSidebar.querySelectorAll('.sidebar-link');
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        manualSidebar.classList.remove('open');
+                        overlay.classList.remove('active');
+                    });
+                });
+            }
         });
     </script>
+    <!-- Floating Mobile Sidebar Toggle -->
+    <button class="mobile-sidebar-toggle" id="mobile-sidebar-toggle">
+        <i class="fa-solid fa-bars"></i> Menú del Manual
+    </button>
     <!-- Lightbox Overlay -->
     <div id="lightbox" class="image-lightbox">
         <span class="image-lightbox-close">&times;</span>
