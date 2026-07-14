@@ -1146,7 +1146,13 @@
                         <div class="browser-url">app.cotizalo.net/settings/users/new</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_            <!-- Section: Agregar Unidad -->
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png"
+                            alt="Gestión de Usuarios - Formulario">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Agregar Unidad -->
             <section id="agregar-unidad" class="doc-section search-target">
                 <h2><i class="fa-solid fa-plus"></i> Agregar Unidad</h2>
                 <p>Administra las unidades de medida o de venta (ej. Horas, Kilogramos, Litros, Piezas) que se utilizarán para catalogar y cotizar tus productos o servicios en el portal:</p>
@@ -1293,11 +1299,6 @@
                         </div>
                         <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/units/Eliminar_unidades.png"
-                                alt="Eliminar Unidad Confirmación">
-                        </div>
-                    </div>
-                </div>
-            </section>s.png"
                                 alt="Eliminar Unidad Confirmación">
                         </div>
                     </div>
