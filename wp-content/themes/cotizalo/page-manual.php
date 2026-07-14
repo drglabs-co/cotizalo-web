@@ -25,11 +25,12 @@
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="apple-touch-icon"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
-    
+
     <style>
         /* Modern Stripe-like layout variables */
         :root {
-            --stripe-primary: #123A2C; /* Pantone 303 C */
+            --stripe-primary: #123A2C;
+            /* Pantone 303 C */
             --stripe-primary-light: rgba(18, 58, 44, 0.06);
             --stripe-primary-hover: #0d2a20;
             --stripe-border: #e2e8f0;
@@ -92,6 +93,7 @@
         .manual-sidebar::-webkit-scrollbar {
             width: 4px;
         }
+
         .manual-sidebar::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 2px;
@@ -209,7 +211,7 @@
             opacity: 0.9;
         }
 
-        .doc-section > p {
+        .doc-section>p {
             font-size: 1.05rem;
             color: var(--stripe-text-muted);
             line-height: 1.7;
@@ -384,7 +386,8 @@
         }
 
         /* Sticky header overrides on scroll */
-        .scrolled .manual-sidebar, .scrolled .manual-toc {
+        .scrolled .manual-sidebar,
+        .scrolled .manual-toc {
             top: calc(var(--nav-height) + 1.5rem);
             max-height: calc(100vh - var(--nav-height) - 3rem);
         }
@@ -395,6 +398,7 @@
                 grid-template-columns: var(--stripe-sidebar-w) 1fr;
                 gap: 2rem;
             }
+
             .manual-toc {
                 display: none;
             }
@@ -405,11 +409,13 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
             .manual-sidebar {
                 position: static;
                 max-height: none;
                 margin-bottom: 1.5rem;
             }
+
             .content-box {
                 padding: 1.75rem;
             }
@@ -428,11 +434,13 @@
                     alt="Cotízalo Logo" id="brand-logo">
             </a>
             <ul class="nav-links">
-                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es
+                        Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#how-it-works" class="nav-item">Cómo Funciona</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
-                <li><a href="<?php echo esc_url(home_url('/manual/')); ?>" class="nav-item nav-item--active">Manual</a></li>
+                <li><a href="<?php echo esc_url(home_url('/manual/')); ?>" class="nav-item nav-item--active">Manual</a>
+                </li>
             </ul>
             <div class="nav-buttons">
                 <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
@@ -458,7 +466,7 @@
 
     <!-- Document Workspace -->
     <div class="manual-workspace">
-        
+
         <!-- Left Sidebar Navigation -->
         <aside class="manual-sidebar">
             <div class="search-container">
@@ -508,39 +516,44 @@
 
         <!-- Central Main Content Block -->
         <main class="content-box">
-            
+
             <!-- Section: Preferencia de Usuario -->
             <section id="preferencias" class="doc-section search-target">
                 <h2><i class="fa-solid fa-user-gear"></i> Preferencias de Usuario</h2>
-                <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de cotizaciones:</p>
-                
+                <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de
+                    cotizaciones:</p>
+
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-language"></i></div>
                         <div class="feature-text">
                             <strong>Seleccionar Idioma</strong>
-                            <p>Elige entre inglés y español para cambiar de inmediato todo el idioma visual de la interfaz del panel.</p>
+                            <p>Elige entre inglés y español para cambiar de inmediato todo el idioma visual de la
+                                interfaz del panel.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-clock"></i></div>
                         <div class="feature-text">
                             <strong>Zona Horaria</strong>
-                            <p>Configura tu zona horaria para registrar de forma precisa las horas de creación de cotizaciones y firmas de clientes.</p>
+                            <p>Configura tu zona horaria para registrar de forma precisa las horas de creación de
+                                cotizaciones y firmas de clientes.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-star"></i></div>
                         <div class="feature-text">
                             <strong>Perfil de Cotización Predeterminado</strong>
-                            <p>Si manejas múltiples perfiles de marcas, aquí puedes establecer cuál se cargará por defecto al crear nuevos presupuestos.</p>
+                            <p>Si manejas múltiples perfiles de marcas, aquí puedes establecer cuál se cargará por
+                                defecto al crear nuevos presupuestos.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-key"></i></div>
                         <div class="feature-text">
                             <strong>Cambiar Contraseña</strong>
-                            <p>Actualiza de forma rápida y segura las credenciales de seguridad para tu acceso personal.</p>
+                            <p>Actualiza de forma rápida y segura las credenciales de seguridad para tu acceso personal.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -549,42 +562,48 @@
             <!-- Section: Configuración Global -->
             <section id="config-global" class="doc-section search-target">
                 <h2><i class="fa-solid fa-globe"></i> Configuración Global</h2>
-                <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las cotizaciones y PDFs generados:</p>
-                
+                <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las
+                    cotizaciones y PDFs generados:</p>
+
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-address-book"></i></div>
                         <div class="feature-text">
                             <strong>Datos de Contacto</strong>
-                            <p>Configura el Nombre Oficial de la Empresa, Eslogan corporativo, RFC, Teléfono de contacto, Correo de soporte y URL de tu Sitio Web.</p>
+                            <p>Configura el Nombre Oficial de la Empresa, Eslogan corporativo, RFC, Teléfono de
+                                contacto, Correo de soporte y URL de tu Sitio Web.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-image"></i></div>
                         <div class="feature-text">
                             <strong>Logotipo de la Empresa</strong>
-                            <p>Sube tu logotipo en formato PNG o JPG. Este reemplazará automáticamente los logos genéricos en la barra lateral del portal y los PDFs.</p>
+                            <p>Sube tu logotipo en formato PNG o JPG. Este reemplazará automáticamente los logos
+                                genéricos en la barra lateral del portal y los PDFs.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-percent"></i></div>
                         <div class="feature-text">
                             <strong>Impuestos Locales</strong>
-                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje correspondiente (ej. 16.00%) aplicable de manera global.</p>
+                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje correspondiente (ej. 16.00%)
+                                aplicable de manera global.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-calculator"></i></div>
                         <div class="feature-text">
                             <strong>Función Dividida (Grupos / Días)</strong>
-                            <p>Activa esta casilla para poder dividir el monto total de la cotización entre un número determinado de personas, días o huéspedes en tu plantilla.</p>
+                            <p>Activa esta casilla para poder dividir el monto total de la cotización entre un número
+                                determinado de personas, días o huéspedes en tu plantilla.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
                         <div class="feature-text">
                             <strong>Descuento Unitario</strong>
-                            <p>Habilita la opción de colocar descuentos individuales a cada partida o producto de manera independiente, adicional al descuento general del total.</p>
+                            <p>Habilita la opción de colocar descuentos individuales a cada partida o producto de manera
+                                independiente, adicional al descuento general del total.</p>
                         </div>
                     </div>
                 </div>
@@ -593,35 +612,40 @@
             <!-- Section: Plan de Suscripción -->
             <section id="plan-suscripcion" class="doc-section search-target">
                 <h2><i class="fa-solid fa-credit-card"></i> Plan de Suscripción</h2>
-                <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu suscripción actual:</p>
-                
+                <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu
+                    suscripción actual:</p>
+
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-info"></i></div>
                         <div class="feature-text">
                             <strong>Plan Activo</strong>
-                            <p>Monitorea qué tipo de cuenta tienes contratada (ej. Profesional o Empresarial) y el espacio de almacenamiento consumido.</p>
+                            <p>Monitorea qué tipo de cuenta tienes contratada (ej. Profesional o Empresarial) y el
+                                espacio de almacenamiento consumido.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-up"></i></div>
                         <div class="feature-text">
                             <strong>Actualizar Plan (Upgrade)</strong>
-                            <p>Mejora tu plan en cualquier momento para ampliar la capacidad de almacenamiento, el límite de cotizaciones y desbloquear herramientas premium.</p>
+                            <p>Mejora tu plan en cualquier momento para ampliar la capacidad de almacenamiento, el
+                                límite de cotizaciones y desbloquear herramientas premium.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-lock"></i></div>
                         <div class="feature-text">
                             <strong>Restricciones de Downgrade</strong>
-                            <p>Para evitar la pérdida accidental de datos e historial, no se permite cambiar a un plan inferior si tu espacio actual supera los límites del plan al que deseas cambiar.</p>
+                            <p>Para evitar la pérdida accidental de datos e historial, no se permite cambiar a un plan
+                                inferior si tu espacio actual supera los límites del plan al que deseas cambiar.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
                         <div class="feature-text">
                             <strong>Facturación de Stripe</strong>
-                            <p>Accede de forma directa y segura al portal de Stripe para actualizar tus métodos de pago, ver cobros y descargar tus facturas históricas.</p>
+                            <p>Accede de forma directa y segura al portal de Stripe para actualizar tus métodos de pago,
+                                ver cobros y descargar tus facturas históricas.</p>
                         </div>
                     </div>
                 </div>
@@ -630,28 +654,32 @@
             <!-- Section: Perfiles de Cotización -->
             <section id="perfiles" class="doc-section search-target">
                 <h2><i class="fa-solid fa-id-card"></i> Perfiles de Cotización</h2>
-                <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de negocio o tipos de clientes desde una misma cuenta corporativa:</p>
-                
+                <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de
+                    negocio o tipos de clientes desde una misma cuenta corporativa:</p>
+
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-font"></i></div>
                         <div class="feature-text">
                             <strong>Nombre e Identificación</strong>
-                            <p>Establece un nombre interno único para identificar el perfil durante el desarrollo de una cotización.</p>
+                            <p>Establece un nombre interno único para identificar el perfil durante el desarrollo de una
+                                cotización.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-hashtag"></i></div>
                         <div class="feature-text">
                             <strong>Prefijos y Secuencias de Folio</strong>
-                            <p>Asigna un prefijo alfanumérico para tus folios. Cada perfil llevará su propio consecutivo numérico independiente que se iniciará automáticamente en 1.</p>
+                            <p>Asigna un prefijo alfanumérico para tus folios. Cada perfil llevará su propio consecutivo
+                                numérico independiente que se iniciará automáticamente en 1.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-paste"></i></div>
                         <div class="feature-text">
                             <strong>Plantillas Vinculadas</strong>
-                            <p>Elige de forma predeterminada los Encabezados, Pies de Página y Cláusulas legales que deberán cargarse cuando utilices este perfil.</p>
+                            <p>Elige de forma predeterminada los Encabezados, Pies de Página y Cláusulas legales que
+                                deberán cargarse cuando utilices este perfil.</p>
                         </div>
                     </div>
                 </div>
@@ -660,21 +688,24 @@
             <!-- Section: Plantillas de Documentos -->
             <section id="plantillas" class="doc-section search-target">
                 <h2><i class="fa-solid fa-file-lines"></i> Plantillas de Documentos</h2>
-                <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus presupuestos comerciales:</p>
-                
+                <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus
+                    presupuestos comerciales:</p>
+
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-folder-open"></i></div>
                         <div class="feature-text">
                             <strong>Tipos de Plantilla</strong>
-                            <p>Organiza tus plantillas y textos guardados clasificándolos en Encabezados, Pies de Página, o Términos y Condiciones Legales.</p>
+                            <p>Organiza tus plantillas y textos guardados clasificándolos en Encabezados, Pies de
+                                Página, o Términos y Condiciones Legales.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
                         <div class="feature-text">
                             <strong>Editor de Texto Enriquecido</strong>
-                            <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas, hipervínculos, o incrustar imágenes en tus textos.</p>
+                            <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas,
+                                hipervínculos, o incrustar imágenes en tus textos.</p>
                         </div>
                     </div>
                 </div>
@@ -684,11 +715,13 @@
             <section id="usuarios" class="doc-section search-target">
                 <h2><i class="fa-solid fa-users-gear"></i> Gestión de Usuarios</h2>
                 <p>Administra los roles de acceso y colaboradores que forman parte de tu portal de cotizaciones:</p>
-                
+
                 <div class="info-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial (Cotizalo 80 / 80GB)</strong>.
+                        <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está
+                        habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial
+                            (Cotizalo 80 / 80GB)</strong>.
                     </div>
                 </div>
 
@@ -697,14 +730,16 @@
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-user-plus"></i></div>
                         <div class="feature-text">
                             <strong>Administración Completa</strong>
-                            <p>Invita colaboradores, actualiza información general, modifica contraseñas o desactiva credenciales de acceso de forma inmediata.</p>
+                            <p>Invita colaboradores, actualiza información general, modifica contraseñas o desactiva
+                                credenciales de acceso de forma inmediata.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon-wrapper"><i class="fa-solid fa-shield"></i></div>
                         <div class="feature-text">
                             <strong>Asignación de Perfil de Cotización</strong>
-                            <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o predeterminar bajo qué marca pueden realizar presupuestos.</p>
+                            <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o
+                                predeterminar bajo qué marca pueden realizar presupuestos.</p>
                         </div>
                     </div>
                 </div>
@@ -713,16 +748,21 @@
             <!-- Section: Zona de Peligro -->
             <section id="zona-peligro" class="doc-section search-target">
                 <h2><i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro</h2>
-                <p>Herramientas y acciones críticas que afectan de manera permanente tu cuenta e información corporativa:</p>
-                
+                <p>Herramientas y acciones críticas que afectan de manera permanente tu cuenta e información
+                    corporativa:</p>
+
                 <div class="warning-box">
-                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Dar de Baja la Cuenta (Cancelación Definitiva)</h4>
-                    <p>Si decides eliminar tu cuenta del portal, la acción se ejecutará de forma inmediata e irreversible. Conlleva las siguientes implicaciones:</p>
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Dar de Baja la Cuenta (Cancelación Definitiva)
+                    </h4>
+                    <p>Si decides eliminar tu cuenta del portal, la acción se ejecutará de forma inmediata e
+                        irreversible. Conlleva las siguientes implicaciones:</p>
                     <ul>
                         <li>Borrado permanente y bloqueo absoluto de todos los accesos del portal.</li>
                         <li>Cancelación automática de la suscripción y cobros futuros en la pasarela Stripe.</li>
-                        <li>Suspensión inmediata de los accesos de todos los colaboradores registrados en tu empresa.</li>
-                        <li><strong>Sin Devoluciones:</strong> No se realizarán reembolsos por períodos de facturación que ya hayan transcurrido o comenzado recientemente.</li>
+                        <li>Suspensión inmediata de los accesos de todos los colaboradores registrados en tu empresa.
+                        </li>
+                        <li><strong>Sin Devoluciones:</strong> No se realizarán reembolsos por períodos de facturación
+                            que ya hayan transcurrido o comenzado recientemente.</li>
                     </ul>
                 </div>
             </section>
@@ -733,21 +773,22 @@
         <aside class="manual-toc">
             <div class="toc-title">En esta página</div>
             <ul class="toc-list">
-                <li class="toc-item"><a href="#preferencias" class="toc-link active" data-target="preferencias">Preferencias</a></li>
-                <li class="toc-item"><a href="#config-global" class="toc-link" data-target="config-global">Configuración Global</a></li>
-                <li class="toc-item"><a href="#plan-suscripcion" class="toc-link" data-target="plan-suscripcion">Plan de Suscripción</a></li>
-                <li class="toc-item"><a href="#perfiles" class="toc-link" data-target="perfiles">Perfiles de Cotización</a></li>
+                <li class="toc-item"><a href="#preferencias" class="toc-link active"
+                        data-target="preferencias">Preferencias</a></li>
+                <li class="toc-item"><a href="#config-global" class="toc-link" data-target="config-global">Configuración
+                        Global</a></li>
+                <li class="toc-item"><a href="#plan-suscripcion" class="toc-link" data-target="plan-suscripcion">Plan de
+                        Suscripción</a></li>
+                <li class="toc-item"><a href="#perfiles" class="toc-link" data-target="perfiles">Perfiles de
+                        Cotización</a></li>
                 <li class="toc-item"><a href="#plantillas" class="toc-link" data-target="plantillas">Plantillas</a></li>
-                <li class="toc-item"><a href="#usuarios" class="toc-link" data-target="usuarios">Gestión de Usuarios</a></li>
-                <li class="toc-item"><a href="#zona-peligro" class="toc-link" data-target="zona-peligro">Zona de Peligro</a></li>
+                <li class="toc-item"><a href="#usuarios" class="toc-link" data-target="usuarios">Gestión de Usuarios</a>
+                </li>
+                <li class="toc-item"><a href="#zona-peligro" class="toc-link" data-target="zona-peligro">Zona de
+                        Peligro</a></li>
             </ul>
         </aside>
 
-    </div>
-
-    <!-- Call to Action bottom section -->
-    <div style="text-align: center; padding: 4rem 1.5rem; background: var(--stripe-bg-alt);">
-        <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Empezar a cotizar ahora</a>
     </div>
 
     <!-- Footer -->
@@ -828,7 +869,7 @@
                     e.preventDefault();
                     const targetId = link.getAttribute('data-target');
                     const targetEl = document.getElementById(targetId);
-                    
+
                     if (targetEl) {
                         const offsetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - 110;
                         window.scrollTo({
@@ -915,4 +956,5 @@
     </script>
     <?php wp_footer(); ?>
 </body>
+
 </html>
