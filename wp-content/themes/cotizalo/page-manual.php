@@ -484,7 +484,7 @@
             font-weight: 700;
         }
 
-        .step-content strong {
+        .step-content > strong {
             display: block;
             font-size: 1rem;
             color: var(--stripe-text-main);
@@ -717,9 +717,16 @@
                     <li class="step-item">
                         <span class="step-number">4</span>
                         <div class="step-content">
+                            <strong>Guardar Cambios</strong>
+                            <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para aplicar los cambios</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">•</span>
+                        <div class="step-content">
                             <strong>Cambio de Contraseña</strong>
                             <p>Si necesitas actualizar tus credenciales, ingresa tu contraseña actual y la nueva
-                                contraseña. Guarda los cambios para actualizar el acceso.</p>
+                                contraseña. Haz clic en el botón <strong style="display: inline;">Actualizar Contraseña</strong> para aplicar los cambios y actualizar el acceso.</p>
                             <p style="margin-top: 0.5rem; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.9rem; color: var(--stripe-text-main);">La nueva contraseña debe cumplir con los siguientes requisitos:</p>
                             <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0.5rem; font-size: 0.9rem; line-height: 1.6; color: var(--stripe-text-muted);">
                                 <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> Mínimo 10 caracteres</li>
@@ -840,27 +847,25 @@
                 <!-- Steps Flow List -->
                 <ol class="steps-flow">
                     <li class="step-item">
-                        <span class="step-number">1</span>
+                        <span class="step-number">•</span>
                         <div class="step-content">
-                            <strong>Verificar Estado de Suscripción</strong>
-                            <p>Visualiza el estado de tu plan actual y supervisa el consumo de almacenamiento en
-                                gigabytes para no exceder los límites del plan.</p>
+                            <strong>Verificar Fecha de Próximo Pago</strong>
+                            <p>Revisa la fecha programada para el próximo cobro de tu suscripción y mantén un seguimiento claro de tus ciclos de facturación.</p>
                         </div>
                     </li>
                     <li class="step-item">
-                        <span class="step-number">2</span>
+                        <span class="step-number">•</span>
                         <div class="step-content">
                             <strong>Actualizar Plan (Upgrade)</strong>
-                            <p>Si deseas aumentar tus límites, primero selecciona el plan deseado de la lista y luego haz clic en el botón de actualización para realizar el cambio de forma instantánea.</p>
+                            <p>Si deseas aumentar tus límites, primero selecciona el plan deseado de la lista y luego haz clic en el botón <strong style="display: inline;">Cambiar Plan</strong> para realizar el cambio de forma inmediata.</p>
                         </div>
                     </li>
                     <li class="step-item">
-                        <span class="step-number">3</span>
+                        <span class="step-number">•</span>
                         <div class="step-content">
                             <strong>Actualización de Método de Pago</strong>
                             <p>Accede directamente al portal del cliente de Stripe de forma cifrada para añadir o editar
-                                tarjetas de crédito/débito, revisar tu historial de cobros y descargar tus facturas
-                                oficiales.</p>
+                                tarjetas de crédito/débito y revisar tu historial de cobros.</p>
                         </div>
                     </li>
                 </ol>
@@ -919,6 +924,13 @@
                             <strong>Vincular Plantillas Predeterminadas</strong>
                             <p>Selecciona los Encabezados, Pies de Página y Cláusulas Legales específicos que se
                                 cargarán automáticamente al cotizar bajo este perfil operativo.</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Guardar Nuevo Perfil</strong>
+                            <p>Haz clic en el botón <strong style="display: inline;">Guardar Nuevo Perfil</strong> para registrar y aplicar todos los cambios en tu perfil de cotización.</p>
                         </div>
                     </li>
                 </ol>
@@ -989,6 +1001,13 @@
                                 texto.</p>
                         </div>
                     </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Guardar Plantilla</strong>
+                            <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para almacenar y aplicar de forma definitiva tu nueva plantilla.</p>
+                        </div>
+                    </li>
                 </ol>
 
                 <!-- Browser Mockup (Configuración del Formulario) -->
@@ -1050,9 +1069,9 @@
                     <li class="step-item">
                         <span class="step-number">1</span>
                         <div class="step-content">
-                            <strong>Invitar y Crear Colaboradores</strong>
+                            <strong>Agregar Nuevo Usuario</strong>
                             <p>Registra un nuevo usuario ingresando su información básica (Nombre, Correo Electrónico y
-                                una Contraseña inicial provisional).</p>
+                                una Contraseña inicial provisional) dando clic en el boton <strong style="display: inline;">Agregar Usuario</strong>.</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -1061,6 +1080,13 @@
                             <strong>Asignar Perfil de Operación</strong>
                             <p>Vincula al colaborador a uno de tus perfiles de cotización específicos. Esto limitará su
                                 alcance para que solo pueda emitir presupuestos bajo la marca o entidad asignada.</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Guardar Nuevo Usuario</strong>
+                            <p>Haz clic en el botón <strong style="display: inline;">Crear Usuario</strong> para confirmar la creación del nuevo usuario y aplicar los cambios.</p>
                         </div>
                     </li>
                 </ol>
