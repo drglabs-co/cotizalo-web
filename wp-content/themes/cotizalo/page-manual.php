@@ -27,51 +27,116 @@
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     
     <style>
+        /* Modern Stripe-like layout variables */
+        :root {
+            --stripe-primary: #123A2C; /* Pantone 303 C */
+            --stripe-primary-light: rgba(18, 58, 44, 0.06);
+            --stripe-primary-hover: #0d2a20;
+            --stripe-border: #e2e8f0;
+            --stripe-text-main: #1e293b;
+            --stripe-text-muted: #64748b;
+            --stripe-bg-light: #ffffff;
+            --stripe-bg-alt: #f8fafc;
+            --stripe-sidebar-w: 280px;
+            --stripe-toc-w: 240px;
+        }
+
+        body {
+            background-color: var(--stripe-bg-alt) !important;
+            color: var(--stripe-text-main) !important;
+        }
+
         .page-hero {
-            padding-top: calc(var(--nav-height) + 3rem);
-            padding-bottom: 4rem;
+            padding-top: calc(var(--nav-height) + 2.5rem);
+            padding-bottom: 2.5rem;
+            background: linear-gradient(135deg, #123A2C 0%, #0A0E1A 100%);
+            color: #ffffff;
+            text-align: center;
+            position: relative;
         }
 
-        /* Layout Grid */
-        .manual-layout {
+        .page-hero h1 {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 3-Column Workspace */
+        .manual-workspace {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2.5rem;
+            grid-template-columns: var(--stripe-sidebar-w) 1fr var(--stripe-toc-w);
+            gap: 3rem;
             align-items: start;
-            margin-top: 2rem;
         }
 
-        /* Sidebar Navigation Menu */
+        /* Left Sidebar Styling */
         .manual-sidebar {
-            background: #fff;
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            border: 1px solid var(--border-dark);
-            box-shadow: var(--shadow-sm);
             position: sticky;
             top: calc(var(--nav-height) + 2rem);
             max-height: calc(100vh - var(--nav-height) - 4rem);
             overflow-y: auto;
-            text-align: left;
+            padding-right: 0.5rem;
         }
 
         .manual-sidebar::-webkit-scrollbar {
-            width: 6px;
+            width: 4px;
         }
         .manual-sidebar::-webkit-scrollbar-thumb {
             background: #cbd5e1;
-            border-radius: 3px;
+            border-radius: 2px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.6rem 1rem 0.6rem 2.2rem;
+            border: 1px solid var(--stripe-border);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-family: var(--font-main);
+            background: var(--stripe-bg-light);
+            color: var(--stripe-text-main);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--stripe-primary);
+            box-shadow: 0 0 0 3px rgba(18, 58, 44, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--stripe-text-muted);
+            font-size: 0.875rem;
         }
 
         .sidebar-section-title {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--text-dark-muted);
+            color: var(--stripe-text-muted);
             margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-left: 0.5rem;
         }
 
         .sidebar-menu {
@@ -81,192 +146,272 @@
         }
 
         .sidebar-menu-item {
-            margin-bottom: 0.25rem;
+            margin-bottom: 2px;
         }
 
         .sidebar-link {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 0.6rem 0.75rem;
-            color: var(--text-dark-muted);
+            padding: 0.55rem 0.75rem;
+            color: var(--stripe-text-muted);
             font-weight: 500;
             font-size: 0.9rem;
-            border-radius: var(--radius-sm);
+            border-radius: 6px;
             transition: all 0.2s ease;
         }
 
-        .sidebar-link:hover, .sidebar-link.active {
-            background: var(--primary-light);
-            color: var(--primary);
+        .sidebar-link:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .sidebar-link.active {
+            background: var(--stripe-primary-light);
+            color: var(--stripe-primary);
             font-weight: 600;
         }
 
-        /* Search input style */
-        .search-container {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 0.75rem 1rem 0.75rem 2.5rem;
-            border: 1px solid #cbd5e1;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            font-family: var(--font-main);
-            color: var(--text-dark);
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .search-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px var(--primary-light);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 0.9rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 0.95rem;
-        }
-
-        /* Content Areas */
+        /* Center Content Styling */
         .content-box {
-            background: var(--bg-light);
-            border-radius: var(--radius-lg);
+            background: var(--stripe-bg-light);
+            border-radius: 12px;
             padding: 3rem;
-            border: 1px solid var(--border-light);
-            color: var(--text-dark);
+            border: 1px solid var(--stripe-border);
             box-shadow: var(--shadow-sm);
-            text-align: left;
-        }
-        .content-box h2 {
-            color: var(--primary);
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-        }
-        .content-box p {
-            color: var(--text-dark-muted);
-            line-height: 1.8;
-            margin-bottom: 1rem;
         }
 
-        /* Collapsible Section Layout */
-        .collapsible-header {
-            background: var(--bg-light-alt);
-            padding: 1.25rem 1.5rem;
-            border-radius: var(--radius-md);
-            border-left: 5px solid var(--primary);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-            margin-bottom: 1rem;
-            user-select: none;
+        .doc-section {
+            padding-bottom: 3.5rem;
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            scroll-margin-top: calc(var(--nav-height) + 3rem);
         }
 
-        .collapsible-header:hover {
-            background: #f1f5f9;
-        }
-
-        .collapsible-header.active {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
+        .doc-section:last-of-type {
+            border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
 
-        .collapsible-header h4 {
-            color: var(--primary);
-            margin: 0;
-            font-size: 1.15rem;
+        .doc-section h2 {
+            font-size: 1.75rem;
+            color: var(--stripe-primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
 
-        .collapsible-icon {
-            transition: transform 0.3s;
-            color: var(--primary);
-            font-size: 1rem;
+        .doc-section h2 i {
+            font-size: 1.4rem;
+            opacity: 0.9;
         }
 
-        .collapsible-header.active .collapsible-icon {
-            transform: rotate(180deg);
-        }
-
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-top: none;
-            border-bottom-left-radius: var(--radius-md);
-            border-bottom-right-radius: var(--radius-md);
-            margin-bottom: 1rem;
-        }
-
-        .collapsible-content-inner {
-            padding: 1.5rem;
-        }
-
-        .collapsible-content-inner ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-        .collapsible-content-inner li {
-            margin-bottom: 0.5rem;
-            color: var(--text-dark-muted);
+        .doc-section > p {
+            font-size: 1.05rem;
+            color: var(--stripe-text-muted);
             line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Premium feature lists */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--stripe-bg-alt);
+            border: 1px solid var(--stripe-border);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border-color: #cbd5e1;
+        }
+
+        .feature-icon-wrapper {
+            background: #ffffff;
+            color: var(--stripe-primary);
+            border: 1px solid var(--stripe-border);
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-text strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--stripe-text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--stripe-text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Alertas y cajas especiales */
+        .info-box {
+            background-color: rgba(245, 158, 11, 0.04);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-left: 4px solid #f59e0b;
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            color: #b45309;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .info-box i {
+            font-size: 1.2rem;
+            color: #d97706;
+            margin-top: 0.1rem;
         }
 
         .warning-box {
-            background-color: rgba(239, 68, 68, 0.05);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            border-left: 5px solid #ef4444;
+            background-color: rgba(239, 68, 68, 0.03);
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            border-left: 4px solid #ef4444;
             padding: 1.5rem;
-            border-radius: var(--radius-md);
-            margin-top: 1rem;
-        }
-        .warning-box h4 {
-            color: #ef4444;
-            margin-bottom: 0.75rem;
-            font-size: 1.15rem;
-        }
-        .info-box {
-            background-color: rgba(245, 158, 11, 0.05);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            border-left: 5px solid #f59e0b;
-            padding: 1rem 1.5rem;
-            border-radius: var(--radius-md);
-            margin-bottom: 1rem;
-            color: #d97706;
-            font-size: 0.95rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            color: #1e293b;
         }
 
-        /* Sticky header / navbar overrides on scroll */
-        .scrolled .manual-sidebar {
+        .warning-box h4 {
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .warning-box li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--stripe-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .warning-box li::before {
+            content: "•";
+            color: #ef4444;
+            font-weight: bold;
+            position: absolute;
+            left: 0.25rem;
+            top: 0;
+        }
+
+        /* Right Sidebar (TOC) */
+        .manual-toc {
+            position: sticky;
+            top: calc(var(--nav-height) + 2rem);
+            max-height: calc(100vh - var(--nav-height) - 4rem);
+            overflow-y: auto;
+            border-left: 1px solid var(--stripe-border);
+            padding-left: 1.25rem;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--stripe-text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            font-size: 0.85rem;
+            color: var(--stripe-text-muted);
+            display: block;
+            transition: all 0.2s ease;
+            line-height: 1.4;
+        }
+
+        .toc-link:hover {
+            color: var(--stripe-primary);
+        }
+
+        .toc-link.active {
+            color: var(--stripe-primary);
+            font-weight: 600;
+        }
+
+        /* Sticky header overrides on scroll */
+        .scrolled .manual-sidebar, .scrolled .manual-toc {
             top: calc(var(--nav-height) + 1.5rem);
             max-height: calc(100vh - var(--nav-height) - 3rem);
         }
 
-        /* Responsive Layout */
-        @media (max-width: 991px) {
-            .manual-layout {
+        /* Responsive Layout styling */
+        @media (max-width: 1200px) {
+            .manual-workspace {
+                grid-template-columns: var(--stripe-sidebar-w) 1fr;
+                gap: 2rem;
+            }
+            .manual-toc {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .manual-workspace {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             .manual-sidebar {
                 position: static;
                 max-height: none;
+                margin-bottom: 1.5rem;
+            }
+            .content-box {
+                padding: 1.75rem;
             }
         }
     </style>
@@ -303,215 +448,307 @@
         </div>
     </header>
 
-    <!-- Page Content -->
+    <!-- Page Hero Banner -->
     <section class="page-hero">
-        <div class="bg-shape bg-shape-1"></div>
-        <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;">Manual de Usuario</h1>
-            <p class="text-muted" style="max-width: 700px; margin: 0 auto 1.5rem; font-size: 1.2rem;">
-                Guía completa de funcionamiento y ayuda para configurar tu portal de cotizaciones paso a paso.
-            </p>
-
-            <div class="manual-layout">
-                <!-- Sidebar Menu & Search -->
-                <aside class="manual-sidebar">
-                    <div class="search-container">
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
-                    </div>
-
-                    <div class="sidebar-section-title">Manual de Ayuda</div>
-                    <ul class="sidebar-menu">
-                        <li class="sidebar-menu-item">
-                            <a href="#preferencias" class="sidebar-link active" data-target="preferencias">
-                                <i class="fa-solid fa-user-gear"></i> Preferencias de Usuario
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a href="#config-global" class="sidebar-link" data-target="config-global">
-                                <i class="fa-solid fa-globe"></i> Configuración Global
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a href="#plan-suscripcion" class="sidebar-link" data-target="plan-suscripcion">
-                                <i class="fa-solid fa-credit-card"></i> Plan de Suscripción
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a href="#perfiles" class="sidebar-link" data-target="perfiles">
-                                <i class="fa-solid fa-id-card"></i> Perfiles de Cotización
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a href="#plantillas" class="sidebar-link" data-target="plantillas">
-                                <i class="fa-solid fa-file-lines"></i> Plantillas de Documentos
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a href="#usuarios" class="sidebar-link" data-target="usuarios">
-                                <i class="fa-solid fa-users-gear"></i> Gestión de Usuarios
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a href="#zona-peligro" class="sidebar-link" data-target="zona-peligro">
-                                <i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro
-                            </a>
-                        </li>
-                    </ul>
-                </aside>
-
-                <!-- Main Content Box -->
-                <div class="content-box">
-                    <h2>Configuración del Sistema</h2>
-                    <p style="margin-bottom: 2rem;">
-                        Aprende cómo personalizar tu cuenta, gestionar tu empresa y configurar los diferentes apartados dentro de la pestaña de Configuración.
-                    </p>
-
-                    <!-- Preferencia de Usuario -->
-                    <div id="preferencias" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header active">
-                            <h4><i class="fa-solid fa-user-gear"></i> Preferencia de Usuario</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content" style="max-height: none;">
-                            <div class="collapsible-content-inner">
-                                <p>En este apartado puedes personalizar tu experiencia de usuario individual en el portal:</p>
-                                <ul>
-                                    <li><strong>Seleccionar Idioma:</strong> Elige entre inglés y español para toda la interfaz del panel.</li>
-                                    <li><strong>Zona Horaria:</strong> Configura tu zona horaria para registrar correctamente las horas de creación y firmas.</li>
-                                    <li><strong>Perfil de Cotización Predeterminado:</strong> Si tienes más de un perfil creado, define cuál se aplicará por defecto en cada cotización nueva.</li>
-                                    <li><strong>Cambiar Contraseña:</strong> Actualiza de forma segura tu contraseña para acceder al portal.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Configuración Global -->
-                    <div id="config-global" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header">
-                            <h4><i class="fa-solid fa-globe"></i> Configuración Global</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content">
-                            <div class="collapsible-content-inner">
-                                <p>Permite configurar los datos del negocio que aparecerán públicamente en las cotizaciones y PDFs:</p>
-                                <ul>
-                                    <li><strong>Datos de Contacto:</strong> Agrega el Nombre de la Empresa, Eslogan, RFC, Teléfono, Correo y Sitio Web.</li>
-                                    <li><strong>Logotipo de la Empresa:</strong> Sube tu logo (PNG o JPG). Este logotipo sustituirá de inmediato al logo genérico de la barra lateral y se mostrará en los encabezados.</li>
-                                    <li><strong>Impuestos:</strong> Configura el nombre del impuesto local (ej. IVA) y el porcentaje correspondiente (ej. 16.00%).</li>
-                                    <li><strong>Habilitar Función Dividida:</strong> Habilita esta opción para que el total se pueda dividir por un número determinado (por ejemplo, número de huéspedes, personas o días) directamente en el formulario de la cotización.</li>
-                                    <li><strong>Habilitar Descuento Unitario:</strong> Permite colocar descuentos individuales a cada partida o producto por separado, además del descuento general.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plan de Suscripción -->
-                    <div id="plan-suscripcion" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header">
-                            <h4><i class="fa-solid fa-credit-card"></i> Plan de Suscripción</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content">
-                            <div class="collapsible-content-inner">
-                                <p>Controla las características de cobro e información de tu plan activo:</p>
-                                <ul>
-                                    <li><strong>Plan Actual:</strong> Consulta el tipo de suscripción de tu cuenta y espacio de almacenamiento.</li>
-                                    <li><strong>Actualizar Plan (Upgrade):</strong> Cambia a planes superiores para añadir más funciones y espacio.</li>
-                                    <li><strong>Restricción de Downgrade:</strong> No se permite cambiar a un plan inferior de manera directa para evitar la pérdida o eliminación accidental de la información que ya excede la capacidad del plan menor.</li>
-                                    <li><strong>Facturación y Métodos de Pago:</strong> Visualiza tu próximo ciclo de cobro y actualiza la tarjeta de crédito o débito a través de Stripe de forma segura.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Perfiles de Cotización -->
-                    <div id="perfiles" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header">
-                            <h4><i class="fa-solid fa-id-card"></i> Perfiles de Cotización (Secuencias y Predeterminados)</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content">
-                            <div class="collapsible-content-inner">
-                                <p>Crea múltiples perfiles si manejas diferentes marcas, líneas de negocio o tipos de clientes:</p>
-                                <ul>
-                                    <li><strong>Nombre del Perfil:</strong> Nombre de referencia interna para el perfil.</li>
-                                    <li><strong>Prefijo de cotizaciones:</strong> Letras o códigos iniciales para la secuencia de folios. Cada perfil inicia su numeración automáticamente desde el 1.</li>
-                                    <li><strong>Plantillas Predeterminadas:</strong> Selecciona el Encabezado, Pie de Página y Términos predeterminados que se cargarán de manera automática al cotizar con este perfil.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plantillas de Documentos -->
-                    <div id="plantillas" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header">
-                            <h4><i class="fa-solid fa-file-lines"></i> Plantillas de Documentos</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content">
-                            <div class="collapsible-content-inner">
-                                <p>Prepara secciones completas de textos libres para armar tus presupuestos rápidamente:</p>
-                                <ul>
-                                    <li><strong>Formulario Unificado:</strong> Permite registrar plantillas especificando Nombre, Tipo (Encabezado, Pie o Términos y Condiciones) y Contenido.</li>
-                                    <li><strong>Editor Enriquecido:</strong> Agrega libremente textos, tablas, alineaciones o imágenes a tus documentos finales.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gestión de Usuarios -->
-                    <div id="usuarios" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header">
-                            <h4><i class="fa-solid fa-users-gear"></i> Gestión de Usuarios</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content">
-                            <div class="collapsible-content-inner">
-                                <div class="info-box">
-                                    <strong>Nota importante:</strong> Esta sección solo está habilitada y visible si cuentas con el plan <strong>Empresarial (Cotizalo 80 / 80GB)</strong>.
-                                </div>
-                                <p>Administra los colaboradores con acceso a tu organización:</p>
-                                <ul>
-                                    <li><strong>Administración Completa:</strong> Crea nuevos usuarios, edita su información, cambia contraseñas o deshabilita accesos.</li>
-                                    <li><strong>Asignación de Perfil:</strong> Vincula a cada colaborador un perfil de cotización predefinido.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Zona de Peligro -->
-                    <div id="zona-peligro" class="collapsible-wrapper search-target">
-                        <div class="collapsible-header">
-                            <h4><i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro</h4>
-                            <i class="fa-solid fa-chevron-down collapsible-icon"></i>
-                        </div>
-                        <div class="collapsible-content">
-                            <div class="collapsible-content-inner">
-                                <div class="warning-box" style="margin-top: 0;">
-                                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Baja de la Cuenta</h4>
-                                    <p>
-                                        Si decides dar de baja la cuenta de manera permanente, la acción se aplicará inmediatamente y tendrá las siguientes consecuencias irreversibles:
-                                    </p>
-                                    <ul>
-                                        <li>Bloqueo permanente de todos los accesos e información de la cuenta.</li>
-                                        <li>Cancelación inmediata de la suscripción de cobro recurrente en Stripe.</li>
-                                        <li>Bloqueo inmediato de todos los usuarios de la organización.</li>
-                                        <li><strong>Sin reembolsos:</strong> Los cargos ya realizados por mensualidades renovadas recientemente no serán reembolsados.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="animate-on-scroll fade-in-up delay-400" style="margin-top: 3rem;">
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Empezar a cotizar ahora</a>
-            </div>
+        <div class="container relative z-10">
+            <h1>Manual de Usuario</h1>
+            <p>Guía de configuración de tu portal de cotizaciones paso a paso.</p>
         </div>
     </section>
+
+    <!-- Document Workspace -->
+    <div class="manual-workspace">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="manual-sidebar">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
+            </div>
+
+            <div class="sidebar-section-title">Manual de Ayuda</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#preferencias" class="sidebar-link active" data-target="preferencias">
+                        <i class="fa-solid fa-user-gear"></i> Preferencias
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#config-global" class="sidebar-link" data-target="config-global">
+                        <i class="fa-solid fa-globe"></i> Configuración Global
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#plan-suscripcion" class="sidebar-link" data-target="plan-suscripcion">
+                        <i class="fa-solid fa-credit-card"></i> Plan de Suscripción
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#perfiles" class="sidebar-link" data-target="perfiles">
+                        <i class="fa-solid fa-id-card"></i> Perfiles de Cotización
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#plantillas" class="sidebar-link" data-target="plantillas">
+                        <i class="fa-solid fa-file-lines"></i> Plantillas
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#usuarios" class="sidebar-link" data-target="usuarios">
+                        <i class="fa-solid fa-users-gear"></i> Gestión de Usuarios
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#zona-peligro" class="sidebar-link" data-target="zona-peligro">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Central Main Content Block -->
+        <main class="content-box">
+            
+            <!-- Section: Preferencia de Usuario -->
+            <section id="preferencias" class="doc-section search-target">
+                <h2><i class="fa-solid fa-user-gear"></i> Preferencias de Usuario</h2>
+                <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de cotizaciones:</p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-language"></i></div>
+                        <div class="feature-text">
+                            <strong>Seleccionar Idioma</strong>
+                            <p>Elige entre inglés y español para cambiar de inmediato todo el idioma visual de la interfaz del panel.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-clock"></i></div>
+                        <div class="feature-text">
+                            <strong>Zona Horaria</strong>
+                            <p>Configura tu zona horaria para registrar de forma precisa las horas de creación de cotizaciones y firmas de clientes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-star"></i></div>
+                        <div class="feature-text">
+                            <strong>Perfil de Cotización Predeterminado</strong>
+                            <p>Si manejas múltiples perfiles de marcas, aquí puedes establecer cuál se cargará por defecto al crear nuevos presupuestos.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-key"></i></div>
+                        <div class="feature-text">
+                            <strong>Cambiar Contraseña</strong>
+                            <p>Actualiza de forma rápida y segura las credenciales de seguridad para tu acceso personal.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Configuración Global -->
+            <section id="config-global" class="doc-section search-target">
+                <h2><i class="fa-solid fa-globe"></i> Configuración Global</h2>
+                <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las cotizaciones y PDFs generados:</p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-address-book"></i></div>
+                        <div class="feature-text">
+                            <strong>Datos de Contacto</strong>
+                            <p>Configura el Nombre Oficial de la Empresa, Eslogan corporativo, RFC, Teléfono de contacto, Correo de soporte y URL de tu Sitio Web.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-image"></i></div>
+                        <div class="feature-text">
+                            <strong>Logotipo de la Empresa</strong>
+                            <p>Sube tu logotipo en formato PNG o JPG. Este reemplazará automáticamente los logos genéricos en la barra lateral del portal y los PDFs.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-percent"></i></div>
+                        <div class="feature-text">
+                            <strong>Impuestos Locales</strong>
+                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje correspondiente (ej. 16.00%) aplicable de manera global.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="feature-text">
+                            <strong>Función Dividida (Grupos / Días)</strong>
+                            <p>Activa esta casilla para poder dividir el monto total de la cotización entre un número determinado de personas, días o huéspedes en tu plantilla.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
+                        <div class="feature-text">
+                            <strong>Descuento Unitario</strong>
+                            <p>Habilita la opción de colocar descuentos individuales a cada partida o producto de manera independiente, adicional al descuento general del total.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Plan de Suscripción -->
+            <section id="plan-suscripcion" class="doc-section search-target">
+                <h2><i class="fa-solid fa-credit-card"></i> Plan de Suscripción</h2>
+                <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu suscripción actual:</p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-info"></i></div>
+                        <div class="feature-text">
+                            <strong>Plan Activo</strong>
+                            <p>Monitorea qué tipo de cuenta tienes contratada (ej. Profesional o Empresarial) y el espacio de almacenamiento consumido.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-up"></i></div>
+                        <div class="feature-text">
+                            <strong>Actualizar Plan (Upgrade)</strong>
+                            <p>Mejora tu plan en cualquier momento para ampliar la capacidad de almacenamiento, el límite de cotizaciones y desbloquear herramientas premium.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-lock"></i></div>
+                        <div class="feature-text">
+                            <strong>Restricciones de Downgrade</strong>
+                            <p>Para evitar la pérdida accidental de datos e historial, no se permite cambiar a un plan inferior si tu espacio actual supera los límites del plan al que deseas cambiar.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
+                        <div class="feature-text">
+                            <strong>Facturación de Stripe</strong>
+                            <p>Accede de forma directa y segura al portal de Stripe para actualizar tus métodos de pago, ver cobros y descargar tus facturas históricas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Perfiles de Cotización -->
+            <section id="perfiles" class="doc-section search-target">
+                <h2><i class="fa-solid fa-id-card"></i> Perfiles de Cotización</h2>
+                <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de negocio o tipos de clientes desde una misma cuenta corporativa:</p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-font"></i></div>
+                        <div class="feature-text">
+                            <strong>Nombre e Identificación</strong>
+                            <p>Establece un nombre interno único para identificar el perfil durante el desarrollo de una cotización.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-hashtag"></i></div>
+                        <div class="feature-text">
+                            <strong>Prefijos y Secuencias de Folio</strong>
+                            <p>Asigna un prefijo alfanumérico para tus folios. Cada perfil llevará su propio consecutivo numérico independiente que se iniciará automáticamente en 1.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-paste"></i></div>
+                        <div class="feature-text">
+                            <strong>Plantillas Vinculadas</strong>
+                            <p>Elige de forma predeterminada los Encabezados, Pies de Página y Cláusulas legales que deberán cargarse cuando utilices este perfil.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Plantillas de Documentos -->
+            <section id="plantillas" class="doc-section search-target">
+                <h2><i class="fa-solid fa-file-lines"></i> Plantillas de Documentos</h2>
+                <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus presupuestos comerciales:</p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-folder-open"></i></div>
+                        <div class="feature-text">
+                            <strong>Tipos de Plantilla</strong>
+                            <p>Organiza tus plantillas y textos guardados clasificándolos en Encabezados, Pies de Página, o Términos y Condiciones Legales.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
+                        <div class="feature-text">
+                            <strong>Editor de Texto Enriquecido</strong>
+                            <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas, hipervínculos, o incrustar imágenes en tus textos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Gestión de Usuarios -->
+            <section id="usuarios" class="doc-section search-target">
+                <h2><i class="fa-solid fa-users-gear"></i> Gestión de Usuarios</h2>
+                <p>Administra los roles de acceso y colaboradores que forman parte de tu portal de cotizaciones:</p>
+                
+                <div class="info-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial (Cotizalo 80 / 80GB)</strong>.
+                    </div>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-user-plus"></i></div>
+                        <div class="feature-text">
+                            <strong>Administración Completa</strong>
+                            <p>Invita colaboradores, actualiza información general, modifica contraseñas o desactiva credenciales de acceso de forma inmediata.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-shield"></i></div>
+                        <div class="feature-text">
+                            <strong>Asignación de Perfil de Cotización</strong>
+                            <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o predeterminar bajo qué marca pueden realizar presupuestos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Zona de Peligro -->
+            <section id="zona-peligro" class="doc-section search-target">
+                <h2><i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro</h2>
+                <p>Herramientas y acciones críticas que afectan de manera permanente tu cuenta e información corporativa:</p>
+                
+                <div class="warning-box">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Dar de Baja la Cuenta (Cancelación Definitiva)</h4>
+                    <p>Si decides eliminar tu cuenta del portal, la acción se ejecutará de forma inmediata e irreversible. Conlleva las siguientes implicaciones:</p>
+                    <ul>
+                        <li>Borrado permanente y bloqueo absoluto de todos los accesos del portal.</li>
+                        <li>Cancelación automática de la suscripción y cobros futuros en la pasarela Stripe.</li>
+                        <li>Suspensión inmediata de los accesos de todos los colaboradores registrados en tu empresa.</li>
+                        <li><strong>Sin Devoluciones:</strong> No se realizarán reembolsos por períodos de facturación que ya hayan transcurrido o comenzado recientemente.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Right Table of Contents (TOC) -->
+        <aside class="manual-toc">
+            <div class="toc-title">En esta página</div>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#preferencias" class="toc-link active" data-target="preferencias">Preferencias</a></li>
+                <li class="toc-item"><a href="#config-global" class="toc-link" data-target="config-global">Configuración Global</a></li>
+                <li class="toc-item"><a href="#plan-suscripcion" class="toc-link" data-target="plan-suscripcion">Plan de Suscripción</a></li>
+                <li class="toc-item"><a href="#perfiles" class="toc-link" data-target="perfiles">Perfiles de Cotización</a></li>
+                <li class="toc-item"><a href="#plantillas" class="toc-link" data-target="plantillas">Plantillas</a></li>
+                <li class="toc-item"><a href="#usuarios" class="toc-link" data-target="usuarios">Gestión de Usuarios</a></li>
+                <li class="toc-item"><a href="#zona-peligro" class="toc-link" data-target="zona-peligro">Zona de Peligro</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- Call to Action bottom section -->
+    <div style="text-align: center; padding: 4rem 1.5rem; background: var(--stripe-bg-alt);">
+        <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Empezar a cotizar ahora</a>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -572,18 +809,6 @@
                 }
             });
 
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
-
             const mobileBtn = document.querySelector('.mobile-menu-btn');
             const navContainer = document.querySelector('.nav-container');
             if (mobileBtn && navContainer) {
@@ -595,57 +820,17 @@
             }
 
             // -----------------------------------------------------
-            // Collapsible Sections Engine
+            // Smooth Scroll navigation
             // -----------------------------------------------------
-            const collapsibles = document.querySelectorAll('.collapsible-header');
-            collapsibles.forEach(col => {
-                col.addEventListener('click', () => {
-                    const content = col.nextElementSibling;
-                    const isActive = col.classList.contains('active');
-
-                    // Close all others
-                    collapsibles.forEach(c => {
-                        c.classList.remove('active');
-                        c.nextElementSibling.style.maxHeight = null;
-                    });
-
-                    // Toggle current
-                    if (!isActive) {
-                        col.classList.add('active');
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                    }
-                });
-            });
-
-            // -----------------------------------------------------
-            // Sidebar Navigation & Highlighting
-            // -----------------------------------------------------
-            const sidebarLinks = document.querySelectorAll('.sidebar-link');
-            sidebarLinks.forEach(link => {
+            const links = document.querySelectorAll('.sidebar-link, .toc-link');
+            links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('data-target');
                     const targetEl = document.getElementById(targetId);
                     
                     if (targetEl) {
-                        // Open collapsible if closed
-                        const colHeader = targetEl.querySelector('.collapsible-header');
-                        const colContent = targetEl.querySelector('.collapsible-content');
-                        
-                        collapsibles.forEach(c => {
-                            c.classList.remove('active');
-                            c.nextElementSibling.style.maxHeight = null;
-                        });
-
-                        colHeader.classList.add('active');
-                        colContent.style.maxHeight = colContent.scrollHeight + 'px';
-
-                        // Set active sidebar class
-                        sidebarLinks.forEach(l => l.classList.remove('active'));
-                        link.classList.add('active');
-
-                        // Scroll cleanly to target element
-                        const offsetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - 120;
+                        const offsetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - 110;
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
@@ -655,30 +840,63 @@
             });
 
             // -----------------------------------------------------
+            // ScrollSpy Engine (Updates active states on scroll)
+            // -----------------------------------------------------
+            const sections = document.querySelectorAll('.doc-section');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const tocLinks = document.querySelectorAll('.toc-link');
+
+            function updateScrollSpy() {
+                let currentActiveId = '';
+                const scrollPos = window.scrollY + 130;
+
+                sections.forEach(sec => {
+                    if (scrollPos >= sec.offsetTop) {
+                        currentActiveId = sec.getAttribute('id');
+                    }
+                });
+
+                // Fallback to first if above all
+                if (!currentActiveId && sections.length > 0) {
+                    currentActiveId = sections[0].getAttribute('id');
+                }
+
+                if (currentActiveId) {
+                    sidebarLinks.forEach(link => {
+                        if (link.getAttribute('data-target') === currentActiveId) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+
+                    tocLinks.forEach(link => {
+                        if (link.getAttribute('data-target') === currentActiveId) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', updateScrollSpy);
+            updateScrollSpy(); // Initial call
+
+            // -----------------------------------------------------
             // Search / Filter System
             // -----------------------------------------------------
             const searchInput = document.getElementById('manual-search');
             searchInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase().trim();
-                const wrappers = document.querySelectorAll('.search-target');
+                const sectionsToFilter = document.querySelectorAll('.search-target');
 
-                wrappers.forEach(wrap => {
-                    const textContent = wrap.textContent.toLowerCase();
-                    const headerText = wrap.querySelector('.collapsible-header h4').textContent.toLowerCase();
-
-                    // If matches, display wrap, otherwise hide
+                sectionsToFilter.forEach(sec => {
+                    const textContent = sec.textContent.toLowerCase();
                     if (textContent.includes(query)) {
-                        wrap.style.display = 'block';
-                        
-                        // If exact header match or query is non-empty, auto-expand matching wrappers
-                        if (query.length > 2) {
-                            const colHeader = wrap.querySelector('.collapsible-header');
-                            const colContent = wrap.querySelector('.collapsible-content');
-                            colHeader.classList.add('active');
-                            colContent.style.maxHeight = colContent.scrollHeight + 'px';
-                        }
+                        sec.style.display = 'block';
                     } else {
-                        wrap.style.display = 'none';
+                        sec.style.display = 'none';
                     }
                 });
 
