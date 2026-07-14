@@ -656,6 +656,11 @@
                     </a>
                 </li>
                 <li class="sidebar-menu-item">
+                    <a href="#unidades" class="sidebar-link" data-target="unidades">
+                        <i class="fa-solid fa-ruler-combined"></i> Unidades
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
                     <a href="#zona-peligro" class="sidebar-link" data-target="zona-peligro">
                         <i class="fa-solid fa-triangle-exclamation"></i> Zona de Peligro
                     </a>
@@ -1129,6 +1134,160 @@
                     <div class="browser-content doc-image-container">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png"
                             alt="Gestión de Usuarios - Formulario">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Unidades -->
+            <section id="unidades" class="doc-section search-target">
+                <h2><i class="fa-solid fa-ruler-combined"></i> Unidades</h2>
+                <p>Administra las unidades de medida o de venta (ej. Horas, Kilogramos, Litros, Piezas) que se utilizarán para catalogar y cotizar tus productos o servicios en el portal:</p>
+
+                <!-- Browser Mockup (Listado Principal) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/units</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/units/Unidades.png"
+                            alt="Listado de Unidades">
+                    </div>
+                </div>
+
+                <div class="mockup-grid-2col" style="margin-top: 2rem;">
+                    <!-- Agregar Unidad -->
+                    <div>
+                        <h3>Agregar Unidad</h3>
+                        <ol class="steps-flow">
+                            <li class="step-item">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <strong>Abrir el Formulario</strong>
+                                    <p>Haz clic en el botón <strong style="display: inline;">+ Agregar Unidad</strong> ubicado en la esquina superior derecha del listado para abrir la modal de registro.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <strong>Ingresar Datos de la Unidad</strong>
+                                    <p>Define el <strong>Nombre</strong> de la unidad (ej. Litros) y su <strong>Abreviatura</strong> correspondiente (ej. l).</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <strong>Registrar Unidad</strong>
+                                    <p>Haz clic en el botón <strong style="display: inline;">+ Agregar</strong> para registrar y habilitar la nueva unidad en tu catálogo.</p>
+                                </div>
+                            </li>
+                        </ol>
+                        
+                        <!-- Browser Mockup (Agregar Form) -->
+                        <div class="browser-mockup narrow" style="margin-top: 1rem;">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Modal: Agregar Unidad</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/units/Agregar_unidades.png"
+                                    alt="Agregar Unidad Formulario">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Editar Unidad -->
+                    <div>
+                        <h3>Editar Unidad</h3>
+                        <ol class="steps-flow">
+                            <li class="step-item">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <strong>Seleccionar Editar</strong>
+                                    <p>Ubica la unidad a modificar en la lista principal y haz clic en el botón <strong style="display: inline;">Editar</strong> en la columna de acciones.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <strong>Actualizar Información</strong>
+                                    <p>Modifica el <strong>Nombre</strong> o la <strong>Abreviatura</strong> en el formulario modal según tus requerimientos.</p>
+                                </div>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <strong>Guardar Cambios</strong>
+                                    <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para aplicar los cambios de forma definitiva.</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <!-- Browser Mockup (Editar Form) -->
+                        <div class="browser-mockup narrow" style="margin-top: 1rem;">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Modal: Editar Unidad</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/units/Editar_Unidades.png"
+                                    alt="Editar Unidad Formulario">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eliminar Unidad -->
+                <div style="margin-top: 2rem;">
+                    <h3>Eliminar Unidad</h3>
+                    <div class="mockup-grid-2col">
+                        <div>
+                            <ol class="steps-flow" style="margin: 0;">
+                                <li class="step-item">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <strong>Seleccionar Eliminar</strong>
+                                        <p>Identifica la unidad que deseas borrar del catálogo y haz clic en el botón <strong style="display: inline;">Eliminar</strong> en su respectiva fila.</p>
+                                    </div>
+                                </li>
+                                <li class="step-item">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <strong>Confirmar la Acción</strong>
+                                        <p>En el cuadro de diálogo de confirmación que pregunta <em>¿Eliminar unidad [Nombre]?</em>, haz clic en el botón <strong style="display: inline;">Confirmar</strong> para retirarla definitivamente de tu catálogo.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <!-- Browser Mockup (Eliminar Confirmación) -->
+                            <div class="browser-mockup narrow" style="margin: 0;">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <span class="browser-dot red"></span>
+                                        <span class="browser-dot yellow"></span>
+                                        <span class="browser-dot green"></span>
+                                    </div>
+                                    <div class="browser-url">Confirmación de Eliminación</div>
+                                </div>
+                                <div class="browser-content doc-image-container">
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/units/Eliminar_unidades.png"
+                                        alt="Eliminar Unidad Confirmación">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
