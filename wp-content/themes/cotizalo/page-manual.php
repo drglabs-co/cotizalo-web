@@ -382,9 +382,18 @@
             height: 8px;
             border-radius: 50%;
         }
-        .browser-dot.red { background: #ef4444; }
-        .browser-dot.yellow { background: #f59e0b; }
-        .browser-dot.green { background: #10b981; }
+
+        .browser-dot.red {
+            background: #ef4444;
+        }
+
+        .browser-dot.yellow {
+            background: #f59e0b;
+        }
+
+        .browser-dot.green {
+            background: #10b981;
+        }
 
         .browser-url {
             background: #ffffff;
@@ -410,7 +419,7 @@
         }
 
         .doc-image-container img {
-            width: 100%;
+            /* width: 100%; */
             height: auto;
             display: block;
             cursor: zoom-in;
@@ -442,6 +451,7 @@
                 grid-template-columns: 1fr;
             }
         }
+
         /* Steps Flow Styling for Instructions */
         .steps-flow {
             list-style: none;
@@ -578,7 +588,8 @@
                         Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
-                <li><a href="<?php echo esc_url(home_url('/manual/')); ?>" class="nav-item nav-item--active">Manual de Usuario</a>
+                <li><a href="<?php echo esc_url(home_url('/manual/')); ?>" class="nav-item nav-item--active">Manual de
+                        Usuario</a>
                 </li>
             </ul>
             <div class="nav-buttons">
@@ -659,7 +670,8 @@
             <!-- Section: Preferencia de Usuario -->
             <section id="preferencias" class="doc-section search-target">
                 <h2><i class="fa-solid fa-user-gear"></i> Preferencias de Usuario</h2>
-                <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de cotizaciones:</p>
+                <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de
+                    cotizaciones:</p>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup narrow">
@@ -672,7 +684,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/preferences</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Preferencias_de_Usuario.png" alt="Preferencias de Usuario">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Preferencias_de_Usuario.png"
+                            alt="Preferencias de Usuario">
                     </div>
                 </div>
 
@@ -682,35 +695,40 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Acceso a Preferencias</strong>
-                            <p>Dirígete a la sección de <strong>Configuración</strong> en el menú lateral izquierdo de tu panel y selecciona la opción **Preferencias**.</p>
+                            <p>Dirígete a la sección de <strong>Configuración</strong> en el menú lateral izquierdo de
+                                tu panel y selecciona la opción **Preferencias**.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Seleccionar Idioma</strong>
-                            <p>Elige tu idioma preferido (inglés o español) en la primera opción. Toda la interfaz del panel cambiará de inmediato.</p>
+                            <p>Elige tu idioma preferido (inglés o español) en la primera opción. Toda la interfaz del
+                                panel cambiará de inmediato.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Configurar Zona Horaria</strong>
-                            <p>Selecciona tu ciudad o zona horaria local. Esto garantiza que las fechas y horas de creación y firmas en tus cotizaciones coincidan correctamente con tu horario local.</p>
+                            <p>Selecciona tu ciudad o zona horaria local. Esto garantiza que las fechas y horas de
+                                creación y firmas en tus cotizaciones coincidan correctamente con tu horario local.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">4</span>
                         <div class="step-content">
                             <strong>Definir Perfil Predeterminado</strong>
-                            <p>Si manejas múltiples marcas o secuencias de cotizaciones, define aquí cuál perfil se cargará por defecto de forma automática en cada cotización nueva.</p>
+                            <p>Si manejas múltiples marcas o secuencias de cotizaciones, define aquí cuál perfil se
+                                cargará por defecto de forma automática en cada cotización nueva.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">5</span>
                         <div class="step-content">
                             <strong>Cambio de Contraseña</strong>
-                            <p>Si necesitas actualizar tus credenciales, ingresa tu contraseña actual y la nueva contraseña. Guarda los cambios para actualizar el acceso.</p>
+                            <p>Si necesitas actualizar tus credenciales, ingresa tu contraseña actual y la nueva
+                                contraseña. Guarda los cambios para actualizar el acceso.</p>
                         </div>
                     </li>
                 </ol>
@@ -719,7 +737,8 @@
             <!-- Section: Configuración Global -->
             <section id="config-global" class="doc-section search-target">
                 <h2><i class="fa-solid fa-globe"></i> Configuración Global</h2>
-                <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las cotizaciones y PDFs generados:</p>
+                <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las
+                    cotizaciones y PDFs generados:</p>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup narrow">
@@ -732,7 +751,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/global</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Configuracion_Global.png" alt="Configuración Global">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Configuracion_Global.png"
+                            alt="Configuración Global">
                     </div>
                 </div>
 
@@ -742,35 +762,41 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Completar Datos de Contacto</strong>
-                            <p>Ingresa la información oficial de tu empresa: Nombre, Eslogan comercial, RFC, Teléfono, Correo electrónico de soporte y URL de tu sitio web. Esta información se usará en el encabezado de tus cotizaciones.</p>
+                            <p>Ingresa la información oficial de tu empresa: Nombre, Eslogan comercial, RFC, Teléfono,
+                                Correo electrónico de soporte y URL de tu sitio web. Esta información se usará en el
+                                encabezado de tus cotizaciones.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Subir el Logotipo Oficial</strong>
-                            <p>Sube la imagen de tu logo en formato PNG o JPG. Este logotipo sustituirá de inmediato a los logos genéricos en toda la plataforma y PDFs.</p>
+                            <p>Sube la imagen de tu logo en formato PNG o JPG. Este logotipo sustituirá de inmediato a
+                                los logos genéricos en toda la plataforma y PDFs.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Configurar Impuestos Locales</strong>
-                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje a cobrar (ej. 16.00%). El desglose se aplicará de forma automática en cada cotización.</p>
+                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje a cobrar (ej. 16.00%). El
+                                desglose se aplicará de forma automática en cada cotización.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">4</span>
                         <div class="step-content">
                             <strong>Habilitar Función Dividida (Opcional)</strong>
-                            <p>Activa esta casilla si necesitas dividir los totales de tus cotizaciones por cantidad de días, huéspedes o personas directamente en el formulario.</p>
+                            <p>Activa esta casilla si necesitas dividir los totales de tus cotizaciones por cantidad de
+                                días, huéspedes o personas directamente en el formulario.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">5</span>
                         <div class="step-content">
                             <strong>Habilitar Descuentos Unitarios (Opcional)</strong>
-                            <p>Activa esta opción para permitir aplicar descuentos independientes a partidas o productos específicos en tus cotizaciones, además del descuento general.</p>
+                            <p>Activa esta opción para permitir aplicar descuentos independientes a partidas o productos
+                                específicos en tus cotizaciones, además del descuento general.</p>
                         </div>
                     </li>
                 </ol>
@@ -779,7 +805,8 @@
             <!-- Section: Plan de Suscripción -->
             <section id="plan-suscripcion" class="doc-section search-target">
                 <h2><i class="fa-solid fa-credit-card"></i> Plan de Suscripción</h2>
-                <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu suscripción actual:</p>
+                <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu
+                    suscripción actual:</p>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup">
@@ -792,7 +819,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/billing</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plan_de_Suscripcion.png" alt="Plan de Suscripción">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plan_de_Suscripcion.png"
+                            alt="Plan de Suscripción">
                     </div>
                 </div>
 
@@ -802,28 +830,34 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Verificar Estado de Suscripción</strong>
-                            <p>Visualiza el estado de tu plan actual y supervisa el consumo de almacenamiento en gigabytes para no exceder los límites del plan.</p>
+                            <p>Visualiza el estado de tu plan actual y supervisa el consumo de almacenamiento en
+                                gigabytes para no exceder los límites del plan.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Actualizar Plan (Upgrade)</strong>
-                            <p>Si deseas aumentar tus límites, haz clic en el botón de actualización para seleccionar un plan mayor de forma instantánea.</p>
+                            <p>Si deseas aumentar tus límites, haz clic en el botón de actualización para seleccionar un
+                                plan mayor de forma instantánea.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Restricciones de Downgrade</strong>
-                            <p>Recuerda que no se permiten downgrades si tus datos almacenados superan la capacidad del plan inferior que deseas contratar, a fin de proteger tu información contra pérdidas accidentales.</p>
+                            <p>Recuerda que no se permiten downgrades si tus datos almacenados superan la capacidad del
+                                plan inferior que deseas contratar, a fin de proteger tu información contra pérdidas
+                                accidentales.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">4</span>
                         <div class="step-content">
                             <strong>Administración de Pagos en Stripe</strong>
-                            <p>Accede directamente al portal del cliente de Stripe de forma cifrada para añadir o editar tarjetas de crédito/débito, revisar tu historial de cobros y descargar tus facturas oficiales.</p>
+                            <p>Accede directamente al portal del cliente de Stripe de forma cifrada para añadir o editar
+                                tarjetas de crédito/débito, revisar tu historial de cobros y descargar tus facturas
+                                oficiales.</p>
                         </div>
                     </li>
                 </ol>
@@ -832,7 +866,8 @@
             <!-- Section: Perfiles de Cotización -->
             <section id="perfiles" class="doc-section search-target">
                 <h2><i class="fa-solid fa-id-card"></i> Perfiles de Cotización</h2>
-                <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de negocio o tipos de clientes desde una misma cuenta corporativa:</p>
+                <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de
+                    negocio o tipos de clientes desde una misma cuenta corporativa:</p>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup">
@@ -845,7 +880,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/profiles</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png" alt="Perfiles de Cotización - Listado">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png"
+                            alt="Perfiles de Cotización - Listado">
                     </div>
                 </div>
 
@@ -855,21 +891,25 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Crear un Nuevo Perfil</strong>
-                            <p>Haz clic en el botón de creación de perfil dentro de la pestaña para abrir el formulario de configuración.</p>
+                            <p>Haz clic en el botón de creación de perfil dentro de la pestaña para abrir el formulario
+                                de configuración.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Establecer Identificación y Folios</strong>
-                            <p>Asigna un nombre interno descriptivo y define un prefijo alfanumérico único para identificar las cotizaciones de esta marca. La secuencia de folio numérico iniciará en 1 para este perfil de forma automática.</p>
+                            <p>Asigna un nombre interno descriptivo y define un prefijo alfanumérico único para
+                                identificar las cotizaciones de esta marca. La secuencia de folio numérico iniciará en 1
+                                para este perfil de forma automática.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Vincular Plantillas Predeterminadas</strong>
-                            <p>Selecciona los Encabezados, Pies de Página y Cláusulas Legales específicos que se cargarán automáticamente al cotizar bajo este perfil operativo.</p>
+                            <p>Selecciona los Encabezados, Pies de Página y Cláusulas Legales específicos que se
+                                cargarán automáticamente al cotizar bajo este perfil operativo.</p>
                         </div>
                     </li>
                 </ol>
@@ -885,7 +925,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/profiles/new</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_2.png" alt="Perfiles de Cotización - Formulario">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_2.png"
+                            alt="Perfiles de Cotización - Formulario">
                     </div>
                 </div>
             </section>
@@ -893,7 +934,8 @@
             <!-- Section: Plantillas de Documentos -->
             <section id="plantillas" class="doc-section search-target">
                 <h2><i class="fa-solid fa-file-lines"></i> Plantillas de Documentos</h2>
-                <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus presupuestos comerciales:</p>
+                <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus
+                    presupuestos comerciales:</p>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup">
@@ -906,7 +948,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/templates</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png" alt="Plantillas de Documentos - Listado">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png"
+                            alt="Plantillas de Documentos - Listado">
                     </div>
                 </div>
 
@@ -916,14 +959,18 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Registrar una Nueva Plantilla</strong>
-                            <p>Accede al gestor de plantillas y haz clic en crear. Selecciona el Tipo de Plantilla: Encabezado (presentación), Pie de Página (agradecimientos/firmas), o Términos y Condiciones (cláusulas contractuales).</p>
+                            <p>Accede al gestor de plantillas y haz clic en crear. Selecciona el Tipo de Plantilla:
+                                Encabezado (presentación), Pie de Página (agradecimientos/firmas), o Términos y
+                                Condiciones (cláusulas contractuales).</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Diseñar el Contenido</strong>
-                            <p>Utiliza el editor de texto enriquecido integrado para dar formato, crear tablas organizadoras, añadir alineaciones personalizadas e incrustar imágenes en el cuerpo del texto.</p>
+                            <p>Utiliza el editor de texto enriquecido integrado para dar formato, crear tablas
+                                organizadoras, añadir alineaciones personalizadas e incrustar imágenes en el cuerpo del
+                                texto.</p>
                         </div>
                     </li>
                 </ol>
@@ -939,7 +986,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/templates/new</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_2.png" alt="Plantillas de Documentos - Formulario">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_2.png"
+                            alt="Plantillas de Documentos - Formulario">
                     </div>
                 </div>
             </section>
@@ -952,7 +1000,9 @@
                 <div class="info-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial (Cotizalo 80 / 80GB)</strong>.
+                        <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está
+                        habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial
+                            (Cotizalo 80 / 80GB)</strong>.
                     </div>
                 </div>
 
@@ -967,7 +1017,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/users</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png" alt="Gestión de Usuarios - Listado">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png"
+                            alt="Gestión de Usuarios - Listado">
                     </div>
                 </div>
 
@@ -977,14 +1028,16 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Invitar y Crear Colaboradores</strong>
-                            <p>Registra un nuevo usuario ingresando su información básica (Nombre, Correo Electrónico y una Contraseña inicial provisional).</p>
+                            <p>Registra un nuevo usuario ingresando su información básica (Nombre, Correo Electrónico y
+                                una Contraseña inicial provisional).</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Asignar Perfil de Operación</strong>
-                            <p>Vincula al colaborador a uno de tus perfiles de cotización específicos. Esto limitará su alcance para que solo pueda emitir presupuestos bajo la marca o entidad asignada.</p>
+                            <p>Vincula al colaborador a uno de tus perfiles de cotización específicos. Esto limitará su
+                                alcance para que solo pueda emitir presupuestos bajo la marca o entidad asignada.</p>
                         </div>
                     </li>
                 </ol>
@@ -1000,7 +1053,8 @@
                         <div class="browser-url">app.cotizalo.net/settings/users/new</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png" alt="Gestión de Usuarios - Formulario">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png"
+                            alt="Gestión de Usuarios - Formulario">
                     </div>
                 </div>
             </section>
