@@ -419,7 +419,6 @@
         }
 
         .doc-image-container img {
-            /* width: 100%; */
             height: auto;
             display: block;
             cursor: zoom-in;
@@ -694,21 +693,13 @@
                     <li class="step-item">
                         <span class="step-number">1</span>
                         <div class="step-content">
-                            <strong>Acceso a Preferencias</strong>
-                            <p>Dirígete a la sección de <strong>Configuración</strong> en el menú lateral izquierdo de
-                                tu panel y selecciona la opción **Preferencias**.</p>
-                        </div>
-                    </li>
-                    <li class="step-item">
-                        <span class="step-number">2</span>
-                        <div class="step-content">
                             <strong>Seleccionar Idioma</strong>
                             <p>Elige tu idioma preferido (inglés o español) en la primera opción. Toda la interfaz del
                                 panel cambiará de inmediato.</p>
                         </div>
                     </li>
                     <li class="step-item">
-                        <span class="step-number">3</span>
+                        <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Configurar Zona Horaria</strong>
                             <p>Selecciona tu ciudad o zona horaria local. Esto garantiza que las fechas y horas de
@@ -716,7 +707,7 @@
                         </div>
                     </li>
                     <li class="step-item">
-                        <span class="step-number">4</span>
+                        <span class="step-number">3</span>
                         <div class="step-content">
                             <strong>Definir Perfil Predeterminado</strong>
                             <p>Si manejas múltiples marcas o secuencias de cotizaciones, define aquí cuál perfil se
@@ -724,11 +715,19 @@
                         </div>
                     </li>
                     <li class="step-item">
-                        <span class="step-number">5</span>
+                        <span class="step-number">4</span>
                         <div class="step-content">
                             <strong>Cambio de Contraseña</strong>
                             <p>Si necesitas actualizar tus credenciales, ingresa tu contraseña actual y la nueva
                                 contraseña. Guarda los cambios para actualizar el acceso.</p>
+                            <p style="margin-top: 0.5rem; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.9rem; color: var(--stripe-text-main);">La nueva contraseña debe cumplir con los siguientes requisitos:</p>
+                            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0.5rem; font-size: 0.9rem; line-height: 1.6; color: var(--stripe-text-muted);">
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> Mínimo 10 caracteres</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 letra mayúscula</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 letra minúscula</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 número</li>
+                                <li><span style="color: #ef4444; font-weight: bold; margin-right: 6px;">✗</span> 1 carácter especial (!@#$%^&*)</li>
+                            </ul>
                         </div>
                     </li>
                 </ol>
@@ -799,6 +798,13 @@
                                 específicos en tus cotizaciones, además del descuento general.</p>
                         </div>
                     </li>
+                    <li class="step-item">
+                        <span class="step-number">6</span>
+                        <div class="step-content">
+                            <strong>Guardar Configuración</strong>
+                            <p>Haz clic en el botón <strong>Guardar Configuración</strong> al final de la página para guardar y aplicar de forma definitiva todos los cambios en tu portal.</p>
+                        </div>
+                    </li>
                 </ol>
             </section>
 
@@ -807,6 +813,13 @@
                 <h2><i class="fa-solid fa-credit-card"></i> Plan de Suscripción</h2>
                 <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu
                     suscripción actual:</p>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Restricciones de Downgrade:</strong> No se permiten downgrades si tus datos almacenados superan la capacidad del plan inferior que deseas contratar, a fin de proteger tu información contra pérdidas accidentales.
+                    </div>
+                </div>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup">
@@ -838,23 +851,13 @@
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <strong>Actualizar Plan (Upgrade)</strong>
-                            <p>Si deseas aumentar tus límites, haz clic en el botón de actualización para seleccionar un
-                                plan mayor de forma instantánea.</p>
+                            <p>Si deseas aumentar tus límites, primero selecciona el plan deseado de la lista y luego haz clic en el botón de actualización para realizar el cambio de forma instantánea.</p>
                         </div>
                     </li>
                     <li class="step-item">
                         <span class="step-number">3</span>
                         <div class="step-content">
-                            <strong>Restricciones de Downgrade</strong>
-                            <p>Recuerda que no se permiten downgrades si tus datos almacenados superan la capacidad del
-                                plan inferior que deseas contratar, a fin de proteger tu información contra pérdidas
-                                accidentales.</p>
-                        </div>
-                    </li>
-                    <li class="step-item">
-                        <span class="step-number">4</span>
-                        <div class="step-content">
-                            <strong>Administración de Pagos en Stripe</strong>
+                            <strong>Actualización de Método de Pago</strong>
                             <p>Accede directamente al portal del cliente de Stripe de forma cifrada para añadir o editar
                                 tarjetas de crédito/débito, revisar tu historial de cobros y descargar tus facturas
                                 oficiales.</p>
@@ -868,6 +871,13 @@
                 <h2><i class="fa-solid fa-id-card"></i> Perfiles de Cotización</h2>
                 <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de
                     negocio o tipos de clientes desde una misma cuenta corporativa:</p>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Nota:</strong> Solo las suscripciones <strong>Profesional</strong> y <strong>Empresarial</strong> podrán generar perfiles adicionales a los que vienen por defecto.
+                    </div>
+                </div>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup">
@@ -891,8 +901,7 @@
                         <span class="step-number">1</span>
                         <div class="step-content">
                             <strong>Crear un Nuevo Perfil</strong>
-                            <p>Haz clic en el botón de creación de perfil dentro de la pestaña para abrir el formulario
-                                de configuración.</p>
+                            <p>Haz clic en el botón de <strong style="font-weight: 600; color: var(--stripe-blue);">Agregar Perfil</strong> dentro de la sección de perfiles de cotización para abrir el formulario de configuración.</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -901,7 +910,7 @@
                             <strong>Establecer Identificación y Folios</strong>
                             <p>Asigna un nombre interno descriptivo y define un prefijo alfanumérico único para
                                 identificar las cotizaciones de esta marca. La secuencia de folio numérico iniciará en 1
-                                para este perfil de forma automática.</p>
+                                para cada perfil y se realizará el incremento secuencial de forma automática.</p>
                         </div>
                     </li>
                     <li class="step-item">
@@ -936,6 +945,13 @@
                 <h2><i class="fa-solid fa-file-lines"></i> Plantillas de Documentos</h2>
                 <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus
                     presupuestos comerciales:</p>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Nota:</strong> Solo las suscripciones <strong>Profesional</strong> y <strong>Empresarial</strong> podrán generar plantillas adicionales a las que vienen por defecto.
+                    </div>
+                </div>
 
                 <!-- Browser Mockup -->
                 <div class="browser-mockup">
@@ -1003,6 +1019,13 @@
                         <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está
                         habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial
                             (Cotizalo 80 / 80GB)</strong>.
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Nota:</strong> El usuario principal no será eliminado hasta que se destruya toda la suscripción.
                     </div>
                 </div>
 
