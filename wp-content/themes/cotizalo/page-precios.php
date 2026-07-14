@@ -464,21 +464,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2.25rem;
+            gap: 2.5rem;
         }
 
-        .payment-methods-icons i {
-            font-size: 2.75rem;
-            color: var(--primary);
-            opacity: 0.7;
+        .payment-methods-icons img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .payment-methods-icons i:hover {
-            opacity: 1;
-            transform: translateY(-3px) scale(1.08);
-            color: var(--primary);
-            filter: drop-shadow(0 4px 6px rgba(18, 58, 44, 0.15));
+        .payment-methods-icons img:hover {
+            transform: translateY(-3px) scale(1.06);
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
         }
     </style>
 </head>
@@ -757,9 +755,9 @@
             <div class="payment-methods-wrap animate-on-scroll fade-in-up">
                 <p class="payment-methods-title">Aceptamos principales tarjetas de crédito y débito</p>
                 <div class="payment-methods-icons">
-                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-                    <i class="fa-brands fa-cc-amex" title="American Express"></i>
+                    <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons@latest/logo/visa.svg" alt="Visa" title="Visa">
+                    <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons@latest/logo/mastercard.svg" alt="Mastercard" title="Mastercard">
+                    <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons@latest/logo/amex.svg" alt="American Express" title="American Express">
                 </div>
             </div>
 
