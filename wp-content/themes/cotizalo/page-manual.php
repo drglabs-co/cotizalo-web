@@ -723,10 +723,34 @@
                 <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
             </div>
 
+            <div class="sidebar-section-title">Productos</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#agregar-producto" class="sidebar-link active" data-target="agregar-producto">
+                        <i class="fa-solid fa-plus"></i> Agregar Producto
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#editar-producto" class="sidebar-link" data-target="editar-producto">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Producto
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#importar-productos" class="sidebar-link" data-target="importar-productos">
+                        <i class="fa-solid fa-file-import"></i> Importar Productos
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#eliminar-producto" class="sidebar-link" data-target="eliminar-producto">
+                        <i class="fa-solid fa-trash-can"></i> Eliminar Producto
+                    </a>
+                </li>
+            </ul>
+
             <div class="sidebar-section-title">Unidades</div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu-item">
-                    <a href="#agregar-unidad" class="sidebar-link active" data-target="agregar-unidad">
+                    <a href="#agregar-unidad" class="sidebar-link" data-target="agregar-unidad">
                         <i class="fa-solid fa-plus"></i> Agregar Unidad
                     </a>
                 </li>
@@ -784,6 +808,214 @@
 
         <!-- Central Main Content Block -->
         <main class="content-box">
+
+            <!-- Section: Agregar Producto -->
+            <section id="agregar-producto" class="doc-section search-target">
+                <h2><i class="fa-solid fa-plus"></i> Agregar Producto</h2>
+                <p>Administra tu catálogo de productos o servicios para que puedas agregarlos rápidamente a tus cotizaciones:</p>
+
+                <!-- Browser Mockup (Listado Principal) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/products</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/products/Productos.png"
+                            alt="Listado de Productos">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Abrir el Formulario</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">+ Agregar Producto</strong> ubicado en la esquina superior derecha del catálogo para abrir la modal de registro.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Ingresar Datos del Producto</strong>
+                                <p>Define la información básica de tu product o servicio: <strong>Nombre</strong>, <strong>Descripción</strong>, <strong>Código/SKU</strong>, <strong>Precio</strong> de venta y selecciona la <strong>Unidad de Medida</strong> correspondiente de la lista.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Registrar Producto</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Agregar</strong> para registrar y guardar el nuevo producto en tu catálogo, dejándolo listo para ser usado al cotizar.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    
+                    <!-- Browser Mockup (Agregar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Agregar Producto</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/products/Agregar_productos.png"
+                                alt="Agregar Producto Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Editar Producto -->
+            <section id="editar-producto" class="doc-section search-target">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Editar Producto</h2>
+                <p>Modifica los datos de un producto o servicio existente para mantener actualizada la información de tu catálogo, como precios y descripciones:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Editar</strong>
+                                <p>Ubica el producto o servicio que deseas modificar en la lista principal y haz clic en el botón <strong style="display: inline;">Editar</strong> en la columna de acciones.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Actualizar la Información</strong>
+                                <p>Modifica el nombre, precio, descripción o la unidad asignada en el formulario según los nuevos datos.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Guardar Cambios</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para actualizar y registrar la información de forma definitiva.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Editar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Editar Producto</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/products/Editar_productos.png"
+                                alt="Editar Producto Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Importar Productos -->
+            <section id="importar-productos" class="doc-section search-target">
+                <h2><i class="fa-solid fa-file-import"></i> Importar Productos</h2>
+                <p>Carga de forma masiva tu catálogo completo de productos o servicios utilizando un archivo CSV para ahorrar tiempo en la configuración inicial:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Acceder a Importar</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Importar</strong> ubicado en la barra de herramientas del catálogo de productos.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Descargar Plantilla (Opcional)</strong>
+                                <p>Descarga el archivo de ejemplo para asegurarte de estructurar correctamente las columnas (Nombre, Descripción, Precio, SKU, Unidad, etc.).</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Subir Archivo CSV</strong>
+                                <p>Selecciona tu archivo CSV estructurado desde tu equipo y haz clic en el botón <strong style="display: inline;">Cargar archivo</strong>.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <strong>Confirmar la Importación</strong>
+                                <p>Revisa la vista previa de los productos cargados y haz clic en <strong style="display: inline;">Confirmar Importación</strong> para añadirlos masivamente a tu base de datos.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Importar Form) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Modal: Importar Productos</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/products/Importar_productos.png"
+                                alt="Importar Productos Formulario">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Eliminar Producto -->
+            <section id="eliminar-producto" class="doc-section search-target">
+                <h2><i class="fa-solid fa-trash-can"></i> Eliminar Producto</h2>
+                <p>Retira de forma definitiva los productos o servicios que ya no comercialices de tu catálogo activo:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Eliminar</strong>
+                                <p>Identifica el producto en la lista principal y haz clic en el botón <strong style="display: inline;">Eliminar</strong> (icono de papelera) en su respectiva fila.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Confirmar la Acción</strong>
+                                <p>En el cuadro de diálogo de confirmación, haz clic en el botón <strong style="display: inline;">Confirmar</strong> para retirar permanentemente el producto de tu catálogo.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Eliminar Confirmación) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Confirmación de Eliminación</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/products/Eliminar_productos.png"
+                                alt="Eliminar Producto Confirmación">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Section: Agregar Unidad -->
             <section id="agregar-unidad" class="doc-section search-target">
