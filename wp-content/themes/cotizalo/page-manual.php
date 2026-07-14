@@ -725,10 +725,29 @@
                 <input type="text" id="manual-search" class="search-input" placeholder="Buscar en el manual...">
             </div>
 
+            <div class="sidebar-section-title">Recibos</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#agregar-recibo" class="sidebar-link active" data-target="agregar-recibo">
+                        <i class="fa-solid fa-plus"></i> Agregar Recibo
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#editar-recibo" class="sidebar-link" data-target="editar-recibo">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Recibo
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#eliminar-recibo" class="sidebar-link" data-target="eliminar-recibo">
+                        <i class="fa-solid fa-trash-can"></i> Eliminar Recibo
+                    </a>
+                </li>
+            </ul>
+
             <div class="sidebar-section-title">Clientes</div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu-item">
-                    <a href="#agregar-cliente" class="sidebar-link active" data-target="agregar-cliente">
+                    <a href="#agregar-cliente" class="sidebar-link" data-target="agregar-cliente">
                         <i class="fa-solid fa-plus"></i> Agregar Cliente
                     </a>
                 </li>
@@ -848,6 +867,293 @@
 
         <!-- Central Main Content Block -->
         <main class="content-box">
+
+            <!-- Section: Agregar Recibo -->
+            <section id="agregar-recibo" class="doc-section search-target">
+                <h2><i class="fa-solid fa-plus"></i> Agregar Recibo de Anticipo</h2>
+                <p>Registra los pagos por adelantado o anticipos recibidos de tus clientes, vinculándolos a una cotización específica o de forma independiente:</p>
+
+                <!-- Browser Mockup (Listado Principal) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/receipts</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Recibos.png"
+                            alt="Listado de Recibos">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Iniciar la Creación</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Crear Recibo</strong> en la parte superior derecha de la sección para acceder al formulario.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Seleccionar o Crear un Cliente</strong>
+                                <p>Escribe el nombre del cliente en el buscador. Si el cliente no existe aún, haz clic en la opción <strong style="display: inline;">+ Nuevo Cliente</strong> dentro de los resultados para abrir el formulario rápido de registro.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Grid de Registro de Cliente Rápido -->
+                    <div class="mockup-grid-2col">
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Buscador: Cliente Nuevo</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Agregar_Cliente_Recibo.png"
+                                    alt="Opción de Cliente Nuevo en Buscador">
+                            </div>
+                        </div>
+
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Modal: Registro de Cliente Rápido</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Agregar_Cliente_Recibo_2.png"
+                                    alt="Modal de Cliente Rápido">
+                            </div>
+                        </div>
+                    </div>
+
+                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Vincular a una Cotización Aceptada (Opcional)</strong>
+                                <p>Una vez seleccionado el cliente, puedes elegir asociar el recibo a una de sus cotizaciones aceptadas en la lista desplegable correspondiente.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Vincular Cotización) -->
+                    <div class="browser-mockup narrow">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Formulario: Vincular Cotización</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Vincular_Cotizacion_Recibo.png"
+                                    alt="Vincular Cotización a Recibo">
+                        </div>
+                    </div>
+
+                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                        <li class="step-item">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <strong>Ingresar Montos y Detalles del Anticipo</strong>
+                                <p>Define el <strong>Folio</strong> del recibo (o déjalo en blanco para autogeneración), una <strong>Plantilla de Encabezado</strong> (opcional), el <strong>Valor Total</strong> de la venta y el monto del <strong>Anticipo</strong>. El sistema calculará automáticamente el saldo <strong>Restante</strong>. Si lo deseas, puedes añadir notas aclaratorias al final.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">5</span>
+                            <div class="step-content">
+                                <strong>Guardar y Generar PDF</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Crear y Generar PDF</strong> para registrar el recibo en el portal y abrir automáticamente la vista previa oficial en formato PDF.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Crear Recibo Form) -->
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/receipts/new</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Crear_Recibo.png"
+                                alt="Crear Recibo de Anticipo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-sección: Galería de Acciones de Recibo -->
+                <div style="margin-top: 3rem; border-top: 1px dashed var(--stripe-border); padding-top: 2rem;">
+                    <h3>Galería de Acciones Disponibles</h3>
+                    <p>En el listado principal de recibos, haz clic en el botón <strong style="display: inline;">Acciones <i class="fas fa-caret-down"></i></strong> correspondiente a la fila del recibo para desplegar el menú de opciones:</p>
+
+                    <div class="mockup-grid-2col" style="align-items: center;">
+                        <div>
+                            <ul class="feature-list">
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-eye"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Visualizar PDF</strong>
+                                        <p>Genera y abre una vista en PDF del recibo para guardarlo o imprimirlo directamente.</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-upload"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Subir Adjunto</strong>
+                                        <p>Carga un archivo externo de respaldo (como el recibo impreso y firmado por el cliente, o un comprobante de transferencia bancaria).</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <div class="feature-icon-wrapper"><i class="fa-solid fa-download"></i></div>
+                                    <div class="feature-text">
+                                        <strong>Descargar Adjunto</strong>
+                                        <p>Esta opción se habilitará si el recibo ya cuenta con un archivo asociado, permitiendo su descarga inmediata en cualquier momento.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="browser-mockup narrow">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                </div>
+                                <div class="browser-url">Menú: Acciones del Recibo</div>
+                            </div>
+                            <div class="browser-content doc-image-container">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Galeria_Acciones_Recibo.png"
+                                    alt="Menú de Acciones de Recibo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vista del Recibo en PDF -->
+                    <h4 style="margin-top: 2rem;">Vista Previa del Recibo PDF</h4>
+                    <div class="browser-mockup narrow">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Visor PDF: Recibo de Anticipo</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Recibo_PDF.png"
+                                alt="Recibo PDF Generado">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Editar Recibo -->
+            <section id="editar-recibo" class="doc-section search-target">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Editar Recibo</h2>
+                <p>Modifica la información o montos de un recibo existente para mantener el control de tus finanzas y saldos de clientes:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Abrir Formulario de Edición</strong>
+                                <p>Despliega el menú de <strong style="display: inline;">Acciones</strong> de tu recibo y selecciona <strong style="display: inline;">Editar</strong>.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Actualizar Datos y Montos</strong>
+                                <p>Modifica el folio, cliente, cotización vinculada, notas o montos correspondientes. El sistema recalculará en tiempo real el saldo restante.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Guardar Cambios</strong>
+                                <p>Haz clic en el botón <strong style="display: inline;">Guardar</strong> para aplicar las actualizaciones en el sistema.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Editar Recibo Form) -->
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/receipts/edit</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Editar_Recibo.png"
+                                alt="Editar Recibo de Anticipo">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Eliminar Recibo -->
+            <section id="eliminar-recibo" class="doc-section search-target">
+                <h2><i class="fa-solid fa-trash-can"></i> Eliminar Recibo</h2>
+                <p>Retira de forma permanente un recibo de anticipo cuando la transacción haya sido cancelada o ingresada por error:</p>
+
+                <div style="margin-top: 2rem;">
+                    <ol class="steps-flow">
+                        <li class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Seleccionar Eliminar</strong>
+                                <p>En el menú de <strong style="display: inline;">Acciones</strong> del recibo correspondiente, selecciona la opción <strong style="display: inline;">Eliminar</strong> (icono de papelera).</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Confirmar la Eliminación</strong>
+                                <p>En la ventana modal de confirmación, presiona el botón <strong style="display: inline;">Confirmar</strong> para remover permanentemente el registro de anticipo.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <!-- Browser Mockup (Eliminar Confirmación) -->
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">Confirmación de Eliminación</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/receipts/Eliminar_Recibo.png"
+                                alt="Eliminar Recibo Confirmación">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Section: Agregar Cliente -->
             <section id="agregar-cliente" class="doc-section search-target">
