@@ -39,7 +39,6 @@
             --stripe-bg-light: #ffffff;
             --stripe-bg-alt: #f8fafc;
             --stripe-sidebar-w: 280px;
-            --stripe-toc-w: 240px;
         }
 
         body {
@@ -70,13 +69,13 @@
             margin: 0 auto;
         }
 
-        /* 3-Column Workspace */
+        /* 2-Column Workspace */
         .manual-workspace {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2.5rem 1.5rem;
             display: grid;
-            grid-template-columns: var(--stripe-sidebar-w) 1fr var(--stripe-toc-w);
+            grid-template-columns: var(--stripe-sidebar-w) 1fr;
             gap: 3rem;
             align-items: start;
         }
@@ -538,71 +537,7 @@
             opacity: 1;
         }
 
-        /* Right Sidebar (TOC) */
-        .manual-toc {
-            position: sticky;
-            top: calc(var(--nav-height) + 2rem);
-            max-height: calc(100vh - var(--nav-height) - 4rem);
-            overflow-y: auto;
-            border-left: 1px solid var(--stripe-border);
-            padding-left: 1.25rem;
-        }
-
-        .toc-title {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--stripe-text-muted);
-            margin-bottom: 0.75rem;
-        }
-
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc-item {
-            margin-bottom: 0.5rem;
-        }
-
-        .toc-link {
-            font-size: 0.85rem;
-            color: var(--stripe-text-muted);
-            display: block;
-            transition: all 0.2s ease;
-            line-height: 1.4;
-        }
-
-        .toc-link:hover {
-            color: var(--stripe-primary);
-        }
-
-        .toc-link.active {
-            color: var(--stripe-primary);
-            font-weight: 600;
-        }
-
-        /* Sticky header overrides on scroll */
-        .scrolled .manual-sidebar,
-        .scrolled .manual-toc {
-            top: calc(var(--nav-height) + 1.5rem);
-            max-height: calc(100vh - var(--nav-height) - 3rem);
-        }
-
         /* Responsive Layout styling */
-        @media (max-width: 1200px) {
-            .manual-workspace {
-                grid-template-columns: var(--stripe-sidebar-w) 1fr;
-                gap: 2rem;
-            }
-
-            .manual-toc {
-                display: none;
-            }
-        }
-
         @media (max-width: 1100px) {
             .manual-workspace {
                 grid-template-columns: 1fr;
@@ -904,7 +839,7 @@
                         <div class="browser-url">app.cotizalo.net/settings/profiles</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png" alt="Perfiles de Cotización">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png" alt="Perfiles de Cotización - Listado">
                     </div>
                 </div>
 
@@ -932,6 +867,21 @@
                         </div>
                     </li>
                 </ol>
+
+                <!-- Browser Mockup (Configuración del Formulario) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/profiles/new</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_2.png" alt="Perfiles de Cotización - Formulario">
+                    </div>
+                </div>
             </section>
 
             <!-- Section: Plantillas de Documentos -->
@@ -950,7 +900,7 @@
                         <div class="browser-url">app.cotizalo.net/settings/templates</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png" alt="Plantillas de Documentos">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png" alt="Plantillas de Documentos - Listado">
                     </div>
                 </div>
 
@@ -971,6 +921,21 @@
                         </div>
                     </li>
                 </ol>
+
+                <!-- Browser Mockup (Configuración del Formulario) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/templates/new</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_2.png" alt="Plantillas de Documentos - Formulario">
+                    </div>
+                </div>
             </section>
 
             <!-- Section: Gestión de Usuarios -->
@@ -996,7 +961,7 @@
                         <div class="browser-url">app.cotizalo.net/settings/users</div>
                     </div>
                     <div class="browser-content doc-image-container">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png" alt="Gestión de Usuarios">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png" alt="Gestión de Usuarios - Listado">
                     </div>
                 </div>
 
@@ -1017,6 +982,21 @@
                         </div>
                     </li>
                 </ol>
+
+                <!-- Browser Mockup (Configuración del Formulario) -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/users/new</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png" alt="Gestión de Usuarios - Formulario">
+                    </div>
+                </div>
             </section>
 
             <!-- Section: Zona de Peligro -->
@@ -1042,26 +1022,6 @@
             </section>
 
         </main>
-
-        <!-- Right Table of Contents (TOC) -->
-        <aside class="manual-toc">
-            <div class="toc-title">En esta página</div>
-            <ul class="toc-list">
-                <li class="toc-item"><a href="#preferencias" class="toc-link active"
-                        data-target="preferencias">Preferencias</a></li>
-                <li class="toc-item"><a href="#config-global" class="toc-link" data-target="config-global">Configuración
-                        Global</a></li>
-                <li class="toc-item"><a href="#plan-suscripcion" class="toc-link" data-target="plan-suscripcion">Plan de
-                        Suscripción</a></li>
-                <li class="toc-item"><a href="#perfiles" class="toc-link" data-target="perfiles">Perfiles de
-                        Cotización</a></li>
-                <li class="toc-item"><a href="#plantillas" class="toc-link" data-target="plantillas">Plantillas</a></li>
-                <li class="toc-item"><a href="#usuarios" class="toc-link" data-target="usuarios">Gestión de Usuarios</a>
-                </li>
-                <li class="toc-item"><a href="#zona-peligro" class="toc-link" data-target="zona-peligro">Zona de
-                        Peligro</a></li>
-            </ul>
-        </aside>
 
     </div>
 
@@ -1136,8 +1096,7 @@
 
             // -----------------------------------------------------
             // Smooth Scroll navigation
-            // -----------------------------------------------------
-            const links = document.querySelectorAll('.sidebar-link, .toc-link');
+            const links = document.querySelectorAll('.sidebar-link');
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1159,7 +1118,6 @@
             // -----------------------------------------------------
             const sections = document.querySelectorAll('.doc-section');
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
-            const tocLinks = document.querySelectorAll('.toc-link');
 
             function updateScrollSpy() {
                 let currentActiveId = '';
@@ -1178,14 +1136,6 @@
 
                 if (currentActiveId) {
                     sidebarLinks.forEach(link => {
-                        if (link.getAttribute('data-target') === currentActiveId) {
-                            link.classList.add('active');
-                        } else {
-                            link.classList.remove('active');
-                        }
-                    });
-
-                    tocLinks.forEach(link => {
                         if (link.getAttribute('data-target') === currentActiveId) {
                             link.classList.add('active');
                         } else {
