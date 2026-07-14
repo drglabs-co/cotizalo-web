@@ -940,9 +940,18 @@
                         </div>
                     </div>
 
-                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                    <ol class="steps-flow">
                         <li class="step-item">
                             <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Seleccionar plantilla de encabezado</strong>
+                                <p>Selecciona la plantilla de encabezado que deseas utilizar para el recibo.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <ol class="steps-flow" style="margin-top: 1.5rem;">
+                        <li class="step-item">
+                            <span class="step-number">4</span>
                             <div class="step-content">
                                 <strong>Vincular a una Cotización Aceptada (Opcional)</strong>
                                 <p>Una vez seleccionado el cliente, puedes elegir asociar el recibo a una de sus cotizaciones aceptadas en la lista desplegable correspondiente.</p>
@@ -968,14 +977,14 @@
 
                     <ol class="steps-flow" style="margin-top: 1.5rem;">
                         <li class="step-item">
-                            <span class="step-number">4</span>
+                            <span class="step-number">5</span>
                             <div class="step-content">
                                 <strong>Ingresar Montos y Detalles del Anticipo</strong>
                                 <p>Define el <strong>Folio</strong> del recibo (o déjalo en blanco para autogeneración), una <strong>Plantilla de Encabezado</strong> (opcional), el <strong>Valor Total</strong> de la venta y el monto del <strong>Anticipo</strong>. El sistema calculará automáticamente el saldo <strong>Restante</strong>. Si lo deseas, puedes añadir notas aclaratorias al final.</p>
                             </div>
                         </li>
                         <li class="step-item">
-                            <span class="step-number">5</span>
+                            <span class="step-number">6</span>
                             <div class="step-content">
                                 <strong>Guardar y Generar PDF</strong>
                                 <p>Haz clic en el botón <strong style="display: inline;">Crear y Generar PDF</strong> para registrar el recibo en el portal y abrir automáticamente la vista previa oficial en formato PDF.</p>
