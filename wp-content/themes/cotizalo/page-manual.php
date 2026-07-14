@@ -932,36 +932,34 @@
                         </li>
                     </ol>
 
-                    <!-- Grid de Registro de Cliente Rápido -->
-                    <div class="mockup-grid-2col">
-                        <div class="browser-mockup narrow">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <span class="browser-dot red"></span>
-                                    <span class="browser-dot yellow"></span>
-                                    <span class="browser-dot green"></span>
-                                </div>
-                                <div class="browser-url">Buscador: Cliente Nuevo</div>
+                    <!-- Registro de Cliente Rápido -->
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
                             </div>
-                            <div class="browser-content doc-image-container">
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Cliente.png"
-                                    alt="Opción de Cliente Nuevo en Cotización">
-                            </div>
+                            <div class="browser-url">Buscador: Cliente Nuevo</div>
                         </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Cliente.png"
+                                alt="Opción de Cliente Nuevo en Cotización">
+                        </div>
+                    </div>
 
-                        <div class="browser-mockup narrow">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <span class="browser-dot red"></span>
-                                    <span class="browser-dot yellow"></span>
-                                    <span class="browser-dot green"></span>
-                                </div>
-                                <div class="browser-url">Modal: Cliente Nuevo Rápido</div>
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
                             </div>
-                            <div class="browser-content doc-image-container">
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Cliente_1.png"
-                                    alt="Modal de Cliente Nuevo Rápido en Cotización">
-                            </div>
+                            <div class="browser-url">Modal: Cliente Nuevo Rápido</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Cliente_1.png"
+                                alt="Modal de Cliente Nuevo Rápido en Cotización">
                         </div>
                     </div>
 
@@ -982,36 +980,34 @@
                         </li>
                     </ol>
 
-                    <!-- Grid de Registro de Producto Rápido -->
-                    <div class="mockup-grid-2col">
-                        <div class="browser-mockup narrow">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <span class="browser-dot red"></span>
-                                    <span class="browser-dot yellow"></span>
-                                    <span class="browser-dot green"></span>
-                                </div>
-                                <div class="browser-url">Buscador: Producto Nuevo</div>
+                    <!-- Registro de Producto Rápido -->
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
                             </div>
-                            <div class="browser-content doc-image-container">
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Producto.png"
-                                    alt="Opción de Producto Nuevo en Cotización">
-                            </div>
+                            <div class="browser-url">Buscador: Producto Nuevo</div>
                         </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Producto.png"
+                                alt="Opción de Producto Nuevo en Cotización">
+                        </div>
+                    </div>
 
-                        <div class="browser-mockup narrow">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <span class="browser-dot red"></span>
-                                    <span class="browser-dot yellow"></span>
-                                    <span class="browser-dot green"></span>
-                                </div>
-                                <div class="browser-url">Modal: Producto Rápido</div>
+                    <div class="browser-mockup narrow" style="margin-top: 1.5rem;">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
                             </div>
-                            <div class="browser-content doc-image-container">
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Producto_1.png"
-                                    alt="Modal de Producto Rápido en Cotización">
-                            </div>
+                            <div class="browser-url">Modal: Producto Rápido</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/quotations/Crear_Cotizacion_Nuevo_Producto_1.png"
+                                alt="Modal de Producto Rápido en Cotización">
                         </div>
                     </div>
 
@@ -1019,8 +1015,8 @@
                         <li class="step-item">
                             <span class="step-number">5</span>
                             <div class="step-content">
-                                <strong>Aplicar Descuentos y Vincular Recibos (Opcional)</strong>
-                                <p>Si necesitas otorgar condiciones especiales, puedes aplicar un descuento global al final del listado de partidas. Este descuento se puede definir en <strong>Porcentaje (%)</strong> o en <strong>Cantidad Fija ($)</strong> de dinero. Asimismo, puedes vincular un recibo de anticipo existente de ese cliente para que se refleje y reste del saldo total de la cotización.</p>
+                                <strong>Aplicar Descuentos</strong>
+                                <p>Si necesitas otorgar condiciones especiales, puedes aplicar un descuento global al final del listado de partidas. Este descuento se puede definir en <strong>Porcentaje (%)</strong> o en <strong>Cantidad Fija ($)</strong> de dinero.</p>
                             </div>
                         </li>
                     </ol>
@@ -1087,7 +1083,7 @@
                             <span class="step-number">2</span>
                             <div class="step-content">
                                 <strong>Modificar los Datos</strong>
-                                <p>Realiza los ajustes requeridos en los conceptos, descuentos o plazos directamente en el formulario.</p>
+                                <p>Realiza los ajustes requeridos en los conceptos, descuentos o plazos directamente en el formulario.Asimismo, puedes vincular un recibo de anticipo existente de ese cliente para que se refleje y reste del saldo total de la cotización.</p>
                             </div>
                         </li>
                         <li class="step-item">
