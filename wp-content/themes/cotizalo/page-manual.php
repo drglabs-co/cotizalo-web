@@ -339,35 +339,68 @@
             top: 0;
         }
 
-        /* Document Screenshots & Two-column layout */
-        .doc-section-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 2.5rem;
-            align-items: start;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 1200px) {
-            .doc-section-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        .doc-image-container {
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--stripe-border);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        /* Browser Mockup Frame for Screenshots */
+        .browser-mockup {
             background: #ffffff;
+            border: 1px solid var(--stripe-border);
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            margin: 1.5rem 0 2rem;
             max-width: 100%;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .doc-image-container:hover {
+        .browser-mockup:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+        }
+
+        .browser-header {
+            background: #f1f5f9;
+            border-bottom: 1px solid var(--stripe-border);
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 0.35rem;
+            flex-shrink: 0;
+        }
+
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .browser-dot.red { background: #ef4444; }
+        .browser-dot.yellow { background: #f59e0b; }
+        .browser-dot.green { background: #10b981; }
+
+        .browser-url {
+            background: #ffffff;
+            border: 1px solid var(--stripe-border);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--stripe-text-muted);
+            padding: 0.15rem 1.5rem;
+            flex-grow: 1;
+            max-width: 320px;
+            margin: 0 auto;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            user-select: none;
+        }
+
+        .doc-image-container {
+            width: 100%;
+            background: #ffffff;
+            overflow: hidden;
         }
 
         .doc-image-container img {
@@ -377,11 +410,31 @@
             cursor: zoom-in;
         }
 
-        .doc-section-visuals {
-            display: flex;
-            flex-direction: column;
+        /* Mockup and Feature Grids */
+        .mockup-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .feature-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .mockup-grid-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid-2col {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Lightbox Overlay for Image Zoom */
@@ -619,49 +672,51 @@
             <!-- Section: Preferencia de Usuario -->
             <section id="preferencias" class="doc-section search-target">
                 <h2><i class="fa-solid fa-user-gear"></i> Preferencias de Usuario</h2>
-                <div class="doc-section-grid">
-                    <div class="doc-section-text">
-                        <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de
-                            cotizaciones:</p>
+                <p>En esta sección puedes personalizar la experiencia individual para tu usuario dentro del portal de cotizaciones:</p>
 
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-language"></i></div>
-                                <div class="feature-text">
-                                    <strong>Seleccionar Idioma</strong>
-                                    <p>Elige entre inglés y español para cambiar de inmediato todo el idioma visual de la
-                                        interfaz del panel.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-clock"></i></div>
-                                <div class="feature-text">
-                                    <strong>Zona Horaria</strong>
-                                    <p>Configura tu zona horaria para registrar de forma precisa las horas de creación de
-                                        cotizaciones y firmas de clientes.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-star"></i></div>
-                                <div class="feature-text">
-                                    <strong>Perfil de Cotización Predeterminado</strong>
-                                    <p>Si manejas múltiples perfiles de marcas, aquí puedes establecer cuál se cargará por
-                                        defecto al crear nuevos presupuestos.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-key"></i></div>
-                                <div class="feature-text">
-                                    <strong>Cambiar Contraseña</strong>
-                                    <p>Actualiza de forma rápida y segura las credenciales de seguridad para tu acceso personal.
-                                    </p>
-                                </div>
-                            </div>
+                <!-- Browser Mockup -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/preferences</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Preferencias_de_Usuario.png" alt="Preferencias de Usuario">
+                    </div>
+                </div>
+
+                <!-- Feature Grid 2 Columns -->
+                <div class="feature-grid-2col">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-language"></i></div>
+                        <div class="feature-text">
+                            <strong>Seleccionar Idioma</strong>
+                            <p>Elige entre inglés y español para cambiar de inmediato todo el idioma visual de la interfaz del panel.</p>
                         </div>
                     </div>
-                    <div class="doc-section-visuals">
-                        <div class="doc-image-container">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Preferencias_de_Usuario.png" alt="Preferencias de Usuario">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-clock"></i></div>
+                        <div class="feature-text">
+                            <strong>Zona Horaria</strong>
+                            <p>Configura tu zona horaria para registrar de forma precisa las horas de creación de cotizaciones y firmas de clientes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-star"></i></div>
+                        <div class="feature-text">
+                            <strong>Perfil de Cotización Predeterminado</strong>
+                            <p>Si manejas múltiples perfiles de marcas, aquí puedes establecer cuál se cargará por defecto al crear nuevos presupuestos.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-key"></i></div>
+                        <div class="feature-text">
+                            <strong>Cambiar Contraseña</strong>
+                            <p>Actualiza de forma rápida y segura las credenciales de seguridad para tu acceso personal.</p>
                         </div>
                     </div>
                 </div>
@@ -670,108 +725,110 @@
             <!-- Section: Configuración Global -->
             <section id="config-global" class="doc-section search-target">
                 <h2><i class="fa-solid fa-globe"></i> Configuración Global</h2>
-                <div class="doc-section-grid">
-                    <div class="doc-section-text">
-                        <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las
-                            cotizaciones y PDFs generados:</p>
+                <p>Configura las propiedades principales de tu negocio, las cuales se aplicarán visualmente en todas las cotizaciones y PDFs generados:</p>
 
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-address-book"></i></div>
-                                <div class="feature-text">
-                                    <strong>Datos de Contacto</strong>
-                                    <p>Configura el Nombre Oficial de la Empresa, Eslogan corporativo, RFC, Teléfono de
-                                        contacto, Correo de soporte y URL de tu Sitio Web.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-image"></i></div>
-                                <div class="feature-text">
-                                    <strong>Logotipo de la Empresa</strong>
-                                    <p>Sube tu logotipo en formato PNG o JPG. Este reemplazará automáticamente los logos
-                                        genéricos en la barra lateral del portal y los PDFs.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-percent"></i></div>
-                                <div class="feature-text">
-                                    <strong>Impuestos Locales</strong>
-                                    <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje correspondiente (ej. 16.00%)
-                                        aplicable de manera global.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-calculator"></i></div>
-                                <div class="feature-text">
-                                    <strong>Función Dividida (Grupos / Días)</strong>
-                                    <p>Activa esta casilla para poder dividir el monto total de la cotización entre un número
-                                        determinado de personas, días o huéspedes en tu plantilla.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
-                                <div class="feature-text">
-                                    <strong>Descuento Unitario</strong>
-                                    <p>Habilita la opción de colocar descuentos individuales a cada partida o producto de manera
-                                        independiente, adicional al descuento general del total.</p>
-                                </div>
-                            </div>
+                <!-- Browser Mockup -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
                         </div>
+                        <div class="browser-url">app.cotizalo.net/settings/global</div>
                     </div>
-                    <div class="doc-section-visuals">
-                        <div class="doc-image-container">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Configuracion_Global.png" alt="Configuración Global">
-                        </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Configuracion_Global.png" alt="Configuración Global">
                     </div>
                 </div>
+
+                <!-- Feature Grid 2 Columns -->
+                <div class="feature-grid-2col">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-address-book"></i></div>
+                        <div class="feature-text">
+                            <strong>Datos de Contacto</strong>
+                            <p>Configura el Nombre Oficial de la Empresa, Eslogan corporativo, RFC, Teléfono de contacto, Correo de soporte y URL de tu Sitio Web.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-image"></i></div>
+                        <div class="feature-text">
+                            <strong>Logotipo de la Empresa</strong>
+                            <p>Sube tu logotipo en formato PNG o JPG. Este reemplazará automáticamente los logos genéricos en la barra lateral del portal y los PDFs.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-percent"></i></div>
+                        <div class="feature-text">
+                            <strong>Impuestos Locales</strong>
+                            <p>Define la etiqueta del impuesto (ej. IVA) y el porcentaje correspondiente (ej. 16.00%) aplicable de manera global.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="feature-text">
+                            <strong>Función Dividida (Grupos / Días)</strong>
+                            <p>Activa esta casilla para poder dividir el monto total de la cotización entre un número determinado de personas, días o huéspedes en tu plantilla.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-tags"></i></div>
+                        <div class="feature-text">
+                            <strong>Descuento Unitario</strong>
+                            <p>Habilita la opción de colocar descuentos individuales a cada partida o producto de manera independiente, adicional al descuento general del total.</p>
+                        </div>
+                    </div>
             </section>
 
             <!-- Section: Plan de Suscripción -->
             <section id="plan-suscripcion" class="doc-section search-target">
                 <h2><i class="fa-solid fa-credit-card"></i> Plan de Suscripción</h2>
-                <div class="doc-section-grid">
-                    <div class="doc-section-text">
-                        <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu
-                            suscripción actual:</p>
+                <p>Gestiona tu facturación mensual, los límites de almacenamiento en la nube y los detalles de tu suscripción actual:</p>
 
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-info"></i></div>
-                                <div class="feature-text">
-                                    <strong>Plan Activo</strong>
-                                    <p>Monitorea qué tipo de cuenta tienes contratada (ej. Profesional o Empresarial) y el
-                                        espacio de almacenamiento consumido.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-up"></i></div>
-                                <div class="feature-text">
-                                    <strong>Actualizar Plan (Upgrade)</strong>
-                                    <p>Mejora tu plan en cualquier momento para ampliar la capacidad de almacenamiento, el
-                                        límite de cotizaciones y desbloquear herramientas premium.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-lock"></i></div>
-                                <div class="feature-text">
-                                    <strong>Restricciones de Downgrade</strong>
-                                    <p>Para evitar la pérdida accidental de datos e historial, no se permite cambiar a un plan
-                                        inferior si tu espacio actual supera los límites del plan al que deseas cambiar.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
-                                <div class="feature-text">
-                                    <strong>Facturación de Stripe</strong>
-                                    <p>Accede de forma directa y segura al portal de Stripe para actualizar tus métodos de pago,
-                                        ver cobros y descargar tus facturas históricas.</p>
-                                </div>
-                            </div>
+                <!-- Browser Mockup -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
+                        <div class="browser-url">app.cotizalo.net/settings/billing</div>
+                    </div>
+                    <div class="browser-content doc-image-container">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plan_de_Suscripcion.png" alt="Plan de Suscripción">
+                    </div>
+                </div>
+
+                <!-- Feature Grid 2 Columns -->
+                <div class="feature-grid-2col">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-info"></i></div>
+                        <div class="feature-text">
+                            <strong>Plan Activo</strong>
+                            <p>Monitorea qué tipo de cuenta tienes contratada (ej. Profesional o Empresarial) y el espacio de almacenamiento consumido.</p>
                         </div>
                     </div>
-                    <div class="doc-section-visuals">
-                        <div class="doc-image-container">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plan_de_Suscripcion.png" alt="Plan de Suscripción">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-circle-up"></i></div>
+                        <div class="feature-text">
+                            <strong>Actualizar Plan (Upgrade)</strong>
+                            <p>Mejora tu plan en cualquier momento para ampliar la capacidad de almacenamiento, el límite de cotizaciones y desbloquear herramientas premium.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-lock"></i></div>
+                        <div class="feature-text">
+                            <strong>Restricciones de Downgrade</strong>
+                            <p>Para evitar la pérdida accidental de datos e historial, no se permite cambiar a un plan inferior si tu espacio actual supera los límites del plan al que deseas cambiar.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
+                        <div class="feature-text">
+                            <strong>Facturación de Stripe</strong>
+                            <p>Accede de forma directa y segura al portal de Stripe para actualizar tus métodos de pago, ver cobros y descargar tus facturas históricas.</p>
                         </div>
                     </div>
                 </div>
@@ -780,44 +837,59 @@
             <!-- Section: Perfiles de Cotización -->
             <section id="perfiles" class="doc-section search-target">
                 <h2><i class="fa-solid fa-id-card"></i> Perfiles de Cotización</h2>
-                <div class="doc-section-grid">
-                    <div class="doc-section-text">
-                        <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de
-                            negocio o tipos de clientes desde una misma cuenta corporativa:</p>
+                <p>Configura múltiples perfiles operativos si gestionas marcas diferentes, diferentes divisiones de negocio o tipos de clientes desde una misma cuenta corporativa:</p>
 
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-font"></i></div>
-                                <div class="feature-text">
-                                    <strong>Nombre e Identificación</strong>
-                                    <p>Establece un nombre interno único para identificar el perfil durante el desarrollo de una
-                                        cotización.</p>
-                                </div>
+                <!-- Side-by-side Browser Mockups -->
+                <div class="mockup-grid-2col">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
                             </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-hashtag"></i></div>
-                                <div class="feature-text">
-                                    <strong>Prefijos y Secuencias de Folio</strong>
-                                    <p>Asigna un prefijo alfanumérico para tus folios. Cada perfil llevará su propio consecutivo
-                                        numérico independiente que se iniciará automáticamente en 1.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-paste"></i></div>
-                                <div class="feature-text">
-                                    <strong>Plantillas Vinculadas</strong>
-                                    <p>Elige de forma predeterminada los Encabezados, Pies de Página y Cláusulas legales que
-                                        deberán cargarse cuando utilices este perfil.</p>
-                                </div>
-                            </div>
+                            <div class="browser-url">app.cotizalo.net/settings/profiles</div>
                         </div>
-                    </div>
-                    <div class="doc-section-visuals">
-                        <div class="doc-image-container">
+                        <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_1.png" alt="Perfiles de Cotización - Listado">
                         </div>
-                        <div class="doc-image-container">
+                    </div>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/settings/profiles/new</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Perfiles_de_Cotizacion_2.png" alt="Perfiles de Cotización - Formulario">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid 2 Columns -->
+                <div class="feature-grid-2col">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-font"></i></div>
+                        <div class="feature-text">
+                            <strong>Nombre e Identificación</strong>
+                            <p>Establece un nombre interno único para identificar el perfil durante el desarrollo de una cotización.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-hashtag"></i></div>
+                        <div class="feature-text">
+                            <strong>Prefijos y Secuencias de Folio</strong>
+                            <p>Asigna un prefijo alfanumérico para tus folios. Cada perfil llevará su propio consecutivo numérico independiente que se iniciará automáticamente en 1.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-paste"></i></div>
+                        <div class="feature-text">
+                            <strong>Plantillas Vinculadas</strong>
+                            <p>Elige de forma predeterminada los Encabezados, Pies de Página y Cláusulas legales que deberán cargarse cuando utilices este perfil.</p>
                         </div>
                     </div>
                 </div>
@@ -826,36 +898,52 @@
             <!-- Section: Plantillas de Documentos -->
             <section id="plantillas" class="doc-section search-target">
                 <h2><i class="fa-solid fa-file-lines"></i> Plantillas de Documentos</h2>
-                <div class="doc-section-grid">
-                    <div class="doc-section-text">
-                        <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus
-                            presupuestos comerciales:</p>
+                <p>Ahorra tiempo pre-redactando cláusulas, cartas de presentación y layouts recurrentes para tus presupuestos comerciales:</p>
 
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-folder-open"></i></div>
-                                <div class="feature-text">
-                                    <strong>Tipos de Plantilla</strong>
-                                    <p>Organiza tus plantillas y textos guardados clasificándolos en Encabezados, Pies de
-                                        Página, o Términos y Condiciones Legales.</p>
-                                </div>
+                <!-- Side-by-side Browser Mockups -->
+                <div class="mockup-grid-2col">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
                             </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
-                                <div class="feature-text">
-                                    <strong>Editor de Texto Enriquecido</strong>
-                                    <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas,
-                                        hipervínculos, o incrustar imágenes en tus textos.</p>
-                                </div>
-                            </div>
+                            <div class="browser-url">app.cotizalo.net/settings/templates</div>
                         </div>
-                    </div>
-                    <div class="doc-section-visuals">
-                        <div class="doc-image-container">
+                        <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_1.png" alt="Plantillas de Documentos - Listado">
                         </div>
-                        <div class="doc-image-container">
+                    </div>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/settings/templates/new</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Plantillas_de_Documentos_2.png" alt="Plantillas de Documentos - Formulario">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid 2 Columns -->
+                <div class="feature-grid-2col">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-folder-open"></i></div>
+                        <div class="feature-text">
+                            <strong>Tipos de Plantilla</strong>
+                            <p>Organiza tus plantillas y textos guardados clasificándolos en Encabezados, Pies de Página, o Términos y Condiciones Legales.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
+                        <div class="feature-text">
+                            <strong>Editor de Texto Enriquecido</strong>
+                            <p>Usa la barra de herramientas para aplicar estilos visuales, agregar alineaciones, tablas, hipervínculos, o incrustar imágenes en tus textos.</p>
                         </div>
                     </div>
                 </div>
@@ -864,44 +952,59 @@
             <!-- Section: Gestión de Usuarios -->
             <section id="usuarios" class="doc-section search-target">
                 <h2><i class="fa-solid fa-users-gear"></i> Gestión de Usuarios</h2>
-                <div class="doc-section-grid">
-                    <div class="doc-section-text">
-                        <p>Administra los roles de acceso y colaboradores que forman parte de tu portal de cotizaciones:</p>
+                <p>Administra los roles de acceso y colaboradores que forman parte de tu portal de cotizaciones:</p>
 
-                        <div class="info-box">
-                            <i class="fa-solid fa-circle-info"></i>
-                            <div>
-                                <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está
-                                habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial
-                                    (Cotizalo 80 / 80GB)</strong>.
-                            </div>
-                        </div>
-
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-user-plus"></i></div>
-                                <div class="feature-text">
-                                    <strong>Administración Completa</strong>
-                                    <p>Invita colaboradores, actualiza información general, modifica contraseñas o desactiva
-                                        credenciales de acceso de forma inmediata.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon-wrapper"><i class="fa-solid fa-shield"></i></div>
-                                <div class="feature-text">
-                                    <strong>Asignación de Perfil de Cotización</strong>
-                                    <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o
-                                        predeterminar bajo qué marca pueden realizar presupuestos.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="info-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Disponibilidad de la función:</strong> Esta herramienta de multi-usuarios está habilitada de manera exclusiva para suscripciones que cuenten con el plan <strong>Empresarial (Cotizalo 80 / 80GB)</strong>.
                     </div>
-                    <div class="doc-section-visuals">
-                        <div class="doc-image-container">
+                </div>
+
+                <!-- Side-by-side Browser Mockups -->
+                <div class="mockup-grid-2col">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/settings/users</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_1.png" alt="Gestión de Usuarios - Listado">
                         </div>
-                        <div class="doc-image-container">
+                    </div>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-url">app.cotizalo.net/settings/users/new</div>
+                        </div>
+                        <div class="browser-content doc-image-container">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/images/settings/Gestion_de_Usuarios_2.png" alt="Gestión de Usuarios - Formulario">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid 2 Columns -->
+                <div class="feature-grid-2col">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-user-plus"></i></div>
+                        <div class="feature-text">
+                            <strong>Administración Completa</strong>
+                            <p>Invita colaboradores, actualiza información general, modifica contraseñas o desactiva credenciales de acceso de forma inmediata.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-shield"></i></div>
+                        <div class="feature-text">
+                            <strong>Asignación de Perfil de Cotización</strong>
+                            <p>Vincula a cada usuario a un perfil de cotización exclusivo para restringir o predeterminar bajo qué marca pueden realizar presupuestos.</p>
                         </div>
                     </div>
                 </div>
