@@ -13,7 +13,7 @@
     <title>¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos</title>
     <meta name="description"
         content="Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.">
-    <meta name="keywords" content="digitalizar cotizaciones, cotizador para empresas, programa de cotizaciones, cotizador gratis, herramientas para cotizar, automatizar ventas">
+    <meta name="keywords" content="digitalizar cotizaciones, cotizador para empresas, programa de cotizaciones, cotizador gratis, herramientas para cotizar, automatizar ventas, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">

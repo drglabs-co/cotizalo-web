@@ -13,7 +13,7 @@
     <title>Manual de Usuario y Ayuda Oficial | Cotízalo</title>
     <meta name="description"
         content="Aprende paso a paso cómo configurar tu cuenta, agregar clientes, crear tu catálogo de productos y enviar cotizaciones profesionales con la ayuda oficial de Cotízalo.">
-    <meta name="keywords" content="manual de usuario cotizalo, ayuda cotizalo, como hacer una cotizacion, tutorial cotizalo, guia de usuario cotizaciones">
+    <meta name="keywords" content="manual de usuario cotizalo, ayuda cotizalo, como hacer una cotizacion, tutorial cotizalo, guia de usuario cotizaciones, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">

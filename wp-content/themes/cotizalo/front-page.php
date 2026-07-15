@@ -7,7 +7,7 @@
     <title>Cotízalo | Sistema de Cotizaciones Automatizado para Empresas en México</title>
     <meta name="description"
         content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
-    <meta name="keywords" content="sistema de cotizaciones, cotizaciones online mexico, hacer cotizacion profesional, generador de presupuestos, software para cotizar servicios, crear cotizacion pdf">
+    <meta name="keywords" content="sistema de cotizaciones, cotizaciones online mexico, hacer cotizacion profesional, generador de presupuestos, software para cotizar servicios, crear cotizacion pdf, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
