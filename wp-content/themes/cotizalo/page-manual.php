@@ -126,7 +126,7 @@
 
         .search-input {
             width: 100%;
-            padding: 0.6rem 1rem 0.6rem 2.2rem;
+            padding: 0.6rem 5.5rem 0.6rem 2.2rem;
             border: 1px solid var(--stripe-border);
             border-radius: 8px;
             font-size: 0.875rem;
@@ -149,6 +149,62 @@
             transform: translateY(-50%);
             color: var(--stripe-text-muted);
             font-size: 0.875rem;
+        }
+
+        /* Search Navigation Controls & Highlights */
+        .search-nav-controls {
+            position: absolute;
+            right: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            z-index: 10;
+        }
+
+        .search-counter {
+            font-size: 0.75rem;
+            color: var(--stripe-text-muted);
+            user-select: none;
+            margin-right: 4px;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .search-nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--stripe-text-muted);
+            cursor: pointer;
+            padding: 4px 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .search-nav-btn:hover {
+            background: rgba(18, 58, 44, 0.08);
+            color: var(--stripe-primary);
+        }
+
+        .search-highlight {
+            background-color: rgba(251, 191, 36, 0.35); /* Soft premium amber/yellow highlight */
+            border-bottom: 2px solid rgba(251, 191, 36, 0.7);
+            border-radius: 2px;
+            padding: 1px 2px;
+            margin: 0 -2px;
+            color: inherit;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .search-highlight-active {
+            background-color: var(--stripe-primary) !important; /* Premium brand dark green for active match */
+            border-bottom: 2px solid var(--stripe-primary) !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 6px rgba(18, 58, 44, 0.4);
         }
 
         .sidebar-section-title {
@@ -2974,22 +3030,154 @@
             updateScrollSpy(); // Initial call
 
             // -----------------------------------------------------
-            // Search / Filter System
+            // Search / Filter System & Highlighting
             // -----------------------------------------------------
             const searchInput = document.getElementById('manual-search');
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                const sectionsToFilter = document.querySelectorAll('.search-target');
+            const searchContainer = document.querySelector('.search-container');
+            const sectionsToFilter = document.querySelectorAll('.search-target');
+            
+            // Create and inject search navigation controls
+            const navControls = document.createElement('div');
+            navControls.id = 'search-nav-controls';
+            navControls.className = 'search-nav-controls';
+            navControls.style.display = 'none';
+            navControls.innerHTML = `
+                <span id="search-counter" class="search-counter">0 de 0</span>
+                <button type="button" id="search-prev-btn" class="search-nav-btn" title="Anterior (Shift+Enter)">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button type="button" id="search-next-btn" class="search-nav-btn" title="Siguiente (Enter)">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            `;
+            searchContainer.appendChild(navControls);
 
+            const searchCounter = document.getElementById('search-counter');
+            const searchPrevBtn = document.getElementById('search-prev-btn');
+            const searchNextBtn = document.getElementById('search-next-btn');
+
+            let activeMatchIndex = -1;
+            let matchElements = [];
+
+            // Store original HTML of sections to restore them when search changes
+            const originalHtmlMap = new Map();
+            sectionsToFilter.forEach(sec => {
+                originalHtmlMap.set(sec, sec.innerHTML);
+            });
+
+            // Highlight matches recursively in a node
+            function highlightNode(node, query) {
+                if (node.nodeType === 3) { // Text Node
+                    const text = node.nodeValue;
+                    const lowerText = text.toLowerCase();
+                    const lowerQuery = query.toLowerCase();
+                    
+                    let index = lowerText.indexOf(lowerQuery);
+                    if (index >= 0) {
+                        const parent = node.parentNode;
+                        const fragment = document.createDocumentFragment();
+                        let lastIndex = 0;
+                        
+                        while (index >= 0) {
+                            if (index > lastIndex) {
+                                fragment.appendChild(document.createTextNode(text.substring(lastIndex, index)));
+                            }
+                            
+                            const mark = document.createElement('mark');
+                            mark.className = 'search-highlight';
+                            mark.textContent = text.substring(index, index + query.length);
+                            fragment.appendChild(mark);
+                            
+                            lastIndex = index + query.length;
+                            index = lowerText.indexOf(lowerQuery, lastIndex);
+                        }
+                        
+                        if (lastIndex < text.length) {
+                            fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+                        }
+                        
+                        parent.replaceChild(fragment, node);
+                    }
+                } else if (node.nodeType === 1 && node.childNodes && 
+                           !['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA', 'NOSCRIPT'].includes(node.nodeName.toUpperCase())) {
+                    const children = Array.from(node.childNodes);
+                    for (let child of children) {
+                        highlightNode(child, query);
+                    }
+                }
+            }
+
+            function scrollToMatch(index) {
+                if (matchElements.length === 0) return;
+                
+                // Remove active class from previous
+                matchElements.forEach(el => el.classList.remove('search-highlight-active'));
+                
+                // Adjust index wrapping
+                if (index < 0) {
+                    index = matchElements.length - 1;
+                } else if (index >= matchElements.length) {
+                    index = 0;
+                }
+                
+                activeMatchIndex = index;
+                
+                // Add active class to current match
+                const activeEl = matchElements[activeMatchIndex];
+                activeEl.classList.add('search-highlight-active');
+                
+                // Update counter text
+                searchCounter.textContent = `${activeMatchIndex + 1} de ${matchElements.length}`;
+                
+                // Scroll to active match
+                const offsetPosition = activeEl.getBoundingClientRect().top + window.pageYOffset - 150;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            function performSearch() {
+                const query = searchInput.value.toLowerCase().trim();
+                
+                // Restore all sections to original HTML first to clear previous highlights
+                sectionsToFilter.forEach(sec => {
+                    sec.innerHTML = originalHtmlMap.get(sec);
+                });
+                
+                if (query.length < 2) {
+                    // Show all sections
+                    sectionsToFilter.forEach(sec => {
+                        sec.style.display = 'block';
+                    });
+                    
+                    // Hide controls
+                    navControls.style.display = 'none';
+                    matchElements = [];
+                    activeMatchIndex = -1;
+                    
+                    // Update active sidebar indicators
+                    sidebarLinks.forEach(link => {
+                        link.style.display = 'flex';
+                    });
+                    
+                    updateScrollSpy();
+                    return;
+                }
+                
+                // Filter sections and highlight query
+                let sectionsShowing = 0;
                 sectionsToFilter.forEach(sec => {
                     const textContent = sec.textContent.toLowerCase();
                     if (textContent.includes(query)) {
                         sec.style.display = 'block';
+                        highlightNode(sec, query);
+                        sectionsShowing++;
                     } else {
                         sec.style.display = 'none';
                     }
                 });
-
+                
                 // Update active sidebar indicators
                 sidebarLinks.forEach(link => {
                     const targetId = link.getAttribute('data-target');
@@ -3000,20 +3188,62 @@
                         link.style.display = 'flex';
                     }
                 });
+                
+                // Collect all highlight elements
+                matchElements = Array.from(document.querySelectorAll('.search-highlight'));
+                
+                if (matchElements.length > 0) {
+                    navControls.style.display = 'flex';
+                    // Scroll to first match
+                    scrollToMatch(0);
+                } else {
+                    navControls.style.display = 'flex';
+                    searchCounter.textContent = '0 de 0';
+                    activeMatchIndex = -1;
+                }
+            }
+
+            let searchTimeout;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(performSearch, 150);
+            });
+
+            // Keyboard navigation inside search input
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (matchElements.length > 0) {
+                        if (e.shiftKey) {
+                            scrollToMatch(activeMatchIndex - 1);
+                        } else {
+                            scrollToMatch(activeMatchIndex + 1);
+                        }
+                    }
+                }
+            });
+
+            searchPrevBtn.addEventListener('click', () => {
+                scrollToMatch(activeMatchIndex - 1);
+            });
+
+            searchNextBtn.addEventListener('click', () => {
+                scrollToMatch(activeMatchIndex + 1);
             });
 
             // -----------------------------------------------------
-            // Lightbox Zoom Engine
+            // Lightbox Zoom Engine (Using Event Delegation)
             // -----------------------------------------------------
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const closeBtn = document.querySelector('.image-lightbox-close');
 
-            document.querySelectorAll('.doc-image-container img').forEach(img => {
-                img.addEventListener('click', () => {
+            document.addEventListener('click', (e) => {
+                const img = e.target.closest('.doc-image-container img');
+                if (img) {
                     lightboxImg.src = img.src;
                     lightbox.classList.add('active');
-                });
+                }
             });
 
             const closeLightbox = () => {
