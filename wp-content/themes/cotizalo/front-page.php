@@ -124,6 +124,39 @@
 
             <!-- Visualization Element (Mockup) -->
             <div class="hero-image-wrapper animate-on-scroll fade-in-up delay-200">
+                <style>
+                    .hero .glass-mockup { background: #ffffff !important; color: #334155 !important; text-align: left !important; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08) !important; }
+                    .hero .glass-mockup .mockup-header { background: #0f172a !important; color: #94a3b8 !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+                    .hero .glass-mockup .mockup-url { color: #94a3b8 !important; background: rgba(255,255,255,0.08) !important; font-family: monospace !important; }
+                    .hero .glass-mockup .mockup-body { background: #f8fafc !important; color: #334155 !important; }
+                    .hero .glass-mockup .mock-sidebar { background: #123A2C !important; color: #ffffff !important; }
+                    .hero .glass-mockup .mock-brand-text { color: #ffffff !important; font-weight: 700 !important; }
+                    .hero .glass-mockup .mock-nav-item { color: rgba(255, 255, 255, 0.75) !important; text-decoration: none !important; }
+                    .hero .glass-mockup .mock-nav-item:hover { color: #ffffff !important; background: rgba(255, 255, 255, 0.08) !important; }
+                    .hero .glass-mockup .mock-nav-item.active { color: #4ade80 !important; background: rgba(74, 222, 128, 0.15) !important; font-weight: 600 !important; border-left: 3px solid #4ade80 !important; }
+                    .hero .glass-mockup .mock-page-title h2 { color: #0f172a !important; font-weight: 800 !important; margin: 0 !important; }
+                    .hero .glass-mockup .mock-topbar-btn { color: #475569 !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
+                    .hero .glass-mockup .mock-card { background: #ffffff !important; color: #334155 !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03) !important; }
+                    .hero .glass-mockup .mock-search-input { color: #64748b !important; background: #f8fafc !important; border: 1px solid #cbd5e1 !important; }
+                    .hero .glass-mockup .mock-search-input span { color: #64748b !important; }
+                    .hero .glass-mockup .mock-btn-secondary { color: #334155 !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
+                    .hero .glass-mockup .mock-btn-primary { color: #ffffff !important; background: #123A2C !important; font-weight: 600 !important; }
+                    .hero .glass-mockup .mock-table th { color: #475569 !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 700 !important; background: #f8fafc !important; }
+                    .hero .glass-mockup .mock-table td { color: #334155 !important; border-bottom: 1px solid #f1f5f9 !important; }
+                    .hero .glass-mockup .mock-num { color: #2563eb !important; font-weight: 700 !important; }
+                    .hero .glass-mockup .mock-client-name { color: #0f172a !important; font-weight: 700 !important; }
+                    .hero .glass-mockup .mock-client-phone { color: #64748b !important; font-size: 0.53rem !important; }
+                    .hero .glass-mockup .mock-email { color: #475569 !important; }
+                    .hero .glass-mockup .mock-total-val { color: #0f172a !important; font-weight: 700 !important; }
+                    .hero .glass-mockup .mock-badge { display: inline-flex !important; align-items: center !important; gap: 4px !important; padding: 2px 7px !important; border-radius: 4px !important; font-size: 0.54rem !important; font-weight: 700 !important; letter-spacing: 0.02em !important; }
+                    .hero .glass-mockup .mock-badge.badge-accepted { color: #15803d !important; background: #dcfce7 !important; border: 1px solid #bbf7d0 !important; }
+                    .hero .glass-mockup .mock-badge.badge-draft { color: #475569 !important; background: #f1f5f9 !important; border: 1px solid #e2e8f0 !important; }
+                    .hero .glass-mockup .mock-badge.badge-paid { color: #1d4ed8 !important; background: #dbeafe !important; border: 1px solid #bfdbfe !important; }
+                    .hero .glass-mockup .mock-action-dropdown { color: #334155 !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
+                    .hero .glass-mockup .mock-pagination, .hero .glass-mockup .mock-rows-per-page, .hero .glass-mockup .mock-page-info { color: #64748b !important; }
+                    .hero .glass-mockup .mock-rows-per-page span { color: #334155 !important; font-weight: 600 !important; }
+                    .hero .glass-mockup .mock-page-btn { color: #64748b !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; }
+                </style>
                 <div class="glass-mockup">
                     <div class="mockup-header">
                         <div class="mockup-dots">
@@ -208,7 +241,7 @@
                                     </span>
                                     <span class="mock-topbar-btn">
                                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                        Usuario: drg339@ar-eventos.com
+                                        Usuario: demo@cotizalo.net
                                     </span>
                                 </div>
                             </div>
@@ -219,7 +252,7 @@
                                 <div class="mock-card-controls">
                                     <div class="mock-search-input">
                                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                                        <span>Agregar filtro y teclear Enter...</span>
+                                        <span>Buscar por folio, cliente o servicio...</span>
                                     </div>
                                     <div class="mock-card-buttons">
                                         <button class="mock-btn-secondary" type="button">
@@ -228,7 +261,7 @@
                                         </button>
                                         <button class="mock-btn-primary" type="button">
                                             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                                            Crear Nueva Cotización
+                                            + Nueva Cotización
                                         </button>
                                     </div>
                                 </div>
@@ -238,7 +271,7 @@
                                     <table class="mock-table">
                                         <thead>
                                             <tr>
-                                                <th># NÚMERO</th>
+                                                <th># FOLIO</th>
                                                 <th>FECHA</th>
                                                 <th>CLIENTE</th>
                                                 <th>CREADO POR</th>
@@ -249,18 +282,18 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="mock-num">#E-3</td>
-                                                <td>20 jul 2026</td>
+                                                <td class="mock-num">#COT-2026-042</td>
+                                                <td>20 Jul 2026</td>
                                                 <td>
-                                                    <div class="mock-client-name">Venta al Público</div>
-                                                    <div class="mock-client-phone">524421551780</div>
+                                                    <div class="mock-client-name">Constructora Alpha S.A.</div>
+                                                    <div class="mock-client-phone">+52 55 4123 8900</div>
                                                 </td>
-                                                <td class="mock-email">drg339@ar-eventos.com</td>
-                                                <td class="mock-total-val">$92.80</td>
+                                                <td class="mock-email">carlos@cotizalo.net</td>
+                                                <td class="mock-total-val">$48,500.00</td>
                                                 <td>
                                                     <span class="mock-badge badge-accepted">
                                                         ACEPTADA
-                                                        <svg class="badge-icon" width="11" height="11" viewBox="0 0 24 24" fill="#10b981"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                                                     </span>
                                                 </td>
                                                 <td>
@@ -268,14 +301,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="mock-num">#E-2</td>
-                                                <td>20 jul 2026</td>
+                                                <td class="mock-num">#COT-2026-041</td>
+                                                <td>19 Jul 2026</td>
                                                 <td>
-                                                    <div class="mock-client-name">Venta al Público</div>
-                                                    <div class="mock-client-phone">524421551780</div>
+                                                    <div class="mock-client-name">Logística & Transportes MX</div>
+                                                    <div class="mock-client-phone">+52 81 8345 6789</div>
                                                 </td>
-                                                <td class="mock-email">drg339@ar-eventos.com</td>
-                                                <td class="mock-total-val">$20,532.00</td>
+                                                <td class="mock-email">sofia@cotizalo.net</td>
+                                                <td class="mock-total-val">$12,800.00</td>
                                                 <td>
                                                     <span class="mock-badge badge-draft">BORRADOR</span>
                                                 </td>
@@ -284,16 +317,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="mock-num">#E-1</td>
-                                                <td>20 jul 2026</td>
+                                                <td class="mock-num">#COT-2026-040</td>
+                                                <td>18 Jul 2026</td>
                                                 <td>
-                                                    <div class="mock-client-name">Venta al Público</div>
-                                                    <div class="mock-client-phone">524421551780</div>
+                                                    <div class="mock-client-name">Servicios Industriales del Norte</div>
+                                                    <div class="mock-client-phone">+52 33 3612 4578</div>
                                                 </td>
-                                                <td class="mock-email">drg339@ar-eventos.com</td>
-                                                <td class="mock-total-val">$6,960.00</td>
+                                                <td class="mock-email">carlos@cotizalo.net</td>
+                                                <td class="mock-total-val">$95,600.00</td>
                                                 <td>
-                                                    <span class="mock-badge badge-paid">PAGADA</span>
+                                                    <span class="mock-badge badge-paid">
+                                                        PAGADA
+                                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                                    </span>
                                                 </td>
                                                 <td>
                                                     <div class="mock-action-dropdown">Acciones ▾</div>
