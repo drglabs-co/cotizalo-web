@@ -142,59 +142,141 @@
                           
                           <!-- Sidebar Header -->
                           <g transform="translate(16, 18)">
-                            <rect x="0" y="0" width="26" height="26" rx="6" fill="rgba(255,255,255,0.12)"/>
-                            <path d="M13 5 L5 10 L13 15 L21 10 Z M5 16.5 L13 21.5 L21 16.5 M5 13.2 L13 18.2 L21 13.2" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="0" y="0" width="26" height="26" rx="6" fill="#166534"/>
+                            <path d="M13 5 L5 10 L13 15 L21 10 Z M5 16.5 L13 21.5 L21 16.5 M5 13.2 L13 18.2 L21 13.2" fill="none" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                             <text x="34" y="17" fill="#ffffff" font-family="-apple-system, Montserrat, sans-serif" font-size="12" font-weight="700">Sistema de Cotizaciones</text>
                           </g>
                           <line x1="16" y1="58" x2="194" y2="58" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 
                           <!-- Sidebar Menu Items -->
+                          <!-- 1: Panel de Control -->
                           <g transform="translate(12, 70)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">🌐  Panel de Control</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none">
+                              <circle cx="7" cy="7" r="5.5"/>
+                              <ellipse cx="7" cy="7" rx="2.5" ry="5.5"/>
+                              <line x1="1.5" y1="7" x2="12.5" y2="7"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Panel de Control</text>
                           </g>
+
+                          <!-- 2: Métricas -->
                           <g transform="translate(12, 104)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📊  Métricas</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linecap="round">
+                              <line x1="3" y1="12" x2="3" y2="9"/>
+                              <line x1="7" y1="12" x2="7" y2="6"/>
+                              <line x1="11" y1="12" x2="11" y2="3"/>
+                              <path d="M2 9 L6 6 L10 3 L14 1" stroke="#4ade80" stroke-width="1.5"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Métricas</text>
                           </g>
-                          <!-- Cotizaciones Active -->
+
+                          <!-- 3: Cotizaciones Active -->
                           <g transform="translate(12, 138)">
                             <rect width="186" height="30" rx="6" fill="rgba(74, 222, 128, 0.15)"/>
                             <rect x="0" y="0" width="3" height="30" rx="1.5" fill="#4ade80"/>
-                            <text x="32" y="19" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="700">📑  Cotizaciones</text>
+                            <g transform="translate(14, 6)" stroke="#4ade80" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 2 H9 L13 6 V13 A1 1 0 0 1 12 14 H3 A1 1 0 0 1 2 13 V3 A1 1 0 0 1 3 2 Z"/>
+                              <path d="M9 2 V6 H13"/>
+                              <line x1="5" y1="8" x2="10" y2="8"/>
+                              <line x1="5" y1="11" x2="8" y2="11"/>
+                            </g>
+                            <text x="36" y="19" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="700">Cotizaciones</text>
                           </g>
+
+                          <!-- 4: Recibos de Anticipo -->
                           <g transform="translate(12, 176)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📄  Recibos de Anticipo</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linecap="round">
+                              <path d="M3 2 H12 V14 L10.5 12.5 L9 14 L7.5 12.5 L6 14 L4.5 12.5 L3 14 Z"/>
+                              <line x1="5" y1="5" x2="10" y2="5"/>
+                              <line x1="5" y1="8" x2="8" y2="8"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Recibos de Anticipo</text>
                           </g>
+
+                          <!-- 5: Clientes -->
                           <g transform="translate(12, 210)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">👥  Clientes</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linecap="round">
+                              <circle cx="6" cy="5" r="2.5"/>
+                              <path d="M2 13 A4 4 0 0 1 10 13"/>
+                              <circle cx="11" cy="4.5" r="2"/>
+                              <path d="M9.5 12 A3 3 0 0 1 14 12"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Clientes</text>
                           </g>
+
+                          <!-- 6: Categorías -->
                           <g transform="translate(12, 244)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">🏷️  Categorías</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 2 H7 L2 7 L8 13 L13 8 Z"/>
+                              <circle cx="9" cy="5" r="1" fill="rgba(255,255,255,0.7)"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Categorías</text>
                           </g>
+
+                          <!-- 7: Productos -->
                           <g transform="translate(12, 278)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📦  Productos</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linejoin="round">
+                              <path d="M7 2 L2 5 L7 8 L12 5 Z M2 5 V11 L7 14 V8 M12 5 V11 L7 14"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Productos</text>
                           </g>
+
+                          <!-- 8: Unidades -->
                           <g transform="translate(12, 312)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📏  Unidades</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linecap="round">
+                              <rect x="2" y="4" width="11" height="6" rx="1"/>
+                              <line x1="5" y1="4" x2="5" y2="7"/>
+                              <line x1="8" y1="4" x2="8" y2="8"/>
+                              <line x1="11" y1="4" x2="11" y2="7"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Unidades</text>
                           </g>
+
+                          <!-- 9: Configuración -->
                           <g transform="translate(12, 346)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">⚙️  Configuración</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.7)" stroke-width="1.3" fill="none" stroke-linecap="round">
+                              <circle cx="7" cy="7" r="2.2"/>
+                              <path d="M7 1V3 M7 11V13 M1 7H3 M11 7H13 M2.7 2.7L4.1 4.1 M9.9 9.9L11.3 11.3 M2.7 11.3L4.1 9.9 M9.9 4.1L11.3 2.7"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="11" font-weight="500">Configuración</text>
                           </g>
+
+                          <!-- 10: Cerrar Sesión -->
                           <g transform="translate(12, 480)">
-                            <text x="32" y="19" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11" font-weight="500">🚪  Cerrar Sesión</text>
+                            <g transform="translate(14, 2)" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M5 2 H2 V12 H5"/>
+                              <path d="M7 4 L10 7 L7 10"/>
+                              <line x1="10" y1="7" x2="4" y2="7"/>
+                            </g>
+                            <text x="36" y="14" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11" font-weight="500">Cerrar Sesión</text>
                           </g>
 
                           <!-- Main Content Workspace -->
                           <!-- Top Bar -->
                           <g transform="translate(230, 18)">
-                            <text x="0" y="18" fill="#0f172a" font-family="sans-serif" font-size="17" font-weight="800">📑 Cotizaciones</text>
+                            <!-- Document Icon -->
+                            <g transform="translate(0, 0)" stroke="#0f172a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 2 H10 L14 6 V16 A1 1 0 0 1 13 17 H3 A1 1 0 0 1 2 16 V3 A1 1 0 0 1 3 2 Z" fill="#ffffff"/>
+                              <path d="M10 2 V6 H14"/>
+                              <line x1="5" y1="9" x2="11" y2="9" stroke="#123A2C" stroke-width="1.5"/>
+                              <line x1="5" y1="13" x2="9" y2="13" stroke="#123A2C" stroke-width="1.5"/>
+                            </g>
+                            <text x="22" y="15" fill="#0f172a" font-family="sans-serif" font-size="16" font-weight="800">Cotizaciones</text>
                             
                             <g transform="translate(365, 0)">
                               <rect width="120" height="25" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                              <text x="10" y="16" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="600">📖 Manual de usuario</text>
+                              <g transform="translate(8, 5)" stroke="#475569" stroke-width="1.3" fill="none">
+                                <path d="M2 3 C4 2, 6 2, 8 3 V14 C6 13, 4 13, 2 14 Z M14 3 C12 2, 10 2, 8 3 V14 C10 13, 12 13, 14 14 Z"/>
+                              </g>
+                              <text x="28" y="16" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="600">Manual de usuario</text>
                             </g>
                             <g transform="translate(495, 0)">
                               <rect width="135" height="25" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                              <text x="10" y="16" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="600">👤 demo@cotizalo.net</text>
+                              <g transform="translate(8, 5)" stroke="#475569" stroke-width="1.3" fill="none">
+                                <circle cx="6" cy="4" r="2.5"/>
+                                <path d="M2 13 A4 4 0 0 1 10 13"/>
+                              </g>
+                              <text x="24" y="16" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="600">demo@cotizalo.net</text>
                             </g>
                           </g>
 
@@ -203,17 +285,29 @@
 
                           <!-- Controls Row -->
                           <g transform="translate(245, 70)">
-                            <!-- Search -->
+                            <!-- Search Box -->
                             <rect width="230" height="30" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-                            <text x="12" y="19" fill="#94a3b8" font-family="sans-serif" font-size="10.5">🔍 Buscar por folio, cliente...</text>
+                            <g transform="translate(10, 7)" stroke="#94a3b8" stroke-width="1.3" fill="none">
+                              <circle cx="6" cy="6" r="4.5"/>
+                              <line x1="9.5" y1="9.5" x2="13" y2="13" stroke-linecap="round"/>
+                            </g>
+                            <text x="28" y="19" fill="#94a3b8" font-family="sans-serif" font-size="10.5">Buscar por folio, cliente...</text>
 
                             <!-- Export CSV -->
                             <rect x="360" y="0" width="105" height="30" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                            <text x="372" y="19" fill="#334155" font-family="sans-serif" font-size="10.5" font-weight="600">📄 Exportar CSV</text>
+                            <g transform="translate(368, 7)" stroke="#334155" stroke-width="1.3" fill="none">
+                              <path d="M3 1 H8 L11 4 V13 A1 1 0 0 1 10 14 H3 A1 1 0 0 1 2 13 V2 A1 1 0 0 1 3 1 Z"/>
+                              <path d="M8 1 V4 H11"/>
+                            </g>
+                            <text x="384" y="19" fill="#334155" font-family="sans-serif" font-size="10.5" font-weight="600">Exportar CSV</text>
 
                             <!-- + Nueva Cotización -->
                             <rect x="475" y="0" width="140" height="30" rx="5" fill="#123A2C"/>
-                            <text x="488" y="19" fill="#ffffff" font-family="sans-serif" font-size="10.5" font-weight="700">+ Nueva Cotización</text>
+                            <g transform="translate(485, 7)">
+                              <line x1="3" y1="8" x2="13" y2="8" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+                              <line x1="8" y1="3" x2="8" y2="13" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+                            </g>
+                            <text x="504" y="19" fill="#ffffff" font-family="sans-serif" font-size="10.5" font-weight="700">Crear Nueva Cotización</text>
                           </g>
 
                           <!-- Table Header -->
@@ -240,7 +334,9 @@
 
                             <!-- Badge ACEPTADA -->
                             <rect x="525" y="11" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
-                            <text x="533" y="25" fill="#15803d" font-family="sans-serif" font-size="9.5" font-weight="800">ACEPTADA ✔</text>
+                            <text x="532" y="25" fill="#15803d" font-family="sans-serif" font-size="9.5" font-weight="800">ACEPTADA</text>
+                            <circle cx="583" cy="21" r="4.5" fill="#10b981"/>
+                            <path d="M581 21 L582.5 22.5 L585.5 19.5" fill="none" stroke="#ffffff" stroke-width="1.4"/>
                           </g>
 
                           <!-- Row 2 -->
@@ -255,7 +351,7 @@
 
                             <!-- Badge BORRADOR -->
                             <rect x="525" y="11" width="70" height="20" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-                            <text x="533" y="25" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="800">BORRADOR</text>
+                            <text x="532" y="25" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="800">BORRADOR</text>
                           </g>
 
                           <!-- Row 3 -->
@@ -270,7 +366,9 @@
 
                             <!-- Badge PAGADA -->
                             <rect x="525" y="11" width="70" height="20" rx="4" fill="#dbeafe" stroke="#bfdbfe" stroke-width="1"/>
-                            <text x="536" y="25" fill="#1d4ed8" font-family="sans-serif" font-size="9.5" font-weight="800">PAGADA ✔</text>
+                            <text x="534" y="25" fill="#1d4ed8" font-family="sans-serif" font-size="9.5" font-weight="800">PAGADA</text>
+                            <circle cx="583" cy="21" r="4.5" fill="#1d4ed8"/>
+                            <path d="M581 21 L582.5 22.5 L585.5 19.5" fill="none" stroke="#ffffff" stroke-width="1.4"/>
                           </g>
 
                           <!-- Pagination Footer -->
