@@ -131,33 +131,189 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <div class="mockup-url">www.cotizalo.net</div>
+                        <div class="mockup-url">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 5px; opacity: 0.7;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>app.cotizalo.net/quotations
+                        </div>
                     </div>
                     <div class="mockup-body">
-                        <div class="mockup-sidebar"></div>
-                        <div class="mockup-content">
-                            <div class="mockup-toolbar"></div>
-                            <div class="mockup-document">
-                                <div class="doc-header">
-                                    <div class="doc-logo"></div>
-                                    <div class="doc-title-lines">
-                                        <div class="line w-100"></div>
-                                        <div class="line w-50"></div>
-                                    </div>
+                        <!-- Sidebar -->
+                        <aside class="mock-sidebar">
+                            <div class="mock-sidebar-header">
+                                <div class="mock-brand">
+                                    <span class="mock-brand-icon">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ade80" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    </span>
+                                    <span class="mock-brand-text">Sistema de Cotizaciones</span>
                                 </div>
-                                <div class="doc-items">
-                                    <div class="item-row">
-                                        <div class="line w-75"></div>
-                                        <div class="line w-25 end"></div>
-                                    </div>
-                                    <div class="item-row">
-                                        <div class="line w-50"></div>
-                                        <div class="line w-25 end"></div>
-                                    </div>
-                                </div>
-                                <div class="doc-total"></div>
+                                <span class="mock-toggle-btn">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                                </span>
                             </div>
-                        </div>
+                            <nav class="mock-nav">
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                    <span>Panel de Control</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                                    <span>Métricas</span>
+                                </a>
+                                <a href="#" class="mock-nav-item active" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                    <span>Cotizaciones</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                                    <span>Recibos de Anticipo</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    <span>Clientes</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    <span>Categorías</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                    <span>Productos</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                                    <span>Unidades</span>
+                                </a>
+                                <a href="#" class="mock-nav-item" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                    <span>Configuración</span>
+                                </a>
+                                <a href="#" class="mock-nav-item logout" onclick="return false;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                                    <span>Cerrar Sesión</span>
+                                </a>
+                            </nav>
+                        </aside>
+
+                        <!-- Main Content Workspace -->
+                        <main class="mock-workspace">
+                            <!-- Workspace Top Bar -->
+                            <div class="mock-topbar">
+                                <div class="mock-page-title">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                                    <h2>Cotizaciones</h2>
+                                </div>
+                                <div class="mock-topbar-actions">
+                                    <span class="mock-topbar-btn">
+                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                        Manual de usuario
+                                    </span>
+                                    <span class="mock-topbar-btn">
+                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        Usuario: drg339@ar-eventos.com
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- White Card Container -->
+                            <div class="mock-card">
+                                <!-- Action bar -->
+                                <div class="mock-card-controls">
+                                    <div class="mock-search-input">
+                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                        <span>Agregar filtro y teclear Enter...</span>
+                                    </div>
+                                    <div class="mock-card-buttons">
+                                        <button class="mock-btn-secondary" type="button">
+                                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg>
+                                            Exportar CSV
+                                        </button>
+                                        <button class="mock-btn-primary" type="button">
+                                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                            Crear Nueva Cotización
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Table -->
+                                <div class="mock-table-wrapper">
+                                    <table class="mock-table">
+                                        <thead>
+                                            <tr>
+                                                <th># NÚMERO</th>
+                                                <th>FECHA</th>
+                                                <th>CLIENTE</th>
+                                                <th>CREADO POR</th>
+                                                <th>TOTAL</th>
+                                                <th>ESTADO</th>
+                                                <th>ACCIONES</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="mock-num">#E-3</td>
+                                                <td>20 jul 2026</td>
+                                                <td>
+                                                    <div class="mock-client-name">Venta al Público</div>
+                                                    <div class="mock-client-phone">524421551780</div>
+                                                </td>
+                                                <td class="mock-email">drg339@ar-eventos.com</td>
+                                                <td class="mock-total-val">$92.80</td>
+                                                <td>
+                                                    <span class="mock-badge badge-accepted">
+                                                        ACEPTADA
+                                                        <svg class="badge-icon" width="11" height="11" viewBox="0 0 24 24" fill="#10b981"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div class="mock-action-dropdown">Acciones ▾</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mock-num">#E-2</td>
+                                                <td>20 jul 2026</td>
+                                                <td>
+                                                    <div class="mock-client-name">Venta al Público</div>
+                                                    <div class="mock-client-phone">524421551780</div>
+                                                </td>
+                                                <td class="mock-email">drg339@ar-eventos.com</td>
+                                                <td class="mock-total-val">$20,532.00</td>
+                                                <td>
+                                                    <span class="mock-badge badge-draft">BORRADOR</span>
+                                                </td>
+                                                <td>
+                                                    <div class="mock-action-dropdown">Acciones ▾</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mock-num">#E-1</td>
+                                                <td>20 jul 2026</td>
+                                                <td>
+                                                    <div class="mock-client-name">Venta al Público</div>
+                                                    <div class="mock-client-phone">524421551780</div>
+                                                </td>
+                                                <td class="mock-email">drg339@ar-eventos.com</td>
+                                                <td class="mock-total-val">$6,960.00</td>
+                                                <td>
+                                                    <span class="mock-badge badge-paid">PAGADA</span>
+                                                </td>
+                                                <td>
+                                                    <div class="mock-action-dropdown">Acciones ▾</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Pagination Footer -->
+                                <div class="mock-pagination">
+                                    <div class="mock-rows-per-page">Filas por página: <span>10 ▾</span></div>
+                                    <div class="mock-page-info">Página 1 de 1 (3 elementos)</div>
+                                    <div class="mock-page-nav">
+                                        <span class="mock-page-btn disabled">&lt; Ant</span>
+                                        <span class="mock-page-btn disabled">Sig &gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
                     </div>
                 </div>
             </div>
