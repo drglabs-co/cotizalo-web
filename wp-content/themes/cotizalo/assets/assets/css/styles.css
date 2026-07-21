@@ -400,6 +400,14 @@ header.scrolled {
   .hero .glass-mockup .mock-sidebar {
     display: none !important;
   }
+  .hero .glass-mockup .mockup-header {
+    padding: 0.4rem 0.6rem !important;
+  }
+  .hero .glass-mockup .mockup-url {
+    font-size: 0.62rem !important;
+    padding: 0.15rem 0.4rem !important;
+    margin: 0 0.4rem !important;
+  }
 }
 
 /* Header bar */
@@ -444,8 +452,8 @@ header.scrolled {
 }
 
 .hero .glass-mockup .mockup-body {
-  display: flex !important;
-  min-height: 400px !important;
+  display: block !important;
+  min-height: auto !important;
   background: #f8fafc !important;
   color: #334155 !important;
 }
