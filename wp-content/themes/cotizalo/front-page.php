@@ -124,39 +124,6 @@
 
             <!-- Visualization Element (Mockup) -->
             <div class="hero-image-wrapper animate-on-scroll fade-in-up delay-200">
-                <style>
-                    .hero .glass-mockup { background: #ffffff !important; color: #334155 !important; text-align: left !important; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08) !important; }
-                    .hero .glass-mockup .mockup-header { background: #0f172a !important; color: #94a3b8 !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
-                    .hero .glass-mockup .mockup-url { color: #94a3b8 !important; background: rgba(255,255,255,0.08) !important; font-family: monospace !important; }
-                    .hero .glass-mockup .mockup-body { background: #f8fafc !important; color: #334155 !important; }
-                    .hero .glass-mockup .mock-sidebar { background: #123A2C !important; color: #ffffff !important; }
-                    .hero .glass-mockup .mock-brand-text { color: #ffffff !important; font-weight: 700 !important; }
-                    .hero .glass-mockup .mock-nav-item { color: rgba(255, 255, 255, 0.75) !important; text-decoration: none !important; }
-                    .hero .glass-mockup .mock-nav-item:hover { color: #ffffff !important; background: rgba(255, 255, 255, 0.08) !important; }
-                    .hero .glass-mockup .mock-nav-item.active { color: #4ade80 !important; background: rgba(74, 222, 128, 0.15) !important; font-weight: 600 !important; border-left: 3px solid #4ade80 !important; }
-                    .hero .glass-mockup .mock-page-title h2 { color: #0f172a !important; font-weight: 800 !important; margin: 0 !important; }
-                    .hero .glass-mockup .mock-topbar-btn { color: #475569 !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
-                    .hero .glass-mockup .mock-card { background: #ffffff !important; color: #334155 !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03) !important; }
-                    .hero .glass-mockup .mock-search-input { color: #64748b !important; background: #f8fafc !important; border: 1px solid #cbd5e1 !important; }
-                    .hero .glass-mockup .mock-search-input span { color: #64748b !important; }
-                    .hero .glass-mockup .mock-btn-secondary { color: #334155 !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
-                    .hero .glass-mockup .mock-btn-primary { color: #ffffff !important; background: #123A2C !important; font-weight: 600 !important; }
-                    .hero .glass-mockup .mock-table th { color: #475569 !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 700 !important; background: #f8fafc !important; }
-                    .hero .glass-mockup .mock-table td { color: #334155 !important; border-bottom: 1px solid #f1f5f9 !important; }
-                    .hero .glass-mockup .mock-num { color: #2563eb !important; font-weight: 700 !important; }
-                    .hero .glass-mockup .mock-client-name { color: #0f172a !important; font-weight: 700 !important; }
-                    .hero .glass-mockup .mock-client-phone { color: #64748b !important; font-size: 0.53rem !important; }
-                    .hero .glass-mockup .mock-email { color: #475569 !important; }
-                    .hero .glass-mockup .mock-total-val { color: #0f172a !important; font-weight: 700 !important; }
-                    .hero .glass-mockup .mock-badge { display: inline-flex !important; align-items: center !important; gap: 4px !important; padding: 2px 7px !important; border-radius: 4px !important; font-size: 0.54rem !important; font-weight: 700 !important; letter-spacing: 0.02em !important; }
-                    .hero .glass-mockup .mock-badge.badge-accepted { color: #15803d !important; background: #dcfce7 !important; border: 1px solid #bbf7d0 !important; }
-                    .hero .glass-mockup .mock-badge.badge-draft { color: #475569 !important; background: #f1f5f9 !important; border: 1px solid #e2e8f0 !important; }
-                    .hero .glass-mockup .mock-badge.badge-paid { color: #1d4ed8 !important; background: #dbeafe !important; border: 1px solid #bfdbfe !important; }
-                    .hero .glass-mockup .mock-action-dropdown { color: #334155 !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
-                    .hero .glass-mockup .mock-pagination, .hero .glass-mockup .mock-rows-per-page, .hero .glass-mockup .mock-page-info { color: #64748b !important; }
-                    .hero .glass-mockup .mock-rows-per-page span { color: #334155 !important; font-weight: 600 !important; }
-                    .hero .glass-mockup .mock-page-btn { color: #64748b !important; background: #ffffff !important; border: 1px solid #cbd5e1 !important; }
-                </style>
                 <div class="glass-mockup">
                     <div class="mockup-header">
                         <div class="mockup-dots">
@@ -168,188 +135,157 @@
                             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 5px; opacity: 0.7;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>app.cotizalo.net/quotations
                         </div>
                     </div>
-                    <div class="mockup-body">
-                        <!-- Sidebar -->
-                        <aside class="mock-sidebar">
-                            <div class="mock-sidebar-header">
-                                <div class="mock-brand">
-                                    <span class="mock-brand-icon">
-                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ade80" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                    </span>
-                                    <span class="mock-brand-text">Sistema de Cotizaciones</span>
-                                </div>
-                                <span class="mock-toggle-btn">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-                                </span>
-                            </div>
-                            <nav class="mock-nav">
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                                    <span>Panel de Control</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-                                    <span>Métricas</span>
-                                </a>
-                                <a href="#" class="mock-nav-item active" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                                    <span>Cotizaciones</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                                    <span>Recibos de Anticipo</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                                    <span>Clientes</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-                                    <span>Categorías</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-                                    <span>Productos</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
-                                    <span>Unidades</span>
-                                </a>
-                                <a href="#" class="mock-nav-item" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                                    <span>Configuración</span>
-                                </a>
-                                <a href="#" class="mock-nav-item logout" onclick="return false;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-                                    <span>Cerrar Sesión</span>
-                                </a>
-                            </nav>
-                        </aside>
+                    <div class="mockup-body" style="padding: 0; background: #f8fafc; overflow: hidden;">
+                        <svg viewBox="0 0 880 530" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto;">
+                          <!-- Left Sidebar (Width 210) -->
+                          <rect x="0" y="0" width="210" height="530" fill="#123A2C"/>
+                          
+                          <!-- Sidebar Header -->
+                          <g transform="translate(16, 18)">
+                            <rect x="0" y="0" width="26" height="26" rx="6" fill="rgba(255,255,255,0.12)"/>
+                            <path d="M13 5 L5 10 L13 15 L21 10 Z M5 16.5 L13 21.5 L21 16.5 M5 13.2 L13 18.2 L21 13.2" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="34" y="17" fill="#ffffff" font-family="-apple-system, Montserrat, sans-serif" font-size="12" font-weight="700">Sistema de Cotizaciones</text>
+                          </g>
+                          <line x1="16" y1="58" x2="194" y2="58" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 
-                        <!-- Main Content Workspace -->
-                        <main class="mock-workspace">
-                            <!-- Workspace Top Bar -->
-                            <div class="mock-topbar">
-                                <div class="mock-page-title">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                                    <h2>Cotizaciones</h2>
-                                </div>
-                                <div class="mock-topbar-actions">
-                                    <span class="mock-topbar-btn">
-                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                                        Manual de usuario
-                                    </span>
-                                    <span class="mock-topbar-btn">
-                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                        Usuario: demo@cotizalo.net
-                                    </span>
-                                </div>
-                            </div>
+                          <!-- Sidebar Menu Items -->
+                          <g transform="translate(12, 70)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">🌐  Panel de Control</text>
+                          </g>
+                          <g transform="translate(12, 104)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📊  Métricas</text>
+                          </g>
+                          <!-- Cotizaciones Active -->
+                          <g transform="translate(12, 138)">
+                            <rect width="186" height="30" rx="6" fill="rgba(74, 222, 128, 0.15)"/>
+                            <rect x="0" y="0" width="3" height="30" rx="1.5" fill="#4ade80"/>
+                            <text x="32" y="19" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="700">📑  Cotizaciones</text>
+                          </g>
+                          <g transform="translate(12, 176)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📄  Recibos de Anticipo</text>
+                          </g>
+                          <g transform="translate(12, 210)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">👥  Clientes</text>
+                          </g>
+                          <g transform="translate(12, 244)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">🏷️  Categorías</text>
+                          </g>
+                          <g transform="translate(12, 278)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📦  Productos</text>
+                          </g>
+                          <g transform="translate(12, 312)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">📏  Unidades</text>
+                          </g>
+                          <g transform="translate(12, 346)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="11" font-weight="500">⚙️  Configuración</text>
+                          </g>
+                          <g transform="translate(12, 480)">
+                            <text x="32" y="19" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11" font-weight="500">🚪  Cerrar Sesión</text>
+                          </g>
 
-                            <!-- White Card Container -->
-                            <div class="mock-card">
-                                <!-- Action bar -->
-                                <div class="mock-card-controls">
-                                    <div class="mock-search-input">
-                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                                        <span>Buscar por folio, cliente o servicio...</span>
-                                    </div>
-                                    <div class="mock-card-buttons">
-                                        <button class="mock-btn-secondary" type="button">
-                                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg>
-                                            Exportar CSV
-                                        </button>
-                                        <button class="mock-btn-primary" type="button">
-                                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                                            + Nueva Cotización
-                                        </button>
-                                    </div>
-                                </div>
+                          <!-- Main Content Workspace -->
+                          <!-- Top Bar -->
+                          <g transform="translate(230, 18)">
+                            <text x="0" y="18" fill="#0f172a" font-family="sans-serif" font-size="17" font-weight="800">📑 Cotizaciones</text>
+                            
+                            <g transform="translate(365, 0)">
+                              <rect width="120" height="25" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+                              <text x="10" y="16" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="600">📖 Manual de usuario</text>
+                            </g>
+                            <g transform="translate(495, 0)">
+                              <rect width="135" height="25" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+                              <text x="10" y="16" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="600">👤 demo@cotizalo.net</text>
+                            </g>
+                          </g>
 
-                                <!-- Table -->
-                                <div class="mock-table-wrapper">
-                                    <table class="mock-table">
-                                        <thead>
-                                            <tr>
-                                                <th># FOLIO</th>
-                                                <th>FECHA</th>
-                                                <th>CLIENTE</th>
-                                                <th>CREADO POR</th>
-                                                <th>TOTAL</th>
-                                                <th>ESTADO</th>
-                                                <th>ACCIONES</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="mock-num">#COT-2026-042</td>
-                                                <td>20 Jul 2026</td>
-                                                <td>
-                                                    <div class="mock-client-name">Constructora Alpha S.A.</div>
-                                                    <div class="mock-client-phone">+52 55 4123 8900</div>
-                                                </td>
-                                                <td class="mock-email">carlos@cotizalo.net</td>
-                                                <td class="mock-total-val">$48,500.00</td>
-                                                <td>
-                                                    <span class="mock-badge badge-accepted">
-                                                        ACEPTADA
-                                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <div class="mock-action-dropdown">Acciones ▾</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="mock-num">#COT-2026-041</td>
-                                                <td>19 Jul 2026</td>
-                                                <td>
-                                                    <div class="mock-client-name">Logística & Transportes MX</div>
-                                                    <div class="mock-client-phone">+52 81 8345 6789</div>
-                                                </td>
-                                                <td class="mock-email">sofia@cotizalo.net</td>
-                                                <td class="mock-total-val">$12,800.00</td>
-                                                <td>
-                                                    <span class="mock-badge badge-draft">BORRADOR</span>
-                                                </td>
-                                                <td>
-                                                    <div class="mock-action-dropdown">Acciones ▾</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="mock-num">#COT-2026-040</td>
-                                                <td>18 Jul 2026</td>
-                                                <td>
-                                                    <div class="mock-client-name">Servicios Industriales del Norte</div>
-                                                    <div class="mock-client-phone">+52 33 3612 4578</div>
-                                                </td>
-                                                <td class="mock-email">carlos@cotizalo.net</td>
-                                                <td class="mock-total-val">$95,600.00</td>
-                                                <td>
-                                                    <span class="mock-badge badge-paid">
-                                                        PAGADA
-                                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <div class="mock-action-dropdown">Acciones ▾</div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                          <!-- Main White Card Container -->
+                          <rect x="230" y="56" width="635" height="455" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 
-                                <!-- Pagination Footer -->
-                                <div class="mock-pagination">
-                                    <div class="mock-rows-per-page">Filas por página: <span>10 ▾</span></div>
-                                    <div class="mock-page-info">Página 1 de 1 (3 elementos)</div>
-                                    <div class="mock-page-nav">
-                                        <span class="mock-page-btn disabled">&lt; Ant</span>
-                                        <span class="mock-page-btn disabled">Sig &gt;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </main>
+                          <!-- Controls Row -->
+                          <g transform="translate(245, 70)">
+                            <!-- Search -->
+                            <rect width="230" height="30" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+                            <text x="12" y="19" fill="#94a3b8" font-family="sans-serif" font-size="10.5">🔍 Buscar por folio, cliente...</text>
+
+                            <!-- Export CSV -->
+                            <rect x="360" y="0" width="105" height="30" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+                            <text x="372" y="19" fill="#334155" font-family="sans-serif" font-size="10.5" font-weight="600">📄 Exportar CSV</text>
+
+                            <!-- + Nueva Cotización -->
+                            <rect x="475" y="0" width="140" height="30" rx="5" fill="#123A2C"/>
+                            <text x="488" y="19" fill="#ffffff" font-family="sans-serif" font-size="10.5" font-weight="700">+ Nueva Cotización</text>
+                          </g>
+
+                          <!-- Table Header -->
+                          <g transform="translate(245, 116)">
+                            <rect width="605" height="28" fill="#f8fafc"/>
+                            <line x1="0" y1="28" x2="605" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+                            <text x="12" y="18" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="700"># FOLIO</text>
+                            <text x="115" y="18" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="700">FECHA</text>
+                            <text x="190" y="18" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="700">CLIENTE</text>
+                            <text x="345" y="18" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="700">CREADO POR</text>
+                            <text x="445" y="18" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="700">TOTAL</text>
+                            <text x="525" y="18" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="700">ESTADO</text>
+                          </g>
+
+                          <!-- Row 1 -->
+                          <g transform="translate(245, 150)">
+                            <line x1="0" y1="44" x2="605" y2="44" stroke="#f1f5f9" stroke-width="1"/>
+                            <text x="12" y="26" fill="#2563eb" font-family="sans-serif" font-size="11.5" font-weight="700">#COT-2026-042</text>
+                            <text x="115" y="26" fill="#334155" font-family="sans-serif" font-size="10.5">20 Jul 2026</text>
+                            <text x="190" y="19" fill="#0f172a" font-family="sans-serif" font-size="10.5" font-weight="700">Constructora Alpha S.A.</text>
+                            <text x="190" y="32" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 4123 8900</text>
+                            <text x="345" y="26" fill="#475569" font-family="sans-serif" font-size="10.5">carlos@cotizalo.net</text>
+                            <text x="445" y="26" fill="#0f172a" font-family="sans-serif" font-size="11.5" font-weight="700">$48,500.00</text>
+
+                            <!-- Badge ACEPTADA -->
+                            <rect x="525" y="11" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+                            <text x="533" y="25" fill="#15803d" font-family="sans-serif" font-size="9.5" font-weight="800">ACEPTADA ✔</text>
+                          </g>
+
+                          <!-- Row 2 -->
+                          <g transform="translate(245, 200)">
+                            <line x1="0" y1="44" x2="605" y2="44" stroke="#f1f5f9" stroke-width="1"/>
+                            <text x="12" y="26" fill="#2563eb" font-family="sans-serif" font-size="11.5" font-weight="700">#COT-2026-041</text>
+                            <text x="115" y="26" fill="#334155" font-family="sans-serif" font-size="10.5">19 Jul 2026</text>
+                            <text x="190" y="19" fill="#0f172a" font-family="sans-serif" font-size="10.5" font-weight="700">Logística &amp; Transportes MX</text>
+                            <text x="190" y="32" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 81 8345 6789</text>
+                            <text x="345" y="26" fill="#475569" font-family="sans-serif" font-size="10.5">sofia@cotizalo.net</text>
+                            <text x="445" y="26" fill="#0f172a" font-family="sans-serif" font-size="11.5" font-weight="700">$12,800.00</text>
+
+                            <!-- Badge BORRADOR -->
+                            <rect x="525" y="11" width="70" height="20" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+                            <text x="533" y="25" fill="#475569" font-family="sans-serif" font-size="9.5" font-weight="800">BORRADOR</text>
+                          </g>
+
+                          <!-- Row 3 -->
+                          <g transform="translate(245, 250)">
+                            <line x1="0" y1="44" x2="605" y2="44" stroke="#f1f5f9" stroke-width="1"/>
+                            <text x="12" y="26" fill="#2563eb" font-family="sans-serif" font-size="11.5" font-weight="700">#COT-2026-040</text>
+                            <text x="115" y="26" fill="#334155" font-family="sans-serif" font-size="10.5">18 Jul 2026</text>
+                            <text x="190" y="19" fill="#0f172a" font-family="sans-serif" font-size="10.5" font-weight="700">Servicios Industriales Norte</text>
+                            <text x="190" y="32" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 33 3612 4578</text>
+                            <text x="345" y="26" fill="#475569" font-family="sans-serif" font-size="10.5">carlos@cotizalo.net</text>
+                            <text x="445" y="26" fill="#0f172a" font-family="sans-serif" font-size="11.5" font-weight="700">$95,600.00</text>
+
+                            <!-- Badge PAGADA -->
+                            <rect x="525" y="11" width="70" height="20" rx="4" fill="#dbeafe" stroke="#bfdbfe" stroke-width="1"/>
+                            <text x="536" y="25" fill="#1d4ed8" font-family="sans-serif" font-size="9.5" font-weight="800">PAGADA ✔</text>
+                          </g>
+
+                          <!-- Pagination Footer -->
+                          <g transform="translate(245, 470)">
+                            <line x1="0" y1="0" x2="605" y2="0" stroke="#e2e8f0" stroke-width="1"/>
+                            <text x="0" y="20" fill="#64748b" font-family="sans-serif" font-size="10">Filas por página: <tspan fill="#334155" font-weight="700">10 ▾</tspan></text>
+                            <text x="230" y="20" fill="#64748b" font-family="sans-serif" font-size="10">Página 1 de 1 (3 elementos)</text>
+                            
+                            <rect x="500" y="6" width="45" height="20" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+                            <text x="510" y="19" fill="#94a3b8" font-family="sans-serif" font-size="9">&lt; Ant</text>
+
+                            <rect x="550" y="6" width="45" height="20" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+                            <text x="560" y="19" fill="#94a3b8" font-family="sans-serif" font-size="9">Sig &gt;</text>
+                          </g>
+                        </svg>
                     </div>
                 </div>
             </div>
