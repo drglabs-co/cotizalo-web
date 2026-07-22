@@ -142,8 +142,7 @@
                           
                           <!-- Sidebar Header -->
                           <g transform="translate(16, 18)">
-                            <rect x="0" y="0" width="26" height="26" rx="6" fill="#166534"/>
-                            <path d="M13 5 L5 10 L13 15 L21 10 Z M5 16.5 L13 21.5 L21 16.5 M5 13.2 L13 18.2 L21 13.2" fill="none" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <image href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo%20-%20ISOTIPO-8.png" x="0" y="0" height="26" width="26" />
                             <text x="34" y="17" fill="#ffffff" font-family="-apple-system, Montserrat, sans-serif" font-size="12" font-weight="700">Sistema de Cotizaciones</text>
                           </g>
                           <line x1="16" y1="58" x2="194" y2="58" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
