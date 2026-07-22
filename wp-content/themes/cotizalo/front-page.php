@@ -124,7 +124,7 @@
 
             <!-- Visualization Element (Mockup) -->
             <div class="hero-image-wrapper animate-on-scroll fade-in-up delay-200">
-                <div class="glass-mockup">
+                <div class="glass-mockup" style="min-height: auto !important; height: auto !important; background: #ffffff !important;">
                     <div class="mockup-header">
                         <div class="mockup-dots">
                             <span class="dot red"></span>
@@ -135,8 +135,8 @@
                             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 5px; opacity: 0.7;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>app.cotizalo.net
                         </div>
                     </div>
-                    <div class="mockup-body" style="padding: 0; background: #f8fafc; overflow: hidden;">
-                        <svg viewBox="0 0 880 530" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto;">
+                    <div class="mockup-body" style="padding: 0; background: #f8fafc !important; min-height: auto !important; height: auto !important; display: block !important; overflow: hidden;">
+                        <svg viewBox="0 0 880 530" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto; background: #f8fafc;">
                           <!-- Left Sidebar (Width 210) -->
                           <rect x="0" y="0" width="210" height="530" fill="#123A2C"/>
                           
