@@ -10,6 +10,8 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link class="canonical" rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
     <title>Planes y Precios | Cotízalo - Sistema de Cotizaciones en México</title>
     <meta name="description"
         content="Elige el plan ideal para tu negocio en México. Precios transparentes sin comisiones ocultas. Todos los planes incluyen 14 días de prueba gratis. ¡Empieza hoy!">
@@ -41,6 +43,58 @@
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Product",
+                "@id": "<?php echo esc_url( get_permalink() ); ?>#product",
+                "name": "Cotízalo - Suscripción Mensual",
+                "description": "Sistema de cotizaciones automatizado para empresas en México. Planes diseñados para profesionales, microempresas y pymes.",
+                "image": "<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png",
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "MXN",
+                    "lowPrice": "199",
+                    "highPrice": "899",
+                    "offerCount": "4",
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Inicial",
+                            "price": "199",
+                            "priceCurrency": "MXN",
+                            "url": "<?php echo esc_url( get_permalink() ); ?>"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Básico",
+                            "price": "399",
+                            "priceCurrency": "MXN",
+                            "url": "<?php echo esc_url( get_permalink() ); ?>"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Profesional",
+                            "price": "599",
+                            "priceCurrency": "MXN",
+                            "url": "<?php echo esc_url( get_permalink() ); ?>"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Empresarial",
+                            "price": "899",
+                            "priceCurrency": "MXN",
+                            "url": "<?php echo esc_url( get_permalink() ); ?>"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    </script>
     <?php wp_head(); ?>
     <style>
         /* ============================================================

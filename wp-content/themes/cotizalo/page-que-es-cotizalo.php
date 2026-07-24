@@ -10,6 +10,8 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
     <title>¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos</title>
     <meta name="description"
         content="Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.">
@@ -84,6 +86,45 @@
             font-weight: bold;
         }
     </style>
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "AboutPage",
+                "@id": "<?php echo esc_url( get_permalink() ); ?>#webpage",
+                "url": "<?php echo esc_url( get_permalink() ); ?>",
+                "name": "¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos",
+                "description": "Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.",
+                "isPartOf": {
+                    "@id": "<?php echo esc_url( home_url('/') ); ?>#website"
+                },
+                "breadcrumb": {
+                    "@id": "<?php echo esc_url( get_permalink() ); ?>#breadcrumb"
+                },
+                "inLanguage": "es-MX"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "<?php echo esc_url( get_permalink() ); ?>#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "<?php echo esc_url( home_url('/') ); ?>"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "¿Qué es Cotízalo?"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
     <?php wp_head(); ?>
 </head>
 

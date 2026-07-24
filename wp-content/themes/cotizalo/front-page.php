@@ -4,6 +4,8 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
     <title>Cotízalo | Sistema de Cotizaciones Automatizado para Empresas en México</title>
     <meta name="description"
         content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
@@ -37,34 +39,69 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Cotízalo",
-        "url": "https://cotizalo.net",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "Sistema de cotizaciones automatizado para empresas y profesionales en México. Crea, envía y da seguimiento a propuestas profesionales en PDF.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "MXN",
-            "description": "Prueba gratis por 14 días"
-        },
-        "provider": {
-            "@type": "Organization",
-            "name": "Cotízalo",
-            "url": "https://cotizalo.net",
-            "logo": "<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer support",
-                "url": "https://cotizalo.net/soporte/",
-                "availableLanguage": "Spanish"
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "<?php echo esc_url( home_url('/') ); ?>#website",
+                "url": "<?php echo esc_url( home_url('/') ); ?>",
+                "name": "Cotízalo",
+                "description": "Sistema de cotizaciones automatizado para empresas en México",
+                "publisher": {
+                    "@id": "<?php echo esc_url( home_url('/') ); ?>#organization"
+                }
             },
-            "areaServed": {
-                "@type": "Country",
-                "name": "México"
+            {
+                "@type": "Organization",
+                "@id": "<?php echo esc_url( home_url('/') ); ?>#organization",
+                "name": "Cotízalo",
+                "url": "<?php echo esc_url( home_url('/') ); ?>",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/cotizalo.net",
+                    "https://www.instagram.com/cotizalo",
+                    "https://www.linkedin.com/company/cotizalo"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "url": "<?php echo esc_url( home_url('/soporte/') ); ?>",
+                    "availableLanguage": "Spanish"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "México"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "<?php echo esc_url( home_url('/') ); ?>#software",
+                "name": "Cotízalo",
+                "url": "<?php echo esc_url( home_url('/') ); ?>",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "description": "Sistema de cotizaciones automatizado para empresas y profesionales en México. Crea, envía y da seguimiento a propuestas profesionales en PDF.",
+                "featureList": [
+                    "Creación de cotizaciones en segundos",
+                    "Envío por WhatsApp y correo electrónico",
+                    "Firma digital de propuestas",
+                    "Cobro de anticipos y depósitos en línea",
+                    "Control de disponibilidad en tiempo real",
+                    "Catálogo de precios y productos unificado"
+                ],
+                "offers": {
+                    "@type": "Offer",
+                    "price": "199",
+                    "priceCurrency": "MXN",
+                    "description": "Planes desde $199 MXN al mes con 14 días de prueba gratis."
+                },
+                "publisher": {
+                    "@id": "<?php echo esc_url( home_url('/') ); ?>#organization"
+                }
             }
-        }
+        ]
     }
     </script>
     <?php wp_head(); ?>
