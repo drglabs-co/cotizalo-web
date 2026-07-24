@@ -905,11 +905,11 @@
                 <div class="feature-card animate-on-scroll fade-in-up delay-100">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                     </div>
-                    <h3><?php echo esc_html(get_theme_mod('feat_1_title', 'Cotizando hechos y retornos!')); ?></h3>
-                    <p><?php echo esc_html(get_theme_mod('feat_1_desc', 'Genera cotizaciones completas reutilizando plantillas dinámicas y tu catálogo de productos guardados.')); ?>
+                    <h3><?php echo esc_html(get_theme_mod('feat_1_title', 'Disponibilidad en tiempo real')); ?></h3>
+                    <p><?php echo esc_html(get_theme_mod('feat_1_desc', 'Genera propuestas reutilizando tu catálogo. Cotízalo verifica la disponibilidad de tus productos en cada fecha para evitar dobles reservas.')); ?>
                     </p>
                 </div>
                 <!-- Feature 2 -->
@@ -928,23 +928,22 @@
                 <div class="feature-card animate-on-scroll fade-in-up delay-300">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                         </svg>
                     </div>
-                    <h3><?php echo esc_html(get_theme_mod('feat_3_title', 'Presupuesto Organizado')); ?></h3>
-                    <p><?php echo esc_html(get_theme_mod('feat_3_desc', 'Diseño web y móvil integrado que permite llevar el control de todo tu negocio desde la palma de tu mano.')); ?>
+                    <h3><?php echo esc_html(get_theme_mod('feat_3_title', 'Anticipos y firma digital')); ?></h3>
+                    <p><?php echo esc_html(get_theme_mod('feat_3_desc', 'Tus clientes pueden aceptar, firmar digitalmente y pagar su depósito desde su celular. La forma más rápida de asegurar tu venta y formalizar el trato.')); ?>
                     </p>
                 </div>
                 <!-- Feature 4 -->
                 <div class="feature-card animate-on-scroll fade-in-up delay-300">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
                         </svg>
                     </div>
-                    <h3>Acceso desde Cualquier Lugar</h3>
-                    <p>Tus cotizaciones siempre en la nube. Accede, edita y comparte desde tu celular en cualquier momento.</p>
+                    <h3>Todo en un solo lugar</h3>
+                    <p>Consolida tus clientes, catálogo de precios, cotizaciones y recibos de anticipo en una interfaz limpia. Olvídate de usar cinco herramientas distintas para operar.</p>
                 </div>
             </div>
         </div>

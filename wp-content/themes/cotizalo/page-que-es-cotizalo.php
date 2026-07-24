@@ -135,6 +135,18 @@
             </div>
 
             <div class="content-box animate-on-scroll fade-in-up delay-200" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
+                <h2>Las 3 Herramientas Clave para tu Digitalización</h2>
+                <p>
+                    Inspirados en las mejores prácticas de los sistemas de cotización y reservas más avanzados del mundo, adaptamos las funciones más potentes para que cualquier negocio o profesional independiente pueda usarlas desde el primer día, sin complicaciones:
+                </p>
+                <ul>
+                    <li><strong>Control de disponibilidad y catálogo:</strong> Sabrás exactamente qué productos o servicios tienes libres para rentar o vender en cada fecha. Evita comprometer el mismo equipo dos veces y dile adiós a las dobles reservas accidentales.</li>
+                    <li><strong>Firma digital y cobro de anticipos:</strong> No dejes que la venta se enfríe. Tu cliente puede revisar, aprobar, firmar el contrato digital y pagar su anticipo directamente desde su celular. La forma más rápida de amarrar tu fecha y asegurar tus ingresos.</li>
+                    <li><strong>Tu negocio organizado en un solo lugar:</strong> Deja de brincar entre WhatsApp, fotos de libretas, hojas de Excel y la app de tu banco. Consolida tu catálogo, tus clientes y el historial de cotizaciones en una interfaz limpia diseñada para facilitarte la vida.</li>
+                </ul>
+            </div>
+
+            <div class="content-box animate-on-scroll fade-in-up delay-300" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
                 <h2>Lo que SÍ somos</h2>
                 <ul>
                     <li><strong>Simplicidad ante todo:</strong> Un sistema fácil de usar donde creas y envías propuestas en menos de un minuto.</li>
@@ -143,7 +155,7 @@
                 </ul>
             </div>
 
-            <div class="content-box animate-on-scroll fade-in-up delay-300" style="text-align: left; max-width: 800px; margin: 0 auto 3rem; border-color: rgba(239, 68, 68, 0.3);">
+            <div class="content-box animate-on-scroll fade-in-up delay-400" style="text-align: left; max-width: 800px; margin: 0 auto 3rem; border-color: rgba(239, 68, 68, 0.3);">
                 <h2>Lo que NO somos</h2>
                 <p>
                     <strong>No somos un CRM complejo.</strong> El mercado está lleno de sistemas enormes, costosos y con miles de funciones (embudos complejos, automatizaciones de marketing, reportes infinitos) que el 90% de los emprendedores nunca utiliza. 
@@ -153,7 +165,7 @@
                 </p>
             </div>
 
-            <div class="animate-on-scroll fade-in-up delay-400">
+            <div class="animate-on-scroll fade-in-up delay-500">
                 <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Quiero empezar a cotizar ahora</a>
             </div>
         </div>
