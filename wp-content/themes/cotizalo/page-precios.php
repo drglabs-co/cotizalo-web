@@ -533,6 +533,7 @@
             filter: drop-shadow(0 6px 10px rgba(18, 58, 44, 0.15));
         }
     </style>
+    <link rel="preload" as="image" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2" type="image/png">
 </head>
 
 <body <?php body_class('page-precios'); ?>>
@@ -542,7 +543,7 @@
         <div class="container nav-container">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
-                    alt="Cotízalo Logo" id="brand-logo">
+                    alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
             </a>
             <ul class="nav-links">
                 <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
@@ -900,7 +901,7 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="logo mb-1">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
-                            id="footer-logo">
+                            id="footer-logo" width="260" height="70">
                     </a>
                     <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
                         ventas crean, envían y cierran propuestas.</p>

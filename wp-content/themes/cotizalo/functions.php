@@ -21,6 +21,51 @@ function cotizalo_scripts() {
 add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
 
 /**
+ * Optimize asset loading: Dequeue unused block library styles, classic theme styles,
+ * and plugin styles on the front-end to improve FCP and LCP.
+ */
+function cotizalo_dequeue_unused_assets() {
+    if ( is_admin() ) {
+        return;
+    }
+    
+    // Dequeue Gutenberg Block Library styles
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'wc-blocks-style' );
+    
+    // Dequeue default global styles and classic theme styles
+    wp_dequeue_style( 'global-styles' );
+    wp_dequeue_style( 'classic-theme-styles' );
+    
+    // Dequeue Hostinger Reach plugin styles (if active)
+    wp_dequeue_style( 'hostinger-reach-blocks' );
+    wp_dequeue_style( 'hostinger-reach-frontend' );
+    wp_dequeue_style( 'hostinger-reach-style' );
+    wp_dequeue_style( 'hostinger-reach' );
+}
+add_action( 'wp_enqueue_scripts', 'cotizalo_dequeue_unused_assets', 9999 );
+
+/**
+ * Fallback to strip any plugin-queued styles containing 'hostinger-reach' or 'block-library' from output
+ */
+function cotizalo_strip_plugin_styles() {
+    if ( is_admin() ) {
+        return;
+    }
+    global $wp_styles;
+    if ( ! empty( $wp_styles->queue ) ) {
+        foreach ( $wp_styles->queue as $handle ) {
+            $style = $wp_styles->registered[$handle];
+            if ( isset( $style->src ) && ( strpos( $style->src, 'plugins/hostinger-reach' ) !== false || strpos( $style->src, 'block-library' ) !== false ) ) {
+                wp_dequeue_style( $handle );
+            }
+        }
+    }
+}
+add_action( 'wp_print_styles', 'cotizalo_strip_plugin_styles', 9999 );
+
+/**
  * Override WordPress favicon: remove wp_site_icon and inject our own.
  */
 function cotizalo_remove_wp_favicon() {
