@@ -182,7 +182,7 @@
                 </p>
                 <ul>
                     <li><strong>Control de disponibilidad y catálogo:</strong> Sabrás exactamente qué productos o servicios tienes libres para rentar o vender en cada fecha. Evita comprometer el mismo equipo dos veces y dile adiós a las dobles reservas accidentales.</li>
-                    <li><strong>Firma digital y cobro de anticipos:</strong> No dejes que la venta se enfríe. Tu cliente puede revisar, aprobar, firmar el contrato digital y pagar su anticipo directamente desde su celular. La forma más rápida de amarrar tu fecha y asegurar tus ingresos.</li>
+                    <li><strong>Firma digital y cobro de anticipos:</strong> No dejes que la venta se enfríe. Tu cliente puede revisar, aprobar, firmar el contrato digital y pagar su anticipo directamente desde su celular (conoce cómo funciona en nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: var(--primary); font-weight: 600; text-decoration: underline;">planes de precios</a>). La forma más rápida de amarrar tu fecha y asegurar tus ingresos.</li>
                     <li><strong>Tu negocio organizado en un solo lugar:</strong> Deja de brincar entre WhatsApp, fotos de libretas, hojas de Excel y la app de tu banco. Consolida tu catálogo, tus clientes y el historial de cotizaciones en una interfaz limpia diseñada para facilitarte la vida.</li>
                 </ul>
             </div>
@@ -206,8 +206,11 @@
                 </p>
             </div>
 
-            <div class="animate-on-scroll fade-in-up delay-500">
+            <div class="animate-on-scroll fade-in-up delay-500" style="margin-top: 2rem; text-align: center;">
                 <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Quiero empezar a cotizar ahora</a>
+                <p style="margin-top: 1.5rem; color: var(--text-dark-muted); font-size: 0.95rem;">
+                    ¿Tienes alguna duda técnica o comercial antes de comenzar? Visita nuestra página de <a href="<?php echo esc_url(home_url('/soporte/')); ?>" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Soporte y Contacto</a>.
+                </p>
             </div>
         </div>
     </section>
@@ -237,6 +240,8 @@
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>

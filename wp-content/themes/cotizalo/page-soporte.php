@@ -74,7 +74,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link class="canonical" rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
+    <link rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
     <title>Soporte Técnico y Contacto | Cotízalo México</title>
     <meta name="description"
         content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
@@ -467,6 +467,8 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>

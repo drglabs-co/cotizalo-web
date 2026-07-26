@@ -886,7 +886,7 @@
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    Soporte en español
+                    <a href="<?php echo esc_url(home_url('/soporte/')); ?>" style="color: inherit; text-decoration: underline;">Soporte en español</a>
                 </div>
             </div>
         </div>
@@ -917,6 +917,8 @@
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>

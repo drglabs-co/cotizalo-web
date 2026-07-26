@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
-    <title>Cotízalo | Sistema de Cotizaciones Automatizado para Empresas en México</title>
+    <title>Cotízalo | Sistema de Cotizaciones para Empresas en México</title>
     <meta name="description"
         content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
     <meta name="keywords" content="sistema de cotizaciones, cotizaciones online mexico, hacer cotizacion profesional, generador de presupuestos, software para cotizar servicios, crear cotizacion pdf, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
@@ -14,14 +14,14 @@
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url( home_url( $_SERVER['REQUEST_URI'] ) ); ?>">
-    <meta property="og:title" content="Cotízalo | Sistema de Cotizaciones Automatizado para Empresas en México">
+    <meta property="og:title" content="Cotízalo | Sistema de Cotizaciones para Empresas en México">
     <meta property="og:description" content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
     <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cotízalo | Sistema de Cotizaciones Automatizado para Empresas en México">
+    <meta name="twitter:title" content="Cotízalo | Sistema de Cotizaciones para Empresas en México">
     <meta name="twitter:description" content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
     <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
 
@@ -983,6 +983,11 @@
                     <p>Consolida tus clientes, catálogo de precios, cotizaciones y recibos de anticipo en una interfaz limpia. Olvídate de usar cinco herramientas distintas para operar.</p>
                 </div>
             </div>
+            <div class="text-center animate-on-scroll fade-in-up" style="margin-top: 3.5rem; text-align: center;">
+                <p style="color: #64748b; font-size: 1.05rem;">
+                    ¿Quieres ver cómo funciona a detalle? Conoce <a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">¿Qué es Cotízalo?</a> o consulta nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">Planes de Precios</a>.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -1006,7 +1011,7 @@
                 </div>
                 <h2 class="text-dark" style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);">Siempre contigo,<br>desde cualquier lugar.</h2>
                 <p class="text-dark-muted" style="font-size: 1.05rem; line-height: 1.7;">
-                    Tus cotizaciones viven en la nube. Ajústalas en tiempo real y tu cliente las aprueba al instante — sin correos, sin esperas, sin complicaciones.
+                    Tus cotizaciones viven en la nube. Ajústalas en tiempo real y tu cliente las aprueba al instante — sin correos, sin esperas, sin complicaciones. Conoce todos nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">planes de precios</a> para comenzar hoy mismo.
                 </p>
             </div>
 
@@ -1262,8 +1267,8 @@
                 <div class="footer-links">
                     <h4>Producto</h4>
                     <ul>
-                        <li><a href="#">Características</a></li>
-                        <li><a href="#">Precios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/')); ?>#features">Características</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/precios/')); ?>">Precios</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -1271,6 +1276,8 @@
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>
