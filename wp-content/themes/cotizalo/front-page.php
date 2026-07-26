@@ -1291,15 +1291,22 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Header scroll effect
+            // Header scroll effect (Optimized with rAF & passive listener to avoid forced reflows)
             const header = document.getElementById('navbar');
+            let ticking = false;
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (window.scrollY > 50) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
-            });
+            }, { passive: true });
 
             // Logo fallbacks
             const fallbacks = ['brand-logo', 'footer-logo'];

@@ -483,13 +483,20 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.getElementById('navbar');
+            let ticking = false;
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (window.scrollY > 50) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
-            });
+            }, { passive: true });
 
             // Logo fallbacks
             const fallbacks = ['brand-logo', 'footer-logo'];

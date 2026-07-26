@@ -932,11 +932,18 @@
     <!-- ==================== SCRIPTS ==================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Header scroll effect
+            // Header scroll effect (Optimized with rAF & passive listener)
             const header = document.getElementById('navbar');
+            let ticking = false;
             window.addEventListener('scroll', () => {
-                header.classList.toggle('scrolled', window.scrollY > 50);
-            });
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        header.classList.toggle('scrolled', window.scrollY > 50);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
 
             // Logo fallbacks
             ['brand-logo', 'footer-logo'].forEach(id => {

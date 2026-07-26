@@ -21,6 +21,16 @@ function cotizalo_scripts() {
 add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
 
 /**
+ * Load Google Fonts asynchronously to prevent render-blocking FCP delays.
+ */
+add_filter( 'style_loader_tag', function ( $html, $handle ) {
+    if ( 'google-fonts-montserrat' === $handle ) {
+        return str_replace( "rel='stylesheet'", "rel='stylesheet' media='print' onload=\"this.media='all'\"", $html );
+    }
+    return $html;
+}, 10, 2 );
+
+/**
  * Optimize asset loading: Dequeue unused block library styles, classic theme styles,
  * and plugin styles on the front-end to improve FCP and LCP.
  */
@@ -64,6 +74,28 @@ function cotizalo_strip_plugin_styles() {
     }
 }
 add_action( 'wp_print_styles', 'cotizalo_strip_plugin_styles', 9999 );
+
+/**
+ * Strip any plugin-queued scripts containing 'hostinger-reach' from front-end output
+ */
+function cotizalo_strip_plugin_scripts() {
+    if ( is_admin() ) {
+        return;
+    }
+    global $wp_scripts;
+    if ( ! empty( $wp_scripts->queue ) ) {
+        foreach ( $wp_scripts->queue as $handle ) {
+            if ( isset( $wp_scripts->registered[$handle] ) ) {
+                $script = $wp_scripts->registered[$handle];
+                if ( isset( $script->src ) && strpos( $script->src, 'plugins/hostinger-reach' ) !== false ) {
+                    wp_dequeue_script( $handle );
+                    wp_deregister_script( $handle );
+                }
+            }
+        }
+    }
+}
+add_action( 'wp_print_scripts', 'cotizalo_strip_plugin_scripts', 9999 );
 
 /**
  * Override WordPress favicon: remove wp_site_icon and inject our own.
