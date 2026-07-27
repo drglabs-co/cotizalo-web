@@ -15,7 +15,7 @@
     <title>Planes y Precios | Cotízalo - Sistema de Cotizaciones en México</title>
     <meta name="description"
         content="Elige el plan ideal para tu negocio en México. Precios transparentes sin comisiones ocultas. Todos los planes incluyen 14 días de prueba gratis. ¡Empieza hoy!">
-    <meta name="keywords" content="precios cotizalo, planes cotizalo, cotizador de precios, cotizaciones automaticas baratas, probar cotizador gratis, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
+    <meta name="keywords" content="cotizaciones web, cotizaciones online mexico app, precios cotizalo, planes cotizalo, cotizador de precios, cotizaciones automaticas baratas, probar cotizador gratis, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
