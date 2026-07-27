@@ -781,7 +781,9 @@ if ( !class_exists(UpdateChecker::class, false) ):
 				if ( (strpos($metaClass, '\\') === false) ) {
 					$metaClass = __NAMESPACE__ . '\\' . $metaClass;
 				}
-				$metadata = call_user_func(array($metaClass, 'fromJson'), $result['body']);
+				if ( class_exists($metaClass) && method_exists($metaClass, 'fromJson') ) {
+					$metadata = call_user_func(array($metaClass, 'fromJson'), $result['body']);
+				}
 			} else {
 				do_action('puc_api_error', $status, $result, $url, $this->slug);
 				$this->triggerError(
