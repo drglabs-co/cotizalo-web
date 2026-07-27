@@ -234,4 +234,20 @@ add_action( 'template_redirect', function () {
             exit;
         }
     }
+
+    if ( $uri === 'sitemap.rss' ) {
+        $template = get_template_directory() . '/sitemap-rss.php';
+        if ( file_exists( $template ) ) {
+            include $template;
+            exit;
+        }
+    }
+
+    if ( $uri === 'sitemap.xml' ) {
+        $template = get_template_directory() . '/sitemap-xml.php';
+        if ( file_exists( $template ) ) {
+            include $template;
+            exit;
+        }
+    }
 } );

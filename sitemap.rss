@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cotízalo - Sistema de Cotizaciones para Empresas</title>
+    <link>https://cotizalo.net/</link>
+    <description>Simplifica tus ventas con el mejor sistema de cotizaciones online en México.</description>
+    <language>es-MX</language>
+    <lastBuildDate>Mon, 27 Jul 2026 17:00:00 -0600</lastBuildDate>
+    <atom:link href="https://cotizalo.net/sitemap.rss" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Cotízalo | Sistema de Cotizaciones para Empresas en México</title>
+      <link>https://cotizalo.net/</link>
+      <guid isPermaLink="true">https://cotizalo.net/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF.</description>
+    </item>
+    <item>
+      <title>¿Qué es Cotízalo?</title>
+      <link>https://cotizalo.net/que-es-cotizalo/</link>
+      <guid isPermaLink="true">https://cotizalo.net/que-es-cotizalo/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Descubre cómo Cotízalo ayuda a microempresas y emprendedores a digitalizar su proceso de cotización y ventas.</description>
+    </item>
+    <item>
+      <title>Planes y Precios | Cotízalo</title>
+      <link>https://cotizalo.net/precios/</link>
+      <guid isPermaLink="true">https://cotizalo.net/precios/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Conoce nuestros planes y precios transparentes. Elige el plan ideal para hacer crecer tu negocio.</description>
+    </item>
+    <item>
+      <title>Centro de Soporte y Ayuda | Cotízalo</title>
+      <link>https://cotizalo.net/soporte/</link>
+      <guid isPermaLink="true">https://cotizalo.net/soporte/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Obtén ayuda, resuelve tus dudas y contacta a nuestro equipo de soporte técnico.</description>
+    </item>
+    <item>
+      <title>Aviso de Privacidad | Cotízalo</title>
+      <link>https://cotizalo.net/aviso-de-privacidad/</link>
+      <guid isPermaLink="true">https://cotizalo.net/aviso-de-privacidad/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Consulta nuestro aviso de privacidad y cómo protegemos tus datos personales.</description>
+    </item>
+    <item>
+      <title>Términos y Condiciones | Cotízalo</title>
+      <link>https://cotizalo.net/terminos-y-condiciones/</link>
+      <guid isPermaLink="true">https://cotizalo.net/terminos-y-condiciones/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Revisa los términos y condiciones de uso del servicio Cotízalo.</description>
+    </item>
+  </channel>
+</rss>
