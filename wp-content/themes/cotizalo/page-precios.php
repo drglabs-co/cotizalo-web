@@ -618,7 +618,14 @@
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Exportación a PDF
+                            Envío por WhatsApp y PDF
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Monitoreo de estado de cotizaciones
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -665,7 +672,14 @@
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Exportación a PDF
+                            Envío por WhatsApp y PDF
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Monitoreo de estado de cotizaciones
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -720,14 +734,35 @@
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Multi-empresa
+                            Envío por WhatsApp y PDF
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Reportes avanzados
+                            Monitoreo de estado de cotizaciones
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Agenda de presupuestos autorizados
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Productos más vendidos o cotizados
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Multi-empresa y reportes avanzados
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -774,21 +809,35 @@
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Multi-empresa
+                            Envío por WhatsApp y PDF
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Cuenta de Administrador
+                            Monitoreo de estado en tiempo real
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Reportes y analíticas completas
+                            Agenda de presupuestos autorizados
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Analíticas de productos más vendidos y cotizados
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Multi-empresa y Cuenta Administrador
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
