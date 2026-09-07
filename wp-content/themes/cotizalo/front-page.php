@@ -983,7 +983,237 @@
                     <h3>Todo en un solo lugar</h3>
                     <p>Consolida tus clientes, catálogo de precios, cotizaciones y recibos de anticipo en una interfaz limpia. Olvídate de usar cinco herramientas distintas para operar.</p>
                 </div>
+                <!-- Feature 5 -->
+                <div class="feature-card animate-on-scroll fade-in-up delay-200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <h3>Búsqueda y edición en segundos</h3>
+                    <p>Localiza al instante cualquier cotización por cliente, folio o fecha. Modifica conceptos o precios con un clic sin tener que rehacer todo desde cero.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card animate-on-scroll fade-in-up delay-300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Seguimiento sin límites de IA</h3>
+                    <p>Olvídate de quedarte sin créditos en bots de IA o perder cotizaciones en capturas de pantalla. Monitorea el estatus de cada propuesta desde cualquier dispositivo.</p>
+                </div>
             </div>
+
+            <!-- ==================== HIGHLIGHT: VALOR AGREGADO VS IMÁGENES / IA ==================== -->
+            <div class="vs-ai-showcase animate-on-scroll fade-in-up" style="
+                margin: 4.5rem auto 2.5rem;
+                background: #0A0E1A;
+                border: 1px solid rgba(74, 222, 128, 0.3);
+                border-radius: 24px;
+                padding: clamp(2rem, 5vw, 3.5rem);
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(18, 58, 44, 0.35);
+                position: relative;
+                overflow: hidden;
+            ">
+                <!-- Background ambient glow -->
+                <div style="
+                    position: absolute;
+                    top: -120px;
+                    right: -100px;
+                    width: 320px;
+                    height: 320px;
+                    background: radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%);
+                    pointer-events: none;
+                "></div>
+                <div style="
+                    position: absolute;
+                    bottom: -100px;
+                    left: -100px;
+                    width: 280px;
+                    height: 280px;
+                    background: radial-gradient(circle, rgba(239, 68, 68, 0.14) 0%, transparent 70%);
+                    pointer-events: none;
+                "></div>
+
+                <!-- Header of the highlight box -->
+                <div style="text-align: center; max-width: 820px; margin: 0 auto 3rem; position: relative; z-index: 1;">
+                    <div style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        background: rgba(74, 222, 128, 0.12);
+                        border: 1px solid rgba(74, 222, 128, 0.35);
+                        border-radius: 999px;
+                        padding: 6px 18px;
+                        margin-bottom: 1.25rem;
+                    ">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span style="font-size: 0.78rem; font-weight: 700; color: #4ade80; letter-spacing: 0.08em; text-transform: uppercase;">Valor Agregado Cotízalo</span>
+                    </div>
+                    <h3 style="
+                        font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+                        font-weight: 700;
+                        color: #ffffff;
+                        line-height: 1.25;
+                        margin-bottom: 1rem;
+                    ">
+                        Dile adiós a las imágenes de cotizaciones y a quedarte sin créditos de IA
+                    </h3>
+                    <p style="
+                        color: rgba(255, 255, 255, 0.78);
+                        font-size: 1.05rem;
+                        line-height: 1.7;
+                        margin: 0;
+                    ">
+                        Mandar fotos de cotizaciones o depender de generadores de IA parece rápido, pero pronto se vuelve un dolor de cabeza: no puedes editarlas, se pierden en el chat, te quedas sin créditos a fin de mes y dar seguimiento es imposible. Cotízalo te da una <strong>interfaz gráfica dedicada</strong> para buscar, editar y dar seguimiento a cada cliente desde cualquier dispositivo.
+                    </p>
+                </div>
+
+                <!-- Comparison 2-column Grid -->
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+                    gap: 1.75rem;
+                    position: relative;
+                    z-index: 1;
+                " class="vs-ai-grid">
+
+                    <!-- Col 1: Las imágenes y la IA improvisada -->
+                    <div style="
+                        background: rgba(239, 68, 68, 0.06);
+                        border: 1px solid rgba(239, 68, 68, 0.25);
+                        border-radius: 18px;
+                        padding: 2rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25rem;
+                    ">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                            <div style="
+                                width: 36px; height: 36px; border-radius: 10px;
+                                background: rgba(239, 68, 68, 0.15);
+                                display: flex; align-items: center; justify-content: center;
+                                color: #ef4444; flex-shrink: 0;
+                            ">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            </div>
+                            <h4 style="color: #fca5a5; font-size: 1.15rem; font-weight: 700; margin: 0;">Con imágenes o bots de IA</h4>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Difíciles de buscar</strong>
+                                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Se pierden en la galería de fotos o en hilos infinitos de WhatsApp. Encontrar una propuesta pasada es perder tiempo.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Cero edición ágil</strong>
+                                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Si tu cliente pide cambiar una cantidad o concepto, una imagen no se puede editar; tienes que rehacerla desde cero.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Límite de créditos y tokens</strong>
+                                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Las herramientas de IA te dejan sin saldo en el momento más inoportuno, frenando el cierre de tus ventas.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Imposible dar seguimiento</strong>
+                                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">No sabes cuáles presupuestos siguen pendientes, cuáles ya fueron aceptados o a quién debes llamar para cerrar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Con la interfaz gráfica de Cotízalo -->
+                    <div style="
+                        background: rgba(18, 58, 44, 0.45);
+                        border: 1px solid rgba(74, 222, 128, 0.45);
+                        border-radius: 18px;
+                        padding: 2rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25rem;
+                        box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);
+                    ">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                            <div style="
+                                width: 36px; height: 36px; border-radius: 10px;
+                                background: rgba(74, 222, 128, 0.2);
+                                display: flex; align-items: center; justify-content: center;
+                                color: #4ade80; flex-shrink: 0;
+                            ">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <h4 style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin: 0;">Con la Interfaz Gráfica de Cotízalo</h4>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Búsqueda instantánea</strong>
+                                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Encuentra cualquier propuesta en 1 segundo por nombre del cliente, folio o fecha con filtros inteligentes.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Edición en segundos con un clic</strong>
+                                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Ajusta conceptos, productos o descuentos al instante sin tener que volver a redactar o generar nada.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Sin límites ni créditos de IA</strong>
+                                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Crea todas las cotizaciones que tu empresa demande. Tu ritmo de ventas nunca se detiene por falta de saldo.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Seguimiento total desde cualquier dispositivo</strong>
+                                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Controla el estado exacto de cada cliente (enviada, firmada, pagada) desde tu celular, tablet o PC en tiempo real.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom CTA inside showcase -->
+                <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
+                    <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);">
+                        Empieza a cotizar con interfaz gráfica
+                        <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <style>
+                @media (max-width: 768px) {
+                    .vs-ai-grid {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
             <div class="text-center animate-on-scroll fade-in-up" style="margin-top: 3.5rem; text-align: center;">
                 <p style="color: #64748b; font-size: 1.05rem;">
                     ¿Quieres ver cómo funciona a detalle? Conoce <a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">¿Qué es Cotízalo?</a> o consulta nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">Planes de Precios</a>.
@@ -1070,7 +1300,7 @@
                     </div>
 
                     <!-- Benefit 3 -->
-                    <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                    <div style="display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 2.5rem;">
                         <div style="
                             flex-shrink: 0; width: 52px; height: 52px;
                             background: rgba(234,88,12,0.08);
@@ -1087,6 +1317,29 @@
                             <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">Ajustes en tiempo real · Aprobación inmediata</h3>
                             <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
                                 ¿El cliente pide un cambio? Actualiza la cotización al instante y él la ve reflejada de inmediato. Aprobación con un clic, sin correos de ida y vuelta.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                        <div style="
+                            flex-shrink: 0; width: 52px; height: 52px;
+                            background: rgba(16,185,129,0.08);
+                            border: 1px solid rgba(16,185,129,0.25);
+                            border-radius: 14px;
+                            display: flex; align-items: center; justify-content: center;
+                        ">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <polyline points="11 8 11 11 14 11"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">Búsqueda y seguimiento sin límites de IA</h3>
+                            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
+                                Olvídate de buscar imágenes perdidas en WhatsApp o quedarte sin créditos en bots de IA. Accede a una interfaz gráfica para encontrar cualquier propuesta en un clic, editar cambios y dar seguimiento a cada cliente desde cualquier dispositivo.
                             </p>
                         </div>
                     </div>

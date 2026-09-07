@@ -212,6 +212,7 @@
                     <!-- Benefit 3 -->
                     <div style="
                         display: flex; gap: 1.25rem; align-items: flex-start;
+                        margin-bottom: 2.5rem;
                     ">
                         <div style="
                             flex-shrink: 0;
@@ -230,6 +231,32 @@
                             <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0 0 0.4rem;">Ajustes en tiempo real · Aprobación inmediata</h3>
                             <p style="color: rgba(255,255,255,0.55); font-size: 0.95rem; line-height: 1.65; margin: 0;">
                                 ¿El cliente pide un cambio de último momento? Actualiza la cotización al instante y él la ve reflejada de inmediato. Aprobación con un clic, sin ir y venir de correos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div style="
+                        display: flex; gap: 1.25rem; align-items: flex-start;
+                    ">
+                        <div style="
+                            flex-shrink: 0;
+                            width: 52px; height: 52px;
+                            background: rgba(16,185,129,0.15);
+                            border: 1px solid rgba(16,185,129,0.3);
+                            border-radius: 14px;
+                            display: flex; align-items: center; justify-content: center;
+                        ">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <polyline points="11 8 11 11 14 11"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0 0 0.4rem;">Búsqueda y seguimiento sin límites de IA</h3>
+                            <p style="color: rgba(255,255,255,0.55); font-size: 0.95rem; line-height: 1.65; margin: 0;">
+                                Olvídate de buscar imágenes perdidas en WhatsApp o quedarte sin créditos en bots de IA. Accede a una interfaz gráfica para encontrar cualquier propuesta en un clic, editar cambios y dar seguimiento a cada cliente desde cualquier dispositivo.
                             </p>
                         </div>
                     </div>

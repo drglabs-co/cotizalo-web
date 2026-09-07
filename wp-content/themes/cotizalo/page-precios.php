@@ -572,7 +572,7 @@
                     Plan de Suscripción
                 </p>
                 <h1>Precios simples y transparentes</h1>
-                <p>Sin costos ocultos. Sin contratos. Cancela cuando quieras.</p>
+                <p>Sin costos ocultos ni límites de créditos de IA. Interfaz gráfica completa para buscar, editar y dar seguimiento a tus clientes.</p>
                 <span class="badge-trial">
                     <span class="emoji">🎁</span>
                     ¡Incluye 14 días de prueba gratis!
@@ -937,6 +937,13 @@
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
                     Sin tarjeta de crédito requerida
+                </div>
+                <div class="guarantee-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Sin límites de créditos de IA
                 </div>
                 <div class="guarantee-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

@@ -167,21 +167,25 @@
             </p>
 
             <div class="content-box animate-on-scroll fade-in-up delay-100" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>El Fin del Excel y el Papel</h2>
+                <h2>El Fin del Excel, el Papel y las Cotizaciones en Imágenes o IA</h2>
                 <p>
-                    Si eres emprendedor, conoces el dolor de cabeza que significa hacer cotizaciones manuales. Perder el tiempo buscando el último archivo de Excel, pelear con el formato para que se vea decente en PDF, o incluso hacer presupuestos a mano en papel. Y lo peor: olvidar a qué cliente se lo enviaste y no darle el seguimiento adecuado.
+                    Si eres emprendedor, conoces el dolor de cabeza que significa hacer presupuestos manuales. Perder tiempo buscando el último archivo de Excel, pelear con formatos en PDF o caer en la trampa de mandar capturas de pantalla de cotizaciones y depender de herramientas de Inteligencia Artificial que te dejan sin créditos a mitad de mes.
                 </p>
                 <p>
-                    <strong>Cotízalo nace para resolver ese problema exacto.</strong> Queremos que hacer un presupuesto te tome segundos, no horas. Que tu cliente lo reciba en formato digital, interactivo y lo pueda aprobar desde su celular con un solo clic.
+                    <strong>¿El problema con las imágenes y los bots de IA?</strong> Las imágenes no se pueden editar cuando tu cliente pide un cambio, se pierden en la galería de tu celular o en chats infinitos de WhatsApp, y es casi imposible dar un seguimiento comercial formal. Además, quedarte sin saldo de IA cuando estás a punto de cerrar un trato frena tus ventas.
+                </p>
+                <p>
+                    <strong>Cotízalo nace para resolver ese problema exacto.</strong> Te brinda una interfaz gráfica profesional desde donde buscas cotizaciones pasadas en segundos, editas propuestas con un solo clic y das seguimiento puntual a cada cliente desde tu celular, tablet o computadora.
                 </p>
             </div>
 
             <div class="content-box animate-on-scroll fade-in-up delay-200" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>Las 3 Herramientas Clave para tu Digitalización</h2>
+                <h2>Las 4 Herramientas Clave para tu Digitalización</h2>
                 <p>
                     Inspirados en las mejores prácticas de los sistemas de cotización y reservas más avanzados del mundo, adaptamos las funciones más potentes para que cualquier negocio o profesional independiente pueda usarlas desde el primer día, sin complicaciones:
                 </p>
                 <ul>
+                    <li><strong>Interfaz gráfica con búsqueda y seguimiento sin límites de IA:</strong> Olvídate de imágenes estáticas o de quedarte sin créditos en bots de IA. Accede a un panel visual donde buscas clientes o folios al instante, editas en segundos y monitoreas el estado de cada cotización (enviada, firmada, pagada) desde cualquier dispositivo.</li>
                     <li><strong>Control de disponibilidad y catálogo:</strong> Sabrás exactamente qué productos o servicios tienes libres para rentar o vender en cada fecha. Evita comprometer el mismo equipo dos veces y dile adiós a las dobles reservas accidentales.</li>
                     <li><strong>Firma digital y cobro de anticipos:</strong> No dejes que la venta se enfríe. Tu cliente puede revisar, aprobar, firmar el contrato digital y pagar su anticipo directamente desde su celular (conoce cómo funciona en nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: var(--primary); font-weight: 600; text-decoration: underline;">planes de precios</a>). La forma más rápida de amarrar tu fecha y asegurar tus ingresos.</li>
                     <li><strong>Tu negocio organizado en un solo lugar:</strong> Deja de brincar entre WhatsApp, fotos de libretas, hojas de Excel y la app de tu banco. Consolida tu catálogo, tus clientes y el historial de cotizaciones en una interfaz limpia diseñada para facilitarte la vida.</li>
@@ -193,7 +197,7 @@
                 <ul>
                     <li><strong>Simplicidad ante todo:</strong> Un sistema fácil de usar donde creas y envías propuestas en menos de un minuto.</li>
                     <li><strong>100% Digitales y Móviles:</strong> Tus cotizaciones viven en la nube. Puedes revisarlas y modificarlas desde tu celular en cualquier lugar.</li>
-                    <li><strong>Seguimiento sin esfuerzo:</strong> Sabes exactamente en qué estado está cada cotización y cuándo darle seguimiento a tu cliente para cerrar la venta.</li>
+                    <li><strong>Búsqueda instantánea y seguimiento visual:</strong> Sabes exactamente en qué estado está cada cotización y cuándo darle seguimiento a tu cliente para cerrar la venta, sin perder tiempo buscando capturas en tu galería ni depender de créditos de IA.</li>
                 </ul>
             </div>
 
