@@ -551,8 +551,8 @@
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item nav-item--active">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
             <!-- Mobile Menu Toggle -->
             <div class="mobile-menu-btn">
@@ -569,13 +569,13 @@
             <div class="animate-on-scroll fade-in-up">
                 <p
                     style="font-size:0.875rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:1rem;">
-                    Plan de Suscripción
+                    <?php echo esc_html(get_theme_mod('precios_hero_label', 'Plan de Suscripción')); ?>
                 </p>
-                <h1>Precios simples y transparentes</h1>
-                <p>Sin costos ocultos ni límites de créditos de IA. Interfaz gráfica completa para buscar, editar y dar seguimiento a tus clientes.</p>
+                <h1><?php echo esc_html(get_theme_mod('precios_hero_title', 'Precios simples y transparentes')); ?></h1>
+                <p><?php echo esc_html(get_theme_mod('precios_hero_desc', 'Sin costos ocultos ni límites de créditos de IA. Interfaz gráfica completa para buscar, editar y dar seguimiento a tus clientes.')); ?></p>
                 <span class="badge-trial">
                     <span class="emoji">🎁</span>
-                    ¡Incluye 14 días de prueba gratis!
+                    <?php echo esc_html(get_theme_mod('precios_hero_badge', '¡Incluye 14 días de prueba gratis!')); ?>
                 </span>
             </div>
         </div>
@@ -589,11 +589,11 @@
                 <!-- Plan: Inicial -->
                 <div class="plan-card">
                     <div>
-                        <p class="plan-name">Inicial</p>
+                        <p class="plan-name"><?php echo esc_html(get_theme_mod('plan_inicial_name', 'Inicial')); ?></p>
                     </div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">199</span>
+                        <span class="amount"><?php echo esc_html(get_theme_mod('plan_inicial_price', '199')); ?></span>
                         <span class="period">/mes</span>
                     </div>
                     <div class="plan-storage">
@@ -603,58 +603,28 @@
                             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
                         </svg>
-                        3 GB de almacenamiento
+                        <?php echo esc_html(get_theme_mod('plan_inicial_storage', '3 GB de almacenamiento')); ?>
                     </div>
                     <ul class="plan-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Cotizaciones ilimitadas
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Envío por WhatsApp y PDF
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Monitoreo de estado de cotizaciones
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Soporte por email
-                        </li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_inicial_f1', 'Cotizaciones ilimitadas')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_inicial_f2', 'Envío por WhatsApp y PDF')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_inicial_f3', 'Monitoreo de estado de cotizaciones')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_inicial_f4', 'Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_inicial_f5', 'Soporte por email')); ?></li>
                     </ul>
-                    <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-inicial">
-                        Comenzar Prueba Gratis
+                    <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="plan-btn" id="btn-plan-inicial">
+                        <?php echo esc_html(get_theme_mod('plan_inicial_btn', 'Comenzar Prueba Gratis')); ?>
                     </a>
                 </div>
 
                 <!-- Plan: Básico -->
                 <div class="plan-card">
                     <div>
-                        <p class="plan-name">Básico</p>
+                        <p class="plan-name"><?php echo esc_html(get_theme_mod('plan_basico_name', 'Básico')); ?></p>
                     </div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">399</span>
+                        <span class="amount"><?php echo esc_html(get_theme_mod('plan_basico_price', '399')); ?></span>
                         <span class="period">/mes</span>
                     </div>
                     <div class="plan-storage">
@@ -664,66 +634,30 @@
                             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
                         </svg>
-                        10 GB de almacenamiento
+                        <?php echo esc_html(get_theme_mod('plan_basico_storage', '10 GB de almacenamiento')); ?>
                     </div>
                     <ul class="plan-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Cotizaciones ilimitadas
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Envío por WhatsApp y PDF
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Monitoreo de estado de cotizaciones
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Catálogo de productos
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Soporte por email
-                        </li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_basico_f1', 'Cotizaciones ilimitadas')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_basico_f2', 'Envío por WhatsApp y PDF')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_basico_f3', 'Monitoreo de estado de cotizaciones')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_basico_f4', 'Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_basico_f5', 'Catálogo de productos')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_basico_f6', 'Soporte por email')); ?></li>
                     </ul>
-                    <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-basico">
-                        Comenzar Prueba Gratis
+                    <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="plan-btn" id="btn-plan-basico">
+                        <?php echo esc_html(get_theme_mod('plan_basico_btn', 'Comenzar Prueba Gratis')); ?>
                     </a>
                 </div>
 
                 <!-- Plan: Profesional (RECOMENDADO) -->
                 <div class="plan-card featured">
-                    <span class="recommended-badge">Recomendado</span>
+                    <span class="recommended-badge"><?php echo esc_html(get_theme_mod('plan_pro_badge', 'Recomendado')); ?></span>
                     <div>
-                        <p class="plan-name">Profesional</p>
+                        <p class="plan-name"><?php echo esc_html(get_theme_mod('plan_pro_name', 'Profesional')); ?></p>
                     </div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">599</span>
+                        <span class="amount"><?php echo esc_html(get_theme_mod('plan_pro_price', '599')); ?></span>
                         <span class="period">/mes</span>
                     </div>
                     <div class="plan-storage">
@@ -733,72 +667,30 @@
                             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
                         </svg>
-                        50 GB de almacenamiento
+                        <?php echo esc_html(get_theme_mod('plan_pro_storage', '50 GB de almacenamiento')); ?>
                     </div>
                     <ul class="plan-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Cotizaciones ilimitadas
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Envío por WhatsApp y PDF
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Monitoreo de estado de cotizaciones
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Productos más vendidos o cotizados
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Multi-empresa y reportes avanzados
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Soporte por email
-                        </li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f1', 'Cotizaciones ilimitadas')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f2', 'Envío por WhatsApp y PDF')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f3', 'Monitoreo de estado de cotizaciones')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f4', 'Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f5', 'Productos más vendidos o cotizados')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f6', 'Multi-empresa y reportes avanzados')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_pro_f7', 'Soporte por email')); ?></li>
                     </ul>
-                    <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-profesional">
-                        Comenzar Prueba Gratis
+                    <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="plan-btn" id="btn-plan-profesional">
+                        <?php echo esc_html(get_theme_mod('plan_pro_btn', 'Comenzar Prueba Gratis')); ?>
                     </a>
                 </div>
 
                 <!-- Plan: Empresarial -->
                 <div class="plan-card">
                     <div>
-                        <p class="plan-name">Empresarial</p>
+                        <p class="plan-name"><?php echo esc_html(get_theme_mod('plan_emp_name', 'Empresarial')); ?></p>
                     </div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">899</span>
+                        <span class="amount"><?php echo esc_html(get_theme_mod('plan_emp_price', '899')); ?></span>
                         <span class="period">/mes</span>
                     </div>
                     <div class="plan-storage">
@@ -808,61 +700,19 @@
                             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
                         </svg>
-                        80 GB de almacenamiento
+                        <?php echo esc_html(get_theme_mod('plan_emp_storage', '80 GB de almacenamiento')); ?>
                     </div>
                     <ul class="plan-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Cotizaciones ilimitadas
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Envío por WhatsApp y PDF
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Monitoreo de estado en tiempo real
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Analíticas de productos más vendidos y cotizados
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Multi-empresa y Cuenta Administrador
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Soporte por email
-                        </li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f1', 'Cotizaciones ilimitadas')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f2', 'Envío por WhatsApp y PDF')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f3', 'Monitoreo de estado en tiempo real')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f4', 'Agenda de presupuestos autorizados (Google, Outlook y Apple Calendar)')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f5', 'Analíticas de productos más vendidos y cotizados')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f6', 'Multi-empresa y Cuenta Administrador')); ?></li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg><?php echo esc_html(get_theme_mod('plan_emp_f7', 'Soporte por email')); ?></li>
                     </ul>
-                    <a href="https://app.cotizalo.net/signup" class="plan-btn" id="btn-plan-empresarial">
-                        Comenzar Prueba Gratis
+                    <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="plan-btn" id="btn-plan-empresarial">
+                        <?php echo esc_html(get_theme_mod('plan_emp_btn', 'Comenzar Prueba Gratis')); ?>
                     </a>
                 </div>
 
@@ -929,35 +779,35 @@
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    14 días de prueba gratis
+                    <?php echo esc_html(get_theme_mod('garantia_1', '14 días de prueba gratis')); ?>
                 </div>
                 <div class="guarantee-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    Sin tarjeta de crédito requerida
+                    <?php echo esc_html(get_theme_mod('garantia_2', 'Sin tarjeta de crédito requerida')); ?>
                 </div>
                 <div class="guarantee-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    Sin límites de créditos de IA
+                    <?php echo esc_html(get_theme_mod('garantia_3', 'Sin límites de créditos de IA')); ?>
                 </div>
                 <div class="guarantee-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    Cancela en cualquier momento
+                    <?php echo esc_html(get_theme_mod('garantia_4', 'Cancela en cualquier momento')); ?>
                 </div>
                 <div class="guarantee-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <a href="<?php echo esc_url(home_url('/soporte/')); ?>" style="color: inherit; text-decoration: underline;">Soporte en español</a>
+                    <a href="<?php echo esc_url(home_url('/soporte/')); ?>" style="color: inherit; text-decoration: underline;"><?php echo esc_html(get_theme_mod('garantia_5', 'Soporte en español')); ?></a>
                 </div>
             </div>
         </div>
@@ -973,8 +823,7 @@
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
                             id="footer-logo" width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
-                        ventas crean, envían y cierran propuestas.</p>
+                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -994,7 +843,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DrG Labs CO. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
             </div>
         </div>
     </footer>

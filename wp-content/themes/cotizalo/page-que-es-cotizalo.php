@@ -144,8 +144,8 @@
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -161,58 +161,23 @@
     <section class="page-hero">
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;">¿Qué es Cotízalo?</h1>
+            <h1 class="display-title-sm" style="margin-bottom: 1rem;"><?php echo esc_html(get_theme_mod('que_es_title', '¿Qué es Cotízalo?')); ?></h1>
             <p class="text-muted" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">
-                La herramienta directa, simple y sin complicaciones para emprendedores que quieren dejar atrás el Excel y el papel.
+                <?php echo esc_html(get_theme_mod('que_es_subtitle', 'La herramienta directa, simple y sin complicaciones para emprendedores que quieren dejar atrás el Excel y el papel.')); ?>
             </p>
 
             <div class="content-box animate-on-scroll fade-in-up delay-100" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>El Fin del Excel, el Papel y las Cotizaciones en Imágenes o IA</h2>
-                <p>
-                    Si eres emprendedor, conoces el dolor de cabeza que significa hacer presupuestos manuales. Perder tiempo buscando el último archivo de Excel, pelear con formatos en PDF o caer en la trampa de mandar capturas de pantalla de cotizaciones y depender de herramientas de Inteligencia Artificial que te dejan sin créditos a mitad de mes.
-                </p>
-                <p>
-                    <strong>¿El problema con las imágenes y los bots de IA?</strong> Las imágenes no se pueden editar cuando tu cliente pide un cambio, se pierden en la galería de tu celular o en chats infinitos de WhatsApp, y es casi imposible dar un seguimiento comercial formal. Además, quedarte sin saldo de IA cuando estás a punto de cerrar un trato frena tus ventas.
-                </p>
-                <p>
-                    <strong>Cotízalo nace para resolver ese problema exacto.</strong> Te brinda una interfaz gráfica profesional desde donde buscas cotizaciones pasadas en segundos, editas propuestas con un solo clic y das seguimiento puntual a cada cliente desde tu celular, tablet o computadora.
-                </p>
-            </div>
-
-            <div class="content-box animate-on-scroll fade-in-up delay-200" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>Las 4 Herramientas Clave para tu Digitalización</h2>
-                <p>
-                    Inspirados en las mejores prácticas de los sistemas de cotización y reservas más avanzados del mundo, adaptamos las funciones más potentes para que cualquier negocio o profesional independiente pueda usarlas desde el primer día, sin complicaciones:
-                </p>
-                <ul>
-                    <li><strong>Interfaz gráfica con búsqueda y seguimiento sin límites de IA:</strong> Olvídate de imágenes estáticas o de quedarte sin créditos en bots de IA. Accede a un panel visual donde buscas clientes o folios al instante, editas en segundos y monitoreas el estado de cada cotización (enviada, firmada, pagada) desde cualquier dispositivo.</li>
-                    <li><strong>Control de disponibilidad y catálogo:</strong> Sabrás exactamente qué productos o servicios tienes libres para rentar o vender en cada fecha. Evita comprometer el mismo equipo dos veces y dile adiós a las dobles reservas accidentales.</li>
-                    <li><strong>Firma digital y cobro de anticipos:</strong> No dejes que la venta se enfríe. Tu cliente puede revisar, aprobar, firmar el contrato digital y pagar su anticipo directamente desde su celular (conoce cómo funciona en nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: var(--primary); font-weight: 600; text-decoration: underline;">planes de precios</a>). La forma más rápida de amarrar tu fecha y asegurar tus ingresos.</li>
-                    <li><strong>Tu negocio organizado en un solo lugar:</strong> Deja de brincar entre WhatsApp, fotos de libretas, hojas de Excel y la app de tu banco. Consolida tu catálogo, tus clientes y el historial de cotizaciones en una interfaz limpia diseñada para facilitarte la vida.</li>
-                </ul>
-            </div>
-
-            <div class="content-box animate-on-scroll fade-in-up delay-300" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>Lo que SÍ somos</h2>
-                <ul>
-                    <li><strong>Simplicidad ante todo:</strong> Un sistema fácil de usar donde creas y envías propuestas en menos de un minuto.</li>
-                    <li><strong>100% Digitales y Móviles:</strong> Tus cotizaciones viven en la nube. Puedes revisarlas y modificarlas desde tu celular en cualquier lugar.</li>
-                    <li><strong>Búsqueda instantánea y seguimiento visual:</strong> Sabes exactamente en qué estado está cada cotización y cuándo darle seguimiento a tu cliente para cerrar la venta, sin perder tiempo buscando capturas en tu galería ni depender de créditos de IA.</li>
-                </ul>
-            </div>
-
-            <div class="content-box animate-on-scroll fade-in-up delay-400" style="text-align: left; max-width: 800px; margin: 0 auto 3rem; border-color: rgba(239, 68, 68, 0.3);">
-                <h2>Lo que NO somos</h2>
-                <p>
-                    <strong>No somos un CRM complejo.</strong> El mercado está lleno de sistemas enormes, costosos y con miles de funciones (embudos complejos, automatizaciones de marketing, reportes infinitos) que el 90% de los emprendedores nunca utiliza. 
-                </p>
-                <p>
-                    Si buscas una herramienta que requiera semanas de capacitación, Cotízalo no es para ti. Pero si necesitas una herramienta directa y sin complicaciones que simplemente te ayude a verte profesional, presupuestar rápido y darle seguimiento fácil a tus prospectos... entonces estás en el lugar correcto.
-                </p>
+                <?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        the_content();
+                    endwhile;
+                endif;
+                ?>
             </div>
 
             <div class="animate-on-scroll fade-in-up delay-500" style="margin-top: 2rem; text-align: center;">
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Quiero empezar a cotizar ahora</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-lg"><?php echo esc_html(get_theme_mod('hero_btn_text', 'Quiero empezar a cotizar ahora')); ?></a>
                 <p style="margin-top: 1.5rem; color: var(--text-dark-muted); font-size: 0.95rem;">
                     ¿Tienes alguna duda técnica o comercial antes de comenzar? Visita nuestra página de <a href="<?php echo esc_url(home_url('/soporte/')); ?>" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Soporte y Contacto</a>.
                 </p>
@@ -230,8 +195,7 @@
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
                             id="footer-logo" width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
-                        ventas crean, envían y cierran propuestas.</p>
+                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -251,7 +215,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DrG Labs CO. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
             </div>
         </div>
     </footer>

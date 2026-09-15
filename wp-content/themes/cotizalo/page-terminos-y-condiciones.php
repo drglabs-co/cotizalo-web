@@ -100,8 +100,8 @@
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -117,36 +117,19 @@
     <section class="page-hero">
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;">Términos y Condiciones</h1>
+            <h1 class="display-title-sm" style="margin-bottom: 1rem;"><?php echo esc_html(get_theme_mod('terminos_title', 'Términos y Condiciones')); ?></h1>
             <p class="text-muted" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">
-                Por favor, lee detalladamente los términos de servicio antes de utilizar nuestra herramienta.
+                <?php echo esc_html(get_theme_mod('terminos_subtitle', 'Por favor, lee detalladamente los términos de servicio antes de utilizar nuestra herramienta.')); ?>
             </p>
 
             <div class="content-box animate-on-scroll fade-in-up delay-100" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>1. Aceptación de los Términos</h2>
-                <p>
-                    Al registrarte, ingresar o hacer uso del software en la nube de Cotízalo (disponible en app.cotizalo.net), aceptas sujetarte a los presentes Términos y Condiciones. Si no estás de acuerdo con alguna de las cláusulas, deberás abstenerte de utilizar el sistema.
-                </p>
-
-                <h2>2. Licencia de Uso</h2>
-                <p>
-                    Cotízalo te otorga una licencia limitada, no exclusiva, revocable e intransferible para hacer uso del software conforme a los planes de precios contratados, con el único propósito de gestionar, emitir, enviar y cobrar tus cotizaciones comerciales.
-                </p>
-
-                <h2>3. Cuentas y Contraseñas</h2>
-                <p>
-                    Eres responsable de salvaguardar la confidencialidad de tu usuario y contraseña. Cualquier actividad realizada bajo tu cuenta será de tu exclusiva responsabilidad. En caso de detectar accesos no autorizados, deberás notificarlo inmediatamente a nuestro equipo de soporte.
-                </p>
-
-                <h2>4. Responsabilidad de Contenidos</h2>
-                <p>
-                    Eres el único propietario y responsable de los contenidos de tus cotizaciones (catálogo de precios, descripciones de servicios, datos de tus clientes y montos cobrados). Cotízalo únicamente provee la infraestructura técnica en la nube y no interviene ni se responsabiliza de los tratos comerciales o acuerdos formalizados entre tú y tus clientes.
-                </p>
-
-                <h2>5. Modificaciones del Servicio</h2>
-                <p>
-                    Nos reservamos el derecho de actualizar, modificar o discontinuar temporal o permanentemente funciones específicas de la plataforma para mejorar el rendimiento técnico o la experiencia general. Dichas actualizaciones se comunicarán con anticipación razonable en caso de afectar de manera crítica la operación básica del servicio.
-                </p>
+                <?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        the_content();
+                    endwhile;
+                endif;
+                ?>
             </div>
         </div>
     </section>
@@ -161,8 +144,7 @@
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
                             id="footer-logo" width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
-                        ventas crean, envían y cierran propuestas.</p>
+                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -182,7 +164,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DrG Labs CO. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
             </div>
         </div>
     </footer>

@@ -123,8 +123,8 @@
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -980,8 +980,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
                         </svg>
                     </div>
-                    <h3>Todo en un solo lugar</h3>
-                    <p>Consolida tus clientes, catálogo de precios, cotizaciones y recibos de anticipo en una interfaz limpia. Olvídate de usar cinco herramientas distintas para operar.</p>
+                    <h3><?php echo esc_html(get_theme_mod('feat_4_title', 'Todo en un solo lugar')); ?></h3>
+                    <p><?php echo esc_html(get_theme_mod('feat_4_desc', 'Consolida tus clientes, catálogo de precios, cotizaciones y recibos de anticipo en una interfaz limpia. Olvídate de usar cinco herramientas distintas para operar.')); ?></p>
                 </div>
                 <!-- Feature 5 -->
                 <div class="feature-card animate-on-scroll fade-in-up delay-200">
@@ -991,8 +991,8 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </div>
-                    <h3>Búsqueda y edición en segundos</h3>
-                    <p>Localiza al instante cualquier cotización por cliente, folio o fecha. Modifica conceptos o precios con un clic sin tener que rehacer todo desde cero.</p>
+                    <h3><?php echo esc_html(get_theme_mod('feat_5_title', 'Búsqueda y edición en segundos')); ?></h3>
+                    <p><?php echo esc_html(get_theme_mod('feat_5_desc', 'Localiza al instante cualquier cotización por cliente, folio o fecha. Modifica conceptos o precios con un clic sin tener que rehacer todo desde cero.')); ?></p>
                 </div>
                 <!-- Feature 6 -->
                 <div class="feature-card animate-on-scroll fade-in-up delay-300">
@@ -1003,8 +1003,8 @@
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h3>Seguimiento sin límites de IA</h3>
-                    <p>Olvídate de quedarte sin créditos en bots de IA o perder cotizaciones en capturas de pantalla. Monitorea el estatus de cada propuesta desde cualquier dispositivo.</p>
+                    <h3><?php echo esc_html(get_theme_mod('feat_6_title', 'Seguimiento sin límites de IA')); ?></h3>
+                    <p><?php echo esc_html(get_theme_mod('feat_6_desc', 'Olvídate de quedarte sin créditos en bots de IA o perder cotizaciones en capturas de pantalla. Monitorea el estatus de cada propuesta desde cualquier dispositivo.')); ?></p>
                 </div>
             </div>
 
@@ -1052,7 +1052,7 @@
                         margin-bottom: 1.25rem;
                     ">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        <span style="font-size: 0.78rem; font-weight: 700; color: #4ade80; letter-spacing: 0.08em; text-transform: uppercase;">Valor Agregado Cotízalo</span>
+                        <span style="font-size: 0.78rem; font-weight: 700; color: #4ade80; letter-spacing: 0.08em; text-transform: uppercase;"><?php echo esc_html(get_theme_mod('vsai_badge_text', 'Valor Agregado Cotízalo')); ?></span>
                     </div>
                     <h3 style="
                         font-size: clamp(1.6rem, 3.5vw, 2.3rem);
@@ -1061,7 +1061,7 @@
                         line-height: 1.25;
                         margin-bottom: 1rem;
                     ">
-                        Dile adiós a las imágenes de cotizaciones y a quedarte sin créditos de IA
+                        <?php echo esc_html(get_theme_mod('vsai_title', 'Dile adiós a las imágenes de cotizaciones y a quedarte sin créditos de IA')); ?>
                     </h3>
                     <p style="
                         color: rgba(255, 255, 255, 0.78);
@@ -1069,7 +1069,7 @@
                         line-height: 1.7;
                         margin: 0;
                     ">
-                        Mandar fotos de cotizaciones o depender de generadores de IA parece rápido, pero pronto se vuelve un dolor de cabeza: no puedes editarlas, se pierden en el chat, te quedas sin créditos a fin de mes y dar seguimiento es imposible. Cotízalo te da una <strong>interfaz gráfica dedicada</strong> para buscar, editar y dar seguimiento a cada cliente desde cualquier dispositivo.
+                        <?php echo esc_html(get_theme_mod('vsai_desc', 'Mandar fotos de cotizaciones o depender de generadores de IA parece rápido, pero pronto se vuelve un dolor de cabeza: no puedes editarlas, se pierden en el chat, te quedas sin créditos a fin de mes y dar seguimiento es imposible. Cotízalo te da una interfaz gráfica dedicada para buscar, editar y dar seguimiento a cada cliente desde cualquier dispositivo.')); ?>
                     </p>
                 </div>
 
@@ -1197,8 +1197,8 @@
 
                 <!-- Bottom CTA inside showcase -->
                 <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
-                    <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);">
-                        Empieza a cotizar con interfaz gráfica
+                    <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);">
+                        <?php echo esc_html(get_theme_mod('vsai_cta_text', 'Empieza a cotizar con interfaz gráfica')); ?>
                         <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
@@ -1238,11 +1238,11 @@
                     border-radius: 999px; padding: 6px 18px; margin-bottom: 1.25rem;
                 ">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#123A2C" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                    <span style="font-size: 0.75rem; font-weight: 600; color: #123A2C; letter-spacing: 0.08em; text-transform: uppercase;">En la Nube · Siempre Disponible</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; color: #123A2C; letter-spacing: 0.08em; text-transform: uppercase;"><?php echo esc_html(get_theme_mod('cloud_badge_text', 'En la Nube · Siempre Disponible')); ?></span>
                 </div>
-                <h2 class="text-dark" style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);">Siempre contigo,<br>desde cualquier lugar.</h2>
+                <h2 class="text-dark" style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);"><?php echo esc_html(get_theme_mod('cloud_title', 'Siempre contigo, desde cualquier lugar.')); ?></h2>
                 <p class="text-dark-muted" style="font-size: 1.05rem; line-height: 1.7;">
-                    Tus cotizaciones viven en la nube. Ajústalas en tiempo real y tu cliente las aprueba al instante — sin correos, sin esperas, sin complicaciones. Conoce todos nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">planes de precios</a> para comenzar hoy mismo.
+                    <?php echo esc_html(get_theme_mod('cloud_desc', 'Tus cotizaciones viven en la nube. Ajústalas en tiempo real y tu cliente las aprueba al instante — sin correos, sin esperas, sin complicaciones.')); ?> Conoce todos nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>" style="color: #123A2C; font-weight: 600; text-decoration: underline;">planes de precios</a> para comenzar hoy mismo.
                 </p>
             </div>
 
@@ -1271,9 +1271,9 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">Cotizaciones en la nube</h3>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;"><?php echo esc_html(get_theme_mod('cloud_b1_title', 'Cotizaciones en la nube')); ?></h3>
                             <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                                Todas tus propuestas se guardan automáticamente. Sin archivos locales, sin riesgo de perder información. Disponibles 24/7 desde cualquier dispositivo.
+                                <?php echo esc_html(get_theme_mod('cloud_b1_desc', 'Todas tus propuestas se guardan automáticamente. Sin archivos locales, sin riesgo de perder información. Disponibles 24/7 desde cualquier dispositivo.')); ?>
                             </p>
                         </div>
                     </div>
@@ -1292,9 +1292,9 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">Acceso total desde el móvil</h3>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;"><?php echo esc_html(get_theme_mod('cloud_b2_title', 'Acceso total desde el móvil')); ?></h3>
                             <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                                Crea, revisa y envía cotizaciones desde tu celular en segundos. Tu negocio no se detiene aunque estés fuera de la oficina.
+                                <?php echo esc_html(get_theme_mod('cloud_b2_desc', 'Crea, revisa y envía cotizaciones desde tu celular en segundos. Tu negocio no se detiene aunque estés fuera de la oficina.')); ?>
                             </p>
                         </div>
                     </div>
@@ -1314,9 +1314,9 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">Ajustes en tiempo real · Aprobación inmediata</h3>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;"><?php echo esc_html(get_theme_mod('cloud_b3_title', 'Ajustes en tiempo real · Aprobación inmediata')); ?></h3>
                             <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                                ¿El cliente pide un cambio? Actualiza la cotización al instante y él la ve reflejada de inmediato. Aprobación con un clic, sin correos de ida y vuelta.
+                                <?php echo esc_html(get_theme_mod('cloud_b3_desc', '¿El cliente pide un cambio? Actualiza la cotización al instante y él la ve reflejada de inmediato. Aprobación con un clic, sin correos de ida y vuelta.')); ?>
                             </p>
                         </div>
                     </div>
@@ -1337,9 +1337,9 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">Búsqueda y seguimiento sin límites de IA</h3>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;"><?php echo esc_html(get_theme_mod('cloud_b4_title', 'Búsqueda y seguimiento sin límites de IA')); ?></h3>
                             <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                                Olvídate de buscar imágenes perdidas en WhatsApp o quedarte sin créditos en bots de IA. Accede a una interfaz gráfica para encontrar cualquier propuesta en un clic, editar cambios y dar seguimiento a cada cliente desde cualquier dispositivo.
+                                <?php echo esc_html(get_theme_mod('cloud_b4_desc', 'Olvídate de buscar imágenes perdidas en WhatsApp o quedarte sin créditos en bots de IA. Accede a una interfaz gráfica para encontrar cualquier propuesta en un clic, editar cambios y dar seguimiento a cada cliente desde cualquier dispositivo.')); ?>
                             </p>
                         </div>
                     </div>
@@ -1498,8 +1498,7 @@
                     <?php echo esc_html(get_theme_mod('cta_desc', 'Únete a la revolución de las ventas digitales y asombra a tus clientes con propuestas modernas.')); ?>
                 </p>
                 <div class="hero-buttons">
-                    <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg">Comienza tu Prueba
-                        Gratuita</a>
+                    <a href="<?php echo esc_url(get_theme_mod('cta_btn_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-lg"><?php echo esc_html(get_theme_mod('cta_btn_text', 'Comienza tu Prueba Gratuita')); ?></a>
                 </div>
             </div>
         </div>
@@ -1515,8 +1514,7 @@
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
                             id="footer-logo" width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
-                        ventas crean, envían y cierran propuestas.</p>
+                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -1536,7 +1534,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DrG Labs CO. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
             </div>
         </div>
     </footer>

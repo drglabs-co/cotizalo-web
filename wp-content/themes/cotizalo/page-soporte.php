@@ -34,7 +34,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
             $form_error = 'El correo de la cuenta Cotízalo no es válido.';
         } else {
             // 5. Construct and send email
-            $to = 'support@cotizalo.net';
+        $to = sanitize_email( get_theme_mod('soporte_email', 'support@cotizalo.net') );
             $subject = '[' . $asunto . '] Soporte Web - ' . $nombre;
             
             $body = "Ha recibido una nueva solicitud de soporte desde el sitio web cotizalo.net:\n\n";
@@ -342,8 +342,8 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -359,9 +359,9 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
     <section class="page-hero">
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;">Soporte Técnico y Contacto</h1>
+            <h1 class="display-title-sm" style="margin-bottom: 1rem;"><?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?></h1>
             <p class="text-muted" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.2rem;">
-                ¿Tienes dudas o necesitas ayuda con tu cuenta? Envíanos tus comentarios y nos pondremos en contacto contigo lo antes posible.
+                <?php echo esc_html(get_theme_mod('soporte_subtitle', '¿Tienes dudas o necesitas ayuda con tu cuenta? Envíanos tus comentarios y nos pondremos en contacto contigo lo antes posible.')); ?>
             </p>
 
             <div class="support-container animate-on-scroll fade-in-up delay-100">
@@ -453,8 +453,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
                             id="footer-logo" width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
-                        ventas crean, envían y cierran propuestas.</p>
+                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -474,7 +473,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DrG Labs CO. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
             </div>
         </div>
     </footer>

@@ -100,8 +100,8 @@
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.cotizalo.net/login" class="btn btn-secondary btn-nav">Ingresar</a>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-nav">Empezar Gratis</a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -117,49 +117,19 @@
     <section class="page-hero">
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;">Aviso de Privacidad</h1>
+            <h1 class="display-title-sm" style="margin-bottom: 1rem;"><?php echo esc_html(get_theme_mod('aviso_title', 'Aviso de Privacidad')); ?></h1>
             <p class="text-muted" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">
-                En Cotízalo, tu privacidad y la seguridad de la información de tu negocio son nuestra máxima prioridad.
+                <?php echo esc_html(get_theme_mod('aviso_subtitle', 'En Cotízalo, tu privacidad y la seguridad de la información de tu negocio son nuestra máxima prioridad.')); ?>
             </p>
 
             <div class="content-box animate-on-scroll fade-in-up delay-100" style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
-                <h2>1. Identidad y Domicilio del Responsable</h2>
-                <p>
-                    DrG Labs CO., con domicilio de operaciones en México, es el responsable del uso y protección de sus datos personales. Ponemos a su disposición el presente Aviso de Privacidad en cumplimiento con la legislación aplicable mexicana (LFPDPPP).
-                </p>
-
-                <h2>2. Datos Personales Recabados</h2>
-                <p>
-                    Para llevar a cabo las finalidades descritas en este aviso, recabamos los siguientes datos personales y comerciales al momento de su registro u operación en la plataforma:
-                </p>
-                <ul>
-                    <li>Nombre completo y datos de contacto (correo electrónico, teléfono).</li>
-                    <li>Nombre o razón social de su empresa o actividad comercial.</li>
-                    <li>Información técnica de acceso (dirección IP, cookies, navegador utilizado).</li>
-                    <li>Datos comerciales necesarios para el llenado y facturación de propuestas (catálogos de precios, cotizaciones, información de sus clientes finales).</li>
-                </ul>
-
-                <h2>3. Finalidades del Tratamiento de los Datos</h2>
-                <p>
-                    Los datos personales que recabamos serán utilizados para las siguientes finalidades necesarias para el servicio:
-                </p>
-                <ul>
-                    <li>Proveer y mantener la funcionalidad de la plataforma de cotizaciones.</li>
-                    <li>Crear y gestionar su perfil de usuario en el portal técnico de Cotízalo.</li>
-                    <li>Procesar sus pagos y depósitos mediante integraciones con pasarelas de pago seguras.</li>
-                    <li>Brindarle asistencia técnica, resolución de problemas y soporte a través del centro de ayuda.</li>
-                    <li>Enviar notificaciones operativas relevantes (estado de cotizaciones, vencimiento de planes, cambios en el servicio).</li>
-                </ul>
-
-                <h2>4. Medidas de Seguridad y Encriptación</h2>
-                <p>
-                    Cotízalo utiliza protocolos modernos de encriptación de datos (SSL/TLS) para asegurar que toda la información que viaja a través de nuestros servidores esté a salvo de accesos no autorizados. Nos comprometemos a no vender, rentar ni transferir sus datos comerciales a terceros sin su consentimiento expreso.
-                </p>
-
-                <h2>5. Ejercicio de Derechos ARCO</h2>
-                <p>
-                    Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales. Para ejercer estos derechos, puede enviar su solicitud por escrito al correo electrónico de soporte: <strong>support@cotizalo.net</strong>.
-                </p>
+                <?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        the_content();
+                    endwhile;
+                endif;
+                ?>
             </div>
         </div>
     </section>
@@ -174,8 +144,7 @@
                             alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
                             id="footer-logo" width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">Transformando la forma en que los equipos de
-                        ventas crean, envían y cierran propuestas.</p>
+                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -195,7 +164,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DrG Labs CO. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
             </div>
         </div>
     </footer>
