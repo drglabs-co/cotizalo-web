@@ -20,8 +20,18 @@ function cotizalo_scripts()
     wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.5');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
 
-    // Dropdown "Recursos" nav styles — applied globally to all page templates
+    // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
     $dropdown_css = '
+        /* Sticky Header Background on Scroll */
+        header.navbar.scrolled,
+        header.scrolled {
+            background: rgba(10, 14, 26, 0.96) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
+        }
+
         /* Nav Recursos Dropdown */
         .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
         .nav-dropdown-toggle {
@@ -219,10 +229,39 @@ function cotizalo_dropdown_js()
                     }
                 }, { capture: false });
             }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initDropdowns);
-            } else {
+            function initHeaderScroll() {
+                var header = document.getElementById('navbar') || document.querySelector('header');
+                if (!header || header.dataset.scrollInit) return;
+                header.dataset.scrollInit = '1';
+                var ticking = false;
+                function updateHeader() {
+                    if (window.scrollY > 20) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            updateHeader();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+                updateHeader();
+            }
+
+            function initAll() {
                 initDropdowns();
+                initHeaderScroll();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initAll);
+            } else {
+                initAll();
             }
         })();
     </script>

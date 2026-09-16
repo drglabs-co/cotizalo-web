@@ -567,9 +567,32 @@
                 appearance: none !important;
                 -webkit-appearance: none !important;
             }
+            .print-cotizalo-banner {
+                display: flex !important;
+                margin-top: 25px !important;
+                padding: 12px 16px !important;
+                background: #f0fdf4 !important;
+                border: 1px solid #86efac !important;
+                border-radius: 8px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
             .no-print {
                 display: none !important;
             }
+        }
+
+        .print-cotizalo-banner {
+            margin-top: 1.75rem;
+            padding: 12px 16px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         /* Common Section Styles */
@@ -1000,12 +1023,33 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* Fixed & Scrolled Navbar */
+        header.navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height, 80px);
+            z-index: 1000;
+            transition: background 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        header.navbar.scrolled {
+            background: rgba(10, 14, 26, 0.96) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
+        }
     </style>
 </head>
 
 <body <?php body_class(); ?>>
     <!-- Navigation Bar -->
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
@@ -1220,10 +1264,19 @@
                                 </table>
                             </div>
 
-                            <button type="button" class="btn-add-item no-print" onclick="addRow()">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                Agregar concepto o producto
-                            </button>
+                            <div class="no-print" style="margin-top:10px;">
+                                <button type="button" class="btn-add-item" id="btn_add_item" onclick="addRow()">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                    <span id="btn_add_text">Agregar concepto o producto</span>
+                                </button>
+                                <div id="item_limit_notice" style="display:none; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:0.83rem; color:#92400e;">
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <span style="font-size:1.1rem;">⚠️</span>
+                                        <span><strong>Límite de 2 conceptos en la versión gratuita:</strong> Para agregar partidas ilimitadas, guardar tu catálogo y dar seguimiento:</span>
+                                    </div>
+                                    <a href="<?php echo esc_url(get_theme_mod('nav_register_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary" style="font-size:0.75rem; padding:6px 12px; white-space:nowrap;">Crear cuenta gratis →</a>
+                                </div>
+                            </div>
 
                             <!-- Calculation & Conditions Grid -->
                             <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:1.5rem; margin-top:1.5rem; align-items:start;">
@@ -1232,8 +1285,8 @@
                                         <label>Términos y condiciones comerciales:</label>
                                         <textarea id="q_notes" class="gen-input" rows="3" style="resize:vertical;">Precios en Moneda Nacional (MXN). Tiempo de entrega: 3 a 5 días hábiles. Anticipo del 50% al confirmar la orden y saldo contra entrega.</textarea>
                                     </div>
-                                    <div style="display:flex; gap:12px; margin-top:8px;" class="no-print">
-                                        <div class="gen-field" style="flex:1;">
+                                    <div style="margin-top:8px;" class="no-print">
+                                        <div class="gen-field">
                                             <label>Tasa de IVA:</label>
                                             <select id="q_tax_rate" class="gen-input" onchange="recalcQuote()">
                                                 <option value="0.16" selected>IVA 16% (General México)</option>
@@ -1241,22 +1294,14 @@
                                                 <option value="0">Sin IVA / Exento (0%)</option>
                                             </select>
                                         </div>
-                                        <div class="gen-field" style="flex:1;">
-                                            <label>Descuento (%):</label>
-                                            <input type="number" id="q_discount" class="gen-input" value="0" min="0" max="100" placeholder="0%" oninput="recalcQuote()">
-                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Totals Summary Box -->
                                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:1.25rem; display:flex; flex-direction:column; gap:8px;">
                                     <div style="display:flex; justify-content:space-between; color:#64748b; font-size:0.85rem;">
-                                        <span>Subtotal bruto:</span>
+                                        <span>Subtotal:</span>
                                         <span id="txt_subtotal" style="font-weight:600; color:#334155;">$20,050.00 MXN</span>
-                                    </div>
-                                    <div style="display:flex; justify-content:space-between; color:#64748b; font-size:0.85rem;" id="row_discount">
-                                        <span>Descuento aplicado:</span>
-                                        <span id="txt_discount" style="font-weight:600; color:#dc2626;">-$0.00 MXN</span>
                                     </div>
                                     <div style="display:flex; justify-content:space-between; color:#64748b; font-size:0.85rem;">
                                         <span id="lbl_tax">IVA (16%):</span>
@@ -1266,6 +1311,24 @@
                                         <span>Total Neto:</span>
                                         <span id="txt_total" style="color:#059669;">$23,258.00 MXN</span>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- PDF & Print Watermark Banner -->
+                            <div class="print-cotizalo-banner">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png" alt="Cotízalo" style="width:28px; height:28px; object-fit:contain; flex-shrink:0;" width="28" height="28">
+                                    <div>
+                                        <div style="font-size:0.85rem; font-weight:700; color:#14532d; line-height:1.2;">
+                                            Cotización elaborada con Cotízalo &bull; cotizalo.net
+                                        </div>
+                                        <div style="font-size:0.75rem; color:#166534; margin-top:2px;">
+                                            Software para cotizaciones y presupuestos en línea para pequeñas empresas y emprendedores.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <span style="display:inline-block; background:#123A2C; color:#ffffff; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:6px; letter-spacing:0.3px;">cotizalo.net</span>
                                 </div>
                             </div>
 
@@ -1859,6 +1922,34 @@
             return '$' + amount.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' MXN';
         }
 
+        function updateItemLimitState() {
+            const rows = document.querySelectorAll('#q_tbody tr');
+            const count = rows.length;
+            const btnAdd = document.getElementById('btn_add_item');
+            const btnText = document.getElementById('btn_add_text');
+            const notice = document.getElementById('item_limit_notice');
+
+            if (count >= 2) {
+                if (btnText) btnText.textContent = 'Límite alcanzado (2/2 conceptos en demo)';
+                if (btnAdd) {
+                    btnAdd.style.opacity = '0.75';
+                    btnAdd.style.background = '#fef3c7';
+                    btnAdd.style.color = '#92400e';
+                    btnAdd.style.borderColor = '#fde68a';
+                }
+                if (notice) notice.style.display = 'flex';
+            } else {
+                if (btnText) btnText.textContent = 'Agregar concepto o producto (' + count + '/2)';
+                if (btnAdd) {
+                    btnAdd.style.opacity = '1';
+                    btnAdd.style.background = '#eff6ff';
+                    btnAdd.style.color = '#2563eb';
+                    btnAdd.style.borderColor = '#93c5fd';
+                }
+                if (notice) notice.style.display = 'none';
+            }
+        }
+
         function recalcQuote() {
             const rows = document.querySelectorAll('#q_tbody tr');
             let subtotal = 0;
@@ -1878,22 +1969,16 @@
                 }
             });
 
-            const discountPercent = parseFloat(document.getElementById('q_discount')?.value) || 0;
-            const discountAmount = subtotal * (discountPercent / 100);
-            const subtotalAfterDiscount = Math.max(0, subtotal - discountAmount);
-
             const taxRate = parseFloat(document.getElementById('q_tax_rate')?.value) || 0;
-            const taxAmount = subtotalAfterDiscount * taxRate;
-            const total = subtotalAfterDiscount + taxAmount;
+            const taxAmount = subtotal * taxRate;
+            const total = subtotal + taxAmount;
 
             const txtSubtotal = document.getElementById('txt_subtotal');
-            const txtDiscount = document.getElementById('txt_discount');
             const txtTax = document.getElementById('txt_tax');
             const lblTax = document.getElementById('lbl_tax');
             const txtTotal = document.getElementById('txt_total');
 
             if (txtSubtotal) txtSubtotal.textContent = formatCurrency(subtotal);
-            if (txtDiscount) txtDiscount.textContent = '-' + formatCurrency(discountAmount);
             if (lblTax) {
                 if (taxRate === 0.16) lblTax.textContent = 'IVA (16%):';
                 else if (taxRate === 0.08) lblTax.textContent = 'IVA (8% Frontera):';
@@ -1901,10 +1986,30 @@
             }
             if (txtTax) txtTax.textContent = formatCurrency(taxAmount);
             if (txtTotal) txtTotal.textContent = formatCurrency(total);
+
+            updateItemLimitState();
         }
 
         function addRow() {
             const tbody = document.getElementById('q_tbody');
+            const rows = tbody.querySelectorAll('tr');
+
+            if (rows.length >= 2) {
+                const notice = document.getElementById('item_limit_notice');
+                if (notice) {
+                    notice.style.display = 'flex';
+                    notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    notice.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+                    notice.style.transform = 'scale(1.02)';
+                    notice.style.boxShadow = '0 0 12px rgba(245, 158, 11, 0.45)';
+                    setTimeout(() => {
+                        notice.style.transform = 'scale(1)';
+                        notice.style.boxShadow = 'none';
+                    }, 500);
+                }
+                return;
+            }
+
             const newRow = document.createElement('tr');
             newRow.innerHTML = `
                 <td>
@@ -1965,6 +2070,25 @@
                     }
                 });
             });
+
+            // Header scroll state
+            const header = document.getElementById('navbar') || document.querySelector('header.navbar');
+            if (header) {
+                let ticking = false;
+                const updateHeader = () => {
+                    header.classList.toggle('scrolled', window.scrollY > 20);
+                };
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            updateHeader();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+                updateHeader();
+            }
 
             // Mobile menu toggle
             const mobileBtn = document.querySelector('.mobile-menu-btn');

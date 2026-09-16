@@ -573,12 +573,33 @@
                 width: 100%;
             }
         }
+
+        /* Fixed & Scrolled Navbar */
+        header.navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height, 80px);
+            z-index: 1000;
+            transition: background 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        header.navbar.scrolled {
+            background: rgba(10, 14, 26, 0.96) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
+        }
     </style>
 </head>
 
 <body <?php body_class(); ?>>
     <!-- Navigation Bar -->
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
@@ -972,6 +993,25 @@
                     if (!wasOpen) item.classList.add('open');
                 });
             });
+
+            // Header scroll state
+            const header = document.getElementById('navbar') || document.querySelector('header.navbar');
+            if (header) {
+                let ticking = false;
+                const updateHeader = () => {
+                    header.classList.toggle('scrolled', window.scrollY > 20);
+                };
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            updateHeader();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+                updateHeader();
+            }
 
             const mobileBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');

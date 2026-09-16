@@ -121,7 +121,10 @@
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
+                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
                                 para presupuestos</a></li>
@@ -247,6 +250,26 @@
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/')); ?>#features">Características</a></li>
                         <li><a href="<?php echo esc_url(home_url('/precios/')); ?>">Precios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
+                                para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
+                                WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">Plantilla de
+                                cotización</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
+                                constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                                servicios</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
