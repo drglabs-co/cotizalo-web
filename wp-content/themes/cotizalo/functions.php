@@ -17,8 +17,161 @@ add_action( 'after_setup_theme', 'cotizalo_theme_setup' );
 function cotizalo_scripts() {
     wp_enqueue_style( 'cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.5' );
     wp_enqueue_style( 'google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null );
+
+    // Dropdown "Recursos" nav styles — applied globally to all page templates
+    $dropdown_css = '
+        /* Nav Recursos Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-toggle {
+            display: inline-flex; align-items: center; gap: 4px;
+            background: none; border: none; cursor: pointer;
+            font-family: inherit; font-size: inherit;
+            color: inherit; padding: 0;
+        }
+        .nav-dropdown-toggle svg { transition: transform 0.2s; flex-shrink: 0; }
+        .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+        .nav-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 0.75rem);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #142e22;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            min-width: 230px;
+            padding: 0.5rem 0;
+            z-index: 9999;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            list-style: none;
+        }
+        .nav-dropdown.open .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu::before {
+            content: "";
+            position: absolute;
+            top: -7px; left: 50%; transform: translateX(-50%);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid rgba(255,255,255,0.12);
+        }
+        .nav-dropdown-menu li { margin: 0; }
+        .nav-dropdown-menu a {
+            display: block; padding: 0.55rem 1.25rem;
+            color: rgba(255,255,255,0.78); font-size: 0.875rem;
+            text-decoration: none; white-space: nowrap;
+            transition: color 0.15s, background 0.15s;
+        }
+        .nav-dropdown-menu a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+        .nav-dropdown-menu li:first-child a { border-radius: 12px 12px 0 0; }
+        .nav-dropdown-menu li:last-child  a { border-radius: 0 0 12px 12px; }
+
+        /* Mobile: dropdown shows as stacked list inside open menu */
+        @media (max-width: 900px) {
+            .nav-dropdown-menu {
+                position: static; transform: none;
+                background: rgba(255,255,255,0.05);
+                border: none; border-radius: 8px;
+                box-shadow: none; margin: 0.25rem 0.5rem 0.25rem;
+                padding: 0.25rem 0;
+                min-width: unset; width: calc(100% - 1rem);
+            }
+            .nav-dropdown-menu::before { display: none; }
+            .nav-dropdown-menu a { padding: 0.5rem 1rem; font-size: 0.9rem; }
+        }
+
+        /* ─── Button contrast fixes for dark-background sections ─── */
+        /* Hero & CTA white button: enforce dark text over the white background */
+        .lp-hero .btn-primary,
+        .lp-cta  .btn-primary {
+            color: #0f172a !important;
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+        }
+        .lp-hero .btn-primary:hover,
+        .lp-cta  .btn-primary:hover {
+            background: #f0fdf4 !important;
+            border-color: #f0fdf4 !important;
+            color: #0f172a !important;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
+        }
+        /* WhatsApp-green override (cotizaciones-por-whatsapp page) */
+        .lp-hero .btn-primary.btn-whatsapp,
+        .lp-cta  .btn-primary.btn-whatsapp {
+            background: #25D366 !important;
+            border-color: #25D366 !important;
+            color: #ffffff !important;
+        }
+        .lp-hero .btn-primary.btn-whatsapp:hover,
+        .lp-cta  .btn-primary.btn-whatsapp:hover {
+            background: #1ebe57 !important;
+            border-color: #1ebe57 !important;
+            color: #ffffff !important;
+        }
+        /* App mockup section */
+        .lp-app-preview {
+            background: #fff;
+            padding: 5rem 0 4rem;
+        }
+        .lp-app-preview .app-frame-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .lp-app-preview .app-chrome-bar {
+            background: #e8eaed;
+            padding: 0.55rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .lp-app-preview .chrome-dots { display: flex; gap: 6px; }
+        .lp-app-preview .chrome-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+        }
+        .lp-app-preview .chrome-dot.r { background: #ef4444; }
+        .lp-app-preview .chrome-dot.y { background: #f59e0b; }
+        .lp-app-preview .chrome-dot.g { background: #10b981; }
+        .lp-app-preview .chrome-url {
+            flex: 1; background: #fff; border-radius: 20px;
+            padding: 0.3rem 0.9rem; font-size: 0.8rem;
+            color: #64748b; display: flex; align-items: center; gap: 6px;
+            border: 1px solid #cbd5e1; max-width: 340px; margin: 0 auto;
+        }
+        .lp-app-preview svg.app-svg { display: block; width: 100%; height: auto; }
+    ';
+    wp_add_inline_style( 'cotizalo-style', $dropdown_css );
+
+    // Dropdown toggle JS — runs after DOM ready on every page
+    $dropdown_js = '
+        (function() {
+            document.addEventListener("DOMContentLoaded", function() {
+                var toggles = document.querySelectorAll(".nav-dropdown-toggle");
+                toggles.forEach(function(btn) {
+                    btn.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var dropdown = btn.closest(".nav-dropdown");
+                        var isOpen = dropdown.classList.contains("open");
+                        document.querySelectorAll(".nav-dropdown").forEach(function(d) { d.classList.remove("open"); });
+                        if (!isOpen) dropdown.classList.add("open");
+                    });
+                });
+                document.addEventListener("click", function(e) {
+                    if (!e.target.closest(".nav-dropdown")) {
+                        document.querySelectorAll(".nav-dropdown").forEach(function(d) { d.classList.remove("open"); });
+                    }
+                });
+            });
+        })();
+    ';
+    wp_add_inline_script( 'jquery', $dropdown_js, 'after' );
 }
 add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
+
 
 /**
  * Load Google Fonts asynchronously to prevent render-blocking FCP delays.
