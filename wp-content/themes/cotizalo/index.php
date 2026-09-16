@@ -44,7 +44,8 @@
     <header>
         <div class="container nav-container">
             <a href="https://cotizalo.net/" class="logo">
-                <img src="https://cotizalo.net/wp-content/themes/cotizalo/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2" alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
+                <img src="https://cotizalo.net/wp-content/themes/cotizalo/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
+                    alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
             </a>
             <ul class="nav-links">
                 <li><a href="#features">Características</a></li>
@@ -64,7 +65,8 @@
             <div class="hero-content animate-on-scroll">
                 <div class="hero-badge">⚡ Nuevo Sistema Automatizado</div>
                 <h1 class="text-gradient">Transforma la forma en que cotizas tus servicios.</h1>
-                <p>Olvida el Excel y el Word. Con Cotízalo, emite propuestas profesionales en segundos, controla tus
+                <p>Olvida el Excel, el Word y las Imagenes generadas por IA. Con Cotízalo, emite propuestas
+                    profesionales en segundos, controla tus
                     ventas y asombra a tus clientes desde el primer momento.</p>
                 <div class="hero-buttons">
                     <a href="https://app.cotizalo.net/signup" class="btn btn-primary">Empieza Gratis Ahora</a>
