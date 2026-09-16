@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
-    <title>Cotízalo | Sistema de Cotizaciones para Empresas en México</title>
+    <title>Software para hacer cotizaciones en línea | Cotízalo</title>
     <meta name="description"
-        content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
+        content="Crea, envía y da seguimiento a tus cotizaciones desde una sola plataforma. Cotizaciones por WhatsApp y PDF, catálogo de productos y seguimiento automático. Prueba gratis 14 días.">
     <meta name="keywords" content="sistema de cotizaciones, cotizaciones web, cotizaciones online mexico, cotizaciones online mexico app, hacer cotizacion profesional, generador de presupuestos, software para cotizar servicios, crear cotizacion pdf, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url( home_url( $_SERVER['REQUEST_URI'] ) ); ?>">
-    <meta property="og:title" content="Cotízalo | Sistema de Cotizaciones para Empresas en México">
-    <meta property="og:description" content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
+    <meta property="og:title" content="Software para hacer cotizaciones en línea | Cotízalo">
+    <meta property="og:description" content="Crea, envía y da seguimiento a tus cotizaciones desde una sola plataforma. Cotizaciones por WhatsApp y PDF, catálogo de productos y seguimiento automático. Prueba gratis 14 días.">
     <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cotízalo | Sistema de Cotizaciones para Empresas en México">
-    <meta name="twitter:description" content="Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF en segundos. ¡Prueba Gratis!">
+    <meta name="twitter:title" content="Software para hacer cotizaciones en línea | Cotízalo">
+    <meta name="twitter:description" content="Crea, envía y da seguimiento a tus cotizaciones desde una sola plataforma. Cotizaciones por WhatsApp y PDF, catálogo de productos y seguimiento automático. Prueba gratis 14 días.">
     <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
 
     <!-- Google Fonts for modern typography -->
@@ -143,14 +143,14 @@
         <div class="container relative z-10">
             <div class="hero-content animate-on-scroll fade-in-up">
                 <h1 class="display-title">
-                    <?php echo esc_html(get_theme_mod('hero_title', 'Tu portal web para cotizaciones.')); ?></h1>
+                    <?php echo esc_html(get_theme_mod('hero_title', 'Crea y da seguimiento a tus cotizaciones en línea')); ?></h1>
                 <p class="hero-subtitle">
-                    <?php echo esc_html(get_theme_mod('hero_subtitle', 'Olvida el Excel. Una identidad técnica, segura y seria, ideal para microempresas.')); ?>
+                    <?php echo esc_html(get_theme_mod('hero_subtitle', 'El software de cotizaciones para emprendedores y pequeñas empresas que quieren dejar atrás Excel, papel y archivos difíciles de encontrar.')); ?>
                 </p>
                 <div class="hero-buttons">
-                    <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', '/precios')); ?>"
+                    <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg group">
-                        <?php echo esc_html(get_theme_mod('hero_btn_text', 'Crea tu primera cotización')); ?>
+                        <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis — sin tarjeta')); ?>
                         <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -158,6 +158,20 @@
                         </svg>
                     </a>
                 </div>
+                <!-- Internal SEO links to landing pages -->
+                <nav class="hero-feature-links" aria-label="Páginas de características" style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+                    <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>" style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Software para cotizaciones</a>
+                    <span style="color:rgba(255,255,255,0.3);">·</span>
+                    <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>" style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Programa para presupuestos</a>
+                    <span style="color:rgba(255,255,255,0.3);">·</span>
+                    <a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>" style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Cotizaciones por WhatsApp</a>
+                    <span style="color:rgba(255,255,255,0.3);">·</span>
+                    <a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>" style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Plantilla de cotización</a>
+                    <span style="color:rgba(255,255,255,0.3);">·</span>
+                    <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>" style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Para constructoras</a>
+                    <span style="color:rgba(255,255,255,0.3);">·</span>
+                    <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>" style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Para servicios</a>
+                </nav>
             </div>
 
             <!-- Visualization Element (Mockup) -->

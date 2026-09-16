@@ -60,7 +60,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
           foreach ( $extra_posts as $p ) {
               $permalink = get_permalink( $p->ID );
               $path      = trim( parse_url( $permalink, PHP_URL_PATH ), '/' );
-              if ( in_array( $path, array( '', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones' ), true ) ) {
+              if ( in_array( $path, array( '', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-de-cotizaciones-para-servicios' ), true ) ) {
                   continue;
               }
               ?>
