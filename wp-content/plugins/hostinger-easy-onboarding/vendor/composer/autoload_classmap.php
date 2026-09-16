@@ -19,6 +19,7 @@ return array(
     'Hostinger\\EasyOnboarding\\Activator' => $baseDir . '/includes/Activator.php',
     'Hostinger\\EasyOnboarding\\Admin\\Actions' => $baseDir . '/includes/Admin/Actions.php',
     'Hostinger\\EasyOnboarding\\Admin\\Assets' => $baseDir . '/includes/Admin/Assets.php',
+    'Hostinger\\EasyOnboarding\\Admin\\Elementor\\Assets' => $baseDir . '/includes/Admin/Elementor/Assets.php',
     'Hostinger\\EasyOnboarding\\Admin\\Hooks' => $baseDir . '/includes/Admin/Hooks.php',
     'Hostinger\\EasyOnboarding\\Admin\\Menu' => $baseDir . '/includes/Admin/Menu.php',
     'Hostinger\\EasyOnboarding\\Admin\\Onboarding\\AutocompleteSteps' => $baseDir . '/includes/Admin/Onboarding/AutocompleteSteps.php',

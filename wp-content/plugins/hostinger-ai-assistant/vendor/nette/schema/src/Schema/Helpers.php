@@ -1,11 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Nette Framework (https://nette.org)
  * Copyright (c) 2004 David Grudl (https://davidgrudl.com)
  */
-
-declare(strict_types=1);
 
 namespace Nette\Schema;
 
@@ -56,6 +54,9 @@ final class Helpers
 	}
 
 
+	/**
+	 * Returns the type of a property or parameter as a string, or null if not determinable.
+	 */
 	public static function getPropertyType(\ReflectionProperty|\ReflectionParameter $prop): ?string
 	{
 		if ($type = Nette\Utils\Type::fromReflection($prop)) {
@@ -74,9 +75,9 @@ final class Helpers
 
 	/**
 	 * Returns an annotation value.
-	 * @param  \ReflectionProperty  $ref
+	 * @param  \ReflectionClass<object>|\ReflectionProperty  $ref
 	 */
-	public static function parseAnnotation(\Reflector $ref, string $name): ?string
+	public static function parseAnnotation(\ReflectionClass|\ReflectionProperty $ref, string $name): ?string
 	{
 		if (!Reflection::areCommentsAvailable()) {
 			throw new Nette\InvalidStateException('You have to enable phpDoc comments in opcode cache.');
@@ -91,6 +92,9 @@ final class Helpers
 	}
 
 
+	/**
+	 * Formats a value for use in error messages (e.g., 'hello', true, object stdClass).
+	 */
 	public static function formatValue(mixed $value): string
 	{
 		if ($value instanceof DynamicParameter) {
@@ -107,6 +111,9 @@ final class Helpers
 	}
 
 
+	/**
+	 * Adds a TypeMismatch error to the context if the value does not match the expected type.
+	 */
 	public static function validateType(mixed $value, string $expected, Context $context): void
 	{
 		if (!Nette\Utils\Validators::is($value, $expected)) {
@@ -121,7 +128,10 @@ final class Helpers
 	}
 
 
-	/** @param  array{?float, ?float}  $range */
+	/**
+	 * Adds a range error to the context if the value (or its length for strings/arrays) is outside the given range.
+	 * @param  array{?float, ?float}  $range
+	 */
 	public static function validateRange(mixed $value, array $range, Context $context, string $types = ''): void
 	{
 		if (is_array($value) || is_string($value)) {
@@ -148,7 +158,10 @@ final class Helpers
 	}
 
 
-	/** @param  array{?float, ?float}  $range */
+	/**
+	 * Checks whether a value falls within the given [min, max] range (null means no bound).
+	 * @param  array{?float, ?float}  $range
+	 */
 	public static function isInRange(mixed $value, array $range): bool
 	{
 		return ($range[0] === null || $value >= $range[0])
@@ -156,6 +169,9 @@ final class Helpers
 	}
 
 
+	/**
+	 * Adds a PatternMismatch error to the context if the value does not match the pattern.
+	 */
 	public static function validatePattern(string $value, string $pattern, Context $context): void
 	{
 		if (!preg_match("\x01^(?:$pattern)$\x01Du", $value)) {
@@ -168,7 +184,10 @@ final class Helpers
 	}
 
 
-	/** @return \Closure(mixed): mixed */
+	/**
+	 * Returns a closure that casts a value to the given type (built-in, class with constructor, or plain class).
+	 * @return \Closure(mixed): mixed
+	 */
 	public static function getCastStrategy(string $type): \Closure
 	{
 		if (Nette\Utils\Validators::isBuiltinType($type)) {

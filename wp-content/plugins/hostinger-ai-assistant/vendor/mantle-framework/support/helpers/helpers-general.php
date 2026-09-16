@@ -249,8 +249,6 @@ function retry( $times, callable $callback, $sleep = 0, $when = null ) {
 		// phpcs:ignore Generic.PHP.DiscourageGoto.Found
 		goto beginning;
 	}
-
-	return null;
 }
 
 /**
@@ -573,7 +571,7 @@ function defer( callable $callback, int $priority = 10 ): void {
 	\add_action(
 		'shutdown',
 		function () use ( $callback, &$request_sent ): void {
-			if ( $request_sent ) {
+			if ( ! $request_sent ) {
 				if ( function_exists( 'fastcgi_finish_request' ) ) {
 					fastcgi_finish_request();
 				} elseif ( function_exists( 'litespeed_finish_request' ) ) {

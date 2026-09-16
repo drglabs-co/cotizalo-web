@@ -8,6 +8,8 @@ interface Props {
 	description: string;
 	buttonText?: string;
 	buttonIcon?: string;
+	buttonTo?: string;
+	buttonTarget?: string;
 	backgroundImage?: string;
 	isButtonDisabled?: boolean;
 	isButtonLoading?: boolean;
@@ -18,6 +20,8 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
 	buttonIcon: 'ic-plus-16',
+	buttonTo: undefined,
+	buttonTarget: '_self',
 	backgroundImage: '',
 	onButtonClick: () => {}
 });
@@ -54,6 +58,8 @@ withDefaults(defineProps<Props>(), {
 						color="primary"
 						:icon-prepend="buttonIcon"
 						class="banner-button"
+						:to="buttonTo"
+						:target="buttonTarget"
 						:is-disabled="isButtonDisabled"
 						:is-loading="isButtonLoading"
 						:aria-label="`${buttonText} - ${title}`"
@@ -138,6 +144,10 @@ withDefaults(defineProps<Props>(), {
 			justify-content: flex-start;
 			margin: 0;
 		}
+
+		.banner-button {
+			align-self: flex-start;
+		}
 	}
 
 	&__image {
@@ -147,14 +157,6 @@ withDefaults(defineProps<Props>(), {
 		bottom: 0;
 		width: auto;
 		z-index: 1;
-
-		@media (max-width: 992px) {
-			display: none;
-		}
-
-		@media (max-width: 480px) {
-			display: none;
-		}
 	}
 
 	&__background-image {
@@ -163,10 +165,6 @@ withDefaults(defineProps<Props>(), {
 		object-fit: cover;
 		object-position: center;
 		border-radius: 0 20px 20px 0;
-
-		@media (max-width: 992px) {
-			display: none;
-		}
 	}
 }
 

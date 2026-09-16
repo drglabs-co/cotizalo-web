@@ -16,6 +16,7 @@ class Menu {
         add_filter( 'hostinger_admin_menu_bar_items', array( $this, 'add_admin_bar_items' ) );
         add_filter( 'hostinger_admin_menu_bar_items', array( $this, 'add_hpanel_bar_items' ), 999 );
         add_action( 'admin_menu', array( $this, 'register_hidden_full_screen_page' ) );
+        add_action( 'admin_menu', array( $this, 'register_hidden_hostinger_hub_page' ) );
     }
 
     /**
@@ -116,5 +117,20 @@ class Menu {
 
     public function render_full_screen_onboarding(): void {
         include_once __DIR__ . '/Views/FullScreenOnboarding.php';
+    }
+
+    public function register_hidden_hostinger_hub_page(): void {
+        add_submenu_page(
+            'hts',
+            __( 'Hostinger Hub', 'hostinger-easy-onboarding' ),
+            __( 'Hostinger Hub', 'hostinger-easy-onboarding' ),
+            'manage_options',
+            'hostinger-hub',
+            array( $this, 'render_hostinger_hub' )
+        );
+    }
+
+    public function render_hostinger_hub(): void {
+        include_once __DIR__ . '/Views/HostingerHub.php';
     }
 }

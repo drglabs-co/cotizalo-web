@@ -177,6 +177,13 @@ abstract class BaseElementorTool {
                 $item['children_count'] = 0;
             }
 
+            if ( ( $element['elType'] ?? '' ) === 'container' ) {
+                $background = $this->describe_background( $element['settings'] ?? array() );
+                if ( $background !== null ) {
+                    $item['background'] = $background;
+                }
+            }
+
             if ( $include_settings && isset( $element['settings'] ) ) {
                 $item['settings_summary'] = $this->get_settings_summary( $element );
             }
@@ -269,7 +276,48 @@ abstract class BaseElementorTool {
             $summary[] = 'Align: ' . $settings['align'];
         }
 
+        $background = $this->describe_background( $settings );
+        if ( $background !== null ) {
+            $summary[] = 'Background: ' . $background['type'];
+        }
+
         return implode( ', ', $summary );
+    }
+
+    protected function describe_background( array $settings ): ?array {
+        $type = $settings['background_background'] ?? '';
+
+        if ( $type === 'video' ) {
+            return array(
+                'type'      => 'video',
+                'has_media' => ! empty( $settings['background_video_link'] ),
+            );
+        }
+
+        if ( $type === 'gradient' ) {
+            return array(
+                'type'      => 'gradient',
+                'has_media' => false,
+            );
+        }
+
+        if ( $type === 'classic' ) {
+            if ( ! empty( $settings['background_image']['url'] ) ) {
+                return array(
+                    'type'      => 'image',
+                    'has_media' => true,
+                );
+            }
+
+            if ( ! empty( $settings['background_color'] ) ) {
+                return array(
+                    'type'      => 'color',
+                    'has_media' => false,
+                );
+            }
+        }
+
+        return null;
     }
 
     protected function get_content_preview( array $element ): string {

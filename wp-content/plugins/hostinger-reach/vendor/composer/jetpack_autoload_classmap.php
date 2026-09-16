@@ -7,44 +7,60 @@ $baseDir   = dirname($vendorDir);
 
 return array(
 	'Autoloader' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-autoloader.php'
 	),
 	'Autoloader_Handler' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-autoloader-handler.php'
 	),
 	'Autoloader_Locator' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-autoloader-locator.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadFileWriter' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadFileWriter.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadGenerator' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadGenerator.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadProcessor' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadProcessor.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/CustomAutoloaderPlugin.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\ManifestGenerator' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/ManifestGenerator.php'
 	),
 	'Container' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-container.php'
 	),
 	'Hook_Manager' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-hook-manager.php'
+	),
+	'Hostinger\\Amplitude\\ActionDispatcher' => array(
+		'version' => '1.0.18.0',
+		'path'    => $vendorDir . '/hostinger/hostinger-wp-amplitude/src/ActionDispatcher.php'
+	),
+	'Hostinger\\Amplitude\\AmplitudeLoader' => array(
+		'version' => '1.0.18.0',
+		'path'    => $vendorDir . '/hostinger/hostinger-wp-amplitude/src/AmplitudeLoader.php'
+	),
+	'Hostinger\\Amplitude\\AmplitudeManager' => array(
+		'version' => '1.0.18.0',
+		'path'    => $vendorDir . '/hostinger/hostinger-wp-amplitude/src/AmplitudeManager.php'
+	),
+	'Hostinger\\Amplitude\\Rest' => array(
+		'version' => '1.0.18.0',
+		'path'    => $vendorDir . '/hostinger/hostinger-wp-amplitude/src/Rest.php'
 	),
 	'Hostinger\\Reach\\Admin\\Database\\CartsTable' => array(
 		'version' => 'dev-main',
@@ -94,6 +110,14 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Admin/RedirectsTest.php'
 	),
+	'Hostinger\\Reach\\Amplitude\\Amplitude' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Amplitude/Amplitude.php'
+	),
+	'Hostinger\\Reach\\Amplitude\\Events' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Amplitude/Events.php'
+	),
 	'Hostinger\\Reach\\Api\\ApiKeyManager' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Api/ApiKeyManager.php'
@@ -105,6 +129,10 @@ return array(
 	'Hostinger\\Reach\\Api\\Handlers\\FormsApiHandler' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Api/Handlers/FormsApiHandler.php'
+	),
+	'Hostinger\\Reach\\Api\\Handlers\\HostingApiHandler' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Api/Handlers/HostingApiHandler.php'
 	),
 	'Hostinger\\Reach\\Api\\Handlers\\IntegrationsApiHandler' => array(
 		'version' => 'dev-main',
@@ -121,6 +149,10 @@ return array(
 	'Hostinger\\Reach\\Api\\Routes\\FormsRoutes' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Api/Routes/FormsRoutes.php'
+	),
+	'Hostinger\\Reach\\Api\\Routes\\HostingRoutes' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Api/Routes/HostingRoutes.php'
 	),
 	'Hostinger\\Reach\\Api\\Routes\\IntegrationsRoutes' => array(
 		'version' => 'dev-main',
@@ -234,6 +266,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Integrations/PluginManager.php'
 	),
+	'Hostinger\\Reach\\Integrations\\Reach\\ReachFormBuilder' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Integrations/Reach/ReachFormBuilder.php'
+	),
 	'Hostinger\\Reach\\Integrations\\Reach\\ReachFormIntegration' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Integrations/Reach/ReachFormIntegration.php'
@@ -310,6 +346,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Models/PluginData.php'
 	),
+	'Hostinger\\Reach\\Providers\\AmplitudeProvider' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Providers/AmplitudeProvider.php'
+	),
 	'Hostinger\\Reach\\Providers\\AssetsProvider' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Providers/AssetsProvider.php'
@@ -318,6 +358,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Providers/BlocksProvider.php'
 	),
+	'Hostinger\\Reach\\Providers\\ClientProvider' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Providers/ClientProvider.php'
+	),
 	'Hostinger\\Reach\\Providers\\ContainerProvider' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Providers/ContainerProvider.php'
@@ -325,6 +369,10 @@ return array(
 	'Hostinger\\Reach\\Providers\\DatabaseProvider' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Providers/DatabaseProvider.php'
+	),
+	'Hostinger\\Reach\\Providers\\HostingRoutesProvider' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Providers/HostingRoutesProvider.php'
 	),
 	'Hostinger\\Reach\\Providers\\IntegrationsProvider' => array(
 		'version' => 'dev-main',
@@ -466,6 +514,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Api/Handlers/FormsApiHandlerTest.php'
 	),
+	'Hostinger\\Reach\\Tests\\Integration\\Api\\Handlers\\HostingApiHandlerTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Api/Handlers/HostingApiHandlerTest.php'
+	),
 	'Hostinger\\Reach\\Tests\\Integration\\Api\\Handlers\\IntegrationsApiHandlerTest' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Api/Handlers/IntegrationsApiHandlerTest.php'
@@ -481,6 +533,10 @@ return array(
 	'Hostinger\\Reach\\Tests\\Integration\\Api\\Routes\\FormsRoutesTest' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Api/Routes/FormsRoutesTest.php'
+	),
+	'Hostinger\\Reach\\Tests\\Integration\\Api\\Routes\\HostingRoutesTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Api/Routes/HostingRoutesTest.php'
 	),
 	'Hostinger\\Reach\\Tests\\Integration\\Api\\Routes\\IntegrationsRoutesTest' => array(
 		'version' => 'dev-main',
@@ -574,6 +630,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Integrations/OptInMonsterIntegrationTest.php'
 	),
+	'Hostinger\\Reach\\Tests\\Integration\\Integrations\\ReachFormBuilderTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Integrations/ReachFormBuilderTest.php'
+	),
 	'Hostinger\\Reach\\Tests\\Integration\\Integrations\\ReachFormIntegrationTest' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Integrations/ReachFormIntegrationTest.php'
@@ -630,6 +690,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Integrations/PluginManagerTest.php'
 	),
+	'Hostinger\\Reach\\Tests\\Integration\\Providers\\AmplitudeProviderTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Providers/AmplitudeProviderTest.php'
+	),
 	'Hostinger\\Reach\\Tests\\Integration\\Providers\\AssetsProviderTest' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Providers/AssetsProviderTest.php'
@@ -638,9 +702,17 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Providers/BlocksProviderTest.php'
 	),
+	'Hostinger\\Reach\\Tests\\Integration\\Providers\\ClientProviderTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Providers/ClientProviderTest.php'
+	),
 	'Hostinger\\Reach\\Tests\\Integration\\Providers\\DatabaseProviderTest' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Providers/DatabaseProviderTest.php'
+	),
+	'Hostinger\\Reach\\Tests\\Integration\\Providers\\HostingRoutesProviderTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Providers/HostingRoutesProviderTest.php'
 	),
 	'Hostinger\\Reach\\Tests\\Integration\\Providers\\IntegrationsProviderTest' => array(
 		'version' => 'dev-main',
@@ -698,6 +770,10 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Tracking/AbandonedCartsTest.php'
 	),
+	'Hostinger\\Reach\\Tests\\Integration\\Tracking\\RestoreCartTest' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/tests/phpunit/Integration/Tracking/RestoreCartTest.php'
+	),
 	'Hostinger\\Reach\\Tests\\Unit\\Api\\ResourceIdManagerTest' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/tests/phpunit/Integration/Api/ResourceIdManagerTest.php'
@@ -706,80 +782,84 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Tracking/AbandonedCarts.php'
 	),
+	'Hostinger\\Reach\\Tracking\\RestoreCart' => array(
+		'version' => 'dev-main',
+		'path'    => $baseDir . '/src/Tracking/RestoreCart.php'
+	),
 	'Hostinger\\Surveys\\Ajax' => array(
-		'version' => '1.1.17.0',
+		'version' => '1.1.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-surveys/src/Ajax.php'
 	),
 	'Hostinger\\Surveys\\Assets' => array(
-		'version' => '1.1.17.0',
+		'version' => '1.1.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-surveys/src/Assets.php'
 	),
 	'Hostinger\\Surveys\\Loader' => array(
-		'version' => '1.1.17.0',
+		'version' => '1.1.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-surveys/src/Loader.php'
 	),
 	'Hostinger\\Surveys\\Rest' => array(
-		'version' => '1.1.17.0',
+		'version' => '1.1.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-surveys/src/Rest.php'
 	),
 	'Hostinger\\Surveys\\SurveyLoader' => array(
-		'version' => '1.1.17.0',
+		'version' => '1.1.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-surveys/src/SurveyLoader.php'
 	),
 	'Hostinger\\Surveys\\SurveyManager' => array(
-		'version' => '1.1.17.0',
+		'version' => '1.1.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-surveys/src/SurveyManager.php'
 	),
 	'Hostinger\\WpHelper\\Config' => array(
-		'version' => '1.0.12.0',
+		'version' => '1.0.15.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-helper/src/Config.php'
 	),
 	'Hostinger\\WpHelper\\Constants' => array(
-		'version' => '1.0.12.0',
+		'version' => '1.0.15.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-helper/src/Constants.php'
 	),
 	'Hostinger\\WpHelper\\Requests\\Client' => array(
-		'version' => '1.0.12.0',
+		'version' => '1.0.15.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-helper/src/Requests/Client.php'
 	),
 	'Hostinger\\WpHelper\\Utils' => array(
-		'version' => '1.0.12.0',
+		'version' => '1.0.15.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-helper/src/Utils.php'
 	),
 	'Hostinger\\WpMenuManager\\Assets' => array(
-		'version' => '1.2.20.0',
+		'version' => '1.2.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-menu-manager/src/Assets.php'
 	),
 	'Hostinger\\WpMenuManager\\Manager' => array(
-		'version' => '1.2.20.0',
+		'version' => '1.2.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-menu-manager/src/Manager.php'
 	),
 	'Hostinger\\WpMenuManager\\Menus' => array(
-		'version' => '1.2.20.0',
+		'version' => '1.2.23.0',
 		'path'    => $vendorDir . '/hostinger/hostinger-wp-menu-manager/src/Menus.php'
 	),
 	'Latest_Autoloader_Guard' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-latest-autoloader-guard.php'
 	),
 	'Manifest_Reader' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-manifest-reader.php'
 	),
 	'PHP_Autoloader' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-php-autoloader.php'
 	),
 	'Path_Processor' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-path-processor.php'
 	),
 	'Plugin_Locator' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-plugin-locator.php'
 	),
 	'Plugins_Handler' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-plugins-handler.php'
 	),
 	'Psr\\Container\\ContainerExceptionInterface' => array(
@@ -795,15 +875,15 @@ return array(
 		'path'    => $vendorDir . '/psr/container/src/NotFoundExceptionInterface.php'
 	),
 	'Shutdown_Handler' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-shutdown-handler.php'
 	),
 	'Version_Loader' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-version-loader.php'
 	),
 	'Version_Selector' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-version-selector.php'
 	),
 );

@@ -14,14 +14,6 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $vendorDir . '/symfony/deprecation-contracts/function.php'
 	),
-	'22177d82d05723dff5b1903f4496520e' => array(
-		'version' => '1.2.1.0',
-		'path'    => $vendorDir . '/alleyinteractive/wordpress-autoloader/src/class-autoloader.php'
-	),
-	'd0b4d9ff2237dcc1a532ae9d039c0c2c' => array(
-		'version' => '1.3.0.0',
-		'path'    => $vendorDir . '/alleyinteractive/composer-wordpress-autoloader/src/autoload.php'
-	),
 	'320cde22f66dd4f5d3fd621d3e88b98f' => array(
 		'version' => '1.9999999.9999999.9999999-dev',
 		'path'    => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php'
@@ -30,9 +22,17 @@ return array(
 		'version' => '1.9999999.9999999.9999999-dev',
 		'path'    => $vendorDir . '/symfony/polyfill-php80/bootstrap.php'
 	),
+	'22177d82d05723dff5b1903f4496520e' => array(
+		'version' => '1.2.1.0',
+		'path'    => $vendorDir . '/alleyinteractive/wordpress-autoloader/src/class-autoloader.php'
+	),
 	'662a729f963d39afe703c9d9b7ab4a8c' => array(
 		'version' => '1.9999999.9999999.9999999-dev',
 		'path'    => $vendorDir . '/symfony/polyfill-php83/bootstrap.php'
+	),
+	'd0b4d9ff2237dcc1a532ae9d039c0c2c' => array(
+		'version' => '1.3.0.0',
+		'path'    => $vendorDir . '/alleyinteractive/composer-wordpress-autoloader/src/autoload.php'
 	),
 	'2203a247e6fda86070a5e4e07aed533a' => array(
 		'version' => '7.4.9999999.9999999-dev',
@@ -62,8 +62,8 @@ return array(
 		'version' => '0.4.0.0',
 		'path'    => $vendorDir . '/wordpress/abilities-api/includes/bootstrap.php'
 	),
-	'f6d4f6bcee7247df6b777884c3e22f98' => array(
-		'version' => '5.6.0.0',
-		'path'    => $vendorDir . '/yahnis-elsts/plugin-update-checker/load-v5p6.php'
+	'bc0af1337b39f0d750e835f5263eb646' => array(
+		'version' => '5.7.0.0',
+		'path'    => $vendorDir . '/yahnis-elsts/plugin-update-checker/load-v5p7.php'
 	),
 );

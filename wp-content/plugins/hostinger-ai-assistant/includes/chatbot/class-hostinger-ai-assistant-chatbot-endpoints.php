@@ -1,5 +1,7 @@
 <?php
 
+use Hostinger\AiAssistant\Hosting\SearchConsoleRepository;
+
 class Hostinger_Ai_Assistant_Chatbot_Endpoints {
     private Hostinger_Ai_Assistant_Helper $helper;
     private Hostinger_Ai_Assistant_Config $config_handler;
@@ -12,12 +14,13 @@ class Hostinger_Ai_Assistant_Chatbot_Endpoints {
         $this->helper         = new Hostinger_Ai_Assistant_Helper();
         $this->config_handler = new Hostinger_Ai_Assistant_Config();
 
-        $rest_url = rest_url( 'wp/v2/posts' );
+        $rest_url       = rest_url( 'wp/v2/posts' );
+        $search_console = new SearchConsoleRepository();
 
         $response_data = array(
             'data' => array(
-                'domain'             => implode( ' ', str_split( $this->helper->get_host_info() ) ),
-                'metadata'           => array(
+                'domain'                => implode( ' ', str_split( $this->helper->get_host_info() ) ),
+                'metadata'              => array(
                     'environment_info' => array(
                         'wordpress_version' => get_bloginfo( 'version' ) ?? '',
                         'is_multisite'      => is_multisite(),
@@ -41,12 +44,16 @@ class Hostinger_Ai_Assistant_Chatbot_Endpoints {
                             ->get( 'Name' ) : '',
                     ),
                 ),
-                'rest_api_endpoints' => array(
+                'rest_api_endpoints'    => array(
                     'base_rest_api'   => HOSTINGER_AI_ASSISTANT_REST_API_BASE,
                     'base_rest_uri'   => $this->config_handler->get_config_value( 'base_rest_uri', HOSTINGER_AI_ASSISTANT_REST_URI ),
                     'base_hpanel_uri' => $this->config_handler->get_config_value( 'base_hpanel_rest_uri', HOSTINGER_AI_ASSISTANT_HPANEL_REST_URI ),
                 ),
-                'base_url'           => $this->return_chatbot_base_url(),
+                'base_url'              => $this->return_chatbot_base_url(),
+                'google_site_kit_state' => array(
+                    'is_installed' => $search_console->is_site_kit_installed(),
+                    'is_active'    => $search_console->is_site_kit_active(),
+                ),
             ),
         );
 

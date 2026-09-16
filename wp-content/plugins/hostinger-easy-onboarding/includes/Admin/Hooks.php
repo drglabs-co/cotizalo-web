@@ -123,6 +123,8 @@ class Hooks {
         }
 
         add_action( 'admin_init', array( $this, 'skip_cartflow_onboarding' ), 0 );
+
+        add_filter( 'wpforms_setup_wizard_setup_wizard_is_disabled', '__return_true', PHP_INT_MAX );
     }
 
     public function init_onboarding() {

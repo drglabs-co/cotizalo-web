@@ -211,9 +211,17 @@ class Hostinger_Ai_Assistant_Admin {
         $translations = new Hostinger_Frontend_Translations();
 
         wp_enqueue_style(
+            'hostinger_chatbot_vendor',
+            HOSTINGER_AI_ASSISTANT_ASSETS_URL . '/css/chatbot-widget-vendor.min.css',
+            array(),
+            $this->version,
+            'all'
+        );
+
+        wp_enqueue_style(
             'hostinger_chatbot',
             HOSTINGER_AI_ASSISTANT_ASSETS_URL . '/css/hostinger-chatbot.min.css',
-            array(),
+            array( 'hostinger_chatbot_vendor' ),
             $this->version,
             'all'
         );
@@ -241,11 +249,21 @@ class Hostinger_Ai_Assistant_Admin {
                 array(
                     'nonce'       => wp_create_nonce( 'wp_rest' ),
                     'chatbot_uri' => esc_url_raw( rest_url() ),
+                    'ajax_nonce'  => wp_create_nonce( 'updates' ),
+                    'admin_url'   => esc_url_raw( admin_url( 'admin-ajax.php' ) ),
                     'user_id'     => ! empty( $user->ID ) ? $user->ID : 0,
                     'language'    => $locale,
                 )
             )
         );
+    }
+
+    public function enqueue_chatbot_on_frontend(): void {
+        if ( ! Hostinger_Ai_Assistant_Helper::should_load_frontend_chatbot() ) {
+            return;
+        }
+
+        $this->enqueue_chatbot();
     }
 
     /**

@@ -1,25 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import FAQ from '@/components/FAQ.vue';
 import Hero from '@/components/Hero.vue';
+import { useModal } from '@/composables/useModal';
 import { useToast } from '@/composables/useToast';
 import { connectFaqData } from '@/data/faq';
 import { reachRepo } from '@/data/repositories/reachRepo';
-import { useGeneralDataStore } from '@/stores';
+import { ModalName } from '@/types/enums/modalEnum';
 import { translate } from '@/utils/translate';
 
 const TRUSTED_AUTH_DOMAINS = /^https:\/\/auth\.hostinger\.(dev|com)/;
-const PREVIEW_DOMAINS = /hostingersite\.com/i;
 
 const { showError } = useToast();
 
-const generalDataStore = useGeneralDataStore();
-
 const isConnectedToAnotherSite = ref(false);
 const isButtonLoading = ref(false);
+const { openModal } = useModal();
 const domain = window.location.hostname;
-const rawDomain = generalDataStore.rawDomain;
 
 const handleGetStarted = async () => {
 	isButtonLoading.value = true;
@@ -34,18 +32,25 @@ const handleGetStarted = async () => {
 		return;
 	}
 
-	if (PREVIEW_DOMAINS.test(domain)) {
-		window.open(`https://hpanel.hostinger.com/websites/${encodeURIComponent(rawDomain)}`, '_blank');
-
-		return;
-	}
-
 	if (data.authUrl && TRUSTED_AUTH_DOMAINS.test(data.authUrl)) {
-		window.open(data.authUrl, '_blank');
+		window.location.href = data.authUrl;
 	} else {
 		showError(translate('hostinger_reach_error_message'));
 	}
 };
+
+const openApiKeyModal = (apiKey: string = '') => {
+	openModal(ModalName.REACH_API_KEY_MODAL, { apiKey }, { hasCloseButton: true, isXL: true });
+};
+
+onMounted(() => {
+	const params = new URLSearchParams(window.location.search);
+	const key = params.get('api_key');
+
+	if (key !== null) {
+		openApiKeyModal();
+	}
+});
 </script>
 
 <template>
@@ -54,8 +59,8 @@ const handleGetStarted = async () => {
 			:is-connected-to-another-site="isConnectedToAnotherSite"
 			:is-button-loading="isButtonLoading"
 			:domain="domain"
-			:is-temporary="PREVIEW_DOMAINS.test(domain)"
 			:on-get-started="handleGetStarted"
+			:on-manual-api-key-click="() => openApiKeyModal()"
 		/>
 		<div class="faq-wrap">
 			<FAQ :faq-data="connectFaqData" />

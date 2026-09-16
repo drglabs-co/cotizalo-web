@@ -12,7 +12,7 @@ class UpdateWidgetImage extends BaseElementorTool {
             'hostinger-ai-assistant/elementor-update-widget-image',
             array(
                 'label'               => __( 'Update Elementor Widget Image', 'hostinger-ai-assistant' ),
-                'description'         => __( 'Updates image widget source URLs safely. Supports updating URL, media library ID, and alt text.', 'hostinger-ai-assistant' ),
+                'description'         => __( 'Updates an Elementor image widget source. IMPORTANT: only use an image_url that is publicly reachable and returns HTTP 200 - never a placeholder, hallucinated, or external URL that may expire, as this causes broken (404) images. Strongly prefer images already in the WordPress media library: use media-search or media-list to find one and pass its image_id, or upload the image via the media tool first. Do not invent image URLs. Do not use images from Unsplash or other third-party stock image services - those URLs cannot be verified and frequently lead to broken (404) images. Only use images that already exist in the WordPress media library.', 'hostinger-ai-assistant' ),
                 'category'            => $this->category,
                 'input_schema'        => array(
                     'type'       => 'object',
@@ -27,11 +27,11 @@ class UpdateWidgetImage extends BaseElementorTool {
                         ),
                         'image_url' => array(
                             'type'        => 'string',
-                            'description' => __( 'The new image URL', 'hostinger-ai-assistant' ),
+                            'description' => __( 'The new image URL. Must be a real, currently reachable URL that returns HTTP 200 (not a 404, placeholder, or made-up URL). Strongly prefer a WordPress media library item URL over an external one to avoid broken images.', 'hostinger-ai-assistant' ),
                         ),
                         'image_id'  => array(
                             'type'        => 'integer',
-                            'description' => __( 'Optional: WordPress media library ID', 'hostinger-ai-assistant' ),
+                            'description' => __( 'Optional but recommended: WordPress media library attachment ID (from media-search or media-list). Using a media library image is the most reliable way to avoid 404 images. When provided, it should match image_url.', 'hostinger-ai-assistant' ),
                         ),
                         'alt_text'  => array(
                             'type'        => 'string',

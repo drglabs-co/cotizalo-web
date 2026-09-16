@@ -7,7 +7,7 @@ $baseDir   = dirname($vendorDir);
 
 return array(
 	'voku\\' => array(
-		'version' => '2.0.3.0',
+		'version' => '2.1.1.0',
 		'path'    => array( $vendorDir . '/voku/portable-ascii/src/voku' )
 	),
 	'WP\\MCP\\' => array(
@@ -47,7 +47,7 @@ return array(
 		'path'    => array( $vendorDir . '/symfony/finder' )
 	),
 	'Symfony\\Component\\DomCrawler\\' => array(
-		'version' => '7.3.9999999.9999999-dev',
+		'version' => '7.4.9999999.9999999-dev',
 		'path'    => array( $vendorDir . '/symfony/dom-crawler' )
 	),
 	'Symfony\\Component\\Clock\\' => array(
@@ -55,7 +55,7 @@ return array(
 		'path'    => array( $vendorDir . '/symfony/clock' )
 	),
 	'Spatie\\Backtrace\\' => array(
-		'version' => '1.8.1.0',
+		'version' => '1.8.2.0',
 		'path'    => array( $vendorDir . '/spatie/backtrace/src' )
 	),
 	'Ramsey\\Uuid\\' => array(
@@ -99,8 +99,16 @@ return array(
 		'path'    => array( $vendorDir . '/monolog/monolog/src/Monolog' )
 	),
 	'Masterminds\\' => array(
-		'version' => '2.10.0.0',
+		'version' => '2.10.1.0',
 		'path'    => array( $vendorDir . '/masterminds/html5/src' )
+	),
+	'Mantle\\Support\\' => array(
+		'version' => '1.9999999.9999999.9999999-dev',
+		'path'    => array( $vendorDir . '/mantle-framework/support' )
+	),
+	'Mantle\\Contracts\\' => array(
+		'version' => '1.9999999.9999999.9999999-dev',
+		'path'    => array( $vendorDir . '/mantle-framework/contracts' )
 	),
 	'League\\Uri\\' => array(
 		'version' => 'dev-master',
@@ -119,23 +127,23 @@ return array(
 		'path'    => array( $vendorDir . '/laravel/serializable-closure/src' )
 	),
 	'Hostinger\\WpMenuManager\\' => array(
-		'version' => '1.2.20.0',
+		'version' => '1.2.23.0',
 		'path'    => array( $vendorDir . '/hostinger/hostinger-wp-menu-manager/src' )
 	),
 	'Hostinger\\WpHelper\\' => array(
-		'version' => '1.0.12.0',
+		'version' => '1.0.15.0',
 		'path'    => array( $vendorDir . '/hostinger/hostinger-wp-helper/src' )
 	),
 	'Hostinger\\Tests\\' => array(
-		'version' => '1.0.12.0',
+		'version' => '1.0.15.0',
 		'path'    => array( $vendorDir . '/hostinger/hostinger-wp-helper/tests/phpunit' )
 	),
 	'Hostinger\\Surveys\\' => array(
-		'version' => '1.1.19.0',
+		'version' => '1.1.23.0',
 		'path'    => array( $vendorDir . '/hostinger/hostinger-wp-surveys/src' )
 	),
 	'Hostinger\\Amplitude\\' => array(
-		'version' => '1.0.17.0',
+		'version' => '1.0.18.0',
 		'path'    => array( $vendorDir . '/hostinger/hostinger-wp-amplitude/src' )
 	),
 	'Hostinger\\AiAssistant\\Tests\\' => array(
@@ -151,7 +159,7 @@ return array(
 		'path'    => array( $vendorDir . '/graham-campbell/result-type/src' )
 	),
 	'Firebase\\JWT\\' => array(
-		'version' => '7.0.3.0',
+		'version' => '7.1.0.0',
 		'path'    => array( $vendorDir . '/firebase/php-jwt/src' )
 	),
 	'Dotenv\\' => array(
@@ -171,7 +179,7 @@ return array(
 		'path'    => array( $vendorDir . '/alleyinteractive/composer-wordpress-autoloader/src' )
 	),
 	'Carbon\\Doctrine\\' => array(
-		'version' => '3.2.0.0',
+		'version' => 'dev-main',
 		'path'    => array( $vendorDir . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine' )
 	),
 	'Carbon\\' => array(
@@ -179,11 +187,11 @@ return array(
 		'path'    => array( $vendorDir . '/nesbot/carbon/src/Carbon' )
 	),
 	'Brick\\Math\\' => array(
-		'version' => '0.14.7.0',
+		'version' => '0.18.0.0',
 		'path'    => array( $vendorDir . '/brick/math/src' )
 	),
 	'Automattic\\Jetpack\\Autoloader\\' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => array( $vendorDir . '/automattic/jetpack-autoloader/src' )
 	),
 );

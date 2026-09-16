@@ -320,36 +320,33 @@ header.scrolled {
 }
 
 /* Open on hover on desktop or when active */
-@media (min-width: 1101px) {
+@media (min-width: 901px) {
   .nav-dropdown:hover > .nav-dropdown-menu,
   .nav-dropdown.open > .nav-dropdown-menu {
     display: block;
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .nav-dropdown.open > .nav-dropdown-menu {
     display: block;
     position: static;
     transform: none;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 8px;
     box-shadow: none;
-    margin: 0.5rem auto;
-    padding: 0.5rem 0;
+    margin: 0.25rem 0.5rem 0.25rem;
+    padding: 0.25rem 0;
     min-width: unset;
-    width: 100%;
-    max-width: 320px;
+    width: calc(100% - 1rem);
   }
   .nav-dropdown-menu::before {
     display: none;
   }
   .nav-dropdown-menu a {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.92rem;
-    text-align: center;
-    white-space: normal;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1133,72 +1130,57 @@ footer {
     flex-direction: column;
     align-items: center;
     padding-top: 1.5rem;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
-  .nav-links li {
-    width: 100%;
-    text-align: center;
+  .nav-container.menu-open {
+    flex-wrap: wrap;
+    height: 100%;
+    align-content: flex-start;
   }
 
-  .nav-links .nav-item {
-    font-size: 1.05rem;
-    display: inline-block;
-    padding: 0.35rem 0.5rem;
-  }
-
-  .nav-dropdown {
-    width: 100%;
+  .nav-container.menu-open .nav-links,
+  .nav-container.menu-open .nav-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
-  .nav-dropdown-toggle {
-    font-size: 1.05rem;
-    justify-content: center;
+  .nav-container.menu-open .nav-buttons {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    gap: 1rem;
   }
 
-  .nav-container {
-    position: relative;
-    width: 100%;
+  header.menu-open {
+    height: 100vh;
+    align-items: flex-start;
+    background: rgba(10, 14, 26, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  header.menu-open .logo,
+  header.menu-open .mobile-menu-btn {
+    height: var(--nav-height);
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   .mobile-menu-btn {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    gap: 6px;
     cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 8px;
-    z-index: 100001;
-    width: 44px;
-    height: 44px;
-    box-sizing: border-box;
   }
 
   .mobile-menu-btn span {
     width: 24px;
-    height: 2.5px;
-    background-color: var(--text-light, #ffffff);
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
-    border-radius: 2px;
-    display: block;
-    pointer-events: none;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
   }
 
   .mobile-menu-btn.open span:nth-child(1) {
-    transform: translateY(7.5px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
   }
 
   .mobile-menu-btn.open span:nth-child(2) {
@@ -1206,85 +1188,7 @@ footer {
   }
 
   .mobile-menu-btn.open span:nth-child(3) {
-    transform: translateY(-7.5px) rotate(-45deg);
-  }
-
-  header.menu-open,
-  header.navbar.menu-open {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-    max-height: 100vh !important;
-    max-height: 100dvh !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    align-items: flex-start !important;
-    background: rgba(10, 14, 26, 0.98) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    z-index: 99999 !important;
-  }
-
-  header.menu-open .nav-container,
-  header.navbar.menu-open .nav-container {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    min-height: 100% !important;
-    height: auto !important;
-    padding-top: calc(var(--nav-height, 76px) + 1rem) !important;
-    padding-bottom: 3rem !important;
-    position: relative !important;
-  }
-
-  header.menu-open .logo,
-  header.navbar.menu-open .logo {
-    position: absolute !important;
-    top: 0 !important;
-    left: 1rem !important;
-    height: var(--nav-height, 76px) !important;
-    display: flex !important;
-    align-items: center !important;
-    z-index: 100000 !important;
-  }
-
-  header.menu-open .mobile-menu-btn,
-  header.navbar.menu-open .mobile-menu-btn {
-    position: absolute !important;
-    top: calc(var(--nav-height, 76px) / 2) !important;
-    right: 1rem !important;
-    transform: translateY(-50%) !important;
-    z-index: 100001 !important;
-  }
-
-  .nav-container.menu-open .nav-links,
-  .nav-container.menu-open .nav-buttons {
-    display: flex !important;
-  }
-
-  .nav-container.menu-open .nav-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-    margin: 1.5rem auto 2.5rem;
-    padding: 0;
-    gap: 0.85rem;
-  }
-
-  .nav-container.menu-open .nav-buttons .btn-nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0.85rem 1.5rem;
-    font-size: 0.95rem;
-    border-radius: 9999px;
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   /* Hide active underline in mobile vertical menu */
@@ -1294,135 +1198,5 @@ footer {
 
   .footer-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================================================
-   MOBILE RESPONSIVENESS (< 768px & < 480px)
-   Buttons, Typography, Hero Sections & Spacing
-   ========================================================================== */
-@media (max-width: 768px) {
-  section {
-    padding: 4rem 0;
-  }
-
-  .hero,
-  .lp-hero {
-    padding-top: calc(var(--nav-height, 80px) + 2rem);
-    padding-bottom: 3.5rem;
-    min-height: auto;
-  }
-
-  .hero-content {
-    margin-bottom: 2.5rem;
-  }
-
-  .display-title,
-  h1 {
-    font-size: clamp(1.85rem, 6.5vw, 2.75rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    word-break: break-word;
-  }
-
-  .display-title-sm,
-  .section-title,
-  h2 {
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
-    line-height: 1.25;
-  }
-
-  p,
-  .hero-subtitle,
-  .section-subtitle {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .btn {
-    white-space: normal;
-    text-align: center;
-    max-width: 100%;
-    word-break: break-word;
-  }
-
-  .btn-lg {
-    padding: 0.85rem 1.4rem;
-    font-size: 0.95rem;
-  }
-
-  .hero-buttons,
-  .hero-ctas,
-  .hero-actions,
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: stretch;
-    gap: 0.85rem;
-  }
-
-  .hero-buttons .btn,
-  .hero-ctas .btn,
-  .hero-ctas .btn-cta-primary,
-  .hero-ctas .btn-cta-secondary,
-  .cta-buttons .btn {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .badge-pill,
-  .section-eyebrow {
-    max-width: 100%;
-    white-space: normal;
-    text-align: center;
-  }
-
-  .cards-grid-3,
-  .cards-grid-2,
-  .business-grid,
-  .steps-container,
-  .benefits-grid,
-  .features-grid,
-  .pain-comparison-grid,
-  .faq-grid,
-  .status-pipeline-steps {
-    grid-template-columns: 1fr !important;
-  }
-
-  .table-responsive-container,
-  .table-wrap,
-  .seo-comparison-table-wrapper {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
-  }
-
-  .logo img {
-    height: 48px;
-  }
-
-  header {
-    --nav-height: 70px;
-  }
-
-  .hero,
-  .lp-hero {
-    padding-top: calc(70px + 1.5rem);
-    padding-bottom: 3rem;
-  }
-
-  .btn-lg {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
   }
 }

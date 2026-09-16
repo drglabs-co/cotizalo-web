@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
+class ComposerStaticInitc2faf6c24f5323a75899b1c424d7e7cc
 {
     public static $prefixLengthsPsr4 = array (
         'P' =>
@@ -18,6 +18,7 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
             'Hostinger\\Tests\\' => 16,
             'Hostinger\\Surveys\\' => 18,
             'Hostinger\\Reach\\' => 16,
+            'Hostinger\\Amplitude\\' => 20,
         ),
         'A' =>
         array (
@@ -50,6 +51,10 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
+        'Hostinger\\Amplitude\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/hostinger/hostinger-wp-amplitude/src',
+        ),
         'Automattic\\Jetpack\\Autoloader\\' =>
         array (
             0 => __DIR__ . '/..' . '/automattic/jetpack-autoloader/src',
@@ -63,6 +68,10 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
         'Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin' => __DIR__ . '/..' . '/automattic/jetpack-autoloader/src/CustomAutoloaderPlugin.php',
         'Automattic\\Jetpack\\Autoloader\\ManifestGenerator' => __DIR__ . '/..' . '/automattic/jetpack-autoloader/src/ManifestGenerator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Hostinger\\Amplitude\\ActionDispatcher' => __DIR__ . '/..' . '/hostinger/hostinger-wp-amplitude/src/ActionDispatcher.php',
+        'Hostinger\\Amplitude\\AmplitudeLoader' => __DIR__ . '/..' . '/hostinger/hostinger-wp-amplitude/src/AmplitudeLoader.php',
+        'Hostinger\\Amplitude\\AmplitudeManager' => __DIR__ . '/..' . '/hostinger/hostinger-wp-amplitude/src/AmplitudeManager.php',
+        'Hostinger\\Amplitude\\Rest' => __DIR__ . '/..' . '/hostinger/hostinger-wp-amplitude/src/Rest.php',
         'Hostinger\\Reach\\Admin\\Database\\CartsTable' => __DIR__ . '/../..' . '/src/Admin/Database/CartsTable.php',
         'Hostinger\\Reach\\Admin\\Database\\ContactListsTable' => __DIR__ . '/../..' . '/src/Admin/Database/ContactListsTable.php',
         'Hostinger\\Reach\\Admin\\Database\\DatabaseInterface' => __DIR__ . '/../..' . '/src/Admin/Database/DatabaseInterface.php',
@@ -74,13 +83,17 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
         'Hostinger\\Reach\\Admin\\Redirects' => __DIR__ . '/../..' . '/src/Admin/Redirects.php',
         'Hostinger\\Reach\\Admin\\Surveys\\SatisfactionSurvey' => __DIR__ . '/../..' . '/src/Admin/Surveys/SatisfactionSurvey.php',
         'Hostinger\\Reach\\Admin\\Surveys\\Survey' => __DIR__ . '/../..' . '/src/Admin/Surveys/Survey.php',
+        'Hostinger\\Reach\\Amplitude\\Amplitude' => __DIR__ . '/../..' . '/src/Amplitude/Amplitude.php',
+        'Hostinger\\Reach\\Amplitude\\Events' => __DIR__ . '/../..' . '/src/Amplitude/Events.php',
         'Hostinger\\Reach\\Api\\ApiKeyManager' => __DIR__ . '/../..' . '/src/Api/ApiKeyManager.php',
         'Hostinger\\Reach\\Api\\Handlers\\ApiHandler' => __DIR__ . '/../..' . '/src/Api/Handlers/ApiHandler.php',
         'Hostinger\\Reach\\Api\\Handlers\\FormsApiHandler' => __DIR__ . '/../..' . '/src/Api/Handlers/FormsApiHandler.php',
+        'Hostinger\\Reach\\Api\\Handlers\\HostingApiHandler' => __DIR__ . '/../..' . '/src/Api/Handlers/HostingApiHandler.php',
         'Hostinger\\Reach\\Api\\Handlers\\IntegrationsApiHandler' => __DIR__ . '/../..' . '/src/Api/Handlers/IntegrationsApiHandler.php',
         'Hostinger\\Reach\\Api\\Handlers\\ReachApiHandler' => __DIR__ . '/../..' . '/src/Api/Handlers/ReachApiHandler.php',
         'Hostinger\\Reach\\Api\\ResourceIdManager' => __DIR__ . '/../..' . '/src/Api/ResourceIdManager.php',
         'Hostinger\\Reach\\Api\\Routes\\FormsRoutes' => __DIR__ . '/../..' . '/src/Api/Routes/FormsRoutes.php',
+        'Hostinger\\Reach\\Api\\Routes\\HostingRoutes' => __DIR__ . '/../..' . '/src/Api/Routes/HostingRoutes.php',
         'Hostinger\\Reach\\Api\\Routes\\IntegrationsRoutes' => __DIR__ . '/../..' . '/src/Api/Routes/IntegrationsRoutes.php',
         'Hostinger\\Reach\\Api\\Routes\\ReachRoutes' => __DIR__ . '/../..' . '/src/Api/Routes/ReachRoutes.php',
         'Hostinger\\Reach\\Api\\Routes\\Routes' => __DIR__ . '/../..' . '/src/Api/Routes/Routes.php',
@@ -109,6 +122,7 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
         'Hostinger\\Reach\\Integrations\\NinjaForms\\NinjaFormsIntegration' => __DIR__ . '/../..' . '/src/Integrations/NinjaForms/NinjaFormsIntegration.php',
         'Hostinger\\Reach\\Integrations\\OptInMonster\\OptInMonsterIntegration' => __DIR__ . '/../..' . '/src/Integrations/OptInMonster/OptInMonsterIntegration.php',
         'Hostinger\\Reach\\Integrations\\PluginManager' => __DIR__ . '/../..' . '/src/Integrations/PluginManager.php',
+        'Hostinger\\Reach\\Integrations\\Reach\\ReachFormBuilder' => __DIR__ . '/../..' . '/src/Integrations/Reach/ReachFormBuilder.php',
         'Hostinger\\Reach\\Integrations\\Reach\\ReachFormIntegration' => __DIR__ . '/../..' . '/src/Integrations/Reach/ReachFormIntegration.php',
         'Hostinger\\Reach\\Integrations\\SureForms\\SureFormsIntegration' => __DIR__ . '/../..' . '/src/Integrations/SureForms/SureFormsIntegration.php',
         'Hostinger\\Reach\\Integrations\\ThriveLeads\\ThriveLeadsIntegration' => __DIR__ . '/../..' . '/src/Integrations/ThriveLeads/ThriveLeadsIntegration.php',
@@ -128,10 +142,13 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
         'Hostinger\\Reach\\Models\\Form' => __DIR__ . '/../..' . '/src/Models/Form.php',
         'Hostinger\\Reach\\Models\\Model' => __DIR__ . '/../..' . '/src/Models/Model.php',
         'Hostinger\\Reach\\Models\\PluginData' => __DIR__ . '/../..' . '/src/Models/PluginData.php',
+        'Hostinger\\Reach\\Providers\\AmplitudeProvider' => __DIR__ . '/../..' . '/src/Providers/AmplitudeProvider.php',
         'Hostinger\\Reach\\Providers\\AssetsProvider' => __DIR__ . '/../..' . '/src/Providers/AssetsProvider.php',
         'Hostinger\\Reach\\Providers\\BlocksProvider' => __DIR__ . '/../..' . '/src/Providers/BlocksProvider.php',
+        'Hostinger\\Reach\\Providers\\ClientProvider' => __DIR__ . '/../..' . '/src/Providers/ClientProvider.php',
         'Hostinger\\Reach\\Providers\\ContainerProvider' => __DIR__ . '/../..' . '/src/Providers/ContainerProvider.php',
         'Hostinger\\Reach\\Providers\\DatabaseProvider' => __DIR__ . '/../..' . '/src/Providers/DatabaseProvider.php',
+        'Hostinger\\Reach\\Providers\\HostingRoutesProvider' => __DIR__ . '/../..' . '/src/Providers/HostingRoutesProvider.php',
         'Hostinger\\Reach\\Providers\\IntegrationsProvider' => __DIR__ . '/../..' . '/src/Providers/IntegrationsProvider.php',
         'Hostinger\\Reach\\Providers\\JobsProvider' => __DIR__ . '/../..' . '/src/Providers/JobsProvider.php',
         'Hostinger\\Reach\\Providers\\MenusProvider' => __DIR__ . '/../..' . '/src/Providers/MenusProvider.php',
@@ -154,6 +171,7 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
         'Hostinger\\Reach\\Setup\\Database' => __DIR__ . '/../..' . '/src/Setup/Database.php',
         'Hostinger\\Reach\\Setup\\Encrypt' => __DIR__ . '/../..' . '/src/Setup/Encrypt.php',
         'Hostinger\\Reach\\Tracking\\AbandonedCarts' => __DIR__ . '/../..' . '/src/Tracking/AbandonedCarts.php',
+        'Hostinger\\Reach\\Tracking\\RestoreCart' => __DIR__ . '/../..' . '/src/Tracking/RestoreCart.php',
         'Hostinger\\Surveys\\Ajax' => __DIR__ . '/..' . '/hostinger/hostinger-wp-surveys/src/Ajax.php',
         'Hostinger\\Surveys\\Assets' => __DIR__ . '/..' . '/hostinger/hostinger-wp-surveys/src/Assets.php',
         'Hostinger\\Surveys\\Loader' => __DIR__ . '/..' . '/hostinger/hostinger-wp-surveys/src/Loader.php',
@@ -175,9 +193,9 @@ class ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit313e69f9685b56c2f319d1e3f6f39c52::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc2faf6c24f5323a75899b1c424d7e7cc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc2faf6c24f5323a75899b1c424d7e7cc::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc2faf6c24f5323a75899b1c424d7e7cc::$classMap;
 
         }, null, ClassLoader::class);
     }
