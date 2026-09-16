@@ -145,32 +145,58 @@ function cotizalo_scripts() {
     ';
     wp_add_inline_style( 'cotizalo-style', $dropdown_css );
 
-    // Dropdown toggle JS — runs after DOM ready on every page
-    $dropdown_js = '
-        (function() {
-            document.addEventListener("DOMContentLoaded", function() {
-                var toggles = document.querySelectorAll(".nav-dropdown-toggle");
-                toggles.forEach(function(btn) {
-                    btn.addEventListener("click", function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        var dropdown = btn.closest(".nav-dropdown");
-                        var isOpen = dropdown.classList.contains("open");
-                        document.querySelectorAll(".nav-dropdown").forEach(function(d) { d.classList.remove("open"); });
-                        if (!isOpen) dropdown.classList.add("open");
+}
+add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
+
+/**
+ * Output dropdown JS in wp_footer so it runs on every page template
+ * regardless of whether jQuery is enqueued.
+ */
+function cotizalo_dropdown_js() {
+    ?>
+    <script>
+    (function () {
+        function initDropdowns() {
+            document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
+                // Avoid double-binding
+                if (btn.dataset.ddInit) return;
+                btn.dataset.ddInit = '1';
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var dropdown = btn.closest('.nav-dropdown');
+                    var isOpen = dropdown.classList.contains('open');
+                    document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                        d.classList.remove('open');
+                        var t = d.querySelector('.nav-dropdown-toggle');
+                        if (t) t.setAttribute('aria-expanded', 'false');
                     });
-                });
-                document.addEventListener("click", function(e) {
-                    if (!e.target.closest(".nav-dropdown")) {
-                        document.querySelectorAll(".nav-dropdown").forEach(function(d) { d.classList.remove("open"); });
+                    if (!isOpen) {
+                        dropdown.classList.add('open');
+                        btn.setAttribute('aria-expanded', 'true');
                     }
                 });
             });
-        })();
-    ';
-    wp_add_inline_script( 'jquery', $dropdown_js, 'after' );
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.nav-dropdown')) {
+                    document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                        d.classList.remove('open');
+                        var t = d.querySelector('.nav-dropdown-toggle');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                }
+            }, { capture: false });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDropdowns);
+        } else {
+            initDropdowns();
+        }
+    })();
+    </script>
+    <?php
 }
-add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
+add_action( 'wp_footer', 'cotizalo_dropdown_js' );
 
 
 /**
