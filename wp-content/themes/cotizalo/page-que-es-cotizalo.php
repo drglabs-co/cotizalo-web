@@ -213,7 +213,7 @@
             </p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg">
-                <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis — 14 días sin tarjeta')); ?>
+                <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis — 14 días')); ?>
             </a>
         </div>
     </section>
@@ -412,7 +412,7 @@
             <h2 style="font-size:clamp(1.75rem,3vw,2.75rem); font-weight:700; color:#fff; margin-bottom:1rem;">Empieza a
                 cotizar de forma profesional</h2>
             <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; margin:0 auto 2rem; max-width:480px;">14 días
-                gratis, sin tarjeta de crédito. Configura tu cuenta en menos de 5 minutos.</p>
+                gratis. Configura tu cuenta en menos de 5 minutos.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg">
                 Crear mi cuenta gratis →

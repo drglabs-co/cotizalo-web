@@ -439,7 +439,7 @@
                 anticipos en línea y da seguimiento a cada proyecto desde un solo lugar.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg" style="background:#fff; color:#292524; border-color:#fff;">
-                Empieza gratis — 14 días sin tarjeta
+                Empieza gratis — 14 días
             </a>
             <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Sin comisiones. Sin
                 contrato. Cancela cuando quieras.</p>
@@ -757,7 +757,7 @@
     <section class="lp-cta">
         <div class="container animate-on-scroll fade-in-up">
             <h2>Presenta propuestas de construcción más profesionales</h2>
-            <p>14 días gratis, sin tarjeta de crédito. Genera tu primera cotización de obra en menos de 5 minutos.</p>
+            <p>14 días gratis. Genera tu primera cotización de obra en menos de 5 minutos.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg" style="background:#fff; color:#292524; border-color:#fff;">
                 Crear mi cuenta gratis

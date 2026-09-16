@@ -933,7 +933,7 @@
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <?php echo esc_html(get_theme_mod('garantia_2', 'Sin tarjeta de crédito requerida')); ?>
+                    <?php echo esc_html(get_theme_mod('garantia_2', '')); ?>
                 </div>
                 <div class="guarantee-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

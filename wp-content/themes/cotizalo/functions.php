@@ -701,7 +701,7 @@ function cotizalo_customize_register($wp_customize)
 
     $wp_customize->add_setting('garantia_1', array('default' => '14 días de prueba gratis'));
     $wp_customize->add_control('garantia_1', array('label' => __('Garantía 1', 'cotizalo'), 'section' => 'cotizalo_garantias', 'type' => 'text'));
-    $wp_customize->add_setting('garantia_2', array('default' => 'Sin tarjeta de crédito requerida'));
+    $wp_customize->add_setting('garantia_2', array('default' => ''));
     $wp_customize->add_control('garantia_2', array('label' => __('Garantía 2', 'cotizalo'), 'section' => 'cotizalo_garantias', 'type' => 'text'));
     $wp_customize->add_setting('garantia_3', array('default' => 'Sin límites de créditos de IA'));
     $wp_customize->add_control('garantia_3', array('label' => __('Garantía 3', 'cotizalo'), 'section' => 'cotizalo_garantias', 'type' => 'text'));

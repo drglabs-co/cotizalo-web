@@ -532,7 +532,7 @@
                 class="btn btn-primary btn-lg" style="background:#fff; color:var(--primary); border-color:#fff;">
                 Generar mi cotización gratis
             </a>
-            <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Sin tarjeta. Sin
+            <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Sin
                 instalación. Listo en 2 minutos.</p>
         </div>
     </section>

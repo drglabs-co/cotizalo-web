@@ -478,7 +478,7 @@
                 puede aceptarla con firma digital y pagar un anticipo, todo sin instalar nada.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg btn-whatsapp">
-                Empieza gratis — 14 días sin tarjeta
+                Empieza gratis — 14 días
             </a>
             <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.65);">Sin comisiones. Sin
                 contrato. Cancela cuando quieras.</p>
@@ -810,7 +810,7 @@
     <section class="lp-cta">
         <div class="container animate-on-scroll fade-in-up">
             <h2>Empieza a cotizar por WhatsApp de forma profesional</h2>
-            <p>14 días gratis, sin tarjeta de crédito. Envía tu primera cotización por WhatsApp en menos de 5 minutos.
+            <p>14 días gratis. Envía tu primera cotización por WhatsApp en menos de 5 minutos.
             </p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg btn-whatsapp">

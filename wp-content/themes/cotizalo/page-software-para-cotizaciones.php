@@ -89,7 +89,7 @@
                     "@type": "Offer",
                     "price": "199",
                     "priceCurrency": "MXN",
-                    "description": "Planes desde $199 MXN al mes. 14 días de prueba gratis sin tarjeta."
+                    "description": "Planes desde $199 MXN al mes. 14 días de prueba gratis."
                 },
                 "publisher": { "@id": "<?php echo esc_url(home_url('/')); ?>#organization" }
             },
@@ -491,7 +491,7 @@
                 profesional en segundos, la envías al instante y sabes exactamente cuándo tu cliente la leyó.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg" style="background:#fff; color:var(--primary); border-color:#fff;">
-                Empieza gratis — 14 días sin tarjeta
+                Empieza gratis — 14 días
             </a>
             <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Sin comisiones. Sin
                 contrato. Cancela cuando quieras.</p>
@@ -824,7 +824,7 @@
     <section class="lp-cta">
         <div class="container animate-on-scroll fade-in-up">
             <h2>Empieza a cotizar de forma profesional hoy</h2>
-            <p>14 días gratis, sin tarjeta de crédito. Configura tu cuenta en menos de 5 minutos.</p>
+            <p>14 días gratis. Configura tu cuenta en menos de 5 minutos.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                 class="btn btn-primary btn-lg" style="background:#fff; color:var(--primary); border-color:#fff;">
                 Crear mi cuenta gratis
