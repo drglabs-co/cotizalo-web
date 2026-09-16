@@ -868,7 +868,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?>
-                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?>
+                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
                 </p>
             </div>
         </div>

@@ -61,6 +61,48 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
       <pubDate><?php echo date( DATE_RFC822, strtotime( '2026-07-27' ) ); ?></pubDate>
       <description>Revisa los términos y condiciones de uso del servicio Cotízalo.</description>
     </item>
+    <item>
+      <title>Envía Cotizaciones por WhatsApp en Segundos | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/cotizaciones-por-whatsapp/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/cotizaciones-por-whatsapp/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Crea una cotización profesional y compártela por WhatsApp en un clic. Tu cliente la ve desde su celular y puede firmarla.</description>
+    </item>
+    <item>
+      <title>Plantilla de Cotización en PDF y Online Gratis | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/plantilla-de-cotizacion/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/plantilla-de-cotizacion/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Descarga o genera plantillas de cotización profesionales en PDF listas para enviar a tus clientes.</description>
+    </item>
+    <item>
+      <title>Programa para Hacer Presupuestos Comerciales Online | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/programa-para-hacer-presupuestos/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/programa-para-hacer-presupuestos/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>El mejor programa para hacer presupuestos y propuestas comerciales rápidas y profesionales en línea.</description>
+    </item>
+    <item>
+      <title>Software para Cotizaciones en México | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/software-para-cotizaciones/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/software-para-cotizaciones/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Software de cotizaciones número uno para microempresas y pymes en México. Rápido, claro y efectivo.</description>
+    </item>
+    <item>
+      <title>Software de Cotizaciones para Constructoras y Contratistas | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/software-de-cotizaciones-para-constructoras/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/software-de-cotizaciones-para-constructoras/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Cotiza proyectos de obra, acabados y construcción con desglose de partidas y control de costos.</description>
+    </item>
+    <item>
+      <title>Software de Cotizaciones para Empresas de Servicios | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/software-de-cotizaciones-para-servicios/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/software-de-cotizaciones-para-servicios/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Genera propuestas y presupuestos de servicios profesionales con firmas digitales y cobro de anticipos.</description>
+    </item>
 
     <?php
     if ( function_exists( 'get_posts' ) ) {
@@ -75,7 +117,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
             foreach ( $extra_posts as $p ) {
                 $permalink = get_permalink( $p->ID );
                 $path      = trim( parse_url( $permalink, PHP_URL_PATH ), '/' );
-                if ( in_array( $path, array( '', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones' ), true ) ) {
+                if ( in_array( $path, array( '', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
                     continue;
                 }
                 $excerpt = has_excerpt( $p->ID ) ? get_the_excerpt( $p->ID ) : wp_trim_words( $p->post_content, 30 );

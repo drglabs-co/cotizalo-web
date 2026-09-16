@@ -43,14 +43,9 @@
     <!-- Nav Section -->
     <header>
         <div class="container nav-container">
-            <div class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round" class="text-primary"
-                    style="color: var(--primary-color);">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                Cotíza<span>lo</span>
-            </div>
+            <a href="https://cotizalo.net/" class="logo">
+                <img src="https://cotizalo.net/wp-content/themes/cotizalo/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2" alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
+            </a>
             <ul class="nav-links">
                 <li><a href="#features">Características</a></li>
                 <li><a href="#how-it-works">Aprender Más</a></li>
@@ -537,14 +532,11 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" class="text-primary"
-                        style="color: var(--primary-color);">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
-                    Cotíza<span>lo</span>
-                </div>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="logo mb-1">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
+                        alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;" id="footer-logo"
+                        width="260" height="70">
+                </a>
                 <ul class="nav-links">
                     <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos</a></li>
                     <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Privacidad</a></li>
@@ -552,7 +544,7 @@
                 </ul>
             </div>
             <div class="footer-bottom">
-                &copy; <?php echo date("Y"); ?> PixelZero. Todos los derechos reservados.
+                &copy; <?php echo date("Y"); ?> PixelZero.mx . Todos los derechos reservados.
             </div>
         </div>
     </footer>

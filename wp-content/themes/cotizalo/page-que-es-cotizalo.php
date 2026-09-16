@@ -205,7 +205,8 @@
                 Conoce Cotízalo
             </span>
             <h1 class="display-title-sm" style="margin-bottom: 1rem;">
-                <?php echo esc_html(get_theme_mod('que_es_title', '¿Qué es Cotízalo?')); ?></h1>
+                <?php echo esc_html(get_theme_mod('que_es_title', '¿Qué es Cotízalo?')); ?>
+            </h1>
             <p class="text-muted"
                 style="max-width: 640px; margin: 0 auto 2.5rem; font-size: 1.2rem; line-height: 1.75;">
                 <?php echo esc_html(get_theme_mod('que_es_subtitle', 'La herramienta directa, simple y sin complicaciones para emprendedores que quieren dejar atrás el Excel y el papel.')); ?>
@@ -393,9 +394,11 @@
                         onmouseout="this.style.transform='';this.style.boxShadow='';">
                         <div style="font-size:1.75rem; margin-bottom:0.85rem;"><?php echo $f[0]; ?></div>
                         <h3 style="font-size:1.05rem; font-weight:600; color:var(--text-dark); margin-bottom:0.45rem;">
-                            <?php echo esc_html($f[1]); ?></h3>
+                            <?php echo esc_html($f[1]); ?>
+                        </h3>
                         <p style="color:var(--text-dark-muted); font-size:0.94rem; line-height:1.65; margin:0;">
-                            <?php echo esc_html($f[2]); ?></p>
+                            <?php echo esc_html($f[2]); ?>
+                        </p>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -471,7 +474,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?>
-                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?>
+                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
                 </p>
             </div>
         </div>

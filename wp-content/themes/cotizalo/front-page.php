@@ -1548,7 +1548,8 @@
             style="font-size: 0.75rem; font-weight: 600; color: #123A2C; letter-spacing: 0.08em; text-transform: uppercase;"><?php echo esc_html(get_theme_mod('cloud_badge_text', 'En la Nube · Siempre Disponible')); ?></span>
         </div>
         <h2 class="text-dark" style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);">
-          <?php echo esc_html(get_theme_mod('cloud_title', 'Siempre contigo, desde cualquier lugar.')); ?></h2>
+          <?php echo esc_html(get_theme_mod('cloud_title', 'Siempre contigo, desde cualquier lugar.')); ?>
+        </h2>
         <p class="text-dark-muted" style="font-size: 1.05rem; line-height: 1.7;">
           <?php echo esc_html(get_theme_mod('cloud_desc', 'Tus cotizaciones viven en la nube. Ajústalas en tiempo real y tu cliente las aprueba al instante — sin correos, sin esperas, sin complicaciones.')); ?>
           Conoce todos nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>"
@@ -1584,7 +1585,8 @@
             </div>
             <div>
               <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">
-                <?php echo esc_html(get_theme_mod('cloud_b1_title', 'Cotizaciones en la nube')); ?></h3>
+                <?php echo esc_html(get_theme_mod('cloud_b1_title', 'Cotizaciones en la nube')); ?>
+              </h3>
               <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
                 <?php echo esc_html(get_theme_mod('cloud_b1_desc', 'Todas tus propuestas se guardan automáticamente. Sin archivos locales, sin riesgo de perder información. Disponibles 24/7 desde cualquier dispositivo.')); ?>
               </p>
@@ -1607,7 +1609,8 @@
             </div>
             <div>
               <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">
-                <?php echo esc_html(get_theme_mod('cloud_b2_title', 'Acceso total desde el móvil')); ?></h3>
+                <?php echo esc_html(get_theme_mod('cloud_b2_title', 'Acceso total desde el móvil')); ?>
+              </h3>
               <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
                 <?php echo esc_html(get_theme_mod('cloud_b2_desc', 'Crea, revisa y envía cotizaciones desde tu celular en segundos. Tu negocio no se detiene aunque estés fuera de la oficina.')); ?>
               </p>
@@ -1881,7 +1884,8 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; <?php echo date('Y'); ?>
-          <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?></p>
+          <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
+        </p>
       </div>
     </div>
   </footer>

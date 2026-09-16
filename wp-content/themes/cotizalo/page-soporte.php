@@ -399,7 +399,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_subm
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
             <h1 class="display-title-sm" style="margin-bottom: 1rem;">
-                <?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?></h1>
+                <?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?>
+            </h1>
             <p class="text-muted" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.2rem;">
                 <?php echo esc_html(get_theme_mod('soporte_subtitle', '¿Tienes dudas o necesitas ayuda con tu cuenta? Envíanos tus comentarios y nos pondremos en contacto contigo lo antes posible.')); ?>
             </p>
@@ -536,7 +537,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_subm
             </div>
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?>
-                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?>
+                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
                 </p>
             </div>
         </div>

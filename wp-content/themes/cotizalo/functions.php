@@ -350,7 +350,7 @@ function cotizalo_customize_register($wp_customize)
         'type' => 'textarea',
     ));
     // Hero Subtitle
-    $wp_customize->add_setting('hero_subtitle', array('default' => 'Olvida el Excel. Una identidad técnica, segura y seria, ideal para microempresas.'));
+    $wp_customize->add_setting('hero_subtitle', array('default' => 'Olvida el Excel y las Imagenes hechas por IA. Una identidad técnica, segura y seria, ideal para microempresas.'));
     $wp_customize->add_control('hero_subtitle', array(
         'label' => __('Subtítulo', 'cotizalo'),
         'section' => 'cotizalo_hero_section',
@@ -552,7 +552,7 @@ function cotizalo_customize_register($wp_customize)
     $wp_customize->add_setting('footer_brand_text', array('default' => 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.'));
     $wp_customize->add_control('footer_brand_text', array('label' => __('Texto de marca (bajo logo)', 'cotizalo'), 'section' => 'cotizalo_footer_section', 'type' => 'textarea'));
 
-    $wp_customize->add_setting('footer_copyright', array('default' => 'PixelZero. Todos los derechos reservados.'));
+    $wp_customize->add_setting('footer_copyright', array('default' => 'PixelZero.mx . Todos los derechos reservados.'));
     $wp_customize->add_control('footer_copyright', array('label' => __('Texto de copyright (sin el año)', 'cotizalo'), 'section' => 'cotizalo_footer_section', 'type' => 'text'));
 
     // ==============================================
@@ -753,39 +753,67 @@ function cotizalo_customize_register($wp_customize)
 add_action('customize_register', 'cotizalo_customize_register');
 
 /**
- * Serve /precios/ without needing a WordPress page in the database.
- * Intercepts the request at template_redirect and loads our custom template.
+ * Map custom landing pages, legal pages, and sitemaps so they work seamlessly
+ * without requiring page entries in the WordPress database (wp_posts).
+ */
+function cotizalo_get_custom_routes() {
+    return array(
+        'que-es-cotizalo'                             => 'page-que-es-cotizalo.php',
+        'precios'                                     => 'page-precios.php',
+        'soporte'                                     => 'page-soporte.php',
+        'terminos-y-condiciones'                      => 'page-terminos-y-condiciones.php',
+        'aviso-de-privacidad'                         => 'page-aviso-de-privacidad.php',
+        'cotizaciones-por-whatsapp'                   => 'page-cotizaciones-por-whatsapp.php',
+        'plantilla-de-cotizacion'                     => 'page-plantilla-de-cotizacion.php',
+        'programa-para-hacer-presupuestos'             => 'page-programa-para-hacer-presupuestos.php',
+        'software-para-cotizaciones'                  => 'page-software-para-cotizaciones.php',
+        'software-de-cotizaciones-para-constructoras' => 'page-software-cotizaciones-constructoras.php',
+        'software-cotizaciones-constructoras'        => 'page-software-cotizaciones-constructoras.php',
+        'software-de-cotizaciones-para-servicios'     => 'page-software-cotizaciones-servicios.php',
+        'software-cotizaciones-servicios'            => 'page-software-cotizaciones-servicios.php',
+        'sitemap.rss'                                 => 'sitemap-rss.php',
+        'sitemap.xml'                                 => 'sitemap-xml.php',
+    );
+}
+
+/**
+ * Prevent WordPress from marking these custom routes as 404.
+ */
+add_filter('pre_handle_404', function ($preempt, $wp_query) {
+    $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    $site_path    = parse_url(home_url(), PHP_URL_PATH);
+    if ($site_path && $site_path !== '/') {
+        $request_path = substr($request_path, strlen($site_path));
+    }
+    $uri    = trim($request_path, '/');
+    $routes = cotizalo_get_custom_routes();
+
+    if (isset($routes[$uri])) {
+        return true; // Bypass WordPress 404 handling
+    }
+    return $preempt;
+}, 10, 2);
+
+/**
+ * Intercept requests to custom routes at template_redirect and load the corresponding template.
  */
 add_action('template_redirect', function () {
-    $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-
-    if ($uri === 'precios') {
-        $template = get_template_directory() . '/page-precios.php';
-        if (file_exists($template)) {
-            include $template;
-            exit;
-        }
+    $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    $site_path    = parse_url(home_url(), PHP_URL_PATH);
+    if ($site_path && $site_path !== '/') {
+        $request_path = substr($request_path, strlen($site_path));
     }
+    $uri    = trim($request_path, '/');
+    $routes = cotizalo_get_custom_routes();
 
-    if ($uri === 'soporte') {
-        $template = get_template_directory() . '/page-soporte.php';
+    if (isset($routes[$uri])) {
+        $template = get_template_directory() . '/' . $routes[$uri];
         if (file_exists($template)) {
-            include $template;
-            exit;
-        }
-    }
-
-    if ($uri === 'sitemap.rss') {
-        $template = get_template_directory() . '/sitemap-rss.php';
-        if (file_exists($template)) {
-            include $template;
-            exit;
-        }
-    }
-
-    if ($uri === 'sitemap.xml') {
-        $template = get_template_directory() . '/sitemap-xml.php';
-        if (file_exists($template)) {
+            global $wp_query;
+            if (is_object($wp_query)) {
+                $wp_query->is_404 = false;
+            }
+            status_header(200);
             include $template;
             exit;
         }

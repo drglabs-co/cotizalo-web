@@ -158,7 +158,8 @@
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
             <h1 class="display-title-sm" style="margin-bottom: 1rem;">
-                <?php echo esc_html(get_theme_mod('terminos_title', 'Términos y Condiciones')); ?></h1>
+                <?php echo esc_html(get_theme_mod('terminos_title', 'Términos y Condiciones')); ?>
+            </h1>
             <p class="text-muted" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">
                 <?php echo esc_html(get_theme_mod('terminos_subtitle', 'Por favor, lee detalladamente los términos de servicio antes de utilizar nuestra herramienta.')); ?>
             </p>
@@ -166,13 +167,64 @@
             <div class="content-box animate-on-scroll fade-in-up delay-100"
                 style="text-align: left; max-width: 800px; margin: 0 auto 3rem;">
                 <?php
+                $has_custom_content = false;
                 if (have_posts()):
                     while (have_posts()):
                         the_post();
-                        the_content();
+                        $content = get_the_content();
+                        if (!empty(trim($content))) {
+                            the_content();
+                            $has_custom_content = true;
+                        }
                     endwhile;
                 endif;
+                if (!$has_custom_content):
                 ?>
+                <p>Al contratar y hacer uso del Sistema de Cotizaciones (en adelante, la <strong>"Aplicación"</strong>) proporcionado por <strong>DrG Labs Co.</strong> (en adelante, la <strong>"Sociedad"</strong>), el Cliente acepta estar sujeto a los siguientes términos y condiciones de uso.</p>
+
+                <h2>1. Consentimiento y Capacidad</h2>
+                <p>Para poder registrarse como Cliente, se debe tener al menos 18 años y contar con la capacidad legal necesaria para obligarse y aceptar los presentes Términos de Uso. El Cliente manifiesta actuar por cuenta propia, y al momento de registrarse reconoce que es sujeto a los derechos y obligaciones que aquí se describen. Al marcar la casilla de aceptación durante el proceso de registro, el Cliente otorga su consentimiento expreso y autoriza a la Sociedad a registrar y almacenar de forma segura los metadatos de su conexión (incluyendo dirección IP, fecha, hora y características del dispositivo o navegador) como evidencia irrefutable de dicha aceptación.</p>
+
+                <h2>2. Usos y Restricciones de la Aplicación</h2>
+                <p>El uso de los servicios y de la Aplicación es exclusiva responsabilidad del Cliente. El Cliente se obliga a no utilizar dispositivos, programas de cómputo, software o cualquier otro medio que pueda interferir en las funcionalidades, actividades y operaciones de la Aplicación. Asimismo, se obliga a utilizarlos de modo tal que no atenten contra las leyes de los Estados Unidos Mexicanos, normas de uso en Internet y derechos de terceros.</p>
+                <p>Las operaciones y servicios que ofrece la Sociedad mediante la Aplicación estarán disponibles, en la medida de lo posible, las veinticuatro horas del día, los 7 días de la semana, sujeto a mantenimientos programados o contingencias operativas.</p>
+
+                <h2>3. Responsabilidad de Claves de Acceso</h2>
+                <p>El buen uso, manejo y custodia de las claves de acceso, contraseñas y cualquier otro dato de acceso a la Aplicación son de la exclusiva responsabilidad del Cliente. Por el solo hecho de acceder a la Aplicación, el Cliente reconoce y acepta que todas las operaciones o transacciones se presumen realizadas por él.</p>
+                <p>En caso de robo, extravío u olvido de las claves de acceso, el Cliente deberá dar aviso de manera inmediata o utilizar los mecanismos de recuperación de cuenta proporcionados por la Aplicación. La Sociedad no se hará responsable de la falta de diligencia, negligencia o impericia del Cliente en el control y cuidado de sus credenciales.</p>
+
+                <h2>4. Confidencialidad y Tratamiento de Datos Personales</h2>
+                <p>En estricto apego y cumplimiento a la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</strong>, la Sociedad se obliga a mantener la confidencialidad de toda la información y datos personales que reciba por parte del Cliente y de los usuarios de este último.</p>
+                <p>Mientras su suscripción o servicio se encuentre activo, la Sociedad se compromete íntegramente a resguardar la totalidad de los datos ingresados en la plataforma, haciendo buen uso de ellos y protegiéndolos contra accesos no autorizados, alteración, pérdida o destrucción.</p>
+
+                <h2>5. Retención de Datos Post-Cancelación</h2>
+                <p>En el supuesto de que el Cliente decida cancelar su cuenta o se suspenda el servicio por falta de pago o por incumplimiento de estos términos, la Sociedad mantendrá un respaldo de los datos e información alojados en la cuenta por un periodo estricto de <strong>60 días naturales</strong> posteriores a la fecha efectiva de cancelación.</p>
+                <p>Este lapso tiene como única finalidad permitir al Cliente la recuperación de un respaldo de su información, previa solicitud formal a nuestro equipo de soporte técnico.</p>
+
+                <h2>6. Eliminación Definitiva de los Datos</h2>
+                <p>Una vez transcurrido el plazo de 60 días naturales descrito en la sección anterior, y en caso de que la información no haya sido solicitada mediante respaldo por el Cliente, <strong>todos los datos, archivos e información que permanezcan alojados en la cuenta serán eliminados de manera definitiva e irreversible de nuestros servidores.</strong> La Sociedad no tendrá obligación alguna de retener ni recuperar dicha información transcurrido este periodo.</p>
+
+                <h2>7. Cookies e Información de Dispositivos</h2>
+                <p>Al acceder a la Aplicación, el Cliente conviene en recibir archivos de datos que se almacenan en el disco duro de su dispositivo ("Cookies"). Dichos archivos se utilizan para fines de seguridad, para mantener la sesión del usuario activa, y para rastrear información estadística que ayude a mejorar el servicio. De igual manera, la Sociedad podrá recabar datos técnicos y de conexión de los dispositivos mediante los cuales tenga acceso a la Aplicación.</p>
+
+                <h2>8. Propiedad Intelectual</h2>
+                <p>El Cliente acuerda que la titularidad de los derechos de propiedad intelectual sobre el código, diseño, logotipos, marcas y contenidos de la Aplicación corresponden de manera exclusiva a <strong>DrG Labs Co.</strong>, o en su caso a terceros licenciantes. Queda estrictamente prohibida su reproducción, distribución o modificación sin autorización previa.</p>
+
+                <h2>9. Modificaciones, Suspensión y Terminación del Servicio</h2>
+                <p>La Sociedad se reserva el derecho de modificar en cualquier momento los presentes Términos de Uso. Dichas modificaciones serán notificadas a través de la Aplicación o vía correo electrónico.</p>
+                <p>Asimismo, la Sociedad se reserva el derecho a negar o dar por terminado el acceso o el uso del Cliente a la Aplicación por cualquier incumplimiento a los presentes términos. En caso de que el Cliente presente una falta de pago continua por un periodo de <strong>90 días naturales</strong>, la cuenta será dada de baja (desactivada) del sistema, bloqueando el acceso de forma definitiva a todos los usuarios asociados a dicha cuenta, sin que ello genere responsabilidad alguna para la Sociedad frente al Cliente.</p>
+
+                <h2>10. Pagos y Periodos de Prueba</h2>
+                <p>Al registrarse en la Aplicación, se podrá otorgar un periodo de prueba inicial sin costo, cuya duración será la especificada en la oferta comercial vigente (típicamente 15 días). Para continuar utilizando el servicio o realizar un cambio de plan ("Upgrade") una vez finalizado o próximo a finalizar dicho periodo, el Cliente deberá registrar un método de pago válido.</p>
+                <p>En caso de que el Cliente ingrese su método de pago y ya haya superado su periodo de prueba, o le queden menos de 48 horas para su expiración, el cobro del plan seleccionado se realizará de manera inmediata (por reglas operativas de las pasarelas de pago). Todo cambio a un plan superior posterior a la primera contratación generará un cargo inmediato por el monto o la diferencia aplicable al nuevo periodo de facturación.</p>
+
+                <h2>11. Cancelación por parte del Cliente y Políticas de Reembolso</h2>
+                <p>El Cliente podrá solicitar la cancelación de su suscripción y la baja de su cuenta en cualquier momento a través del panel de configuración de la Aplicación. Al ejecutar esta acción, la suscripción de pago será cancelada de manera inmediata y el acceso a los datos de la cuenta quedará bloqueado.</p>
+                <p>La Sociedad mantiene una estricta política de <strong>no reembolsos ni devoluciones</strong>. Si la suscripción del Cliente fue cobrada recientemente, se renovó de forma automática o el ciclo de facturación ya inició, el cargo no será revertido ni prorrateado bajo ninguna circunstancia. La cancelación aplica de forma inmediata desde el momento de su ejecución, sin generar saldos a favor o compensaciones monetarias.</p>
+
+                <h2>12. Leyes Aplicables y Jurisdicción</h2>
+                <p>Para la interpretación, cumplimiento y ejecución de los presentes Términos de Uso, el Cliente está de acuerdo en que serán aplicables las leyes de los Estados Unidos Mexicanos y se somete a la jurisdicción de los tribunales competentes en México, renunciando expresamente a cualquier otro fuero que pudiera corresponderle en razón de su domicilio presente o futuro.</p>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -212,7 +264,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?>
-                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?>
+                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
                 </p>
             </div>
         </div>

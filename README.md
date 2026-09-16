@@ -231,5 +231,5 @@ Adicionalmente se corrigió un **bug de ruta en favicon** en `front-page.php` e 
 
 ## 👤 Autor
 
-**David Ramirez** — PixelZero.  
+**David Ramirez** — PixelZero.mx .  
 © 2025 Todos los derechos reservados.

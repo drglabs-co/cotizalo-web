@@ -20,8 +20,7 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url"
-        content="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">
+    <meta property="og:url" content="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">
     <meta property="og:title" content="Software de Cotizaciones para Constructoras | Cotízalo">
     <meta property="og:description"
         content="Cotiza materiales, mano de obra y anticipos en minutos. Software de cotizaciones para constructoras y contratistas en México. Prueba gratis.">
@@ -827,7 +826,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?>
-                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?>
+                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
                 </p>
             </div>
         </div>
