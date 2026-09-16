@@ -3,32 +3,46 @@
  * Cotizalo Theme Functions
  */
 
-if ( ! function_exists( 'cotizalo_theme_setup' ) ) {
-    function cotizalo_theme_setup() {
-        add_theme_support( 'post-thumbnails' );
-        add_theme_support( 'custom-logo' );
+if (!function_exists('cotizalo_theme_setup')) {
+    function cotizalo_theme_setup()
+    {
+        add_theme_support('post-thumbnails');
+        add_theme_support('custom-logo');
     }
 }
-add_action( 'after_setup_theme', 'cotizalo_theme_setup' );
+add_action('after_setup_theme', 'cotizalo_theme_setup');
 
 /**
  * Enqueue scripts and styles.
  */
-function cotizalo_scripts() {
-    wp_enqueue_style( 'cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.5' );
-    wp_enqueue_style( 'google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null );
+function cotizalo_scripts()
+{
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.5');
+    wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
 
     // Dropdown "Recursos" nav styles — applied globally to all page templates
     $dropdown_css = '
         /* Nav Recursos Dropdown */
-        .nav-dropdown { position: relative; }
+        .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
         .nav-dropdown-toggle {
             display: inline-flex; align-items: center; gap: 4px;
             background: none; border: none; cursor: pointer;
-            font-family: inherit; font-size: inherit;
-            color: inherit; padding: 0;
+            font-family: var(--font-main, "Montserrat", system-ui, sans-serif) !important;
+            font-size: 0.875rem !important;
+            font-weight: 600 !important;
+            color: var(--text-light, #ffffff) !important;
+            opacity: 0.85;
+            padding: 0;
+            line-height: inherit;
+            transition: opacity 0.2s ease, color 0.2s ease;
         }
         .nav-dropdown-toggle svg { transition: transform 0.2s; flex-shrink: 0; }
+        .nav-dropdown:hover .nav-dropdown-toggle,
+        .nav-dropdown.open .nav-dropdown-toggle {
+            opacity: 1;
+            color: #ffffff !important;
+        }
+        .nav-dropdown:hover .nav-dropdown-toggle svg,
         .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
         .nav-dropdown-menu {
             display: none;
@@ -45,7 +59,24 @@ function cotizalo_scripts() {
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             list-style: none;
         }
-        .nav-dropdown.open .nav-dropdown-menu { display: block; }
+        /* Desktop: open on hover or when clicked open */
+        @media (min-width: 901px) {
+            .nav-dropdown:hover > .nav-dropdown-menu,
+            .nav-dropdown.open > .nav-dropdown-menu {
+                display: block;
+            }
+        }
+        @media (max-width: 900px) {
+            .nav-dropdown.open > .nav-dropdown-menu {
+                display: block;
+            }
+        }
+        /* Hover bridge so mouse move does not close dropdown */
+        .nav-dropdown-menu::after {
+            content: "";
+            position: absolute;
+            top: -15px; left: 0; right: 0; height: 15px;
+        }
         .nav-dropdown-menu::before {
             content: "";
             position: absolute;
@@ -143,159 +174,166 @@ function cotizalo_scripts() {
         }
         .lp-app-preview svg.app-svg { display: block; width: 100%; height: auto; }
     ';
-    wp_add_inline_style( 'cotizalo-style', $dropdown_css );
+    wp_add_inline_style('cotizalo-style', $dropdown_css);
 
 }
-add_action( 'wp_enqueue_scripts', 'cotizalo_scripts' );
+add_action('wp_enqueue_scripts', 'cotizalo_scripts');
 
 /**
  * Output dropdown JS in wp_footer so it runs on every page template
  * regardless of whether jQuery is enqueued.
  */
-function cotizalo_dropdown_js() {
+function cotizalo_dropdown_js()
+{
     ?>
     <script>
-    (function () {
-        function initDropdowns() {
-            document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
-                // Avoid double-binding
-                if (btn.dataset.ddInit) return;
-                btn.dataset.ddInit = '1';
-                btn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    var dropdown = btn.closest('.nav-dropdown');
-                    var isOpen = dropdown.classList.contains('open');
-                    document.querySelectorAll('.nav-dropdown').forEach(function (d) {
-                        d.classList.remove('open');
-                        var t = d.querySelector('.nav-dropdown-toggle');
-                        if (t) t.setAttribute('aria-expanded', 'false');
+        (function () {
+            function initDropdowns() {
+                document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
+                    // Avoid double-binding
+                    if (btn.dataset.ddInit) return;
+                    btn.dataset.ddInit = '1';
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var dropdown = btn.closest('.nav-dropdown');
+                        var isOpen = dropdown.classList.contains('open');
+                        document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                            d.classList.remove('open');
+                            var t = d.querySelector('.nav-dropdown-toggle');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                        });
+                        if (!isOpen) {
+                            dropdown.classList.add('open');
+                            btn.setAttribute('aria-expanded', 'true');
+                        }
                     });
-                    if (!isOpen) {
-                        dropdown.classList.add('open');
-                        btn.setAttribute('aria-expanded', 'true');
-                    }
                 });
-            });
-            document.addEventListener('click', function (e) {
-                if (!e.target.closest('.nav-dropdown')) {
-                    document.querySelectorAll('.nav-dropdown').forEach(function (d) {
-                        d.classList.remove('open');
-                        var t = d.querySelector('.nav-dropdown-toggle');
-                        if (t) t.setAttribute('aria-expanded', 'false');
-                    });
-                }
-            }, { capture: false });
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initDropdowns);
-        } else {
-            initDropdowns();
-        }
-    })();
+                document.addEventListener('click', function (e) {
+                    if (!e.target.closest('.nav-dropdown')) {
+                        document.querySelectorAll('.nav-dropdown').forEach(function (d) {
+                            d.classList.remove('open');
+                            var t = d.querySelector('.nav-dropdown-toggle');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                        });
+                    }
+                }, { capture: false });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initDropdowns);
+            } else {
+                initDropdowns();
+            }
+        })();
     </script>
     <?php
 }
-add_action( 'wp_footer', 'cotizalo_dropdown_js' );
+add_action('wp_footer', 'cotizalo_dropdown_js');
 
 
 /**
  * Load Google Fonts asynchronously to prevent render-blocking FCP delays.
  */
-add_filter( 'style_loader_tag', function ( $html, $handle ) {
-    if ( 'google-fonts-montserrat' === $handle ) {
-        return str_replace( "rel='stylesheet'", "rel='stylesheet' media='print' onload=\"this.media='all'\"", $html );
+add_filter('style_loader_tag', function ($html, $handle) {
+    if ('google-fonts-montserrat' === $handle) {
+        return str_replace("rel='stylesheet'", "rel='stylesheet' media='print' onload=\"this.media='all'\"", $html);
     }
     return $html;
-}, 10, 2 );
+}, 10, 2);
 
 /**
  * Optimize asset loading: Dequeue unused block library styles, classic theme styles,
  * and plugin styles on the front-end to improve FCP and LCP.
  */
-function cotizalo_dequeue_unused_assets() {
-    if ( is_admin() ) {
+function cotizalo_dequeue_unused_assets()
+{
+    if (is_admin()) {
         return;
     }
-    
+
     // Dequeue Gutenberg Block Library styles
-    wp_dequeue_style( 'wp-block-library' );
-    wp_dequeue_style( 'wp-block-library-theme' );
-    wp_dequeue_style( 'wc-blocks-style' );
-    
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('wc-blocks-style');
+
     // Dequeue default global styles and classic theme styles
-    wp_dequeue_style( 'global-styles' );
-    wp_dequeue_style( 'classic-theme-styles' );
-    
+    wp_dequeue_style('global-styles');
+    wp_dequeue_style('classic-theme-styles');
+
     // Dequeue Hostinger Reach plugin styles (if active)
-    wp_dequeue_style( 'hostinger-reach-blocks' );
-    wp_dequeue_style( 'hostinger-reach-frontend' );
-    wp_dequeue_style( 'hostinger-reach-style' );
-    wp_dequeue_style( 'hostinger-reach' );
+    wp_dequeue_style('hostinger-reach-blocks');
+    wp_dequeue_style('hostinger-reach-frontend');
+    wp_dequeue_style('hostinger-reach-style');
+    wp_dequeue_style('hostinger-reach');
 }
-add_action( 'wp_enqueue_scripts', 'cotizalo_dequeue_unused_assets', 9999 );
+add_action('wp_enqueue_scripts', 'cotizalo_dequeue_unused_assets', 9999);
 
 /**
  * Fallback to strip any plugin-queued styles containing 'hostinger-reach' or 'block-library' from output
  */
-function cotizalo_strip_plugin_styles() {
-    if ( is_admin() ) {
+function cotizalo_strip_plugin_styles()
+{
+    if (is_admin()) {
         return;
     }
     global $wp_styles;
-    if ( ! empty( $wp_styles->queue ) ) {
-        foreach ( $wp_styles->queue as $handle ) {
+    if (!empty($wp_styles->queue)) {
+        foreach ($wp_styles->queue as $handle) {
             $style = $wp_styles->registered[$handle];
-            if ( isset( $style->src ) && ( strpos( $style->src, 'plugins/hostinger-reach' ) !== false || strpos( $style->src, 'block-library' ) !== false ) ) {
-                wp_dequeue_style( $handle );
+            if (isset($style->src) && (strpos($style->src, 'plugins/hostinger-reach') !== false || strpos($style->src, 'block-library') !== false)) {
+                wp_dequeue_style($handle);
             }
         }
     }
 }
-add_action( 'wp_print_styles', 'cotizalo_strip_plugin_styles', 9999 );
+add_action('wp_print_styles', 'cotizalo_strip_plugin_styles', 9999);
 
 /**
  * Strip any plugin-queued scripts containing 'hostinger-reach' from front-end output
  */
-function cotizalo_strip_plugin_scripts() {
-    if ( is_admin() ) {
+function cotizalo_strip_plugin_scripts()
+{
+    if (is_admin()) {
         return;
     }
     global $wp_scripts;
-    if ( ! empty( $wp_scripts->queue ) ) {
-        foreach ( $wp_scripts->queue as $handle ) {
-            if ( isset( $wp_scripts->registered[$handle] ) ) {
+    if (!empty($wp_scripts->queue)) {
+        foreach ($wp_scripts->queue as $handle) {
+            if (isset($wp_scripts->registered[$handle])) {
                 $script = $wp_scripts->registered[$handle];
-                if ( isset( $script->src ) && strpos( $script->src, 'plugins/hostinger-reach' ) !== false ) {
-                    wp_dequeue_script( $handle );
-                    wp_deregister_script( $handle );
+                if (isset($script->src) && strpos($script->src, 'plugins/hostinger-reach') !== false) {
+                    wp_dequeue_script($handle);
+                    wp_deregister_script($handle);
                 }
             }
         }
     }
 }
-add_action( 'wp_print_scripts', 'cotizalo_strip_plugin_scripts', 9999 );
+add_action('wp_print_scripts', 'cotizalo_strip_plugin_scripts', 9999);
 
 /**
  * Override WordPress favicon: remove wp_site_icon and inject our own.
  */
-function cotizalo_remove_wp_favicon() {
-    remove_action( 'wp_head', 'wp_site_icon', 99 );
+function cotizalo_remove_wp_favicon()
+{
+    remove_action('wp_head', 'wp_site_icon', 99);
 }
-add_action( 'init', 'cotizalo_remove_wp_favicon' );
+add_action('init', 'cotizalo_remove_wp_favicon');
 
-function cotizalo_custom_favicon() {
+function cotizalo_custom_favicon()
+{
     $uri = get_template_directory_uri();
-    echo '<link rel="icon" type="image/png" href="' . esc_url( $uri ) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
-    echo '<link rel="shortcut icon" href="' . esc_url( $uri ) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
-    echo '<link rel="apple-touch-icon" href="' . esc_url( $uri ) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
+    echo '<link rel="icon" type="image/png" href="' . esc_url($uri) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
+    echo '<link rel="shortcut icon" href="' . esc_url($uri) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
+    echo '<link rel="apple-touch-icon" href="' . esc_url($uri) . '/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=4">' . "\n";
 }
-add_action( 'wp_head', 'cotizalo_custom_favicon', 1 );
+add_action('wp_head', 'cotizalo_custom_favicon', 1);
 
 /**
  * Register Customizer Settings
  */
-function cotizalo_customize_register( $wp_customize ) {
+function cotizalo_customize_register($wp_customize)
+{
     // ---------------------------------------------
     // PANEL: Hero Section
     // ---------------------------------------------
@@ -345,27 +383,27 @@ function cotizalo_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('nav_login_text', array('default' => 'Ingresar'));
     $wp_customize->add_control('nav_login_text', array(
-        'label'   => __('Botón "Ingresar" — Texto', 'cotizalo'),
+        'label' => __('Botón "Ingresar" — Texto', 'cotizalo'),
         'section' => 'cotizalo_nav_section',
-        'type'    => 'text',
+        'type' => 'text',
     ));
     $wp_customize->add_setting('nav_login_url', array('default' => 'https://app.cotizalo.net/login'));
     $wp_customize->add_control('nav_login_url', array(
-        'label'   => __('Botón "Ingresar" — URL', 'cotizalo'),
+        'label' => __('Botón "Ingresar" — URL', 'cotizalo'),
         'section' => 'cotizalo_nav_section',
-        'type'    => 'url',
+        'type' => 'url',
     ));
     $wp_customize->add_setting('nav_signup_text', array('default' => 'Empezar Gratis'));
     $wp_customize->add_control('nav_signup_text', array(
-        'label'   => __('Botón "Registro" — Texto', 'cotizalo'),
+        'label' => __('Botón "Registro" — Texto', 'cotizalo'),
         'section' => 'cotizalo_nav_section',
-        'type'    => 'text',
+        'type' => 'text',
     ));
     $wp_customize->add_setting('nav_signup_url', array('default' => 'https://app.cotizalo.net/signup'));
     $wp_customize->add_control('nav_signup_url', array(
-        'label'   => __('Botón "Registro" — URL', 'cotizalo'),
+        'label' => __('Botón "Registro" — URL', 'cotizalo'),
         'section' => 'cotizalo_nav_section',
-        'type'    => 'url',
+        'type' => 'url',
     ));
 
     // ---------------------------------------------
@@ -430,7 +468,7 @@ function cotizalo_customize_register( $wp_customize ) {
     // PANEL: VS-AI Section (Valor Agregado)
     // ---------------------------------------------
     $wp_customize->add_section('cotizalo_vsai_section', array(
-        'title'    => __('Sección "VS Imágenes / IA"', 'cotizalo'),
+        'title' => __('Sección "VS Imágenes / IA"', 'cotizalo'),
         'priority' => 32,
     ));
 
@@ -450,7 +488,7 @@ function cotizalo_customize_register( $wp_customize ) {
     // PANEL: Cloud/Mobile Section ("Siempre contigo")
     // ---------------------------------------------
     $wp_customize->add_section('cotizalo_cloud_section', array(
-        'title'    => __('Sección "Siempre contigo" (Nube/Móvil)', 'cotizalo'),
+        'title' => __('Sección "Siempre contigo" (Nube/Móvil)', 'cotizalo'),
         'priority' => 33,
     ));
 
@@ -507,21 +545,21 @@ function cotizalo_customize_register( $wp_customize ) {
     // PANEL: Footer
     // ---------------------------------------------
     $wp_customize->add_section('cotizalo_footer_section', array(
-        'title'    => __('Footer', 'cotizalo'),
+        'title' => __('Footer', 'cotizalo'),
         'priority' => 35,
     ));
 
     $wp_customize->add_setting('footer_brand_text', array('default' => 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.'));
     $wp_customize->add_control('footer_brand_text', array('label' => __('Texto de marca (bajo logo)', 'cotizalo'), 'section' => 'cotizalo_footer_section', 'type' => 'textarea'));
 
-    $wp_customize->add_setting('footer_copyright', array('default' => 'DrG Labs CO. Todos los derechos reservados.'));
+    $wp_customize->add_setting('footer_copyright', array('default' => 'PixelZero. Todos los derechos reservados.'));
     $wp_customize->add_control('footer_copyright', array('label' => __('Texto de copyright (sin el año)', 'cotizalo'), 'section' => 'cotizalo_footer_section', 'type' => 'text'));
 
     // ==============================================
     // PANEL: PÁGINA DE PRECIOS
     // ==============================================
     $wp_customize->add_panel('cotizalo_precios_panel', array(
-        'title'    => __('Página de Precios', 'cotizalo'),
+        'title' => __('Página de Precios', 'cotizalo'),
         'priority' => 40,
     ));
 
@@ -549,10 +587,10 @@ function cotizalo_customize_register( $wp_customize ) {
         'panel' => 'cotizalo_precios_panel',
     ));
 
-    $wp_customize->add_setting('plan_inicial_name',    array('default' => 'Inicial'));
-    $wp_customize->add_control('plan_inicial_name',    array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
-    $wp_customize->add_setting('plan_inicial_price',   array('default' => '199'));
-    $wp_customize->add_control('plan_inicial_price',   array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
+    $wp_customize->add_setting('plan_inicial_name', array('default' => 'Inicial'));
+    $wp_customize->add_control('plan_inicial_name', array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
+    $wp_customize->add_setting('plan_inicial_price', array('default' => '199'));
+    $wp_customize->add_control('plan_inicial_price', array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
     $wp_customize->add_setting('plan_inicial_storage', array('default' => '3 GB de almacenamiento'));
     $wp_customize->add_control('plan_inicial_storage', array('label' => __('Almacenamiento', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
     $wp_customize->add_setting('plan_inicial_f1', array('default' => 'Cotizaciones ilimitadas'));
@@ -574,10 +612,10 @@ function cotizalo_customize_register( $wp_customize ) {
         'panel' => 'cotizalo_precios_panel',
     ));
 
-    $wp_customize->add_setting('plan_basico_name',    array('default' => 'Básico'));
-    $wp_customize->add_control('plan_basico_name',    array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
-    $wp_customize->add_setting('plan_basico_price',   array('default' => '399'));
-    $wp_customize->add_control('plan_basico_price',   array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
+    $wp_customize->add_setting('plan_basico_name', array('default' => 'Básico'));
+    $wp_customize->add_control('plan_basico_name', array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
+    $wp_customize->add_setting('plan_basico_price', array('default' => '399'));
+    $wp_customize->add_control('plan_basico_price', array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
     $wp_customize->add_setting('plan_basico_storage', array('default' => '10 GB de almacenamiento'));
     $wp_customize->add_control('plan_basico_storage', array('label' => __('Almacenamiento', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
     $wp_customize->add_setting('plan_basico_f1', array('default' => 'Cotizaciones ilimitadas'));
@@ -601,12 +639,12 @@ function cotizalo_customize_register( $wp_customize ) {
         'panel' => 'cotizalo_precios_panel',
     ));
 
-    $wp_customize->add_setting('plan_pro_badge',   array('default' => 'Recomendado'));
-    $wp_customize->add_control('plan_pro_badge',   array('label' => __('Texto del badge "Recomendado"', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
-    $wp_customize->add_setting('plan_pro_name',    array('default' => 'Profesional'));
-    $wp_customize->add_control('plan_pro_name',    array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
-    $wp_customize->add_setting('plan_pro_price',   array('default' => '599'));
-    $wp_customize->add_control('plan_pro_price',   array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
+    $wp_customize->add_setting('plan_pro_badge', array('default' => 'Recomendado'));
+    $wp_customize->add_control('plan_pro_badge', array('label' => __('Texto del badge "Recomendado"', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
+    $wp_customize->add_setting('plan_pro_name', array('default' => 'Profesional'));
+    $wp_customize->add_control('plan_pro_name', array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
+    $wp_customize->add_setting('plan_pro_price', array('default' => '599'));
+    $wp_customize->add_control('plan_pro_price', array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
     $wp_customize->add_setting('plan_pro_storage', array('default' => '50 GB de almacenamiento'));
     $wp_customize->add_control('plan_pro_storage', array('label' => __('Almacenamiento', 'cotizalo'), 'section' => 'cotizalo_plan_profesional', 'type' => 'text'));
     $wp_customize->add_setting('plan_pro_f1', array('default' => 'Cotizaciones ilimitadas'));
@@ -632,10 +670,10 @@ function cotizalo_customize_register( $wp_customize ) {
         'panel' => 'cotizalo_precios_panel',
     ));
 
-    $wp_customize->add_setting('plan_emp_name',    array('default' => 'Empresarial'));
-    $wp_customize->add_control('plan_emp_name',    array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_empresarial', 'type' => 'text'));
-    $wp_customize->add_setting('plan_emp_price',   array('default' => '899'));
-    $wp_customize->add_control('plan_emp_price',   array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_empresarial', 'type' => 'text'));
+    $wp_customize->add_setting('plan_emp_name', array('default' => 'Empresarial'));
+    $wp_customize->add_control('plan_emp_name', array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_empresarial', 'type' => 'text'));
+    $wp_customize->add_setting('plan_emp_price', array('default' => '899'));
+    $wp_customize->add_control('plan_emp_price', array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_empresarial', 'type' => 'text'));
     $wp_customize->add_setting('plan_emp_storage', array('default' => '80 GB de almacenamiento'));
     $wp_customize->add_control('plan_emp_storage', array('label' => __('Almacenamiento', 'cotizalo'), 'section' => 'cotizalo_plan_empresarial', 'type' => 'text'));
     $wp_customize->add_setting('plan_emp_f1', array('default' => 'Cotizaciones ilimitadas'));
@@ -676,7 +714,7 @@ function cotizalo_customize_register( $wp_customize ) {
     // PANEL: PÁGINA DE SOPORTE
     // ==============================================
     $wp_customize->add_section('cotizalo_soporte_section', array(
-        'title'    => __('Página de Soporte', 'cotizalo'),
+        'title' => __('Página de Soporte', 'cotizalo'),
         'priority' => 41,
     ));
 
@@ -693,7 +731,7 @@ function cotizalo_customize_register( $wp_customize ) {
     // PANEL: TÍTULOS DE PÁGINAS SECUNDARIAS
     // ==============================================
     $wp_customize->add_section('cotizalo_page_titles_section', array(
-        'title'    => __('Títulos de Páginas Secundarias', 'cotizalo'),
+        'title' => __('Títulos de Páginas Secundarias', 'cotizalo'),
         'priority' => 42,
     ));
 
@@ -718,38 +756,38 @@ add_action('customize_register', 'cotizalo_customize_register');
  * Serve /precios/ without needing a WordPress page in the database.
  * Intercepts the request at template_redirect and loads our custom template.
  */
-add_action( 'template_redirect', function () {
-    $uri = trim( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
+add_action('template_redirect', function () {
+    $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
-    if ( $uri === 'precios' ) {
+    if ($uri === 'precios') {
         $template = get_template_directory() . '/page-precios.php';
-        if ( file_exists( $template ) ) {
+        if (file_exists($template)) {
             include $template;
             exit;
         }
     }
 
-    if ( $uri === 'soporte' ) {
+    if ($uri === 'soporte') {
         $template = get_template_directory() . '/page-soporte.php';
-        if ( file_exists( $template ) ) {
+        if (file_exists($template)) {
             include $template;
             exit;
         }
     }
 
-    if ( $uri === 'sitemap.rss' ) {
+    if ($uri === 'sitemap.rss') {
         $template = get_template_directory() . '/sitemap-rss.php';
-        if ( file_exists( $template ) ) {
+        if (file_exists($template)) {
             include $template;
             exit;
         }
     }
 
-    if ( $uri === 'sitemap.xml' ) {
+    if ($uri === 'sitemap.xml') {
         $template = get_template_directory() . '/sitemap-xml.php';
-        if ( file_exists( $template ) ) {
+        if (file_exists($template)) {
             include $template;
             exit;
         }
     }
-} );
+});

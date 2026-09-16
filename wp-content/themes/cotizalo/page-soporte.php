@@ -7,43 +7,42 @@
 $form_success = false;
 $form_error = '';
 
-if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_submit_hidden']) ) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_submit_hidden'])) {
     // 1. Verify nonce
-    if ( ! isset( $_POST['cotizalo_support_nonce'] ) || ! wp_verify_nonce( $_POST['cotizalo_support_nonce'], 'cotizalo_support_submit' ) ) {
+    if (!isset($_POST['cotizalo_support_nonce']) || !wp_verify_nonce($_POST['cotizalo_support_nonce'], 'cotizalo_support_submit')) {
         $form_error = 'Error de seguridad. Por favor, intente de nuevo.';
     }
     // 2. Check honeypot (bots)
-    elseif ( ! empty( $_POST['website_url'] ) ) {
+    elseif (!empty($_POST['website_url'])) {
         $form_error = 'Spam detectado.';
-    }
-    else {
+    } else {
         // 3. Retrieve and sanitize inputs
-        $nombre = sanitize_text_field( $_POST['nombre'] );
-        $email = sanitize_email( $_POST['email'] );
-        $cuenta_email = isset($_POST['cuenta_email']) ? sanitize_email( $_POST['cuenta_email'] ) : '';
-        $telefono = isset($_POST['telefono']) ? sanitize_text_field( $_POST['telefono'] ) : '';
-        $asunto = sanitize_text_field( $_POST['asunto'] );
-        $mensaje = esc_textarea( $_POST['mensaje'] );
+        $nombre = sanitize_text_field($_POST['nombre']);
+        $email = sanitize_email($_POST['email']);
+        $cuenta_email = isset($_POST['cuenta_email']) ? sanitize_email($_POST['cuenta_email']) : '';
+        $telefono = isset($_POST['telefono']) ? sanitize_text_field($_POST['telefono']) : '';
+        $asunto = sanitize_text_field($_POST['asunto']);
+        $mensaje = esc_textarea($_POST['mensaje']);
 
         // 4. Validate required fields
-        if ( empty($nombre) || empty($email) || empty($asunto) || empty($mensaje) ) {
+        if (empty($nombre) || empty($email) || empty($asunto) || empty($mensaje)) {
             $form_error = 'Por favor, complete todos los campos requeridos.';
-        } elseif ( ! is_email($email) ) {
+        } elseif (!is_email($email)) {
             $form_error = 'El correo electrónico de contacto no es válido.';
-        } elseif ( ! empty($cuenta_email) && ! is_email($cuenta_email) ) {
+        } elseif (!empty($cuenta_email) && !is_email($cuenta_email)) {
             $form_error = 'El correo de la cuenta Cotízalo no es válido.';
         } else {
             // 5. Construct and send email
-        $to = sanitize_email( get_theme_mod('soporte_email', 'support@cotizalo.net') );
+            $to = sanitize_email(get_theme_mod('soporte_email', 'support@cotizalo.net'));
             $subject = '[' . $asunto . '] Soporte Web - ' . $nombre;
-            
+
             $body = "Ha recibido una nueva solicitud de soporte desde el sitio web cotizalo.net:\n\n";
             $body .= "Nombre: " . $nombre . "\n";
             $body .= "Correo de contacto: " . $email . "\n";
-            if ( ! empty($cuenta_email) ) {
+            if (!empty($cuenta_email)) {
                 $body .= "Correo de la cuenta Cotízalo: " . $cuenta_email . "\n";
             }
-            if ( ! empty($telefono) ) {
+            if (!empty($telefono)) {
                 $body .= "Teléfono: " . $telefono . "\n";
             }
             $body .= "Tipo de consulta: " . $asunto . "\n\n";
@@ -56,9 +55,9 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                 'Reply-To: ' . $nombre . ' <' . $email . '>'
             );
 
-            $sent = wp_mail( $to, $subject, $body, $headers );
+            $sent = wp_mail($to, $subject, $body, $headers);
 
-            if ( $sent ) {
+            if ($sent) {
                 $form_success = true;
             } else {
                 $form_error = 'Ocurrió un error al enviar su mensaje. Por favor, intente más tarde o escríbanos directamente a support@cotizalo.net.';
@@ -74,25 +73,30 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="<?php echo esc_url( is_front_page() ? home_url('/') : get_permalink() ); ?>">
+    <link rel="canonical" href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
     <title>Soporte Técnico y Contacto | Cotízalo México</title>
     <meta name="description"
         content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
-    <meta name="keywords" content="cotizaciones web, cotizaciones online mexico app, soporte cotizalo, contacto cotizalo, ayuda tecnica cotizalo, atencion a clientes cotizalo, ayuda cotizaciones, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
-    
+    <meta name="keywords"
+        content="cotizaciones web, cotizaciones online mexico app, soporte cotizalo, contacto cotizalo, ayuda tecnica cotizalo, atencion a clientes cotizalo, ayuda cotizaciones, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
+
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo esc_url( home_url( $_SERVER['REQUEST_URI'] ) ); ?>">
+    <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
     <meta property="og:title" content="Soporte Técnico y Contacto | Cotízalo México">
-    <meta property="og:description" content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
-    <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+    <meta property="og:description"
+        content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
+    <meta property="og:image"
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Soporte Técnico y Contacto | Cotízalo México">
-    <meta name="twitter:description" content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
-    <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+    <meta name="twitter:description"
+        content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
+    <meta name="twitter:image"
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
 
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -106,7 +110,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
     <link rel="apple-touch-icon"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
-    
+
     <style>
         /* Custom Styles for Support Page */
         .page-hero {
@@ -271,8 +275,15 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
         }
 
         @keyframes scaleIn {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* Honey-pot style to hide from humans */
@@ -291,27 +302,27 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
         "@graph": [
             {
                 "@type": "ContactPage",
-                "@id": "<?php echo esc_url( get_permalink() ); ?>#webpage",
-                "url": "<?php echo esc_url( get_permalink() ); ?>",
+                "@id": "<?php echo esc_url(get_permalink()); ?>#webpage",
+                "url": "<?php echo esc_url(get_permalink()); ?>",
                 "name": "Soporte Técnico y Contacto | Cotízalo México",
                 "description": "¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.",
                 "isPartOf": {
-                    "@id": "<?php echo esc_url( home_url('/') ); ?>#website"
+                    "@id": "<?php echo esc_url(home_url('/')); ?>#website"
                 },
                 "breadcrumb": {
-                    "@id": "<?php echo esc_url( get_permalink() ); ?>#breadcrumb"
+                    "@id": "<?php echo esc_url(get_permalink()); ?>#breadcrumb"
                 },
                 "inLanguage": "es-MX"
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "<?php echo esc_url( get_permalink() ); ?>#breadcrumb",
+                "@id": "<?php echo esc_url(get_permalink()); ?>#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Inicio",
-                        "item": "<?php echo esc_url( home_url('/') ); ?>"
+                        "item": "<?php echo esc_url(home_url('/')); ?>"
                     },
                     {
                         "@type": "ListItem",
@@ -323,7 +334,9 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
         ]
     }
     </script>
-    <link rel="preload" as="image" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2" type="image/png">
+    <link rel="preload" as="image"
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
+        type="image/png">
     <?php wp_head(); ?>
 </head>
 
@@ -337,27 +350,39 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                     alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
             </a>
             <ul class="nav-links">
-                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es
+                        Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-item nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Recursos
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">Plantilla de cotización</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
+                                para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
+                                WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">Plantilla de
+                                cotización</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
+                                constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                                servicios</a></li>
                     </ul>
                 </li>
             </ul>
             <div class="nav-buttons">
-                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>" class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
-                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>" class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_login_url', 'https://app.cotizalo.net/login')); ?>"
+                    class="btn btn-secondary btn-nav"><?php echo esc_html(get_theme_mod('nav_login_text', 'Ingresar')); ?></a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
+                    class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_signup_text', 'Empezar Gratis')); ?></a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -373,21 +398,23 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
     <section class="page-hero">
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;"><?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?></h1>
+            <h1 class="display-title-sm" style="margin-bottom: 1rem;">
+                <?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?></h1>
             <p class="text-muted" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.2rem;">
                 <?php echo esc_html(get_theme_mod('soporte_subtitle', '¿Tienes dudas o necesitas ayuda con tu cuenta? Envíanos tus comentarios y nos pondremos en contacto contigo lo antes posible.')); ?>
             </p>
 
             <div class="support-container animate-on-scroll fade-in-up delay-100">
-                <?php if ( $form_success ) : ?>
+                <?php if ($form_success): ?>
                     <div class="success-box">
                         <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
                         <h2>¡Mensaje enviado con éxito!</h2>
-                        <p>Hemos recibido tus comentarios. Un miembro de nuestro equipo de soporte se pondrá en contacto contigo en tu correo de contacto lo antes posible.</p>
+                        <p>Hemos recibido tus comentarios. Un miembro de nuestro equipo de soporte se pondrá en contacto
+                            contigo en tu correo de contacto lo antes posible.</p>
                         <a href="<?php echo esc_url(home_url('/')); ?>" class="btn btn-primary">Volver al Inicio</a>
                     </div>
-                <?php else : ?>
-                    <?php if ( ! empty($form_error) ) : ?>
+                <?php else: ?>
+                    <?php if (!empty($form_error)): ?>
                         <div class="alert alert-error">
                             <i class="fa-solid fa-triangle-exclamation" style="margin-top: 3px;"></i>
                             <div><?php echo esc_html($form_error); ?></div>
@@ -396,9 +423,9 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
 
                     <form action="" method="POST" id="support-form">
                         <!-- Token de seguridad nonce -->
-                        <?php wp_nonce_field( 'cotizalo_support_submit', 'cotizalo_support_nonce' ); ?>
+                        <?php wp_nonce_field('cotizalo_support_submit', 'cotizalo_support_nonce'); ?>
                         <input type="hidden" name="cotizalo_support_submit_hidden" value="1">
-                        
+
                         <!-- Honeypot Field (Anti-Spam) -->
                         <div class="hp-field">
                             <label for="website_url">No llenar este campo:</label>
@@ -408,12 +435,18 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                         <!-- Name and Email -->
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="nombre" class="form-label">Nombre Completo <span class="required">*</span></label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required value="<?php echo isset($_POST['nombre']) ? esc_attr($_POST['nombre']) : ''; ?>">
+                                <label for="nombre" class="form-label">Nombre Completo <span
+                                        class="required">*</span></label>
+                                <input type="text" name="nombre" id="nombre" class="form-control"
+                                    placeholder="Ej. Juan Pérez" required
+                                    value="<?php echo isset($_POST['nombre']) ? esc_attr($_POST['nombre']) : ''; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="email" class="form-label">Correo de Contacto <span class="required">*</span></label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Ej. juan@correo.com" required value="<?php echo isset($_POST['email']) ? esc_attr($_POST['email']) : ''; ?>">
+                                <label for="email" class="form-label">Correo de Contacto <span
+                                        class="required">*</span></label>
+                                <input type="email" name="email" id="email" class="form-control"
+                                    placeholder="Ej. juan@correo.com" required
+                                    value="<?php echo isset($_POST['email']) ? esc_attr($_POST['email']) : ''; ?>">
                             </div>
                         </div>
 
@@ -421,30 +454,41 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="telefono" class="form-label">Teléfono (Opcional)</label>
-                                <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Ej. 5512345678" value="<?php echo isset($_POST['telefono']) ? esc_attr($_POST['telefono']) : ''; ?>">
+                                <input type="tel" name="telefono" id="telefono" class="form-control"
+                                    placeholder="Ej. 5512345678"
+                                    value="<?php echo isset($_POST['telefono']) ? esc_attr($_POST['telefono']) : ''; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="cuenta_email" class="form-label">Correo de Cuenta Cotízalo (Opcional)</label>
-                                <input type="email" name="cuenta_email" id="cuenta_email" class="form-control" placeholder="El correo registrado en la app" value="<?php echo isset($_POST['cuenta_email']) ? esc_attr($_POST['cuenta_email']) : ''; ?>">
+                                <input type="email" name="cuenta_email" id="cuenta_email" class="form-control"
+                                    placeholder="El correo registrado en la app"
+                                    value="<?php echo isset($_POST['cuenta_email']) ? esc_attr($_POST['cuenta_email']) : ''; ?>">
                             </div>
                         </div>
 
                         <!-- Subject -->
                         <div class="form-group">
-                            <label for="asunto" class="form-label">Tipo de Consulta / Asunto <span class="required">*</span></label>
+                            <label for="asunto" class="form-label">Tipo de Consulta / Asunto <span
+                                    class="required">*</span></label>
                             <select name="asunto" id="asunto" class="form-control" required>
                                 <option value="" disabled selected>Selecciona una opción...</option>
                                 <option value="Soporte Técnico" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Soporte Técnico') ? 'selected' : ''; ?>>Soporte Técnico</option>
-                                <option value="Facturación y Planes" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Facturación y Planes') ? 'selected' : ''; ?>>Facturación y Planes</option>
-                                <option value="Reportar un Problema" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Reportar un Problema') ? 'selected' : ''; ?>>Reportar un Problema (Bug)</option>
-                                <option value="Dudas Generales" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Dudas Generales') ? 'selected' : ''; ?>>Dudas Generales / Ventas</option>
+                                <option value="Facturación y Planes" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Facturación y Planes') ? 'selected' : ''; ?>>Facturación y Planes
+                                </option>
+                                <option value="Reportar un Problema" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Reportar un Problema') ? 'selected' : ''; ?>>Reportar un Problema
+                                    (Bug)</option>
+                                <option value="Dudas Generales" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Dudas Generales') ? 'selected' : ''; ?>>Dudas Generales / Ventas
+                                </option>
                             </select>
                         </div>
 
                         <!-- Message -->
                         <div class="form-group">
-                            <label for="mensaje" class="form-label">Mensaje o Detalles <span class="required">*</span></label>
-                            <textarea name="mensaje" id="mensaje" rows="6" class="form-control" placeholder="Describe detalladamente tu duda o problema aquí..." required><?php echo isset($_POST['mensaje']) ? esc_textarea($_POST['mensaje']) : ''; ?></textarea>
+                            <label for="mensaje" class="form-label">Mensaje o Detalles <span
+                                    class="required">*</span></label>
+                            <textarea name="mensaje" id="mensaje" rows="6" class="form-control"
+                                placeholder="Describe detalladamente tu duda o problema aquí..."
+                                required><?php echo isset($_POST['mensaje']) ? esc_textarea($_POST['mensaje']) : ''; ?></textarea>
                         </div>
 
                         <!-- Submit Button -->
@@ -464,10 +508,12 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                 <div class="footer-brand">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="logo mb-1">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
-                            alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;"
-                            id="footer-logo" width="260" height="70">
+                            alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;" id="footer-logo"
+                            width="260" height="70">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;"><?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?></p>
+                    <p class="text-muted mt-1" style="max-width: 300px;">
+                        <?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?>
+                    </p>
                 </div>
                 <div class="footer-links">
                     <h4>Producto</h4>
@@ -481,13 +527,17 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a>
+                        </li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y
+                                Condiciones</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', 'DrG Labs CO. Todos los derechos reservados.')); ?></p>
+                <p>&copy; <?php echo date('Y'); ?>
+                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero. Todos los derechos reservados.')); ?>
+                </p>
             </div>
         </div>
     </footer>
@@ -567,4 +617,5 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_sub
     </script>
     <?php wp_footer(); ?>
 </body>
+
 </html>

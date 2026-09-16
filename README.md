@@ -231,5 +231,5 @@ Adicionalmente se corrigió un **bug de ruta en favicon** en `front-page.php` e 
 
 ## 👤 Autor
 
-**David Ramirez** — DrG Labs CO.  
+**David Ramirez** — PixelZero.  
 © 2025 Todos los derechos reservados.
