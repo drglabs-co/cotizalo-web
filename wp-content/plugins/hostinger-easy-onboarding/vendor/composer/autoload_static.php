@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitdbf9d9084b9657b1dd3c14afab51966b
 {
     public static $files = array (
-        'f6d4f6bcee7247df6b777884c3e22f98' => __DIR__ . '/..' . '/yahnis-elsts/plugin-update-checker/load-v5p6.php',
+        'bc0af1337b39f0d750e835f5263eb646' => __DIR__ . '/..' . '/yahnis-elsts/plugin-update-checker/load-v5p7.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -71,6 +71,7 @@ class ComposerStaticInitdbf9d9084b9657b1dd3c14afab51966b
         'Hostinger\\EasyOnboarding\\Activator' => __DIR__ . '/../..' . '/includes/Activator.php',
         'Hostinger\\EasyOnboarding\\Admin\\Actions' => __DIR__ . '/../..' . '/includes/Admin/Actions.php',
         'Hostinger\\EasyOnboarding\\Admin\\Assets' => __DIR__ . '/../..' . '/includes/Admin/Assets.php',
+        'Hostinger\\EasyOnboarding\\Admin\\Elementor\\Assets' => __DIR__ . '/../..' . '/includes/Admin/Elementor/Assets.php',
         'Hostinger\\EasyOnboarding\\Admin\\Hooks' => __DIR__ . '/../..' . '/includes/Admin/Hooks.php',
         'Hostinger\\EasyOnboarding\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/Admin/Menu.php',
         'Hostinger\\EasyOnboarding\\Admin\\Onboarding\\AutocompleteSteps' => __DIR__ . '/../..' . '/includes/Admin/Onboarding/AutocompleteSteps.php',

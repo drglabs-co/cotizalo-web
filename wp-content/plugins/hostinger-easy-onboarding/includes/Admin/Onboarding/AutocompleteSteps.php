@@ -45,9 +45,7 @@ class AutocompleteSteps {
             add_action( 'admin_init', array( $this, 'affiliate_plugin_connected' ) );
         }
 
-        if ( is_admin() && isset( $_GET['page'] ) && $_GET['page'] === 'hostinger' ) {
-            add_action( 'admin_init', array( $this, 'domain_is_connected' ) );
-        }
+        add_action( 'admin_init', array( $this, 'domain_is_connected' ) );
 
         if ( $this->helper->is_store_setup_completed() ) {
             add_action( 'admin_init', array( $this, 'website_setup_completed' ) );
@@ -184,7 +182,7 @@ class AutocompleteSteps {
             return;
         }
 
-        if ( ! $this->helper->is_free_subdomain() && ! $this->helper->is_preview_domain() ) {
+        if ( ! $this->helper->is_free_subdomain() ) {
             if ( ! did_action( 'hostinger_domain_connected' ) ) {
                 $this->onboarding->complete_step( $category_id, $action );
 
@@ -346,10 +344,9 @@ class AutocompleteSteps {
     }
 
     public function check_ai_website_created(): void {
-        $ai_website_created = get_option( 'hostinger_ai_website_created', false );
-        $is_ai_theme_active = get_stylesheet() === 'hostinger-ai-theme';
+        $ai_created_pages = get_option( 'hostinger_ai_created_pages', array() );
 
-        if ( empty( $ai_website_created ) && ! $is_ai_theme_active ) {
+        if ( empty( $ai_created_pages ) ) {
             return;
         }
 

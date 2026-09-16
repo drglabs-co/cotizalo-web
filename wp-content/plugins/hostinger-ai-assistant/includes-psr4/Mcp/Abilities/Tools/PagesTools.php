@@ -37,7 +37,7 @@ class PagesTools extends RestEndpointTool {
                 'create' => array(
                     'tool_name'   => 'hostinger-ai-assistant/pages-create',
                     'label'       => __( 'Create Page', 'hostinger-ai-assistant' ),
-                    'description' => __( 'Create a new WordPress page. Requires title and content.', 'hostinger-ai-assistant' ),
+                    'description' => __( 'Create a new WordPress page. Requires title and content. Write the content using plain HTML and, where possible, shortcodes rather than Gutenberg block markup (e.g. avoid "<!-- wp:... -->" comments). Prefer shortcodes over custom Gutenberg blocks so the page never references a block that is not registered on the site, which would break the editor. For a contact form use the [hostinger_contact_form] shortcode instead of a custom block. Only use a Gutenberg block if you are certain it is registered.', 'hostinger-ai-assistant' ),
                     'meta'        => array(
                         'annotations' => array(
                             'title'       => 'Add Page',
@@ -50,7 +50,7 @@ class PagesTools extends RestEndpointTool {
                 'update' => array(
                     'tool_name'   => 'hostinger-ai-assistant/pages-update',
                     'label'       => __( 'Update Page', 'hostinger-ai-assistant' ),
-                    'description' => __( 'Update an existing WordPress page by ID. Only provided fields will be updated.', 'hostinger-ai-assistant' ),
+                    'description' => __( 'Update an existing WordPress page by ID. Only provided fields will be updated. When updating content, write plain HTML and, where possible, shortcodes rather than Gutenberg block markup (e.g. avoid "<!-- wp:... -->" comments). Prefer shortcodes over custom Gutenberg blocks so the page never references a block that is not registered on the site. For a contact form use the [hostinger_contact_form] shortcode instead of a custom block.', 'hostinger-ai-assistant' ),
                     'meta'        => array(
                         'annotations' => array(
                             'title'       => 'Update Page',

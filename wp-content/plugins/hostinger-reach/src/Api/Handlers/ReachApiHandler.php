@@ -15,6 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class ReachApiHandler extends ApiHandler {
+    public const CONNECTION_SUCCESS_TRANSIENT             = 'hostinger_reach_connection_success';
+    private const CONNECTION_SUCCESS_TRANSIENT_EXPIRATION = MINUTE_IN_SECONDS;
+
     protected string $hostinger_auth_url;
     protected string $reach_domain;
     public ApiKeyManager $api_key_manager;
@@ -109,6 +112,10 @@ class ReachApiHandler extends ApiHandler {
 
     public function is_connected(): bool {
         return ! empty( $this->api_key_manager->get_token() );
+    }
+
+    public function get_reach_domain(): string {
+        return $this->reach_domain;
     }
 
     public function get_resource_id(): string {
@@ -219,6 +226,69 @@ class ReachApiHandler extends ApiHandler {
         $this->api_key_manager->store_token( $token );
         $this->api_key_manager->clear_csrf();
 
+        if ( ! $this->get_connection_status_handler() ) {
+            $this->api_key_manager->clear_token();
+
+            return new WP_REST_Response( array( 'success' => false ) );
+        }
+
+        $this->set_connection_success_transient();
+
+        return new WP_REST_Response( array( 'success' => true ) );
+    }
+
+    public function post_connect_handler(): WP_REST_Response {
+        if ( ! $this->get_connection_status_handler() ) {
+            return new WP_REST_Response( array( 'success' => false ), 400 );
+        }
+
+        $domain = apply_filters( 'hostinger_reach_domain', parse_url( get_option( 'siteurl' ), PHP_URL_HOST ) );
+
+        $this->delete(
+            'websites/connect',
+            array(
+                'domain' => $domain,
+            )
+        );
+
+        $response = $this->post(
+            'websites/connect',
+            array(
+                'domain' => $domain,
+                'type'   => 'wordpress',
+            )
+        );
+
+        if ( is_wp_error( $response ) ) {
+            $this->api_key_manager->clear_token();
+
+            return $this->handle_wp_error( $response );
+        }
+
+        if ( ! isset( $response['response']['code'] ) || $response['response']['code'] >= 300 ) {
+            $this->api_key_manager->clear_token();
+
+            return new WP_REST_Response(
+                array(
+                    'success' => false,
+                    'data'    => $response['response']['message'] ?? __( 'Error connecting your site', 'hostinger-reach' ),
+                ),
+                $response['response']['code'] ?? 400,
+            );
+        }
+
+        $this->set_connection_success_transient();
+
+        return new WP_REST_Response( array( 'success' => true ) );
+    }
+
+    public function get_connection_success_handler(): WP_REST_Response {
+        return new WP_REST_Response( array( 'success' => (bool) get_transient( self::CONNECTION_SUCCESS_TRANSIENT ) ) );
+    }
+
+    public function delete_connection_success_handler(): WP_REST_Response {
+        delete_transient( self::CONNECTION_SUCCESS_TRANSIENT );
+
         return new WP_REST_Response( array( 'success' => true ) );
     }
 
@@ -241,8 +311,6 @@ class ReachApiHandler extends ApiHandler {
 
     public function post_contact( array $data ): WP_REST_Response {
         if ( ! $this->get_connection_status_handler() ) {
-            $this->api_key_manager->clear_token();
-
             return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action' ) );
         }
 
@@ -281,8 +349,6 @@ class ReachApiHandler extends ApiHandler {
 
     public function post_import_contacts( array $contacts_data ): WP_REST_Response {
         if ( ! $this->get_connection_status_handler() ) {
-            $this->api_key_manager->clear_token();
-
             return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action' ) );
         }
 
@@ -316,8 +382,6 @@ class ReachApiHandler extends ApiHandler {
 
     public function post_webhook_event( array $webhook_payload ): WP_REST_Response {
         if ( ! $this->get_connection_status_handler() ) {
-            $this->api_key_manager->clear_token();
-
             return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action' ) );
         }
 
@@ -345,7 +409,6 @@ class ReachApiHandler extends ApiHandler {
 
     public function get_tags_handler(): WP_REST_Response {
         if ( ! $this->get_connection_status_handler() ) {
-            $this->api_key_manager->clear_token();
 
             return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action', array( 'status' => 403 ) ) );
         }
@@ -362,8 +425,6 @@ class ReachApiHandler extends ApiHandler {
     public function post_tags_handler( WP_REST_Request $request ): WP_REST_Response {
         $nonce = $request->get_header( 'X-WP-Nonce' );
         if ( ! wp_verify_nonce( $nonce, 'wp_rest' ) || ! $this->get_connection_status_handler() ) {
-            $this->api_key_manager->clear_token();
-
             return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action', array( 'status' => 403 ) ) );
         }
 
@@ -392,11 +453,11 @@ class ReachApiHandler extends ApiHandler {
         );
 
         if ( ! empty( $data['name'] ) ) {
-            $contact['name'] = $data['name'];
+            $contact['name'] = $this->ensure_utf8( (string) $data['name'] );
         }
 
         if ( ! empty( $data['surname'] ) ) {
-            $contact['surname'] = $data['surname'];
+            $contact['surname'] = $this->ensure_utf8( (string) $data['surname'] );
         }
 
         $metadata = $data['metadata'] ?? array();
@@ -414,6 +475,54 @@ class ReachApiHandler extends ApiHandler {
         $contact['metadata'] = $metadata;
 
         return $contact;
+    }
+
+    public function get_forms_handler(): WP_REST_Response {
+        if ( ! $this->get_connection_status_handler() ) {
+            return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action', array( 'status' => 403 ) ) );
+        }
+
+        $response = $this->get( 'forms' );
+
+        if ( is_wp_error( $response ) ) {
+            return $this->handle_wp_error( $response );
+        }
+
+        return $this->handle_response( $response );
+    }
+
+    public function get_form_preview_handler( WP_REST_Request $request ): WP_REST_Response {
+        if ( ! $this->get_connection_status_handler() ) {
+
+            return $this->handle_wp_error( new WP_Error( $this->get_not_connected_error_message(), 'You cannot perform this action', array( 'status' => 403 ) ) );
+        }
+        $form_id  = $request->get_param( 'id' );
+        $response = $this->get( 'forms/' . $form_id . '/preview' );
+
+        if ( is_wp_error( $response ) ) {
+            return $this->handle_wp_error( $response );
+        }
+
+        if ( empty( wp_remote_retrieve_body( $response ) ) ) {
+            return new WP_REST_Response( array( 'error' => 'preview_not_ready' ), 404 );
+        }
+
+        return $this->handle_image_response( $response );
+    }
+
+    private function ensure_utf8( string $value ): string {
+        if ( $value === '' || ! function_exists( 'mb_check_encoding' ) || mb_check_encoding( $value, 'UTF-8' ) ) {
+            return $value;
+        }
+
+        $detected  = mb_detect_encoding( $value, array( 'UTF-8', 'Windows-1252', 'ISO-8859-1' ), true );
+        $converted = mb_convert_encoding( $value, 'UTF-8', $detected !== false ? $detected : 'ISO-8859-1' );
+
+        return is_string( $converted ) ? $converted : $value;
+    }
+
+    private function set_connection_success_transient(): void {
+        set_transient( self::CONNECTION_SUCCESS_TRANSIENT, true, self::CONNECTION_SUCCESS_TRANSIENT_EXPIRATION );
     }
 
     private function set_api_base_name(): void {
@@ -466,6 +575,7 @@ class ReachApiHandler extends ApiHandler {
 
         $body = wp_remote_retrieve_body( $response );
         $body = json_decode( $body, true );
+
         return $body['data'][0]['uuid'] ?? '';
     }
 }

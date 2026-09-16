@@ -39,8 +39,8 @@ class Hostinger_Frontend_Translations {
 
         $this->chatbot_translations = array(
             'main'            => array(
-                'intro'                                       => __( 'Hi, I\'m Kodee, your personal AI assistant. You can ask me any questions you have regarding WordPress. I\'m still learning, so sometimes can make mistakes. What questions do you have?', 'hostinger-ai-assistant' ),
-                'title'                                       => __( 'Kodee', 'hostinger-ai-assistant' ),
+                'intro'                                       => __( 'Hi, I\'m Hostinger Agent, your personal AI assistant. You can ask me any questions you have regarding WordPress. I\'m still learning, so sometimes can make mistakes. What questions do you have?', 'hostinger-ai-assistant' ),
+                'title'                                       => __( 'Hostinger Agent', 'hostinger-ai-assistant' ),
                 'beta_badge'                                  => '',
                 'tooltip_feedback'                            => __( 'Leave feedback', 'hostinger-ai-assistant' ),
                 'tooltip_reset'                               => __( 'Restart chatbot', 'hostinger-ai-assistant' ),
@@ -50,13 +50,13 @@ class Hostinger_Frontend_Translations {
                 'tooltip_history'                             => __( 'History', 'hostinger-ai-assistant' ),
                 'question_input_placeholder'                  => __( 'Write your question', 'hostinger-ai-assistant' ),
                 'disclaimer'                                  => __( 'AI may produce inaccurate information', 'hostinger-ai-assistant' ),
-                'button'                                      => __( 'Ask Kodee', 'hostinger-ai-assistant' ),
+                'button'                                      => __( 'Agent', 'hostinger-ai-assistant' ),
                 'drag_over_overlay_text'                      => __( 'Drop files here', 'hostinger-ai-assistant' ),
-                'unsupported_format_kodee'                    => __( 'Kodee only supports JPEG, JPG, PNG, GIF, HEIC, and DNG files', 'hostinger-ai-assistant' ),
+                'unsupported_format_kodee'                    => __( 'Hostinger Agent only supports JPEG, JPG, PNG, GIF, HEIC, and DNG files', 'hostinger-ai-assistant' ),
                 'unsupported_format_agent'                    => __( 'Selected file type is not supported', 'hostinger-ai-assistant' ),
                 'file_upload_limit_error'                     => __( 'You can only upload up to 6 files', 'hostinger-ai-assistant' ),
-                'tooltip_kodee_responding_disabled'           => __( 'Cannot restart the chat when Kodee is responding', 'hostinger-ai-assistant' ),
-                'tooltip_kodee_responding_start_new_disabled' => __( 'Cannot start a new chat when Kodee is responding', 'hostinger-ai-assistant' ),
+                'tooltip_kodee_responding_disabled'           => __( 'Cannot restart the chat when Hostinger Agent is responding', 'hostinger-ai-assistant' ),
+                'tooltip_kodee_responding_start_new_disabled' => __( 'Cannot start a new chat when Hostinger Agent is responding', 'hostinger-ai-assistant' ),
                 'active_conversation'                         => __( 'Active', 'hostinger-ai-assistant' ),
                 'thinking'                                    => __( 'Thinking', 'hostinger-ai-assistant' ),
             ),
@@ -67,7 +67,7 @@ class Hostinger_Frontend_Translations {
             'greeting_screen' => array(
                 'title'       => __( 'Hey,', 'hostinger-ai-assistant' ),
                 'subtitle'    => __( 'How can I help you?', 'hostinger-ai-assistant' ),
-                'description' => __( 'I’m Kodee – your AI WordPress assistant. I can help you:', 'hostinger-ai-assistant' ),
+                'description' => __( 'I’m Hostinger Agent – your AI WordPress assistant. I can help you:', 'hostinger-ai-assistant' ),
                 'intro_items' => array(
                     'create_and_edit_pages_or_posts'           => __( 'Create and edit pages or posts', 'hostinger-ai-assistant' ),
                     'manage_users_and_permissions'             => __( 'Manage users and permissions', 'hostinger-ai-assistant' ),
@@ -107,7 +107,7 @@ class Hostinger_Frontend_Translations {
             ),
             'voice'           => array(
                 'title'        => __( 'Voice feature is coming soon', 'hostinger-ai-assistant' ),
-                'description'  => __( 'Talking to Kodee is in the works, we\'ll keep you posted once it\'s out!', 'hostinger-ai-assistant' ),
+                'description'  => __( 'Talking to Hostinger Agent is in the works, we\'ll keep you posted once it\'s out!', 'hostinger-ai-assistant' ),
                 'close_button' => __( 'Close', 'hostinger-ai-assistant' ),
             ),
             'error'           => array(

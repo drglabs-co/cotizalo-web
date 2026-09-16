@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
-            "version": "dev-trunk",
-            "version_normalized": "dev-trunk",
+            "version": "v5.0.23",
+            "version_normalized": "5.0.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/jetpack-autoloader.git",
-                "reference": "540e86b3f828e8307ee8ac7a29c00d559a9e0d6f"
+                "reference": "d11b2d621035dcb920abce8ae09bebd5da5f9ff8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/540e86b3f828e8307ee8ac7a29c00d559a9e0d6f",
-                "reference": "540e86b3f828e8307ee8ac7a29c00d559a9e0d6f",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/d11b2d621035dcb920abce8ae09bebd5da5f9ff8",
+                "reference": "d11b2d621035dcb920abce8ae09bebd5da5f9ff8",
                 "shasum": ""
             },
             "require": {
@@ -20,13 +20,11 @@
                 "php": ">=7.2"
             },
             "require-dev": {
-                "automattic/jetpack-changelogger": "^6.0.14",
-                "automattic/phpunit-select-config": "^1.0.4",
+                "automattic/phpunit-select-config": "^1.0.9",
                 "composer/composer": "^2.2",
                 "yoast/phpunit-polyfills": "^4.0.0"
             },
-            "time": "2026-03-30T17:53:21+00:00",
-            "default-branch": true,
+            "time": "2026-08-11T18:32:06+00:00",
             "type": "composer-plugin",
             "extra": {
                 "class": "Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin",
@@ -65,23 +63,23 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/Automattic/jetpack-autoloader/tree/trunk"
+                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v5.0.23"
             },
             "install-path": "../automattic/jetpack-autoloader"
         },
         {
             "name": "hostinger/hostinger-wp-amplitude",
-            "version": "1.0.17",
-            "version_normalized": "1.0.17.0",
+            "version": "1.0.19",
+            "version_normalized": "1.0.19.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:hostinger/hostinger-wp-amplitude.git",
-                "reference": "2c22923adbd7ab46c468dc1a86416bd9e7bb20c8"
+                "reference": "f22d3baa5dc8d2036ae4e6179761e46168b18947"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hostinger/hostinger-wp-amplitude/zipball/2c22923adbd7ab46c468dc1a86416bd9e7bb20c8",
-                "reference": "2c22923adbd7ab46c468dc1a86416bd9e7bb20c8",
+                "url": "https://api.github.com/repos/hostinger/hostinger-wp-amplitude/zipball/f22d3baa5dc8d2036ae4e6179761e46168b18947",
+                "reference": "f22d3baa5dc8d2036ae4e6179761e46168b18947",
                 "shasum": ""
             },
             "require": {
@@ -89,11 +87,11 @@
                 "php": ">=8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.6",
-                "squizlabs/php_codesniffer": "^3.0",
+                "phpunit/phpunit": "^9.6.33",
+                "squizlabs/php_codesniffer": "^3.11",
                 "yoast/phpunit-polyfills": "^4.0"
             },
-            "time": "2026-01-27T12:26:54+00:00",
+            "time": "2026-09-03T10:58:59+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -111,24 +109,24 @@
             ],
             "description": "A PHP package with amplitude events for WordPress plugins",
             "support": {
-                "source": "https://github.com/hostinger/hostinger-wp-amplitude/tree/1.0.17",
+                "source": "https://github.com/hostinger/hostinger-wp-amplitude/tree/1.0.19",
                 "issues": "https://github.com/hostinger/hostinger-wp-amplitude/issues"
             },
             "install-path": "../hostinger/hostinger-wp-amplitude"
         },
         {
             "name": "hostinger/hostinger-wp-helper",
-            "version": "1.0.13",
-            "version_normalized": "1.0.13.0",
+            "version": "1.0.16",
+            "version_normalized": "1.0.16.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:hostinger/hostinger-wp-helper.git",
-                "reference": "0f8c2eb4d9516a0bfe985f09770b66aa6d974136"
+                "reference": "beda8cb0f7d7f3ff6eacfc02c22dc701062d26ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hostinger/hostinger-wp-helper/zipball/0f8c2eb4d9516a0bfe985f09770b66aa6d974136",
-                "reference": "0f8c2eb4d9516a0bfe985f09770b66aa6d974136",
+                "url": "https://api.github.com/repos/hostinger/hostinger-wp-helper/zipball/beda8cb0f7d7f3ff6eacfc02c22dc701062d26ce",
+                "reference": "beda8cb0f7d7f3ff6eacfc02c22dc701062d26ce",
                 "shasum": ""
             },
             "require": {
@@ -136,10 +134,12 @@
                 "php": ">=8.0"
             },
             "require-dev": {
+                "10up/wp_mock": "^1.1",
                 "phpunit/phpunit": "^9.6.33",
+                "squizlabs/php_codesniffer": "^4.0",
                 "yoast/phpunit-polyfills": "^2.0"
             },
-            "time": "2026-04-02T13:20:06+00:00",
+            "time": "2026-09-03T08:20:38+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -148,26 +148,29 @@
                     "Hostinger\\Tests\\": "tests/phpunit"
                 }
             },
+            "license": [
+                "proprietary"
+            ],
             "description": "A PHP package with core functions for Hostinger WordPress plugins.",
             "support": {
-                "source": "https://github.com/hostinger/hostinger-wp-helper/tree/1.0.13",
+                "source": "https://github.com/hostinger/hostinger-wp-helper/tree/1.0.16",
                 "issues": "https://github.com/hostinger/hostinger-wp-helper/issues"
             },
             "install-path": "../hostinger/hostinger-wp-helper"
         },
         {
             "name": "hostinger/hostinger-wp-menu-manager",
-            "version": "1.2.20",
-            "version_normalized": "1.2.20.0",
+            "version": "1.2.31",
+            "version_normalized": "1.2.31.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:hostinger/hostinger-wp-menu-manager.git",
-                "reference": "937e866a6c7db2ae9e9549a8f57c1ff922117ed2"
+                "reference": "b91e6bcb5a77aac1d802e29df132220098a4dd1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hostinger/hostinger-wp-menu-manager/zipball/937e866a6c7db2ae9e9549a8f57c1ff922117ed2",
-                "reference": "937e866a6c7db2ae9e9549a8f57c1ff922117ed2",
+                "url": "https://api.github.com/repos/hostinger/hostinger-wp-menu-manager/zipball/b91e6bcb5a77aac1d802e29df132220098a4dd1b",
+                "reference": "b91e6bcb5a77aac1d802e29df132220098a4dd1b",
                 "shasum": ""
             },
             "require": {
@@ -178,7 +181,7 @@
                 "squizlabs/php_codesniffer": "^3.0",
                 "yoast/phpunit-polyfills": "^2.0"
             },
-            "time": "2025-08-18T12:17:45+00:00",
+            "time": "2026-09-03T07:42:33+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -196,24 +199,24 @@
             ],
             "description": "Package for managing Hostinger WordPress menus and pages.",
             "support": {
-                "source": "https://github.com/hostinger/hostinger-wp-menu-manager/tree/1.2.20",
+                "source": "https://github.com/hostinger/hostinger-wp-menu-manager/tree/1.2.31",
                 "issues": "https://github.com/hostinger/hostinger-wp-menu-manager/issues"
             },
             "install-path": "../hostinger/hostinger-wp-menu-manager"
         },
         {
             "name": "hostinger/hostinger-wp-surveys",
-            "version": "1.1.20",
-            "version_normalized": "1.1.20.0",
+            "version": "1.1.24",
+            "version_normalized": "1.1.24.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:hostinger/hostinger-wp-surveys.git",
-                "reference": "2f6a79ffe112d661106ae8c2698805e0041de53c"
+                "reference": "316cfc58960f336ffad44c00d29b582b2f7762a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hostinger/hostinger-wp-surveys/zipball/2f6a79ffe112d661106ae8c2698805e0041de53c",
-                "reference": "2f6a79ffe112d661106ae8c2698805e0041de53c",
+                "url": "https://api.github.com/repos/hostinger/hostinger-wp-surveys/zipball/316cfc58960f336ffad44c00d29b582b2f7762a6",
+                "reference": "316cfc58960f336ffad44c00d29b582b2f7762a6",
                 "shasum": ""
             },
             "require": {
@@ -226,7 +229,7 @@
                 "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.0"
             },
-            "time": "2026-03-13T06:31:14+00:00",
+            "time": "2026-08-18T07:19:08+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -244,36 +247,36 @@
             ],
             "description": "A PHP package with surveys for WordPress plugins",
             "support": {
-                "source": "https://github.com/hostinger/hostinger-wp-surveys/tree/1.1.20",
+                "source": "https://github.com/hostinger/hostinger-wp-surveys/tree/1.1.24",
                 "issues": "https://github.com/hostinger/hostinger-wp-surveys/issues"
             },
             "install-path": "../hostinger/hostinger-wp-surveys"
         },
         {
             "name": "yahnis-elsts/plugin-update-checker",
-            "version": "v5.6",
-            "version_normalized": "5.6.0.0",
+            "version": "v5.7",
+            "version_normalized": "5.7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/YahnisElsts/plugin-update-checker.git",
-                "reference": "a2db6871deec989a74e1f90fafc6d58ae526a879"
+                "reference": "275a96a2a18d03c34c87f35cb68673c8c49ac3b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/a2db6871deec989a74e1f90fafc6d58ae526a879",
-                "reference": "a2db6871deec989a74e1f90fafc6d58ae526a879",
+                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/275a96a2a18d03c34c87f35cb68673c8c49ac3b1",
+                "reference": "275a96a2a18d03c34c87f35cb68673c8c49ac3b1",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": ">=5.6.20"
             },
-            "time": "2025-05-20T12:29:01+00:00",
+            "time": "2026-05-26T12:48:45+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "files": [
-                    "load-v5p6.php"
+                    "load-v5p7.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -298,7 +301,7 @@
             ],
             "support": {
                 "issues": "https://github.com/YahnisElsts/plugin-update-checker/issues",
-                "source": "https://github.com/YahnisElsts/plugin-update-checker/tree/v5.6"
+                "source": "https://github.com/YahnisElsts/plugin-update-checker/tree/v5.7"
             },
             "install-path": "../yahnis-elsts/plugin-update-checker"
         }

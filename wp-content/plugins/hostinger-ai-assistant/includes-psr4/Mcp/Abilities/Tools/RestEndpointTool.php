@@ -343,7 +343,7 @@ abstract class RestEndpointTool {
                 $property['properties'] = new stdClass();
             }
 
-            if ( isset( $arg['required'] ) && true === $arg['required'] ) {
+            if ( isset( $arg['required'] ) && $arg['required'] === true ) {
                 $required[] = $key;
             }
 
@@ -459,7 +459,32 @@ abstract class RestEndpointTool {
         $method    = $config->get_http_method_for_operation();
 
         $request_route = $route;
+
+        // Replace path placeholders like (?P<parent>\d+) with provided input params.
+        // This allows nested REST routes such as /wp/v2/posts/(?P<parent>\d+)/revisions.
+        if ( preg_match_all( '/\(\?P<([a-zA-Z_][a-zA-Z0-9_]*)>[^)]+\)/', $request_route, $matches ) ) {
+            $param_names = $matches[1] ?? array();
+            foreach ( $param_names as $param_name ) {
+                if ( ! array_key_exists( $param_name, $input ) ) {
+                    return new WP_Error(
+                        'route_param_missing',
+                        sprintf( /* translators: %s is a route parameter name */ __( 'Missing required route parameter: %s', 'hostinger-ai-assistant' ), $param_name ),
+                        array( 'status' => 400 )
+                    );
+                }
+
+                $value = $input[ $param_name ];
+                $value = is_scalar( $value ) ? (string) $value : '';
+
+                $request_route = preg_replace( '/\(\?P<' . preg_quote( $param_name, '/' ) . '>[^)]+\)/', rawurlencode( $value ), $request_route, 1 );
+                unset( $input[ $param_name ] );
+            }
+        }
+        $deleted_post_id = 0;
         if ( isset( $input['id'] ) && in_array( $operation, array( 'get', 'update', 'delete' ), true ) ) {
+            if ( $operation === 'delete' ) {
+                $deleted_post_id = intval( $input['id'] );
+            }
             $request_route .= '/' . intval( $input['id'] );
             unset( $input['id'] );
         }
@@ -469,16 +494,127 @@ abstract class RestEndpointTool {
             $request->set_param( $key, $value );
         }
 
+        if ( $operation === 'delete' && ! isset( $input['force'] ) && is_a( $config->get_controller_class(), 'WP_REST_Terms_Controller', true ) ) {
+            $request->set_param( 'force', true );
+        }
+
         $response = rest_do_request( $request );
         if ( is_wp_error( $response ) ) {
             return $response;
         }
 
         $data = $response instanceof WP_REST_Response ? $response->get_data() : $response;
+
+        $status = $response instanceof WP_REST_Response ? $response->get_status() : 200;
+        if ( $operation === 'delete' && $deleted_post_id > 0 && $status >= 200 && $status < 300 && is_a( $config->get_controller_class(), 'WP_REST_Posts_Controller', true ) ) {
+            $this->delete_associated_menu_items( $deleted_post_id );
+        }
+
         if ( in_array( $operation, array( 'list', 'report' ), true ) ) {
             return array( 'data' => $data );
         }
 
         return $data;
+    }
+
+    protected function delete_associated_menu_items( int $post_id ): void {
+        $menu_item_ids = wp_get_associated_nav_menu_items( $post_id, 'post_type' );
+        foreach ( $menu_item_ids as $menu_item_id ) {
+            wp_delete_post( intval( $menu_item_id ), true );
+        }
+
+        $this->remove_block_navigation_links( $post_id );
+    }
+
+    protected function remove_block_navigation_links( int $post_id ): void {
+        $posts = get_posts(
+            array(
+                'post_type'        => array( 'wp_navigation', 'wp_template_part', 'wp_template' ),
+                'post_status'      => 'any',
+                'numberposts'      => -1,
+                'suppress_filters' => false,
+            )
+        );
+
+        foreach ( $posts as $post ) {
+            if ( $post->post_content === '' || strpos( $post->post_content, '"id":' . $post_id ) === false ) {
+                continue;
+            }
+
+            $filtered    = $this->filter_out_navigation_links( parse_blocks( $post->post_content ), $post_id );
+            $new_content = serialize_blocks( $filtered );
+
+            if ( $new_content !== $post->post_content ) {
+                wp_update_post(
+                    array(
+                        'ID'           => $post->ID,
+                        'post_content' => $new_content,
+                    )
+                );
+            }
+        }
+    }
+
+    protected function filter_out_navigation_links( array $blocks, int $post_id ): array {
+        $result = array();
+
+        foreach ( $blocks as $block ) {
+            if ( $this->is_navigation_link_to_post( $block, $post_id ) ) {
+                continue;
+            }
+
+            $result[] = $this->filter_inner_navigation_links( $block, $post_id );
+        }
+
+        return $result;
+    }
+
+    protected function filter_inner_navigation_links( array $block, int $post_id ): array {
+        if ( empty( $block['innerBlocks'] ) ) {
+            return $block;
+        }
+
+        $new_inner_blocks  = array();
+        $new_inner_content = array();
+        $index             = 0;
+
+        foreach ( $block['innerContent'] as $chunk ) {
+            if ( is_string( $chunk ) ) {
+                $new_inner_content[] = $chunk;
+                continue;
+            }
+
+            $inner_block = $block['innerBlocks'][ $index ] ?? null;
+            ++$index;
+
+            if ( $inner_block === null || $this->is_navigation_link_to_post( $inner_block, $post_id ) ) {
+                continue;
+            }
+
+            $new_inner_blocks[]  = $this->filter_inner_navigation_links( $inner_block, $post_id );
+            $new_inner_content[] = null;
+        }
+
+        $block['innerBlocks']  = $new_inner_blocks;
+        $block['innerContent'] = $new_inner_content;
+
+        return $block;
+    }
+
+    protected function is_navigation_link_to_post( array $block, int $post_id ): bool {
+        $block_name = $block['blockName'] ?? '';
+        if ( $block_name !== 'core/navigation-link' && $block_name !== 'core/navigation-submenu' ) {
+            return false;
+        }
+
+        $attrs = $block['attrs'] ?? array();
+        $kind  = $attrs['kind'] ?? '';
+        $type  = $attrs['type'] ?? '';
+
+        if ( $kind !== 'post-type' && $type !== 'page' && $type !== 'post' ) {
+            return false;
+        }
+
+        return isset( $attrs['id'] ) && intval( $attrs['id'] ) === $post_id;
     }
 }

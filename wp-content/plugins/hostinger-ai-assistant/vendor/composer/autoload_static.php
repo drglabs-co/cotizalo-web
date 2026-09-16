@@ -4,16 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce
+class ComposerStaticIniteb3b4c4870b06861746d079d15b3ed7f
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '22177d82d05723dff5b1903f4496520e' => __DIR__ . '/..' . '/alleyinteractive/wordpress-autoloader/src/class-autoloader.php',
-        'd0b4d9ff2237dcc1a532ae9d039c0c2c' => __DIR__ . '/..' . '/alleyinteractive/composer-wordpress-autoloader/src/autoload.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '22177d82d05723dff5b1903f4496520e' => __DIR__ . '/..' . '/alleyinteractive/wordpress-autoloader/src/class-autoloader.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
+        'd0b4d9ff2237dcc1a532ae9d039c0c2c' => __DIR__ . '/..' . '/alleyinteractive/composer-wordpress-autoloader/src/autoload.php',
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
@@ -21,7 +21,7 @@ class ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce
         '91dcc74bdd4f7744d05727fdc296d8ae' => __DIR__ . '/..' . '/mantle-framework/support/autoload.php',
         'b68c986d100cce58b4f7580a7ebd1ae7' => __DIR__ . '/..' . '/alleyinteractive/wp-block-converter/src/helpers.php',
         '2d223b650b5c56928c1affa16ee5cfe2' => __DIR__ . '/..' . '/wordpress/abilities-api/includes/bootstrap.php',
-        'f6d4f6bcee7247df6b777884c3e22f98' => __DIR__ . '/..' . '/yahnis-elsts/plugin-update-checker/load-v5p6.php',
+        'bc0af1337b39f0d750e835f5263eb646' => __DIR__ . '/..' . '/yahnis-elsts/plugin-update-checker/load-v5p7.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -69,6 +69,8 @@ class ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce
         array (
             'Monolog\\' => 8,
             'Masterminds\\' => 12,
+            'Mantle\\Support\\' => 15,
+            'Mantle\\Contracts\\' => 17,
         ),
         'L' =>
         array (
@@ -214,6 +216,14 @@ class ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce
         'Masterminds\\' =>
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'Mantle\\Support\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/mantle-framework/support',
+        ),
+        'Mantle\\Contracts\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/mantle-framework/contracts',
         ),
         'League\\Uri\\' =>
         array (
@@ -365,6 +375,9 @@ class ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce
         'Nette\\Utils\\JsonException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\ObjectHelpers' => __DIR__ . '/..' . '/nette/utils/src/Utils/ObjectHelpers.php',
         'Nette\\Utils\\Paginator' => __DIR__ . '/..' . '/nette/utils/src/Utils/Paginator.php',
+        'Nette\\Utils\\Process' => __DIR__ . '/..' . '/nette/utils/src/Utils/Process.php',
+        'Nette\\Utils\\ProcessFailedException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
+        'Nette\\Utils\\ProcessTimeoutException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\Random' => __DIR__ . '/..' . '/nette/utils/src/Utils/Random.php',
         'Nette\\Utils\\Reflection' => __DIR__ . '/..' . '/nette/utils/src/Utils/Reflection.php',
         'Nette\\Utils\\ReflectionMethod' => __DIR__ . '/..' . '/nette/utils/src/Utils/ReflectionMethod.php',
@@ -384,9 +397,9 @@ class ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit87e6dab7ebc2276d20278ed9fabe93ce::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticIniteb3b4c4870b06861746d079d15b3ed7f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticIniteb3b4c4870b06861746d079d15b3ed7f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticIniteb3b4c4870b06861746d079d15b3ed7f::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -6,9 +6,7 @@ $vendorDir = __DIR__;
 $baseDir = dirname($vendorDir);
 
 \ComposerWordPressAutoloader\AutoloadFactory::registerFromRules(array(
-    'Mantle\\Contracts' => array($vendorDir . '/mantle-framework/contracts'),
     'Alley\\WP_Bulk_Task\\' => array($vendorDir . '/alleyinteractive/wp-bulk-task/src'),
-    'Mantle\\Support' => array($vendorDir . '/mantle-framework/support'),
     'Alley\\WP\\Block_Converter\\' => array($vendorDir . '/alleyinteractive/wp-block-converter/src'),
 ));
 

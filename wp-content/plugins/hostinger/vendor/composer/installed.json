@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/jetpack-autoloader.git",
-                "reference": "540e86b3f828e8307ee8ac7a29c00d559a9e0d6f"
+                "reference": "9986e477ab1a3f611a0e07746708ebe4837dbb8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/540e86b3f828e8307ee8ac7a29c00d559a9e0d6f",
-                "reference": "540e86b3f828e8307ee8ac7a29c00d559a9e0d6f",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/9986e477ab1a3f611a0e07746708ebe4837dbb8b",
+                "reference": "9986e477ab1a3f611a0e07746708ebe4837dbb8b",
                 "shasum": ""
             },
             "require": {
@@ -20,12 +20,11 @@
                 "php": ">=7.2"
             },
             "require-dev": {
-                "automattic/jetpack-changelogger": "^6.0.14",
-                "automattic/phpunit-select-config": "^1.0.4",
+                "automattic/phpunit-select-config": "^1.0.9",
                 "composer/composer": "^2.2",
                 "yoast/phpunit-polyfills": "^4.0.0"
             },
-            "time": "2026-03-30T17:53:21+00:00",
+            "time": "2026-08-11T20:27:44+00:00",
             "default-branch": true,
             "type": "composer-plugin",
             "extra": {
@@ -71,17 +70,17 @@
         },
         {
             "name": "hostinger/hostinger-wp-helper",
-            "version": "1.0.13",
-            "version_normalized": "1.0.13.0",
+            "version": "1.0.15",
+            "version_normalized": "1.0.15.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:hostinger/hostinger-wp-helper.git",
-                "reference": "0f8c2eb4d9516a0bfe985f09770b66aa6d974136"
+                "url": "https://github.com/hostinger/hostinger-wp-helper.git",
+                "reference": "4ed53bfa1c2ad4e8d0662a416e760428a93a994b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hostinger/hostinger-wp-helper/zipball/0f8c2eb4d9516a0bfe985f09770b66aa6d974136",
-                "reference": "0f8c2eb4d9516a0bfe985f09770b66aa6d974136",
+                "url": "https://api.github.com/repos/hostinger/hostinger-wp-helper/zipball/4ed53bfa1c2ad4e8d0662a416e760428a93a994b",
+                "reference": "4ed53bfa1c2ad4e8d0662a416e760428a93a994b",
                 "shasum": ""
             },
             "require": {
@@ -89,10 +88,12 @@
                 "php": ">=8.0"
             },
             "require-dev": {
+                "10up/wp_mock": "^1.1",
                 "phpunit/phpunit": "^9.6.33",
+                "squizlabs/php_codesniffer": "^4.0",
                 "yoast/phpunit-polyfills": "^2.0"
             },
-            "time": "2026-04-02T13:20:06+00:00",
+            "time": "2026-07-01T09:43:05+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -101,26 +102,25 @@
                     "Hostinger\\Tests\\": "tests/phpunit"
                 }
             },
+            "license": [
+                "proprietary"
+            ],
             "description": "A PHP package with core functions for Hostinger WordPress plugins.",
-            "support": {
-                "source": "https://github.com/hostinger/hostinger-wp-helper/tree/1.0.13",
-                "issues": "https://github.com/hostinger/hostinger-wp-helper/issues"
-            },
             "install-path": "../hostinger/hostinger-wp-helper"
         },
         {
             "name": "hostinger/hostinger-wp-menu-manager",
-            "version": "1.2.20",
-            "version_normalized": "1.2.20.0",
+            "version": "1.2.29",
+            "version_normalized": "1.2.29.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:hostinger/hostinger-wp-menu-manager.git",
-                "reference": "937e866a6c7db2ae9e9549a8f57c1ff922117ed2"
+                "url": "https://github.com/hostinger/hostinger-wp-menu-manager.git",
+                "reference": "caa9b2aa6bf3ebf48788aa6fc4604d557cc99d73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hostinger/hostinger-wp-menu-manager/zipball/937e866a6c7db2ae9e9549a8f57c1ff922117ed2",
-                "reference": "937e866a6c7db2ae9e9549a8f57c1ff922117ed2",
+                "url": "https://api.github.com/repos/hostinger/hostinger-wp-menu-manager/zipball/caa9b2aa6bf3ebf48788aa6fc4604d557cc99d73",
+                "reference": "caa9b2aa6bf3ebf48788aa6fc4604d557cc99d73",
                 "shasum": ""
             },
             "require": {
@@ -131,7 +131,7 @@
                 "squizlabs/php_codesniffer": "^3.0",
                 "yoast/phpunit-polyfills": "^2.0"
             },
-            "time": "2025-08-18T12:17:45+00:00",
+            "time": "2026-08-18T07:18:38+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -148,10 +148,6 @@
                 "proprietary"
             ],
             "description": "Package for managing Hostinger WordPress menus and pages.",
-            "support": {
-                "source": "https://github.com/hostinger/hostinger-wp-menu-manager/tree/1.2.20",
-                "issues": "https://github.com/hostinger/hostinger-wp-menu-manager/issues"
-            },
             "install-path": "../hostinger/hostinger-wp-menu-manager"
         },
         {

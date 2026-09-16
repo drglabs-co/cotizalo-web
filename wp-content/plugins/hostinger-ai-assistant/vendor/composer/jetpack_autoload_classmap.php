@@ -11,7 +11,7 @@ return array(
 		'path'    => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php'
 	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadGenerator' => array(
-		'version' => '5.0.15',
+		'version' => '5.0.20',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadGenerator.php'
 	),
 	'DateError' => array(
@@ -265,6 +265,18 @@ return array(
 	'Nette\\Utils\\Paginator' => array(
 		'version' => 'dev-master',
 		'path'    => $vendorDir . '/nette/utils/src/Utils/Paginator.php'
+	),
+	'Nette\\Utils\\Process' => array(
+		'version' => 'dev-master',
+		'path'    => $vendorDir . '/nette/utils/src/Utils/Process.php'
+	),
+	'Nette\\Utils\\ProcessFailedException' => array(
+		'version' => 'dev-master',
+		'path'    => $vendorDir . '/nette/utils/src/Utils/exceptions.php'
+	),
+	'Nette\\Utils\\ProcessTimeoutException' => array(
+		'version' => 'dev-master',
+		'path'    => $vendorDir . '/nette/utils/src/Utils/exceptions.php'
 	),
 	'Nette\\Utils\\Random' => array(
 		'version' => 'dev-master',

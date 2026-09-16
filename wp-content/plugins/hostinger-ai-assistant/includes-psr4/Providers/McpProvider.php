@@ -5,9 +5,11 @@ namespace Hostinger\AiAssistant\Providers;
 use Hostinger\AiAssistant\Container;
 use Hostinger\AiAssistant\Functions;
 use Hostinger\AiAssistant\Mcp\Abilities\AbilitiesRegistry;
+use Hostinger\AiAssistant\Mcp\McpConnectionTracker;
 use Hostinger\AiAssistant\Mcp\Hooks;
 use Hostinger\AiAssistant\Mcp\McpServer;
 use Hostinger\AiAssistant\Mcp\Rest\JwtAuth;
+use Hostinger\Amplitude\AmplitudeManager;
 
 if ( ! defined( 'ABSPATH' ) ) {
     die;
@@ -37,5 +39,15 @@ class McpProvider implements ProviderInterface {
 
         $mcp_server = $container->get( McpServer::class );
         $mcp_server->init();
+
+        $container->set(
+            McpConnectionTracker::class,
+            function () use ( $container ) {
+                return new McpConnectionTracker( $container->get( AmplitudeManager::class ) );
+            }
+        );
+
+        $connection_tracker = $container->get( McpConnectionTracker::class );
+        $connection_tracker->init();
     }
 }

@@ -9,6 +9,7 @@ use Hostinger\EasyOnboarding\Rest\TutorialRoutes;
 use Hostinger\EasyOnboarding\Rest\WelcomeRoutes;
 use Hostinger\EasyOnboarding\Rest\WooRoutes;
 use Hostinger\EasyOnboarding\Admin\Assets as AdminAssets;
+use Hostinger\EasyOnboarding\Admin\Elementor\Assets as ElementorAssets;
 use Hostinger\EasyOnboarding\Admin\Hooks as AdminHooks;
 use Hostinger\EasyOnboarding\Admin\Menu as AdminMenu;
 use Hostinger\EasyOnboarding\Admin\Partnership;
@@ -91,6 +92,7 @@ class Bootstrap {
     private function load_admin_dependencies(): void {
         $this->surveys();
         new AdminAssets();
+        new ElementorAssets();
         new AdminHooks();
         new AdminMenu();
         new AdminRedirects();

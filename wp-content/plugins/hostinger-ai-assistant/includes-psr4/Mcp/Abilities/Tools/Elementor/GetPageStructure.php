@@ -12,7 +12,7 @@ class GetPageStructure extends BaseElementorTool {
             'hostinger-ai-assistant/elementor-get-page-structure',
             array(
                 'label'               => __( 'Get Elementor Page Structure', 'hostinger-ai-assistant' ),
-                'description'         => __( 'Returns a readable, hierarchical summary of Elementor page structure without raw JSON. Shows containers and widgets in a tree view.', 'hostinger-ai-assistant' ),
+                'description'         => __( 'Returns a readable, hierarchical summary of Elementor page structure without raw JSON. Shows containers and widgets in a tree view. Each container reports its existing background (video/image/gradient/color) in a "background" field — always check this before suggesting or adding a background, so you do not overwrite an existing video/image background.', 'hostinger-ai-assistant' ),
                 'category'            => $this->category,
                 'input_schema'        => array(
                     'type'       => 'object',
