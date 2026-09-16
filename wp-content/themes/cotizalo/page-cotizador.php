@@ -519,17 +519,51 @@
             background: #059669;
         }
 
+        .gen-calc-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            align-items: start;
+        }
+
         @media (max-width: 768px) {
+            .mockup-body {
+                padding: 16px 12px;
+            }
+            .mockup-header {
+                padding: 10px 14px;
+            }
             .gen-grid-2 {
                 grid-template-columns: 1fr;
+            }
+            .gen-calc-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
             }
             .gen-actions-bar {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 10px;
+            }
+            .gen-actions-bar > div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
             }
             .btn-gen-action {
                 justify-content: center;
                 width: 100%;
+                text-align: center;
+            }
+            #q_table {
+                min-width: 520px;
+            }
+            .print-cotizalo-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
 
@@ -800,13 +834,16 @@
             margin: 0 auto;
             background: #ffffff;
             border-radius: var(--radius-lg);
-            overflow: hidden;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             border: 1px solid var(--border-dark);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            width: 100%;
         }
 
         .seo-comparison-table {
             width: 100%;
+            min-width: 580px;
             border-collapse: collapse;
             text-align: left;
             font-size: 0.925rem;
@@ -1044,6 +1081,18 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
         }
+
+        header.navbar.menu-open {
+            height: 100vh !important;
+            height: 100dvh !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            align-items: flex-start !important;
+            background: rgba(10, 14, 26, 0.98) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            padding-bottom: 3rem !important;
+        }
     </style>
 </head>
 
@@ -1085,14 +1134,11 @@
                 <a href="<?php echo esc_url(get_theme_mod('nav_register_url', 'https://app.cotizalo.net/signup')); ?>"
                     class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_register_text', 'Probar Gratis')); ?></a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Abrir menú de navegación">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
+            <div class="mobile-menu-btn" aria-label="Abrir menú de navegación" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -1279,7 +1325,7 @@
                             </div>
 
                             <!-- Calculation & Conditions Grid -->
-                            <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:1.5rem; margin-top:1.5rem; align-items:start;">
+                            <div class="gen-calc-grid">
                                 <div>
                                     <div class="gen-field">
                                         <label>Términos y condiciones comerciales:</label>
@@ -2092,10 +2138,15 @@
 
             // Mobile menu toggle
             const mobileBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            if (mobileBtn && navLinks) {
-                mobileBtn.addEventListener('click', function () {
-                    navLinks.classList.toggle('active');
+            const navContainer = document.querySelector('.nav-container');
+            if (mobileBtn && navContainer && header) {
+                mobileBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const isOpen = header.classList.toggle('menu-open');
+                    mobileBtn.classList.toggle('open', isOpen);
+                    navContainer.classList.toggle('menu-open', isOpen);
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
                 });
             }
 
