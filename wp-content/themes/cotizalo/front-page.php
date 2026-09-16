@@ -6,27 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
-  <title>Software para hacer cotizaciones en línea | Cotízalo</title>
+  <title>Cotizador en línea para pequeñas empresas | Cotízalo</title>
   <meta name="description"
-    content="Crea, envía y da seguimiento a tus cotizaciones desde una sola plataforma. Cotizaciones por WhatsApp y PDF, catálogo de productos y seguimiento automático. Prueba gratis 14 días.">
+    content="Crea, envía y administra cotizaciones profesionales desde cualquier dispositivo. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y WhatsApp. Prueba gratis 14 días.">
   <meta name="keywords"
-    content="sistema de cotizaciones, cotizaciones web, cotizaciones online mexico, cotizaciones online mexico app, hacer cotizacion profesional, generador de presupuestos, software para cotizar servicios, crear cotizacion pdf, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
+    content="cotizador en linea, cotizador para empresas, software de cotizaciones, cotizador online mexico, hacer cotizacion profesional, generador de presupuestos, cotizaciones por whatsapp, seguimiento de cotizaciones, cotizador para pymes">
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
-  <meta property="og:title" content="Software para hacer cotizaciones en línea | Cotízalo">
+  <meta property="og:title" content="Cotizador en línea para pequeñas empresas | Cotízalo">
   <meta property="og:description"
-    content="Crea, envía y da seguimiento a tus cotizaciones desde una sola plataforma. Cotizaciones por WhatsApp y PDF, catálogo de productos y seguimiento automático. Prueba gratis 14 días.">
+    content="Crea, envía y administra cotizaciones profesionales desde cualquier dispositivo. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y WhatsApp. Prueba gratis 14 días.">
   <meta property="og:image"
     content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
   <meta property="og:locale" content="es_MX">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Software para hacer cotizaciones en línea | Cotízalo">
+  <meta name="twitter:title" content="Cotizador en línea para pequeñas empresas | Cotízalo">
   <meta name="twitter:description"
-    content="Crea, envía y da seguimiento a tus cotizaciones desde una sola plataforma. Cotizaciones por WhatsApp y PDF, catálogo de productos y seguimiento automático. Prueba gratis 14 días.">
+    content="Crea, envía y administra cotizaciones profesionales desde cualquier dispositivo. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y WhatsApp. Prueba gratis 14 días.">
   <meta name="twitter:image"
     content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
 
@@ -137,8 +137,10 @@
             </svg>
           </button>
           <ul class="nav-dropdown-menu">
+            <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
             <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                 cotizaciones</a></li>
+            <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
             <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para
                 presupuestos</a></li>
             <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a>
@@ -174,12 +176,12 @@
     <div class="container relative z-10">
       <div class="hero-content animate-on-scroll fade-in-up">
         <h1 class="display-title">
-          <?php echo esc_html(get_theme_mod('hero_title', 'Crea y da seguimiento a tus cotizaciones en línea')); ?>
+          <?php echo esc_html(get_theme_mod('hero_title', 'Cotizador en línea para pequeñas empresas')); ?>
         </h1>
         <p class="hero-subtitle">
-          <?php echo esc_html(get_theme_mod('hero_subtitle', 'El software de cotizaciones para emprendedores y pequeñas empresas que quieren dejar atrás Excel, papel y archivos difíciles de encontrar.')); ?>
+          <?php echo esc_html(get_theme_mod('hero_subtitle', 'Cotízalo es el software para emprendedores y pequeñas empresas que quieren crear propuestas profesionales, enviarlas por WhatsApp y controlar cuáles están pendientes, aceptadas o pagadas.')); ?>
         </p>
-        <div class="hero-buttons">
+        <div class="hero-buttons" style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
           <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://app.cotizalo.net/signup')); ?>"
             class="btn btn-primary btn-lg group">
             <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis')); ?>
@@ -189,10 +191,17 @@
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
+          <a href="#features" class="btn btn-secondary btn-lg">
+            Ver cómo funciona
+          </a>
         </div>
         <!-- Internal SEO links to landing pages -->
         <nav class="hero-feature-links" aria-label="Páginas de características"
-          style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+          style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; align-items:center;">
+          <a href="<?php echo esc_url(home_url('/cotizador/')); ?>"
+            style="font-size:0.85rem; font-weight:700; color:#34d399; text-decoration:underline; text-underline-offset:3px;">Cotizador
+            en línea</a>
+          <span style="color:rgba(255,255,255,0.3);">·</span>
           <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>"
             style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Software
             para cotizaciones</a>
@@ -1322,16 +1331,14 @@
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
             <span
-              style="font-size: 0.78rem; font-weight: 700; color: #4ade80; letter-spacing: 0.08em; text-transform: uppercase;"><?php echo esc_html(get_theme_mod('vsai_badge_text', 'Valor Agregado Cotízalo')); ?></span>
-          </div>
-          <h3 style="
-                        font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+              style="font-size: 0.78rem; font-weight: 700; color: #4ade80; letter-spacing: 0.08em; text-transform: upperca          <h3 style="
+                        font-size: clamp(1.6rem, 3vw, 2.3rem);
                         font-weight: 700;
                         color: #ffffff;
                         line-height: 1.25;
                         margin-bottom: 1rem;
                     ">
-            <?php echo esc_html(get_theme_mod('vsai_title', 'Dile adiós a las imágenes de cotizaciones y a quedarte sin créditos de IA')); ?>
+            <?php echo esc_html(get_theme_mod('vsai_title', 'Dile adiós al desorden de Excel y a las imágenes perdidas en WhatsApp')); ?>
           </h3>
           <p style="
                         color: rgba(255, 255, 255, 0.78);
@@ -1339,7 +1346,7 @@
                         line-height: 1.7;
                         margin: 0;
                     ">
-            <?php echo esc_html(get_theme_mod('vsai_desc', 'Mandar fotos de cotizaciones o depender de generadores de IA parece rápido, pero pronto se vuelve un dolor de cabeza: no puedes editarlas, se pierden en el chat, te quedas sin créditos a fin de mes y dar seguimiento es imposible. Cotízalo te da una interfaz gráfica dedicada para buscar, editar y dar seguimiento a cada cliente desde cualquier dispositivo.')); ?>
+            <?php echo esc_html(get_theme_mod('vsai_desc', 'Mandar fotos de cotizaciones o depender de archivos de Excel parece rápido al inicio, pero pronto se vuelve un caos: no puedes editarlas rápido, se pierden en el chat y dar seguimiento a tus clientes es imposible. Cotízalo te da una plataforma especializada para crear cotizaciones profesionales, enviarlas por WhatsApp y controlar tus ventas desde cualquier dispositivo.')); ?>
           </p>
         </div>
 
@@ -1352,7 +1359,7 @@
                     z-index: 1;
                 " class="vs-ai-grid">
 
-          <!-- Col 1: Las imágenes y la IA improvisada -->
+          <!-- Col 1: Las imágenes y Excel -->
           <div style="
                         background: rgba(239, 68, 68, 0.06);
                         border: 1px solid rgba(239, 68, 68, 0.25);
@@ -1374,7 +1381,7 @@
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </div>
-              <h4 style="color: #fca5a5; font-size: 1.15rem; font-weight: 700; margin: 0;">Con imágenes o bots de IA
+              <h4 style="color: #fca5a5; font-size: 1.15rem; font-weight: 700; margin: 0;">Con Excel e imágenes por WhatsApp
               </h4>
             </div>
 
@@ -1403,10 +1410,8 @@
             <div style="display: flex; gap: 12px; align-items: flex-start;">
               <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
               <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Límite de
-                  créditos y tokens</strong>
-                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Las
-                  herramientas de IA te dejan sin saldo en el momento más inoportuno, frenando el cierre de tus ventas.
+                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Fórmulas rotas y errores</strong>
+                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Un error en celdas de Excel o precios desactualizados pueden hacerte cotizar por debajo del costo real.
                 </p>
               </div>
             </div>
@@ -1423,7 +1428,7 @@
             </div>
           </div>
 
-          <!-- Col 2: Con la interfaz gráfica de Cotízalo -->
+          <!-- Col 2: Con Cotízalo -->
           <div style="
                         background: rgba(18, 58, 44, 0.45);
                         border: 1px solid rgba(74, 222, 128, 0.45);
@@ -1445,8 +1450,7 @@
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h4 style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin: 0;">Con la Interfaz Gráfica de
-                Cotízalo</h4>
+              <h4 style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin: 0;">Con el Cotizador en Línea de Cotízalo</h4>
             </div>
 
             <div style="display: flex; gap: 12px; align-items: flex-start;">
@@ -1465,17 +1469,15 @@
                 <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Edición en
                   segundos con un clic</strong>
                 <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Ajusta
-                  conceptos, productos o descuentos al instante sin tener que volver a redactar o generar nada.</p>
+                  conceptos, productos o descuentos al instante sin tener que volver a redactar ni recalcular fórmulas.</p>
               </div>
             </div>
 
             <div style="display: flex; gap: 12px; align-items: flex-start;">
               <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
               <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Sin límites ni
-                  créditos de IA</strong>
-                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Crea todas las
-                  cotizaciones que tu empresa demande. Tu ritmo de ventas nunca se detiene por falta de saldo.</p>
+                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Catálogo con precios protegidos</strong>
+                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Crea propuestas usando tus productos, servicios e impuestos configurados con total precisión comercial.</p>
               </div>
             </div>
 
@@ -1497,7 +1499,7 @@
         <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
           <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
             class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);">
-            <?php echo esc_html(get_theme_mod('vsai_cta_text', 'Empieza a cotizar con interfaz gráfica')); ?>
+            <?php echo esc_html(get_theme_mod('vsai_cta_text', 'Empieza a cotizar con Cotízalo gratis')); ?>
             <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1660,10 +1662,10 @@
             </div>
             <div>
               <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a202c; margin: 0 0 0.4rem;">
-                <?php echo esc_html(get_theme_mod('cloud_b4_title', 'Búsqueda y seguimiento sin límites de IA')); ?>
+                <?php echo esc_html(get_theme_mod('cloud_b4_title', 'Búsqueda y control total de tus cotizaciones')); ?>
               </h3>
               <p style="color: #64748b; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                <?php echo esc_html(get_theme_mod('cloud_b4_desc', 'Olvídate de buscar imágenes perdidas en WhatsApp o quedarte sin créditos en bots de IA. Accede a una interfaz gráfica para encontrar cualquier propuesta en un clic, editar cambios y dar seguimiento a cada cliente desde cualquier dispositivo.')); ?>
+                <?php echo esc_html(get_theme_mod('cloud_b4_desc', 'Olvídate de buscar archivos perdidos en carpetas o chats de WhatsApp. Accede a tu cotizador en línea para encontrar cualquier propuesta en un clic, editar cambios y dar seguimiento a cada cliente desde cualquier dispositivo.')); ?>
               </p>
             </div>
           </div>
@@ -1870,6 +1872,17 @@
           <ul>
             <li><a href="<?php echo esc_url(home_url('/')); ?>#features">Características</a></li>
             <li><a href="<?php echo esc_url(home_url('/precios/')); ?>">Precios</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
+            <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
+            <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
+            <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
+            <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
+            <li><a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">Plantilla de cotización</a></li>
           </ul>
         </div>
         <div class="footer-links">

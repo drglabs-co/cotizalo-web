@@ -758,12 +758,18 @@ add_action('customize_register', 'cotizalo_customize_register');
  */
 function cotizalo_get_custom_routes() {
     return array(
+        'cotizador'                                   => 'page-cotizador.php',
+        'cotizador-online'                            => 'page-cotizador.php',
+        'cotizador-en-linea'                          => 'page-cotizador.php',
+        'cotizador-para-pequenas-empresas'            => 'page-cotizador.php',
         'que-es-cotizalo'                             => 'page-que-es-cotizalo.php',
         'precios'                                     => 'page-precios.php',
         'soporte'                                     => 'page-soporte.php',
         'terminos-y-condiciones'                      => 'page-terminos-y-condiciones.php',
         'aviso-de-privacidad'                         => 'page-aviso-de-privacidad.php',
         'cotizaciones-por-whatsapp'                   => 'page-cotizaciones-por-whatsapp.php',
+        'seguimiento-de-cotizaciones'                 => 'page-seguimiento-de-cotizaciones.php',
+        'seguimiento-cotizaciones'                    => 'page-seguimiento-de-cotizaciones.php',
         'plantilla-de-cotizacion'                     => 'page-plantilla-de-cotizacion.php',
         'programa-para-hacer-presupuestos'             => 'page-programa-para-hacer-presupuestos.php',
         'software-para-cotizaciones'                  => 'page-software-para-cotizaciones.php',

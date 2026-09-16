@@ -54,6 +54,12 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <priority>0.9</priority>
   </url>
   <url>
+    <loc><?php echo esc_url( home_url( '/cotizador/' ) ); ?></loc>
+    <lastmod><?php echo date( 'Y-m-d' ); ?></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc><?php echo esc_url( home_url( '/plantilla-de-cotizacion/' ) ); ?></loc>
     <lastmod><?php echo date( 'Y-m-d' ); ?></lastmod>
     <changefreq>weekly</changefreq>
@@ -83,6 +89,12 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc><?php echo esc_url( home_url( '/seguimiento-de-cotizaciones/' ) ); ?></loc>
+    <lastmod><?php echo date( 'Y-m-d' ); ?></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <?php
   if ( function_exists( 'get_posts' ) ) {
       $extra_posts = get_posts( array(
@@ -96,7 +108,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
           foreach ( $extra_posts as $p ) {
               $permalink = get_permalink( $p->ID );
               $path      = trim( parse_url( $permalink, PHP_URL_PATH ), '/' );
-              if ( in_array( $path, array( '', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
+              if ( in_array( $path, array( '', 'cotizador', 'cotizador-en-linea', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'seguimiento-de-cotizaciones', 'seguimiento-cotizaciones', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
                   continue;
               }
               ?>

@@ -62,6 +62,13 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
       <description>Revisa los términos y condiciones de uso del servicio Cotízalo.</description>
     </item>
     <item>
+      <title>Cotizador en Línea para Pequeñas Empresas | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/cotizador/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/cotizador/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Crea, envía y administra cotizaciones profesionales desde una sola plataforma. Deja atrás el desorden de Excel y WhatsApp.</description>
+    </item>
+    <item>
       <title>Envía Cotizaciones por WhatsApp en Segundos | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/cotizaciones-por-whatsapp/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/cotizaciones-por-whatsapp/' ) ); ?></guid>
@@ -103,6 +110,13 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
       <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
       <description>Genera propuestas y presupuestos de servicios profesionales con firmas digitales y cobro de anticipos.</description>
     </item>
+    <item>
+      <title>Sistema de Seguimiento de Cotizaciones para Pequeñas Empresas | Cotízalo</title>
+      <link><?php echo esc_url( home_url( '/seguimiento-de-cotizaciones/' ) ); ?></link>
+      <guid isPermaLink="true"><?php echo esc_url( home_url( '/seguimiento-de-cotizaciones/' ) ); ?></guid>
+      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
+      <description>Sabe qué cotizaciones están pendientes, aceptadas o pagadas. Da seguimiento por WhatsApp sin ser invasivo y cierra más ventas.</description>
+    </item>
 
     <?php
     if ( function_exists( 'get_posts' ) ) {
@@ -117,7 +131,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
             foreach ( $extra_posts as $p ) {
                 $permalink = get_permalink( $p->ID );
                 $path      = trim( parse_url( $permalink, PHP_URL_PATH ), '/' );
-                if ( in_array( $path, array( '', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
+                if ( in_array( $path, array( '', 'cotizador', 'cotizador-en-linea', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'seguimiento-de-cotizaciones', 'seguimiento-cotizaciones', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
                     continue;
                 }
                 $excerpt = has_excerpt( $p->ID ) ? get_the_excerpt( $p->ID ) : wp_trim_words( $p->post_content, 30 );
