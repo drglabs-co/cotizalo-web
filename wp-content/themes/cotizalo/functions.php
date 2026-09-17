@@ -17,7 +17,7 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.5');
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.6');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
 
     // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
@@ -253,9 +253,34 @@ function cotizalo_dropdown_js()
                 updateHeader();
             }
 
+            function initMobileMenu() {
+                var mobileBtn = document.querySelector('.mobile-menu-btn');
+                var navContainer = document.querySelector('.nav-container');
+                var header = document.getElementById('navbar') || document.querySelector('header');
+                if (!mobileBtn || !navContainer || !header || mobileBtn.dataset.menuInit) return;
+                mobileBtn.dataset.menuInit = '1';
+
+                mobileBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    mobileBtn.classList.toggle('open');
+                    header.classList.toggle('menu-open');
+                    navContainer.classList.toggle('menu-open');
+                });
+
+                navContainer.querySelectorAll('.nav-item:not(.nav-dropdown-toggle), .nav-dropdown-menu a, .btn-nav').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        mobileBtn.classList.remove('open');
+                        header.classList.remove('menu-open');
+                        navContainer.classList.remove('menu-open');
+                    });
+                });
+            }
+
             function initAll() {
                 initDropdowns();
                 initHeaderScroll();
+                initMobileMenu();
             }
 
             if (document.readyState === 'loading') {
