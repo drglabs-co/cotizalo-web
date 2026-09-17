@@ -1024,12 +1024,15 @@
             // Mobile menu toggle
             const mobileBtn = document.querySelector('.mobile-menu-btn');
             const navContainer = document.querySelector('.nav-container');
+            const navLinks = document.querySelector('.nav-links');
             const navbarHeader = document.getElementById('navbar') || document.querySelector('header.navbar');
             if (mobileBtn && navContainer && navbarHeader) {
                 mobileBtn.addEventListener('click', function () {
-                    mobileBtn.classList.toggle('open');
-                    navbarHeader.classList.toggle('menu-open');
-                    navContainer.classList.toggle('menu-open');
+                    const isOpen = navContainer.classList.contains('menu-open') || (navLinks && navLinks.classList.contains('active'));
+                    mobileBtn.classList.toggle('open', !isOpen);
+                    navbarHeader.classList.toggle('menu-open', !isOpen);
+                    navContainer.classList.toggle('menu-open', !isOpen);
+                    if (navLinks) navLinks.classList.toggle('active', !isOpen);
                 });
 
                 navContainer.querySelectorAll('.nav-item:not(.nav-dropdown-toggle), .nav-dropdown-menu a, .btn-nav').forEach(function (link) {
@@ -1037,6 +1040,7 @@
                         mobileBtn.classList.remove('open');
                         navbarHeader.classList.remove('menu-open');
                         navContainer.classList.remove('menu-open');
+                        if (navLinks) navLinks.classList.remove('active');
                     });
                 });
             }
