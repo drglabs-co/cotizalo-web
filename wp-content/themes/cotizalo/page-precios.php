@@ -1055,16 +1055,6 @@
 
             document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-            // Mobile menu toggle
-            const mobileBtn = document.querySelector('.mobile-menu-btn');
-            const navContainer = document.querySelector('.nav-container');
-            if (mobileBtn && navContainer) {
-                mobileBtn.addEventListener('click', () => {
-                    mobileBtn.classList.toggle('open');
-                    header.classList.toggle('menu-open');
-                    navContainer.classList.toggle('menu-open');
-                });
-            }
         });
     </script>
     <?php wp_footer(); ?>

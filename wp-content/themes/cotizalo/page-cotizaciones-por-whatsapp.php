@@ -899,9 +899,6 @@
             window.addEventListener('scroll', () => { if (!ticking) { window.requestAnimationFrame(() => { header.classList.toggle('scrolled', window.scrollY > 50); ticking = false; }); ticking = true; } }, { passive: true });
             const observer = new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
             document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-            const mobileBtn = document.querySelector('.mobile-menu-btn');
-            const navContainer = document.querySelector('.nav-container');
-            if (mobileBtn && navContainer) { mobileBtn.addEventListener('click', () => { mobileBtn.classList.toggle('open'); header.classList.toggle('menu-open'); navContainer.classList.toggle('menu-open'); }); }
         });
     </script>
     <?php wp_footer(); ?>

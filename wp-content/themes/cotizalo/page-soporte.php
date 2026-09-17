@@ -611,17 +611,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_subm
 
             document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
 
-            // Mobile menu
-            const mobileBtn = document.querySelector('.mobile-menu-btn');
-            const navContainer = document.querySelector('.nav-container');
-            if (mobileBtn && navContainer) {
-                mobileBtn.addEventListener('click', () => {
-                    mobileBtn.classList.toggle('open');
-                    header.classList.toggle('menu-open');
-                    navContainer.classList.toggle('menu-open');
-                });
-            }
-
             // Client-side validations
             const form = document.getElementById('support-form');
             if (form) {
