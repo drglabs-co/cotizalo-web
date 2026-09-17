@@ -594,6 +594,16 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
         }
+
+        header.navbar.menu-open {
+            height: 100vh !important;
+            align-items: flex-start !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            background: rgba(10, 14, 26, 0.98) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+        }
     </style>
 </head>
 
@@ -635,14 +645,12 @@
                 <a href="<?php echo esc_url(get_theme_mod('nav_register_url', 'https://app.cotizalo.net/signup')); ?>"
                     class="btn btn-primary btn-nav"><?php echo esc_html(get_theme_mod('nav_register_text', 'Probar Gratis')); ?></a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Abrir menú de navegación">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-btn" role="button" aria-label="Abrir menú de navegación" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -1013,11 +1021,23 @@
                 updateHeader();
             }
 
+            // Mobile menu toggle
             const mobileBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            if (mobileBtn && navLinks) {
+            const navContainer = document.querySelector('.nav-container');
+            const navbarHeader = document.getElementById('navbar') || document.querySelector('header.navbar');
+            if (mobileBtn && navContainer && navbarHeader) {
                 mobileBtn.addEventListener('click', function () {
-                    navLinks.classList.toggle('active');
+                    mobileBtn.classList.toggle('open');
+                    navbarHeader.classList.toggle('menu-open');
+                    navContainer.classList.toggle('menu-open');
+                });
+
+                navContainer.querySelectorAll('.nav-item:not(.nav-dropdown-toggle), .nav-dropdown-menu a, .btn-nav').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        mobileBtn.classList.remove('open');
+                        navbarHeader.classList.remove('menu-open');
+                        navContainer.classList.remove('menu-open');
+                    });
                 });
             }
         });
