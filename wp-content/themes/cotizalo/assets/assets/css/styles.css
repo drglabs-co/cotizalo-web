@@ -1136,8 +1136,10 @@ footer {
   .nav-container.menu-open,
   .nav-container:has(.nav-links.active) {
     flex-wrap: wrap;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     align-content: flex-start;
+    padding-bottom: 2.5rem;
   }
 
   .nav-container.menu-open .nav-links,
@@ -1158,6 +1160,8 @@ footer {
   header.menu-open,
   header:has(.nav-links.active) {
     height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     align-items: flex-start;
     background: rgba(10, 14, 26, 0.98);
     backdrop-filter: blur(12px);

@@ -17,7 +17,7 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.6');
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.7');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
 
     // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
