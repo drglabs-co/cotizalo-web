@@ -76,13 +76,6 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
       <description>Crea una cotización profesional y compártela por WhatsApp en un clic. Tu cliente la ve desde su celular y puede firmarla.</description>
     </item>
     <item>
-      <title>Plantilla de Cotización en PDF y Online Gratis | Cotízalo</title>
-      <link><?php echo esc_url( home_url( '/plantilla-de-cotizacion/' ) ); ?></link>
-      <guid isPermaLink="true"><?php echo esc_url( home_url( '/plantilla-de-cotizacion/' ) ); ?></guid>
-      <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
-      <description>Descarga o genera plantillas de cotización profesionales en PDF listas para enviar a tus clientes.</description>
-    </item>
-    <item>
       <title>Programa para Hacer Presupuestos Comerciales Online | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/programa-para-hacer-presupuestos/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/programa-para-hacer-presupuestos/' ) ); ?></guid>
@@ -131,7 +124,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
             foreach ( $extra_posts as $p ) {
                 $permalink = get_permalink( $p->ID );
                 $path      = trim( parse_url( $permalink, PHP_URL_PATH ), '/' );
-                if ( in_array( $path, array( '', 'cotizador', 'cotizador-en-linea', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'seguimiento-de-cotizaciones', 'seguimiento-cotizaciones', 'plantilla-de-cotizacion', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
+                if ( in_array( $path, array( '', 'cotizador', 'cotizador-en-linea', 'que-es-cotizalo', 'precios', 'soporte', 'aviso-de-privacidad', 'terminos-y-condiciones', 'software-para-cotizaciones', 'programa-para-hacer-presupuestos', 'cotizaciones-por-whatsapp', 'seguimiento-de-cotizaciones', 'seguimiento-cotizaciones', 'software-de-cotizaciones-para-constructoras', 'software-cotizaciones-constructoras', 'software-de-cotizaciones-para-servicios', 'software-cotizaciones-servicios' ), true ) ) {
                     continue;
                 }
                 $excerpt = has_excerpt( $p->ID ) ? get_the_excerpt( $p->ID ) : wp_trim_words( $p->post_content, 30 );

@@ -145,7 +145,6 @@
                 presupuestos</a></li>
             <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a>
             </li>
-            <li><a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">Plantilla de cotización</a></li>
             <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
                 constructoras</a></li>
             <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
@@ -219,10 +218,6 @@
           <a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>"
             style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Cotizaciones
             por WhatsApp</a>
-          <span style="color:rgba(255,255,255,0.3);">·</span>
-          <a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>"
-            style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Plantilla
-            de cotización</a>
           <span style="color:rgba(255,255,255,0.3);">·</span>
           <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>"
             style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Para
@@ -1888,7 +1883,6 @@
             <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
             <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
             <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
-            <li><a href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">Plantilla de cotización</a></li>
           </ul>
         </div>
         <div class="footer-links">

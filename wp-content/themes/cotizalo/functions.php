@@ -838,7 +838,6 @@ function cotizalo_get_custom_routes() {
         'cotizaciones-por-whatsapp'                   => 'page-cotizaciones-por-whatsapp.php',
         'seguimiento-de-cotizaciones'                 => 'page-seguimiento-de-cotizaciones.php',
         'seguimiento-cotizaciones'                    => 'page-seguimiento-de-cotizaciones.php',
-        'plantilla-de-cotizacion'                     => 'page-plantilla-de-cotizacion.php',
         'programa-para-hacer-presupuestos'             => 'page-programa-para-hacer-presupuestos.php',
         'software-para-cotizaciones'                  => 'page-software-para-cotizaciones.php',
         'software-de-cotizaciones-para-constructoras' => 'page-software-cotizaciones-constructoras.php',
