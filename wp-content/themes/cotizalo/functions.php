@@ -892,3 +892,22 @@ add_action('template_redirect', function () {
         }
     }
 });
+
+/**
+ * Endpoint to purge LiteSpeed / PHP caches on Hostinger.
+ */
+add_action('init', function () {
+    if (isset($_GET['cotizalo_purge_cache']) && $_GET['cotizalo_purge_cache'] === '1') {
+        if (has_action('litespeed_purge_all')) {
+            do_action('litespeed_purge_all');
+        }
+        if (function_exists('opcache_reset')) {
+            @opcache_reset();
+        }
+        header('Cache-Control: no-cache, no-store, must-revalidate');
+        header('Pragma: no-cache');
+        header('Expires: 0');
+        wp_die('Cotizalo Cache Purged Successfully!');
+    }
+});
+
