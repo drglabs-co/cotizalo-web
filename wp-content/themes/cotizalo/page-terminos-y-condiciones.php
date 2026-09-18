@@ -15,8 +15,6 @@
     <title>Términos y Condiciones de Uso | Cotízalo</title>
     <meta name="description"
         content="Conoce nuestros Términos y Condiciones de Uso. Reglas, responsabilidades y licencias del software de cotizaciones en línea en México.">
-    <meta name="keywords"
-        content="terminos y condiciones cotizalo, contrato de servicio, uso de software de cotizaciones">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
