@@ -1,39 +1,4 @@
-# ─── macOS ────────────────────────────────────────────────────────────────────
-.DS_Store
+##.DS_Store
+/.DS_Store
 **/.DS_Store
-
-# ─── WordPress Core (auto-updated by WP — never track in Git) ─────────────────
-wp-admin/
-wp-includes/
-wp-activate.php
-wp-blog-header.php
-wp-comments-post.php
-wp-config-sample.php
-wp-cron.php
-wp-links-opml.php
-wp-load.php
-wp-login.php
-wp-mail.php
-wp-settings.php
-wp-signup.php
-wp-trackback.php
-xmlrpc.php
-license.txt
-readme.html
-
-# ─── WordPress runtime / auto-managed content ─────────────────────────────────
-wp-content/uploads/
-wp-content/upgrade/
-wp-content/languages/
-wp-content/litespeed/
-wp-content/cache/
-wp-content/backup-db/
-wp-content/blogs.dir/
-
-# ─── Plugins (auto-updated by WP/Hostinger — track only what you own) ─────────
-wp-content/plugins/
-# To track a specific plugin, un-ignore it:
-# !wp-content/plugins/my-custom-plugin/
-
-# ─── Must-use plugins (Hostinger managed — keep tracked) ──────────────────────
-# wp-content/mu-plugins/ is NOT ignored (keep tracked)
+.DS_Store
