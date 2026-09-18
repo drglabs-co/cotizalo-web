@@ -11,7 +11,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
+    <link rel="canonical" href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">
     <title>Aviso de Privacidad | Cotízalo</title>
     <meta name="description"
         content="Conoce nuestro Aviso de Privacidad. Protegemos tus datos personales y comerciales con altos estándares de seguridad técnica en México.">

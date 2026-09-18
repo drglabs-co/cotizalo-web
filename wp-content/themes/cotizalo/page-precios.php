@@ -11,8 +11,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link class="canonical" rel="canonical"
-        href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
+    <link rel="canonical" href="<?php echo esc_url(home_url('/precios/')); ?>">
     <title>Planes y Precios del Sistema de Cotizaciones | Cotízalo</title>
     <meta name="description"
         content="Elige el plan ideal para tu negocio en México. Precios transparentes sin comisiones ocultas. Todos los planes incluyen 14 días de prueba gratis. ¡Empieza hoy!">

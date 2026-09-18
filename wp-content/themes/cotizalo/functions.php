@@ -411,7 +411,7 @@ function cotizalo_customize_register($wp_customize)
     ));
 
     // Hero Title
-    $wp_customize->add_setting('hero_title', array('default' => 'Tu portal web para cotizaciones.'));
+    $wp_customize->add_setting('hero_title', array('default' => 'Software y Programa para Hacer Cotizaciones Profesionales'));
     $wp_customize->add_control('hero_title', array(
         'label' => __('Título Principal', 'cotizalo'),
         'section' => 'cotizalo_hero_section',

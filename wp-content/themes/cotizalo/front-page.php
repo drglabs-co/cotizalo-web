@@ -176,7 +176,13 @@
     <div class="container relative z-10">
       <div class="hero-content animate-on-scroll fade-in-up">
         <h1 class="display-title">
-          <?php echo esc_html(get_theme_mod('hero_title', 'Software y Programa para Hacer Cotizaciones Profesionales')); ?>
+          <?php 
+          $hero_h1 = get_theme_mod('hero_title', 'Software y Programa para Hacer Cotizaciones Profesionales');
+          if (empty($hero_h1) || trim($hero_h1, " .") === 'Tu portal web para cotizaciones') {
+              $hero_h1 = 'Software y Programa para Hacer Cotizaciones Profesionales';
+          }
+          echo esc_html($hero_h1); 
+          ?>
         </h1>
         <p class="hero-subtitle">
           <?php echo esc_html(get_theme_mod('hero_subtitle', 'Cotízalo es el software para emprendedores y pequeñas empresas que quieren crear propuestas profesionales, enviarlas por WhatsApp y controlar cuáles están pendientes, aceptadas o pagadas.')); ?>

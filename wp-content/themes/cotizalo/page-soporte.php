@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_subm
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
+    <link rel="canonical" href="<?php echo esc_url(home_url('/soporte/')); ?>">
     <title>Soporte Técnico y Contacto | Cotízalo México</title>
     <meta name="description"
         content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
