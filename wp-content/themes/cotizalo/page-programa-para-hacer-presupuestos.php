@@ -15,8 +15,6 @@
     <title>Programa para Hacer Presupuestos Profesionales | Cotízalo</title>
     <meta name="description"
         content="Crea presupuestos profesionales en minutos con Cotízalo. Ideal para freelancers, consultores y empresas de servicios en México. Sin Excel, sin hojas sueltas. Prueba gratis 14 días.">
-    <meta name="keywords"
-        content="programa para hacer presupuestos, hacer presupuesto online, presupuestos profesionales, software de presupuestos, generar presupuesto, programa cotizacion presupuesto">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -25,7 +23,9 @@
     <meta property="og:description"
         content="Crea presupuestos profesionales en minutos. Ideal para freelancers, consultores y empresas de servicios en México. Prueba gratis 14 días.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="Programa para Hacer Presupuestos Profesionales | Cotízalo">
     <meta name="twitter:description" content="Crea presupuestos profesionales en minutos. Prueba gratis 14 días.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

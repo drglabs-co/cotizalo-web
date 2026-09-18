@@ -15,8 +15,6 @@
     <title>Software de Cotizaciones para Constructoras y Contratistas | Cotízalo</title>
     <meta name="description"
         content="Cotízalo es el software de cotizaciones para constructoras, contratistas y empresas de construcción en México. Cotiza materiales, mano de obra y anticipos en minutos. Prueba gratis 14 días.">
-    <meta name="keywords"
-        content="software de cotizaciones para constructoras, cotizaciones para construccion, presupuesto de obra, cotizar construccion, software para contratistas, cotizacion materiales construccion">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -25,7 +23,9 @@
     <meta property="og:description"
         content="Cotiza materiales, mano de obra y anticipos en minutos. Software de cotizaciones para constructoras y contratistas en México. Prueba gratis.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
@@ -34,7 +34,7 @@
     <meta name="twitter:description"
         content="Cotiza materiales, mano de obra y anticipos en minutos. Prueba gratis 14 días.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

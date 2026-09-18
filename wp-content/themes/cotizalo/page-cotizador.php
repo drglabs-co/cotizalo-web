@@ -12,29 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/cotizador/')); ?>">
-    <title>Cotizador en línea para pequeñas empresas | Cotízalo</title>
+    <title>Cotizador en Línea — Crea y Envía Cotizaciones Profesionales | Cotízalo</title>
     <meta name="description"
-        content="Crea, envía y administra cotizaciones profesionales desde una sola plataforma. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y dar seguimiento a cada propuesta.">
-    <meta name="keywords"
-        content="cotizador, cotizador en linea, cotizador para empresas, software cotizador, programa para hacer cotizaciones, sistema de cotizaciones, crear cotizaciones en linea, cotizador de precios, cotizador online, cotizaciones profesionales, seguimiento de cotizaciones">
+        content="El cotizador en línea más ágil para negocios y profesionales de México. Crea cotizaciones en minutos, compártelas por WhatsApp y haz seguimiento en tiempo real. 14 días gratis.">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url('/cotizador/')); ?>">
-    <meta property="og:title" content="Cotizador en línea para pequeñas empresas | Cotízalo">
+    <meta property="og:title" content="Cotizador en Línea Ágil para Negocios | Cotízalo">
     <meta property="og:description"
-        content="Crea, envía y administra cotizaciones profesionales desde una sola plataforma. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y dar seguimiento a cada propuesta.">
+        content="Crea cotizaciones profesionales en minutos, compártelas por WhatsApp y haz seguimiento en tiempo real. El cotizador en línea para PyMEs de México.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cotizador en línea para pequeñas empresas | Cotízalo">
+    <meta name="twitter:title" content="Cotizador en Línea Ágil para Negocios | Cotízalo">
     <meta name="twitter:description"
-        content="Crea, envía y administra cotizaciones profesionales desde una sola plataforma. Deja atrás el desorden de Excel y WhatsApp. Prueba gratis 14 días.">
+        content="Crea cotizaciones profesionales en minutos y compártelas por WhatsApp. 14 días gratis.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <!-- Google Fonts & Favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1114,7 +1114,7 @@
                     </svg>
                     <span>Cotizador en línea para pequeñas empresas</span>
                 </div>
-                <h1>Cotizador en línea para pequeñas empresas</h1>
+                <h1>Cotizador en Línea Ágil para Negocios y Profesionales</h1>
                 <p class="hero-intro">
                     Cotízalo es un cotizador en línea para pequeñas empresas que necesitan crear, enviar y dar seguimiento a sus propuestas sin depender de archivos de Excel, imágenes o conversaciones interminables de WhatsApp. Organiza tus clientes, productos y presupuestos desde una sola plataforma y comienza con una prueba gratuita.
                 </p>

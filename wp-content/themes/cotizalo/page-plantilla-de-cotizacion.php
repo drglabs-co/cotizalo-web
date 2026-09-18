@@ -12,29 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">
-    <title>Plantilla de Cotización Profesional Gratis | Cotízalo</title>
+    <title>Plantilla de Cotización en Excel Gratis (Descarga 2026) | Cotízalo</title>
     <meta name="description"
-        content="Descarga o usa en línea nuestra plantilla de cotización profesional gratis. Aprende qué debe incluir una cotización y cómo hacer una en segundos con Cotízalo. Sin registro.">
-    <meta name="keywords"
-        content="plantilla de cotizacion, formato de cotizacion, plantilla cotizacion gratis, modelo de cotizacion, formato presupuesto, ejemplo de cotizacion, como hacer una cotizacion">
+        content="Descarga gratis nuestra plantilla de cotización en Excel con fórmulas automáticas. Personalizable, profesional y lista para usar. O genérala en segundos con Cotízalo sin instalar nada.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url('/plantilla-de-cotizacion/')); ?>">
-    <meta property="og:title" content="Plantilla de Cotización Profesional Gratis | Cotízalo">
+    <meta property="og:title" content="Plantilla de Cotización en Excel Gratis 2026 | Cotízalo">
     <meta property="og:description"
-        content="Plantilla de cotización profesional gratis. Aprende qué debe incluir y cómo generarla en segundos con Cotízalo.">
+        content="Descarga gratis la plantilla de cotización en Excel más completa. Con fórmulas de IVA, totales automáticos y diseño profesional.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Plantilla de Cotización Profesional Gratis | Cotízalo">
+    <meta name="twitter:title" content="Plantilla de Cotización en Excel Gratis 2026 | Cotízalo">
     <meta name="twitter:description"
-        content="Plantilla de cotización gratis. Aprende qué incluir y genera la tuya en segundos con Cotízalo.">
+        content="Descarga gratis la plantilla de cotización en Excel. Con fórmulas automáticas de IVA y diseño profesional.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -527,16 +527,21 @@
     <!-- Hero -->
     <section class="lp-hero">
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <span class="badge-pill">📄 Plantilla gratuita</span>
-            <h1>Plantilla de cotización profesional — úsala gratis ahora</h1>
-            <p>Descubre qué elementos debe tener una cotización completa, ve un ejemplo real y genera la tuya
-                automáticamente con Cotízalo. Gratis, sin instalar nada.</p>
-            <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
-                class="btn btn-primary btn-lg" style="background:#fff; color:var(--primary); border-color:#fff;">
-                Generar mi cotización gratis
-            </a>
-            <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Sin
-                instalación. Listo en 2 minutos.</p>
+            <span class="badge-pill">📅 Plantilla gratuita 2026</span>
+            <h1>Descarga Plantillas de Cotización en Excel y PDF Gratis</h1>
+            <p>La plantilla de cotización profesional más completa de México. Con fórmulas automáticas de IVA, datos de cliente y condiciones de pago. Descárgala gratis o genérala online con Cotízalo.</p>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem;">
+                <a href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/plantilla-cotizacion-cotizalo.xlsx"
+                    class="btn btn-primary btn-lg" style="background:#fff; color:var(--primary); border-color:#fff;"
+                    download="Plantilla-Cotizacion-Cotizalo.xlsx">
+                    📊 Descargar Plantilla Excel Gratis
+                </a>
+                <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
+                    class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.5); color:#fff;">
+                    Generar cotización online →
+                </a>
+            </div>
+            <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Archivo .xlsx · Compatible con Excel, Google Sheets y LibreOffice</p>
         </div>
     </section>
 

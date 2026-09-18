@@ -13,29 +13,29 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link class="canonical" rel="canonical"
         href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
-    <title>Planes y Precios | Cotízalo - Sistema de Cotizaciones en México</title>
+    <title>Planes y Precios del Sistema de Cotizaciones | Cotízalo</title>
     <meta name="description"
         content="Elige el plan ideal para tu negocio en México. Precios transparentes sin comisiones ocultas. Todos los planes incluyen 14 días de prueba gratis. ¡Empieza hoy!">
-    <meta name="keywords"
-        content="cotizaciones web, cotizaciones online mexico app, precios cotizalo, planes cotizalo, cotizador de precios, cotizaciones automaticas baratas, probar cotizador gratis, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
-    <meta property="og:title" content="Planes y Precios | Cotízalo - Sistema de Cotizaciones en México">
+    <meta property="og:title" content="Planes y Precios del Sistema de Cotizaciones | Cotízalo">
     <meta property="og:description"
         content="Elige el plan ideal para tu negocio en México. Precios transparentes sin comisiones ocultas. Todos los planes incluyen 14 días de prueba gratis. ¡Empieza hoy!">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Planes y Precios | Cotízalo - Sistema de Cotizaciones en México">
+    <meta name="twitter:title" content="Planes y Precios del Sistema de Cotizaciones | Cotízalo">
     <meta name="twitter:description"
         content="Elige el plan ideal para tu negocio en México. Precios transparentes sin comisiones ocultas. Todos los planes incluyen 14 días de prueba gratis. ¡Empieza hoy!">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@
                 "@id": "<?php echo esc_url(get_permalink()); ?>#product",
                 "name": "Cotízalo - Suscripción Mensual",
                 "description": "Sistema de cotizaciones automatizado para empresas en México. Planes diseñados para profesionales, microempresas y pymes.",
-                "image": "<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png",
+                "image": "<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg",
                 "offers": {
                     "@type": "AggregateOffer",
                     "priceCurrency": "MXN",

@@ -12,29 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">
-    <title>Envía Cotizaciones por WhatsApp en Segundos | Cotízalo</title>
+    <title>Cotizaciones por WhatsApp en PDF y Enlace | Cotízalo</title>
     <meta name="description"
         content="Crea una cotización profesional en Cotízalo y compártela por WhatsApp en un clic. Tu cliente la ve desde su celular, puede firmarla y pagar un anticipo. Sin apps extra. Prueba gratis.">
-    <meta name="keywords"
-        content="cotizaciones por whatsapp, enviar cotizacion por whatsapp, compartir cotizacion whatsapp, presupuesto por whatsapp, cotizar por whatsapp, enviar propuesta whatsapp">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">
-    <meta property="og:title" content="Envía Cotizaciones por WhatsApp en Segundos | Cotízalo">
+    <meta property="og:title" content="Cotizaciones por WhatsApp en PDF y Enlace | Cotízalo">
     <meta property="og:description"
         content="Crea una cotización profesional y compártela por WhatsApp en un clic. Tu cliente la ve desde su celular y puede firmarla. Prueba gratis.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Envía Cotizaciones por WhatsApp en Segundos | Cotízalo">
+    <meta name="twitter:title" content="Cotizaciones por WhatsApp en PDF y Enlace | Cotízalo">
     <meta name="twitter:description"
         content="Crea una cotización profesional y compártela por WhatsApp en un clic. Prueba gratis.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -476,7 +476,7 @@
     <section class="lp-hero">
         <div class="container relative z-10 animate-on-scroll fade-in-up">
             <span class="badge-pill">💬 WhatsApp + Cotizaciones</span>
-            <h1>Envía cotizaciones profesionales por WhatsApp en un clic</h1>
+            <h1>Envía y Cierra Cotizaciones por WhatsApp en Minutos</h1>
             <p>Crea la cotización en Cotízalo y compártela por WhatsApp en segundos. Tu cliente la ve desde su celular,
                 puede aceptarla con firma digital y pagar un anticipo, todo sin instalar nada.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"

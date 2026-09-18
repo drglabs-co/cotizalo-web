@@ -77,8 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_subm
     <title>Soporte Técnico y Contacto | Cotízalo México</title>
     <meta name="description"
         content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
-    <meta name="keywords"
-        content="cotizaciones web, cotizaciones online mexico app, soporte cotizalo, contacto cotizalo, ayuda tecnica cotizalo, atencion a clientes cotizalo, ayuda cotizaciones, enviar cotizacion por whatsapp, alternativa a excel para cotizaciones, control de cotizaciones y clientes, cotizador para freelancers, cotizador para pymes">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">

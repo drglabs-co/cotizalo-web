@@ -6,29 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="<?php echo esc_url(is_front_page() ? home_url('/') : get_permalink()); ?>">
-  <title>Cotizador en línea para pequeñas empresas | Cotízalo</title>
+  <title>Programa para Hacer Cotizaciones en Línea | Cotízalo</title>
   <meta name="description"
-    content="Crea, envía y administra cotizaciones profesionales desde cualquier dispositivo. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y WhatsApp. Prueba gratis 14 días.">
-  <meta name="keywords"
-    content="cotizador en linea, cotizador para empresas, software de cotizaciones, cotizador online mexico, hacer cotizacion profesional, generador de presupuestos, cotizaciones por whatsapp, seguimiento de cotizaciones, cotizador para pymes">
+    content="Cotízalo es el programa para hacer cotizaciones y presupuestos profesionales para pequeñas empresas. Crea, envía por WhatsApp y da seguimiento. Prueba gratis 14 días.">
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
-  <meta property="og:title" content="Cotizador en línea para pequeñas empresas | Cotízalo">
+  <meta property="og:title" content="Programa para Hacer Cotizaciones en Línea | Cotízalo">
   <meta property="og:description"
-    content="Crea, envía y administra cotizaciones profesionales desde cualquier dispositivo. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y WhatsApp. Prueba gratis 14 días.">
+    content="Crea cotizaciones profesionales, envíalas por WhatsApp y da seguimiento a cada propuesta. El programa de cotizaciones para PyMEs de México. 14 días gratis.">
   <meta property="og:image"
-    content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+    content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_MX">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cotizador en línea para pequeñas empresas | Cotízalo">
+  <meta name="twitter:title" content="Programa para Hacer Cotizaciones en Línea | Cotízalo">
   <meta name="twitter:description"
-    content="Crea, envía y administra cotizaciones profesionales desde cualquier dispositivo. Cotízalo ayuda a pequeñas empresas a dejar atrás Excel y WhatsApp. Prueba gratis 14 días.">
+    content="Crea cotizaciones profesionales, envíalas por WhatsApp y da seguimiento a cada propuesta. 14 días gratis.">
   <meta name="twitter:image"
-    content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+    content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
   <!-- Google Fonts for modern typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,7 +176,7 @@
     <div class="container relative z-10">
       <div class="hero-content animate-on-scroll fade-in-up">
         <h1 class="display-title">
-          <?php echo esc_html(get_theme_mod('hero_title', 'Cotizador en línea para pequeñas empresas')); ?>
+          <?php echo esc_html(get_theme_mod('hero_title', 'Software y Programa para Hacer Cotizaciones Profesionales')); ?>
         </h1>
         <p class="hero-subtitle">
           <?php echo esc_html(get_theme_mod('hero_subtitle', 'Cotízalo es el software para emprendedores y pequeñas empresas que quieren crear propuestas profesionales, enviarlas por WhatsApp y controlar cuáles están pendientes, aceptadas o pagadas.')); ?>
