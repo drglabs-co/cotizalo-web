@@ -95,7 +95,10 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 
 define( 'FS_METHOD', 'direct' );
 define( 'COOKIEHASH', 'f4625a25838d5026129f08919b324ad6' );
-define( 'WP_AUTO_UPDATE_CORE', 'minor' );
+// Auto-updates disabled: WP core & plugins are managed via Git.
+// To update: apply the update locally, commit, and push to deploy via Hostinger.
+define( 'WP_AUTO_UPDATE_CORE', false );
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
