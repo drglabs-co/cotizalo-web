@@ -19,59 +19,53 @@ Sitio de marketing y landing page de **[Cotizalo](https://cotizalo.net)** — la
 
 ## 🗂️ Estructura del proyecto
 
-> **Este repositorio solo rastrea código personalizado** (45 archivos). Los archivos core de WordPress (`wp-admin/`, `wp-includes/`, `wp-*.php`), plugins y uploads están en `.gitignore` para que las actualizaciones automáticas de WP/Hostinger nunca generen conflictos en `git pull`.
+Solo se listan los archivos **activos y relevantes**. Los archivos core de WordPress (`wp-admin/`, `wp-includes/`, `wp-*.php`) son estándar y no se modifican.
 
 ```
-cotizalo-web/                            # ← solo lo de abajo está en Git
+cotizalo-web/
 │
-├── 📁 aviso-de-privacidad/
-│   └── index.php                        # Loader físico para /aviso-de-privacidad/
 ├── 📁 precios/
-│   └── index.php                        # Loader físico para /precios/
-├── 📁 que-es-cotizalo/
-│   └── index.php                        # Loader físico para /que-es-cotizalo/
-├── 📁 soporte/
-│   └── index.php                        # Loader físico para /soporte/
-├── 📁 terminos-y-condiciones/
-│   └── index.php                        # Loader físico para /terminos-y-condiciones/
+│   └── index.php                        # Loader físico: bootstrapea WP y carga page-precios.php
+│                                        # (alternativa al routing de WP para /precios/)
 │
 ├── 📁 wp-content/
+│   │
 │   ├── 📁 themes/
 │   │   └── cotizalo/                    # ⭐ Tema personalizado (ACTIVO)
 │   │       ├── style.css                # Metadatos del tema (requerido por WP)
-│   │       ├── functions.php            # Setup, scripts encolados, customizer, routing
+│   │       ├── functions.php            # Setup, scripts encolados, customizer, routing /precios/
 │   │       ├── front-page.php           # ✅ Landing page principal (cotizalo.net/)
-│   │       ├── page-precios.php         # ✅ Página de precios
-│   │       ├── page-*.php               # ✅ Demás templates de página
-│   │       ├── index.php                # Fallback requerido por WP
+│   │       ├── page-precios.php         # ✅ Página de precios (cotizalo.net/precios/)
+│   │       ├── index.php                # Fallback requerido por WP (no es la página activa)
 │   │       └── assets/
-│   │           └── assets/              # ⚠️ Doble nivel assets/ (no renombrar)
-│   │               ├── css/styles.css   # ✅ Sistema de diseño completo
-│   │               ├── js/main.js       # ✅ JS: sticky header + animaciones
-│   │               └── logos/           # ✅ Isotipo y logotipo activos
+│   │           └── assets/              # ⚠️ Doble nivel assets/ (no renombrar, paths hardcodeados)
+│   │               ├── css/
+│   │               │   └── styles.css   # ✅ Sistema de diseño completo del tema
+│   │               ├── js/
+│   │               │   └── main.js      # ✅ JS: scroll sticky header + IntersectionObserver
+│   │               └── logos/
+│   │                   ├── ISOTIPO/
+│   │                   │   └── Cotizalo-5.png   # ✅ Favicon PNG — usado en todos los templates
+│   │                   └── LOGOTIPO3/
+│   │                       └── Cotizalo-8.png   # ✅ Logo horizontal — nav y footer
 │   │
-│   └── 📁 mu-plugins/                   # Must-use plugins (Hostinger managed)
-│       ├── hostinger-auto-updates.php
-│       └── hostinger-preview-domain.php
+│   ├── 📁 plugins/
+│   │   ├── classic-editor               # Editor clásico de WordPress
+│   │   ├── hostinger                    # Plugin base de Hostinger
+│   │   ├── hostinger-ai-assistant       # Asistente IA de Hostinger
+│   │   ├── hostinger-easy-onboarding    # Onboarding de Hostinger
+│   │   ├── hostinger-reach              # Herramientas de alcance de Hostinger
+│   │   └── litespeed-cache              # ✅ Caché de LiteSpeed (activo)
+│   │
+│   ├── 📁 mu-plugins/                   # Must-use plugins (Hostinger)
+│   │   ├── hostinger-auto-updates.php
+│   │   └── hostinger-preview-domain.php
+│   │
+│   └── 📁 uploads/                      # Media subido desde el admin de WP
 │
-├── .gitignore                           # Excluye WP core, plugins, uploads, caché
-├── .htaccess                            # Reglas del servidor (permalinks WP)
 ├── favicon.ico                          # Favicon raíz del sitio (formato .ico)
-├── index.php                            # Bootstrap loader de WordPress (raíz)
-├── llms.txt                             # Descripción para modelos de IA
-├── robots.txt                           # Reglas SEO para crawlers
-├── sitemap.xml / sitemap.rss            # Sitemaps del sitio
-├── wp-config.php                        # ⚠️ Config de WP (BD, claves — repo privado)
-└── README.md
-
-# ─── En disco (servidor), NO en Git ──────────────────────────────────────────
-# wp-admin/           ← WP core, auto-actualizado
-# wp-includes/        ← WP core, auto-actualizado
-# wp-*.php            ← WP core, auto-actualizado
-# wp-content/plugins/ ← Plugins, auto-actualizados por Hostinger
-# wp-content/uploads/ ← Media del sitio
-# wp-content/languages/ ← Traducciones
-# wp-content/litespeed/ ← Caché en tiempo de ejecución
+├── wp-config.php                        # ⚠️ Configuración de WP (BD, claves — repo privado)
+└── [archivos core de WordPress]         # wp-admin/, wp-includes/, wp-*.php — no modificar
 ```
 
 ---
@@ -227,31 +221,11 @@ Adicionalmente se corrigió un **bug de ruta en favicon** en `front-page.php` e 
 ## 🔒 Archivos ignorados por Git
 
 ```gitignore
-# macOS
-.DS_Store / **/.DS_Store
-
-# WordPress core (auto-updated by WP — never track)
-wp-admin/
-wp-includes/
-wp-activate.php, wp-blog-header.php, wp-comments-post.php,
-wp-config-sample.php, wp-cron.php, wp-links-opml.php, wp-load.php,
-wp-login.php, wp-mail.php, wp-settings.php, wp-signup.php,
-wp-trackback.php, xmlrpc.php, license.txt, readme.html
-
-# Runtime / auto-managed content
-wp-content/uploads/
-wp-content/upgrade/
-wp-content/languages/
-wp-content/litespeed/
-wp-content/cache/
-
-# Plugins (auto-updated by WP/Hostinger)
-wp-content/plugins/
+.DS_Store
+**/.DS_Store
 ```
 
-> `wp-config.php` **no está en `.gitignore`** ya que el repositorio es privado. Agrégalo si el repositorio se hace público.
-
-> **Por qué ignorar WP core:** Cuando WordPress o Hostinger actualizan automáticamente los archivos core, Git los marca como "modificados localmente". Al hacer `git pull` en el servidor, Git rechaza sobreescribirlos y lanza un error de conflicto. Al ignorarlos, WP puede actualizarse libremente sin tocar Git.
+> Los archivos `wp-config.php` **no están en `.gitignore`** ya que el repositorio es privado. Se recomienda agregarlo si el repositorio se hace público en el futuro.
 
 ---
 
