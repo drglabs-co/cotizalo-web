@@ -19,14 +19,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">
-    <title>Software de Cotizaciones y Presupuestos para PyMEs | Cotízalo México</title>
+    <title>Software para Hacer Cotizaciones en México | Cotízalo</title>
     <meta name="description"
-        content="Crea cotizaciones profesionales en segundos, envíalas por WhatsApp o correo y da seguimiento a cada propuesta. El software para hacer cotizaciones más completo para tu empresa. Prueba gratis.">
+        content="Crea cotizaciones profesionales en segundos, envíalas por WhatsApp o correo y da seguimiento a cada propuesta. El software para hacer cotizaciones más completo para pequeñas empresas en México. Prueba gratis.">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">
-    <meta property="og:title" content="Software de Cotizaciones y Presupuestos | Cotízalo México">
+    <meta property="og:title" content="Software para Hacer Cotizaciones en México | Cotízalo">
     <meta property="og:description"
         content="Crea cotizaciones profesionales en segundos, envíalas por WhatsApp o correo y da seguimiento a cada propuesta. Prueba gratis 14 días.">
     <meta property="og:image"
@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Software de Cotizaciones y Presupuestos | Cotízalo México">
+    <meta name="twitter:title" content="Software para Hacer Cotizaciones en México | Cotízalo">
     <meta name="twitter:description"
         content="Crea cotizaciones profesionales en segundos, envíalas por WhatsApp o correo y da seguimiento a cada propuesta. Prueba gratis 14 días.">
     <meta name="twitter:image"
@@ -498,7 +498,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="lp-hero">
         <div class="container relative z-10 animate-on-scroll fade-in-up">
             <span class="badge-pill">✦ Software de cotizaciones</span>
-            <h1>El Software de Cotizaciones que Reemplaza a Excel</h1>
+            <h1>Software para Hacer Cotizaciones para Pequeñas Empresas</h1>
             <p>Olvida el Excel, las imágenes de WhatsApp y los correos sin respuesta. Con Cotízalo creas una cotización
                 profesional en segundos, la envías al instante y sabes exactamente cuándo tu cliente la leyó.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"

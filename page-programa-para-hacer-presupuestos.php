@@ -19,16 +19,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">
-    <title>Programa para Hacer Presupuestos Profesionales | Cotízalo</title>
+    <title>Programa para Hacer Presupuestos para Empresas de Servicios | Cotízalo</title>
     <meta name="description"
-        content="Crea presupuestos profesionales en minutos con Cotízalo. Ideal para freelancers, consultores y empresas de servicios en México. Sin Excel, sin hojas sueltas. Prueba gratis 14 días.">
+        content="Haz presupuestos profesionales desde tu celular, envíalos por WhatsApp y lleva el historial de cada cliente. Ideal para freelancers y pequeñas empresas.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">
-    <meta property="og:title" content="Programa para Hacer Presupuestos Profesionales | Cotízalo">
+    <meta property="og:title" content="Programa para Hacer Presupuestos para Empresas de Servicios | Cotízalo">
     <meta property="og:description"
-        content="Crea presupuestos profesionales en minutos. Ideal para freelancers, consultores y empresas de servicios en México. Prueba gratis 14 días.">
+        content="Haz presupuestos profesionales desde tu celular, envíalos por WhatsApp y lleva el historial de cada cliente. Ideal para freelancers y pequeñas empresas.">
     <meta property="og:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
     <meta property="og:image:width" content="1200">
@@ -37,8 +37,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Programa para Hacer Presupuestos Profesionales | Cotízalo">
-    <meta name="twitter:description" content="Crea presupuestos profesionales en minutos. Prueba gratis 14 días.">
+    <meta name="twitter:title" content="Programa para Hacer Presupuestos para Empresas de Servicios | Cotízalo">
+    <meta name="twitter:description" content="Haz presupuestos profesionales desde tu celular, envíalos por WhatsApp y lleva el historial de cada cliente.">
     <meta name="twitter:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
@@ -461,7 +461,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="lp-hero">
         <div class="container relative z-10 animate-on-scroll fade-in-up">
             <span class="badge-pill">✦ Programa para presupuestos</span>
-            <h1>El programa para hacer presupuestos más fácil para tu empresa</h1>
+            <h1>Programa para Hacer Presupuestos para Empresas de Servicios</h1>
             <p>Di adiós al Excel y las hojas sueltas. Con Cotízalo generas presupuestos profesionales en minutos, los
                 envías por WhatsApp o correo y sabes cuándo tu cliente los revisó.</p>
             <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"

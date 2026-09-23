@@ -937,3 +937,56 @@ add_action('init', function () {
     }
 });
 
+/**
+ * SEO: Add hreflang tags for Mexico (es-MX) and default (x-default).
+ * Signals to Google that the site targets Spanish-speaking users in Mexico.
+ */
+add_action('wp_head', function () {
+    $current_url = esc_url(home_url($_SERVER['REQUEST_URI']));
+    echo '<link rel="alternate" hreflang="es-MX" href="' . $current_url . '" />' . "\n";
+    echo '<link rel="alternate" hreflang="x-default" href="' . $current_url . '" />' . "\n";
+}, 1);
+
+/**
+ * SEO: Add BreadcrumbList JSON-LD schema to all internal pages.
+ * Enables breadcrumb rich snippets in Google search results.
+ */
+add_action('wp_head', function () {
+    // Skip the front page — it is the root of all breadcrumbs
+    if (is_front_page()) {
+        return;
+    }
+
+    // Build breadcrumb items
+    $breadcrumbs = array();
+    $position = 1;
+
+    // Home
+    $breadcrumbs[] = array(
+        '@type' => 'ListItem',
+        'position' => $position++,
+        'name' => 'Inicio',
+        'item' => esc_url(home_url('/'))
+    );
+
+    // Current page
+    $page_title = get_the_title();
+    if (empty($page_title)) {
+        $page_title = wp_get_document_title();
+    }
+    $breadcrumbs[] = array(
+        '@type' => 'ListItem',
+        'position' => $position,
+        'name' => $page_title,
+        'item' => esc_url(get_permalink())
+    );
+
+    $schema = array(
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => $breadcrumbs
+    );
+
+    echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+}, 2);
+

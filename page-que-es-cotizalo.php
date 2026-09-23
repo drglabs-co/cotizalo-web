@@ -19,16 +19,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">
-    <title>¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos</title>
+    <title>¿Qué es Cotízalo? Software de Cotizaciones para Emprendedores</title>
     <meta name="description"
-        content="Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.">
+        content="Conoce Cotízalo, el software para crear cotizaciones profesionales, enviarlas por WhatsApp y dar seguimiento a clientes sin depender de Excel.">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
-    <meta property="og:title" content="¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos">
+    <meta property="og:title" content="¿Qué es Cotízalo? Software de Cotizaciones para Emprendedores">
     <meta property="og:description"
-        content="Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.">
+        content="Conoce Cotízalo, el software para crear cotizaciones profesionales, enviarlas por WhatsApp y dar seguimiento a clientes sin depender de Excel.">
     <meta property="og:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
     <meta property="og:image:width" content="1200">
@@ -37,9 +37,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos">
+    <meta name="twitter:title" content="¿Qué es Cotízalo? Software de Cotizaciones para Emprendedores">
     <meta name="twitter:description"
-        content="Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.">
+        content="Conoce Cotízalo, el software para crear cotizaciones profesionales, enviarlas por WhatsApp y dar seguimiento a clientes sin depender de Excel.">
     <meta name="twitter:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 

@@ -19,16 +19,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">
-    <title>Sistema de Seguimiento de Cotizaciones para Empresas | Cotízalo</title>
+    <title>Seguimiento de Cotizaciones para Pequeñas Empresas | Cotízalo</title>
     <meta name="description"
-        content="Monitorea en tiempo real qué cotizaciones están pendientes, enviadas, aceptadas o pagadas. Da seguimiento comercial a cada cliente y cierra más ventas sin perder tiempo en chats.">
+        content="No pierdas ventas por olvidar presupuestos. Organiza cotizaciones pendientes, aceptadas y vencidas, y sabe a quién contactar desde Cotízalo.">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">
-    <meta property="og:title" content="Sistema de Seguimiento de Cotizaciones para Empresas | Cotízalo">
+    <meta property="og:title" content="Seguimiento de Cotizaciones para Pequeñas Empresas | Cotízalo">
     <meta property="og:description"
-        content="Monitorea en tiempo real qué cotizaciones están pendientes, enviadas, aceptadas o pagadas. Sabe con certeza a quién llamar hoy y cierra más ventas. Prueba gratis 14 días.">
+        content="No pierdas ventas por olvidar presupuestos. Organiza cotizaciones pendientes, aceptadas y vencidas, y sabe a quién contactar desde Cotízalo.">
     <meta property="og:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
     <meta property="og:image:width" content="1200">
@@ -37,9 +37,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sistema de Seguimiento de Cotizaciones para Empresas | Cotízalo">
+    <meta name="twitter:title" content="Seguimiento de Cotizaciones para Pequeñas Empresas | Cotízalo">
     <meta name="twitter:description"
-        content="Monitorea en tiempo real qué cotizaciones están pendientes, enviadas, aceptadas o pagadas. Cierra más ventas con Cotízalo.">
+        content="No pierdas ventas por olvidar presupuestos. Organiza cotizaciones pendientes, aceptadas y vencidas, y sabe a quién contactar desde Cotízalo.">
     <meta name="twitter:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
@@ -107,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         "name": "¿Por qué es tan importante dar seguimiento a una cotización?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Más del 45% de las ventas no se cierran porque el vendedor olvida hacer la llamada o mensaje de seguimiento después de enviar el presupuesto. Un seguimiento oportuno demuestra interés profesional y resuelve objeciones del cliente antes de que busque a otra empresa."
+                            "text": "Muchas cotizaciones se pierden porque nadie registra el siguiente contacto. Un seguimiento oportuno demuestra interés profesional y resuelve objeciones del cliente antes de que busque a otra empresa. Cotízalo centraliza tus propuestas y te ayuda a saber cuáles requieren seguimiento."
                         }
                     },
                     {
@@ -786,7 +786,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="feature-icon-circle" style="background:#fef2f2; color:#dc2626;">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                         </div>
-                        <h3>El 48% de propuestas se olvidan</h3>
+                        <h3>Las propuestas sin seguimiento se pierden</h3>
                         <p>Los dueños de negocio están ocupados operando y no tienen tiempo de revisar cuadernos o chats de WhatsApp para recordar qué prospectos no han contestado.</p>
                     </div>
                     <div class="feature-box">
@@ -868,7 +868,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="faq-answer">
-                            <p>Más del 45% de las ventas no se cierran porque el vendedor olvida hacer la llamada o mensaje de seguimiento después de enviar el presupuesto. Un seguimiento oportuno demuestra interés profesional y resuelve objeciones del cliente antes de que busque a otra empresa.</p>
+                            <p>Muchas cotizaciones se pierden porque nadie registra el siguiente contacto. Un seguimiento oportuno demuestra interés profesional y resuelve objeciones del cliente antes de que busque a otra empresa. Cotízalo centraliza tus propuestas y te ayuda a saber cuáles requieren seguimiento.</p>
                         </div>
                     </div>
                     <div class="faq-item">

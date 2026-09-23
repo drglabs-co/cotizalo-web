@@ -20,14 +20,14 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
     <atom:link href="<?php echo esc_url( home_url( '/sitemap.rss' ) ); ?>" rel="self" type="application/rss+xml" />
 
     <item>
-      <title>Cotízalo | Sistema de Cotizaciones para Empresas en México</title>
+      <title>Software de Cotizaciones para Pequeños Negocios | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/' ) ); ?></guid>
       <pubDate><?php echo date( DATE_RFC822, strtotime( '2026-07-27' ) ); ?></pubDate>
       <description>Simplifica tus ventas con el mejor sistema de cotizaciones online en México. Crea, envía y da seguimiento a propuestas profesionales en PDF.</description>
     </item>
     <item>
-      <title>¿Qué es Cotízalo?</title>
+      <title>¿Qué es Cotízalo? Software de Cotizaciones para Emprendedores</title>
       <link><?php echo esc_url( home_url( '/que-es-cotizalo/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/que-es-cotizalo/' ) ); ?></guid>
       <pubDate><?php echo date( DATE_RFC822, strtotime( '2026-07-27' ) ); ?></pubDate>
@@ -69,21 +69,21 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
       <description>Crea, envía y administra cotizaciones profesionales desde una sola plataforma. Deja atrás el desorden de Excel y WhatsApp.</description>
     </item>
     <item>
-      <title>Envía Cotizaciones por WhatsApp en Segundos | Cotízalo</title>
+      <title>Cotizaciones por WhatsApp: Crea, Envía y Da Seguimiento | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/cotizaciones-por-whatsapp/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/cotizaciones-por-whatsapp/' ) ); ?></guid>
       <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
       <description>Crea una cotización profesional y compártela por WhatsApp en un clic. Tu cliente la ve desde su celular y puede firmarla.</description>
     </item>
     <item>
-      <title>Programa para Hacer Presupuestos Comerciales Online | Cotízalo</title>
+      <title>Programa para Hacer Presupuestos para Empresas de Servicios | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/programa-para-hacer-presupuestos/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/programa-para-hacer-presupuestos/' ) ); ?></guid>
       <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
       <description>El mejor programa para hacer presupuestos y propuestas comerciales rápidas y profesionales en línea.</description>
     </item>
     <item>
-      <title>Software para Cotizaciones en México | Cotízalo</title>
+      <title>Software para Hacer Cotizaciones en México | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/software-para-cotizaciones/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/software-para-cotizaciones/' ) ); ?></guid>
       <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
@@ -104,7 +104,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
       <description>Genera propuestas y presupuestos de servicios profesionales con firmas digitales y cobro de anticipos.</description>
     </item>
     <item>
-      <title>Sistema de Seguimiento de Cotizaciones para Pequeñas Empresas | Cotízalo</title>
+      <title>Seguimiento de Cotizaciones para Pequeñas Empresas | Cotízalo</title>
       <link><?php echo esc_url( home_url( '/seguimiento-de-cotizaciones/' ) ); ?></link>
       <guid isPermaLink="true"><?php echo esc_url( home_url( '/seguimiento-de-cotizaciones/' ) ); ?></guid>
       <pubDate><?php echo date( DATE_RFC822 ); ?></pubDate>
