@@ -3,11 +3,14 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NG2ZW6L3');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NG2ZW6L3');</script>
   <!-- End Google Tag Manager -->
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:title" content="Software de Cotizaciones para Pequeños Negocios | Cotízalo">
   <meta property="og:description"
     content="Crea cotizaciones profesionales, envíalas por WhatsApp y da seguimiento a clientes desde cualquier dispositivo. Prueba Cotízalo gratis en México.">
-  <meta property="og:image"
-    content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+  <meta property="og:image" content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_MX">
@@ -34,8 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="twitter:title" content="Software de Cotizaciones para Pequeños Negocios | Cotízalo">
   <meta name="twitter:description"
     content="Crea cotizaciones profesionales, envíalas por WhatsApp y da seguimiento a clientes desde cualquier dispositivo. Prueba Cotízalo gratis en México.">
-  <meta name="twitter:image"
-    content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+  <meta name="twitter:image" content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
   <!-- Google Fonts for modern typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,8 +125,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body <?php body_class(); ?>>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2ZW6L3"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2ZW6L3" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Nav Section -->
@@ -151,7 +152,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
             <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                 cotizaciones</a></li>
-            <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
+            <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                cotizaciones</a></li>
             <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para
                 presupuestos</a></li>
             <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a>
@@ -186,12 +188,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="container relative z-10">
       <div class="hero-content animate-on-scroll fade-in-up">
         <h1 class="display-title">
-          <?php 
+          <?php
           $hero_h1 = get_theme_mod('hero_title', 'Software de Cotizaciones para Pequeños Negocios en México');
           if (empty($hero_h1) || trim($hero_h1, " .") === 'Tu portal web para cotizaciones') {
-              $hero_h1 = 'Software de Cotizaciones para Pequeños Negocios en México';
+            $hero_h1 = 'Software de Cotizaciones para Pequeños Negocios en México';
           }
-          echo esc_html($hero_h1); 
+          echo esc_html($hero_h1);
           ?>
         </h1>
         <p class="hero-subtitle">
@@ -1329,50 +1331,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <!-- Header of the highlight box -->
         <div style="text-align: center; max-width: 820px; margin: 0 auto 3rem; position: relative; z-index: 1;">
-          <div style="
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 8px;
-                        background: rgba(74, 222, 128, 0.12);
-                        border: 1px solid rgba(74, 222, 128, 0.35);
-                        border-radius: 999px;
-                        padding: 6px 18px;
-                        margin-bottom: 1.25rem;
-                    ">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-            </svg>
-            <span
-              style="font-size: 0.78rem; font-weight: 700; color: #4ade80; letter-spacing: 0.08em; text-transform: upperca          <h3 style="
-                        font-size: clamp(1.6rem, 3vw, 2.3rem);
-                        font-weight: 700;
-                        color: #ffffff;
-                        line-height: 1.25;
-                        margin-bottom: 1rem;
-                    ">
-            <?php echo esc_html(get_theme_mod('vsai_title', 'Dile adiós al desorden de Excel y a las imágenes perdidas en WhatsApp')); ?>
+          <h3 style="
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin: 0 0 1.5rem;
+            letter-spacing: -0.02em;
+          ">
+            Ventajas de <span style="color: #4ade80;">Cotizalo.net</span>
           </h3>
-          <p style="
-                        color: rgba(255, 255, 255, 0.78);
-                        font-size: 1.05rem;
-                        line-height: 1.7;
-                        margin: 0;
-                    ">
-            <?php echo esc_html(get_theme_mod('vsai_desc', 'Mandar fotos de cotizaciones o depender de archivos de Excel parece rápido al inicio, pero pronto se vuelve un caos: no puedes editarlas rápido, se pierden en el chat y dar seguimiento a tus clientes es imposible. Cotízalo te da una plataforma especializada para crear cotizaciones profesionales, enviarlas por WhatsApp y controlar tus ventas desde cualquier dispositivo.')); ?>
-          </p>
         </div>
 
         <!-- Comparison 2-column Grid -->
-        <div style="
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-                    gap: 1.75rem;
-                    position: relative;
-                    z-index: 1;
-                " class="vs-ai-grid">
+        <div style=" display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.75rem;
+              position: relative; z-index: 1; " class=" vs-ai-grid">
 
-          <!-- Col 1: Las imágenes y Excel -->
-          <div style="
+              <!-- Col 1: Las imágenes y Excel -->
+              <div style="
                         background: rgba(239, 68, 68, 0.06);
                         border: 1px solid rgba(239, 68, 68, 0.25);
                         border-radius: 18px;
@@ -1381,67 +1357,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         flex-direction: column;
                         gap: 1.25rem;
                     ">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
-              <div style="
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                  <div style="
                                 width: 36px; height: 36px; border-radius: 10px;
                                 background: rgba(239, 68, 68, 0.15);
                                 display: flex; align-items: center; justify-content: center;
                                 color: #ef4444; flex-shrink: 0;
                             ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </div>
-              <h4 style="color: #fca5a5; font-size: 1.15rem; font-weight: 700; margin: 0;">Con Excel e imágenes por WhatsApp
-              </h4>
-            </div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  </div>
+                  <h4 style="color: #fca5a5; font-size: 1.15rem; font-weight: 700; margin: 0;">Con Excel e imágenes por
+                    WhatsApp
+                  </h4>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Difíciles de
-                  buscar</strong>
-                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Se pierden en
-                  la galería de fotos o en hilos infinitos de WhatsApp. Encontrar una propuesta pasada es perder tiempo.
-                </p>
-              </div>
-            </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Difíciles de
+                      buscar</strong>
+                    <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Se pierden
+                      en
+                      la galería de fotos o en hilos infinitos de WhatsApp. Encontrar una propuesta pasada es perder
+                      tiempo.
+                    </p>
+                  </div>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Cero edición
-                  ágil</strong>
-                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Si tu cliente
-                  pide cambiar una cantidad o concepto, una imagen no se puede editar; tienes que rehacerla desde cero.
-                </p>
-              </div>
-            </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Cero edición
+                      ágil</strong>
+                    <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Si tu
+                      cliente
+                      pide cambiar una cantidad o concepto, una imagen no se puede editar; tienes que rehacerla desde
+                      cero.
+                    </p>
+                  </div>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Fórmulas rotas y errores</strong>
-                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Un error en celdas de Excel o precios desactualizados pueden hacerte cotizar por debajo del costo real.
-                </p>
-              </div>
-            </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Fórmulas
+                      rotas y errores</strong>
+                    <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">Un error
+                      en celdas de Excel o precios desactualizados pueden hacerte cotizar por debajo del costo real.
+                    </p>
+                  </div>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Imposible dar
-                  seguimiento</strong>
-                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">No sabes
-                  cuáles presupuestos siguen pendientes, cuáles ya fueron aceptados o a quién debes llamar para cerrar.
-                </p>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #ef4444; font-size: 1.1rem; line-height: 1; font-weight: bold;">✕</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Imposible
+                      dar
+                      seguimiento</strong>
+                    <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.5; margin: 0;">No sabes
+                      cuáles presupuestos siguen pendientes, cuáles ya fueron aceptados o a quién debes llamar para
+                      cerrar.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Col 2: Con Cotízalo -->
-          <div style="
+              <!-- Col 2: Con Cotízalo -->
+              <div style="
                         background: rgba(18, 58, 44, 0.45);
                         border: 1px solid rgba(74, 222, 128, 0.45);
                         border-radius: 18px;
@@ -1451,92 +1437,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         gap: 1.25rem;
                         box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);
                     ">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
-              <div style="
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                  <div style="
                                 width: 36px; height: 36px; border-radius: 10px;
                                 background: rgba(74, 222, 128, 0.2);
                                 display: flex; align-items: center; justify-content: center;
                                 color: #4ade80; flex-shrink: 0;
                             ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </div>
-              <h4 style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin: 0;">Con el Cotizador en Línea de Cotízalo</h4>
-            </div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <h4 style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin: 0;">Con el Cotizador en Línea
+                    de Cotízalo</h4>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Búsqueda
-                  instantánea</strong>
-                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Encuentra
-                  cualquier propuesta en 1 segundo por nombre del cliente, folio o fecha con filtros inteligentes.</p>
-              </div>
-            </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Búsqueda
+                      instantánea</strong>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Encuentra
+                      cualquier propuesta en 1 segundo por nombre del cliente, folio o fecha con filtros inteligentes.
+                    </p>
+                  </div>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Edición en
-                  segundos con un clic</strong>
-                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Ajusta
-                  conceptos, productos o descuentos al instante sin tener que volver a redactar ni recalcular fórmulas.</p>
-              </div>
-            </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Edición en
+                      segundos con un clic</strong>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Ajusta
+                      conceptos, productos o descuentos al instante sin tener que volver a redactar ni recalcular
+                      fórmulas.</p>
+                  </div>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Catálogo con precios protegidos</strong>
-                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Crea propuestas usando tus productos, servicios e impuestos configurados con total precisión comercial.</p>
-              </div>
-            </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Catálogo con
+                      precios protegidos</strong>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Crea
+                      propuestas usando tus productos, servicios e impuestos configurados con total precisión comercial.
+                    </p>
+                  </div>
+                </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
-              <div>
-                <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Seguimiento
-                  total desde cualquier dispositivo</strong>
-                <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Controla el
-                  estado exacto de cada cliente (enviada, firmada, pagada) desde tu celular, tablet o PC en tiempo real.
-                </p>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="color: #4ade80; font-size: 1.1rem; line-height: 1; font-weight: bold;">✓</span>
+                  <div>
+                    <strong style="color: #ffffff; font-size: 0.95rem; display: block; margin-bottom: 2px;">Seguimiento
+                      total desde cualquier dispositivo</strong>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.5; margin: 0;">Controla
+                      el
+                      estado exacto de cada cliente (enviada, firmada, pagada) desde tu celular, tablet o PC en tiempo
+                      real.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+
           </div>
 
+          <!-- Bottom CTA inside showcase -->
+          <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
+            <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
+              class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);">
+              <?php echo esc_html(get_theme_mod('vsai_cta_text', 'Empieza a cotizar con Cotízalo gratis')); ?>
+              <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <!-- Bottom CTA inside showcase -->
-        <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
-          <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
-            class="btn btn-primary btn-lg" style="box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);">
-            <?php echo esc_html(get_theme_mod('vsai_cta_text', 'Empieza a cotizar con Cotízalo gratis')); ?>
-            <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <style>
-        @media (max-width: 768px) {
-          .vs-ai-grid {
-            grid-template-columns: 1fr !important;
+        <style>
+          @media (max-width: 768px) {
+            .vs-ai-grid {
+              grid-template-columns: 1fr !important;
+            }
           }
-        }
-      </style>
-      <div class="text-center animate-on-scroll fade-in-up" style="margin-top: 3.5rem; text-align: center;">
-        <p style="color: #64748b; font-size: 1.05rem;">
-          ¿Quieres ver cómo funciona a detalle? Conoce <a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>"
-            style="color: #123A2C; font-weight: 600; text-decoration: underline;">¿Qué es Cotízalo?</a> o consulta
-          nuestros <a href="<?php echo esc_url(home_url('/precios/')); ?>"
-            style="color: #123A2C; font-weight: 600; text-decoration: underline;">Planes de Precios</a>.
-        </p>
+        </style>
       </div>
-    </div>
   </section>
 
   <!-- ==================== CLOUD & MOBILE SECTION ==================== -->
@@ -1872,8 +1859,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="footer-brand">
           <a href="<?php echo esc_url(home_url('/')); ?>" class="logo mb-1">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
-              alt="Cotízalo — Software de cotizaciones para pequeños negocios en México" style="height: 70px; width: auto; object-fit: contain;" id="footer-logo" width="260"
-              height="70">
+              alt="Cotízalo — Software de cotizaciones para pequeños negocios en México"
+              style="height: 70px; width: auto; object-fit: contain;" id="footer-logo" width="260" height="70">
           </a>
           <p class="text-muted mt-1" style="max-width: 300px;">
             <?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?>
@@ -1890,10 +1877,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <h4>Recursos</h4>
           <ul>
             <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
-            <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
-            <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
-            <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
-            <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
+            <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                cotizaciones</a></li>
+            <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                cotizaciones</a></li>
+            <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para
+                presupuestos</a></li>
+            <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a>
+            </li>
           </ul>
         </div>
         <div class="footer-links">
