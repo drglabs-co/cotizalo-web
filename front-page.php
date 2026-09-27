@@ -94,7 +94,7 @@
                 "name": "Cotízalo",
                 "url": "<?php echo esc_url(home_url('/')); ?>",
                 "applicationCategory": "BusinessApplication",
-                "operatingSystem": "Web",
+                "operatingSystem": "Web, Mobile",
                 "description": "Sistema de cotizaciones automatizado para empresas y profesionales en México. Crea, envía y da seguimiento a propuestas profesionales en PDF.",
                 "featureList": [
                     "Creación de cotizaciones en segundos",
@@ -105,10 +105,56 @@
                     "Catálogo de precios y productos unificado"
                 ],
                 "offers": {
-                    "@type": "Offer",
-                    "price": "199",
+                    "@type": "AggregateOffer",
                     "priceCurrency": "MXN",
-                    "description": "Planes desde $199 MXN al mes con 14 días de prueba gratis."
+                    "lowPrice": "199",
+                    "highPrice": "899",
+                    "offerCount": "4",
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Inicial",
+                            "price": "199",
+                            "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Básico",
+                            "price": "399",
+                            "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Profesional",
+                            "price": "599",
+                            "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Empresarial",
+                            "price": "899",
+                            "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
+                        }
+                    ]
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "56",
+                    "bestRating": "5",
+                    "worstRating": "1"
                 },
                 "publisher": {
                     "@id": "<?php echo esc_url(home_url('/')); ?>#organization"

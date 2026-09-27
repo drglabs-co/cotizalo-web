@@ -92,7 +92,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:description"
         content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
@@ -101,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:description"
         content="¿Tienes dudas o necesitas ayuda con tu portal de cotizaciones? Contacta al equipo de soporte de Cotízalo México. Estamos listos para ayudarte a digitalizar tus ventas.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

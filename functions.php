@@ -990,3 +990,39 @@ add_action('wp_head', function () {
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }, 2);
 
+/**
+ * SEO: Add og:site_name meta tag on every page.
+ * Social platforms (Facebook, WhatsApp, LinkedIn) use this to display the brand name
+ * alongside shared links, improving brand recognition in social feeds.
+ */
+add_action('wp_head', function () {
+    echo '<meta property="og:site_name" content="Cotízalo">' . "\n";
+}, 3);
+
+/**
+ * Conversion Tracking: Fire generate_lead GA4 event on WhatsApp link clicks.
+ * Pushes page_location, click_text, and click_classes to the dataLayer so GTM
+ * can attribute lead sources to specific pages and CTA buttons.
+ */
+add_action('wp_footer', function () {
+    ?>
+    <script>
+    (function(){
+        if(typeof window.dataLayer==='undefined') return;
+        document.addEventListener('click',function(e){
+            var a=e.target.closest('a[href*="wa.me"],a[href*="api.whatsapp.com"]');
+            if(!a) return;
+            window.dataLayer.push({
+                'event':'generate_lead',
+                'lead_source':'whatsapp_click',
+                'page_location':window.location.href,
+                'click_text':(a.textContent||'').trim().substring(0,100),
+                'click_classes':a.className||'',
+                'click_url':a.href
+            });
+        });
+    })();
+    </script>
+    <?php
+}, 99);
+

@@ -5,6 +5,9 @@ Allow: /
 Sitemap: https://cotizalo.net/sitemap.xml
 Sitemap: https://cotizalo.net/sitemap.rss
 
+# LLMs
+LLMs-Txt: https://cotizalo.net/llms.txt
+
 # Disallow admin and internal WP paths
 Disallow: /wp-admin/
 Disallow: /wp-includes/

@@ -78,6 +78,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "name": "Plan Inicial",
                             "price": "199",
                             "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
                             "url": "<?php echo esc_url(get_permalink()); ?>"
                         },
                         {
@@ -85,6 +87,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "name": "Plan Básico",
                             "price": "399",
                             "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
                             "url": "<?php echo esc_url(get_permalink()); ?>"
                         },
                         {
@@ -92,6 +96,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "name": "Plan Profesional",
                             "price": "599",
                             "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
                             "url": "<?php echo esc_url(get_permalink()); ?>"
                         },
                         {
@@ -99,6 +105,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "name": "Plan Empresarial",
                             "price": "899",
                             "priceCurrency": "MXN",
+                            "availability": "https://schema.org/InStock",
+                            "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
                             "url": "<?php echo esc_url(get_permalink()); ?>"
                         }
                     ]

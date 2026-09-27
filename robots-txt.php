@@ -14,6 +14,9 @@ echo "# Sitemaps\n";
 echo "Sitemap: " . esc_url(home_url('/sitemap.xml')) . "\n";
 echo "Sitemap: " . esc_url(home_url('/sitemap.rss')) . "\n\n";
 
+echo "# LLMs\n";
+echo "LLMs-Txt: " . esc_url(home_url('/llms.txt')) . "\n\n";
+
 echo "# Disallow admin and internal WP paths\n";
 echo "Disallow: /wp-admin/\n";
 echo "Disallow: /wp-includes/\n";
@@ -21,3 +24,4 @@ echo "Disallow: /wp-login.php\n";
 echo "Disallow: /wp-signup.php\n";
 echo "Disallow: /wp-cron.php\n";
 echo "Disallow: /xmlrpc.php\n";
+
