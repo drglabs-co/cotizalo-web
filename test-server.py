@@ -27,11 +27,6 @@ ROUTES = {
     "/": "front-page.php",
     "/precios/": "page-precios.php",
     "/precios": "page-precios.php",
-    "/cotizador/": "page-cotizador.php",
-    "/cotizador": "page-cotizador.php",
-    "/cotizador-online/": "page-cotizador.php",
-    "/cotizador-en-linea/": "page-cotizador.php",
-    "/cotizador-para-pequenas-empresas/": "page-cotizador.php",
     "/que-es-cotizalo/": "page-que-es-cotizalo.php",
     "/que-es-cotizalo": "page-que-es-cotizalo.php",
     "/soporte/": "page-soporte.php",
@@ -145,7 +140,6 @@ def audit_seo():
     unique_routes = [
         ("/", "front-page.php"),
         ("/precios/", "page-precios.php"),
-        ("/cotizador/", "page-cotizador.php"),
         ("/que-es-cotizalo/", "page-que-es-cotizalo.php"),
         ("/soporte/", "page-soporte.php"),
         ("/terminos-y-condiciones/", "page-terminos-y-condiciones.php"),
@@ -280,8 +274,11 @@ def main():
     print(f"📂 Serving root: {BASE_DIR}")
     print("Press Ctrl+C to stop.\n")
 
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", port), CotizaloHandler) as httpd:
+    class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+        allow_reuse_address = True
+        daemon_threads = True
+
+    with ThreadedTCPServer(("", port), CotizaloHandler) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

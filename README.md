@@ -44,7 +44,6 @@ cotizalo-web/ (raíz del repositorio Git)
 ├── 📄 Templates de Páginas (Landing Pages & Legales)
 │   ├── front-page.php                       # ✅ Home / Landing principal (cotizalo.net/)
 │   ├── page-precios.php                     # ✅ Planes y precios con toggle (cotizalo.net/precios/)
-│   ├── page-cotizador.php                   # ✅ Landing cotizador online (cotizalo.net/cotizador/)
 │   ├── page-cotizaciones-por-whatsapp.php   # ✅ Cotizaciones WhatsApp (cotizalo.net/cotizaciones-por-whatsapp/)
 │   ├── page-que-es-cotizalo.php             # ✅ Qué es Cotízalo (cotizalo.net/que-es-cotizalo/)
 │   ├── page-soporte.php                     # ✅ Soporte técnico y contacto (cotizalo.net/soporte/)
@@ -160,7 +159,6 @@ python3 test-server.py --port 8085
 Abre tu navegador en:
 - **Home**: [http://localhost:8000/](http://localhost:8000/)
 - **Precios**: [http://localhost:8000/precios/](http://localhost:8000/precios/)
-- **Cotizador**: [http://localhost:8000/cotizador/](http://localhost:8000/cotizador/)
 - **Cotizaciones WhatsApp**: [http://localhost:8000/cotizaciones-por-whatsapp/](http://localhost:8000/cotizaciones-por-whatsapp/)
 - **Soporte**: [http://localhost:8000/soporte/](http://localhost:8000/soporte/)
 - **Sitemap XML**: [http://localhost:8000/sitemap.xml](http://localhost:8000/sitemap.xml)
@@ -201,7 +199,7 @@ Si deseas probar dentro de una instalación real de WordPress con base de datos:
    ln -s "/ruta/a/cotizalo-web" "/ruta/a/wordpress/wp-content/themes/cotizalo"
    ```
 2. Activa el tema desde el administrador de WordPress (`Apariencia` → `Temas`).
-3. Todas las URLs (`/precios/`, `/cotizador/`, etc.) funcionarán automáticamente gracias a la interceptación en `functions.php`, sin necesidad de crear páginas en la base de datos.
+3. Todas las URLs (`/precios/`, `/software-para-cotizaciones/`, etc.) funcionarán automáticamente gracias a la interceptación en `functions.php`, sin necesidad de crear páginas en la base de datos.
 
 ---
 
@@ -213,7 +211,6 @@ Todas las páginas han sido verificadas y cuentan con su configuración SEO comp
 |---|---|---|---|---|:---:|:---:|
 | `/` | `front-page.php` | Programa para Hacer Cotizaciones en Línea \| Cotízalo | Software y Programa para Hacer Cotizaciones Profesionales | ✅ 166 caracteres | ✅ | ✅ WebSite, Org, SoftwareApp |
 | `/precios/` | `page-precios.php` | Planes y Precios del Sistema de Cotizaciones \| Cotízalo | Precios simples y transparentes | ✅ 158 caracteres | ✅ | ✅ SoftwareApplication |
-| `/cotizador/` | `page-cotizador.php` | Cotizador en Línea — Crea y Envía Cotizaciones Profesionales \| Cotízalo | Cotizador en Línea Ágil para Negocios y Profesionales | ✅ 176 caracteres | ✅ | ✅ Product & App |
 | `/que-es-cotizalo/` | `page-que-es-cotizalo.php` | ¿Qué es Cotízalo? \| Digitaliza tus Cotizaciones y Presupuestos | ¿Qué es Cotízalo? | ✅ 163 caracteres | ✅ | ✅ About & FAQ |
 | `/soporte/` | `page-soporte.php` | Soporte Técnico y Contacto \| Cotízalo México | Soporte Técnico y Contacto | ✅ 167 caracteres | ✅ | ✅ ContactPoint |
 | `/cotizaciones-por-whatsapp/` | `page-cotizaciones-por-whatsapp.php` | Cotizaciones por WhatsApp en PDF y Enlace \| Cotízalo | Envía y Cierra Cotizaciones por WhatsApp en Minutos | ✅ 183 caracteres | ✅ | ✅ SoftwareApplication |

@@ -74,7 +74,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="hero">
         <div class="container relative">
             <div class="hero-content animate-on-scroll">
-                <div class="hero-badge">⚡ Nuevo Sistema Automatizado</div>
                 <h1 class="text-gradient">Transforma la forma en que cotizas tus servicios.</h1>
                 <p>Olvida el Excel, el Word y las Imagenes generadas por IA. Con Cotízalo, emite propuestas
                     profesionales en segundos, controla tus

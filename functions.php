@@ -637,7 +637,6 @@ function cotizalo_customize_register($wp_customize)
         'panel' => 'cotizalo_precios_panel',
     ));
 
-    $wp_customize->add_setting('precios_hero_label', array('default' => 'Plan de Suscripción'));
     $wp_customize->add_control('precios_hero_label', array('label' => __('Etiqueta superior', 'cotizalo'), 'section' => 'cotizalo_precios_hero', 'type' => 'text'));
 
     $wp_customize->add_setting('precios_hero_title', array('default' => 'Precios simples y transparentes'));
@@ -826,10 +825,6 @@ add_action('customize_register', 'cotizalo_customize_register');
  */
 function cotizalo_get_custom_routes() {
     return array(
-        'cotizador'                                   => 'page-cotizador.php',
-        'cotizador-online'                            => 'page-cotizador.php',
-        'cotizador-en-linea'                          => 'page-cotizador.php',
-        'cotizador-para-pequenas-empresas'            => 'page-cotizador.php',
         'que-es-cotizalo'                             => 'page-que-es-cotizalo.php',
         'precios'                                     => 'page-precios.php',
         'soporte'                                     => 'page-soporte.php',

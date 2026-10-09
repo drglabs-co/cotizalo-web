@@ -167,20 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             pointer-events: none;
         }
 
-        .lp-hero .badge-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            color: #fff;
-            font-size: 0.875rem;
-            font-weight: 600;
-            padding: 0.4rem 1.15rem;
-            border-radius: var(--radius-full);
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(8px);
-        }
+
 
         .lp-hero h1 {
             font-size: clamp(2rem, 4.5vw, 3.4rem);
@@ -639,7 +626,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>" style="font-weight:700; color:#34d399;">Seguimiento de cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
@@ -668,12 +654,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!-- Hero Section -->
         <section class="lp-hero">
             <div class="container">
-                <div class="badge-pill">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                    </svg>
-                    <span>Control Comercial y Cierre de Ventas</span>
-                </div>
                 <h1>Sistema de seguimiento de cotizaciones para pequeñas empresas</h1>
                 <p class="hero-intro">
                     Sabe con certeza a quién llamar hoy. Deja de perder ventas por olvidar presupuestos en chats de WhatsApp o carpetas de Excel. Monitorea cada propuesta desde que la envías hasta que el cliente la aprueba y formaliza su anticipo.
@@ -951,7 +931,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>" style="font-weight:700; color:#34d399;">Seguimiento de cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>

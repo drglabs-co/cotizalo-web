@@ -54,6 +54,23 @@
         "@context": "https://schema.org",
         "@graph": [
             {
+                "@type": "WebPage",
+                "@id": "<?php echo esc_url(home_url('/')); ?>#webpage",
+                "url": "<?php echo esc_url(home_url('/')); ?>",
+                "name": "Software de Cotizaciones y Presupuestos para PyMEs en México | Cotízalo",
+                "description": "Crea, envía y gestiona cotizaciones en PDF y WhatsApp en minutos. Olvídate de Excel. Inicia tu prueba gratis de 14 días con el mejor software para PyMEs.",
+                "isPartOf": { "@id": "<?php echo esc_url(home_url('/')); ?>#website" },
+                "breadcrumb": { "@id": "<?php echo esc_url(home_url('/')); ?>#breadcrumb" },
+                "inLanguage": "es-MX"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "<?php echo esc_url(home_url('/')); ?>#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "<?php echo esc_url(home_url('/')); ?>" }
+                ]
+            },
+            {
                 "@type": "WebSite",
                 "@id": "<?php echo esc_url(home_url('/')); ?>#website",
                 "url": "<?php echo esc_url(home_url('/')); ?>",
@@ -159,6 +176,60 @@
                 "publisher": {
                     "@id": "<?php echo esc_url(home_url('/')); ?>#organization"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "<?php echo esc_url(home_url('/')); ?>#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué es Cotízalo y para qué sirve?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Cotízalo es un software en la nube diseñado para micro, pequeñas y medianas empresas en México y Latinoamérica que permite crear cotizaciones y presupuestos profesionales en PDF, enviarlos directamente por WhatsApp y correo electrónico, gestionar firmas digitales y cobrar anticipos en línea."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Por qué es mejor usar Cotízalo en lugar de Excel o Word?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Cotízalo ahorra más del 80% del tiempo en la elaboración de propuestas comerciales, elimina errores de fórmulas, ofrece diseño profesional con tu propio logotipo, permite el envío instantáneo por WhatsApp con enlaces interactivos, notifica en tiempo real cuando tu cliente abre la propuesta y permite firma digital directa."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Cómo reciben y firman las cotizaciones mis clientes?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Tus clientes reciben un enlace interactivo y un documento PDF por WhatsApp o correo. Pueden abrirlo desde cualquier teléfono inteligente o computadora sin instalar ninguna aplicación y firmar la aceptación directamente en pantalla con su dedo o cursor."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Puedo enviar cotizaciones directamente por WhatsApp?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sí. Cotízalo genera un mensaje personalizado y un enlace interactivo listo para enviar a través de WhatsApp con un solo clic, aumentando la tasa de apertura y acelerando la respuesta de tus clientes."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Se requiere tarjeta de crédito para la prueba gratis?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Puedes comenzar tu prueba gratuita de 14 días sin ingresar ninguna tarjeta de crédito. Obtendrás acceso inmediato a todas las funciones sin ningún compromiso."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Mis datos y la información de mis clientes están seguros?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sí. Toda la información está protegida con cifrado SSL/TLS de grado bancario, respaldos continuos en la nube y servidores de alta disponibilidad para garantizar la máxima privacidad y seguridad operativa."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -195,7 +266,6 @@
             </svg>
           </button>
           <ul class="nav-dropdown-menu">
-            <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
             <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                 cotizaciones</a></li>
             <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
@@ -229,6 +299,223 @@
 
   <!-- Hero Section (Dark Theme with Gradient) -->
   <section class="hero">
+    <style>
+      /* Hero Trust & Social Proof Block */
+      .hero-trust-block {
+        margin-top: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        width: 100%;
+      }
+      .hero-trust-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        flex-wrap: wrap;
+      }
+      .hero-avatar-stack {
+        display: inline-flex;
+        align-items: center;
+      }
+      .hero-avatar-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #0f261e;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-left: -8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        position: relative;
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.2s;
+        cursor: default;
+      }
+      .hero-avatar-circle:first-child {
+        margin-left: 0;
+      }
+      .hero-avatar-circle:hover {
+        transform: translateY(-2px) scale(1.1);
+        z-index: 5;
+      }
+      .hero-avatar-circle.av-1 {
+        background: linear-gradient(135deg, #059669, #10b981);
+      }
+      .hero-avatar-circle.av-2 {
+        background: linear-gradient(135deg, #2563eb, #38bdf8);
+      }
+      .hero-avatar-circle.av-3 {
+        background: linear-gradient(135deg, #d97706, #f59e0b);
+      }
+      .hero-avatar-circle.av-4 {
+        background: linear-gradient(135deg, #7c3aed, #a855f7);
+      }
+      .hero-avatar-circle.av-count {
+        background: rgba(255, 255, 255, 0.12);
+        color: #34d399;
+        font-size: 0.65rem;
+        font-weight: 800;
+        backdrop-filter: blur(6px);
+      }
+      .hero-rating-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+      .hero-rating-stars {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .stars-icons {
+        display: inline-flex;
+        gap: 2px;
+      }
+      .stars-icons svg {
+        filter: drop-shadow(0 1px 2px rgba(245, 158, 11, 0.3));
+      }
+      .rating-score {
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 0.01em;
+      }
+      .rating-subtext {
+        font-size: 0.77rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+      }
+      .hero-trust-badges {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+      }
+      .hero-trust-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.32rem 0.65rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        font-size: 0.77rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        white-space: nowrap;
+      }
+      .hero-trust-badge svg {
+        color: #34d399;
+        flex-shrink: 0;
+      }
+      .hero-trust-badge:hover {
+        background: rgba(52, 211, 153, 0.12);
+        border-color: rgba(52, 211, 153, 0.4);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+      .hero-feature-nav {
+        width: 100%;
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        position: relative;
+        z-index: 10;
+      }
+      .hero-feature-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .hero-feature-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+        width: 100%;
+      }
+      .hero-feature-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        padding: 0.55rem 1.15rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.88);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        text-decoration: none;
+        backdrop-filter: blur(8px);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        white-space: nowrap;
+        flex: 1 1 auto;
+      }
+      .hero-feature-chip svg {
+        color: #34d399;
+        transition: transform 0.2s ease;
+      }
+      .hero-feature-chip:hover {
+        background: rgba(52, 211, 153, 0.15);
+        border-color: rgba(52, 211, 153, 0.5);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+      .hero-feature-chip:hover svg {
+        transform: translateX(3px);
+      }
+      @media (min-width: 1101px) {
+        .hero-content {
+          max-width: 50% !important;
+          min-height: 480px;
+          margin-bottom: 2rem !important;
+        }
+      }
+      @media (max-width: 1100px) {
+        .hero-buttons {
+          justify-content: center !important;
+        }
+        .hero-trust-block {
+          align-items: center !important;
+          text-align: center !important;
+        }
+        .hero-trust-rating {
+          justify-content: center !important;
+        }
+        .hero-trust-badges {
+          justify-content: center !important;
+        }
+        .hero-feature-nav {
+          align-items: center !important;
+          text-align: center !important;
+          margin-top: 2rem !important;
+          padding-top: 1.25rem !important;
+        }
+        .hero-feature-chips {
+          justify-content: center !important;
+        }
+        .hero-feature-chip {
+          flex: 0 1 auto !important;
+          white-space: normal !important;
+          padding: 0.4rem 0.9rem !important;
+          font-size: 0.82rem !important;
+        }
+      }
+    </style>
     <!-- Background Design Elements for Hero -->
     <div class="bg-shape bg-shape-1"></div>
     <div class="container relative z-10">
@@ -245,7 +532,7 @@
         <p class="hero-subtitle">
           <?php echo esc_html(get_theme_mod('hero_subtitle', 'Deja atrás Excel y las imágenes perdidas en WhatsApp. Crea, envía y controla tus cotizaciones desde un solo lugar.')); ?>
         </p>
-        <div class="hero-buttons" style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <div class="hero-buttons">
           <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://app.cotizalo.net/signup')); ?>"
             class="btn btn-primary btn-lg group">
             <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis')); ?>
@@ -259,34 +546,76 @@
             Ver cómo funciona
           </a>
         </div>
-        <!-- Internal SEO links to landing pages -->
-        <nav class="hero-feature-links" aria-label="Páginas de características"
-          style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; align-items:center;">
-          <a href="<?php echo esc_url(home_url('/cotizador/')); ?>"
-            style="font-size:0.85rem; font-weight:700; color:#34d399; text-decoration:underline; text-underline-offset:3px;">Cotizador
-            en línea</a>
-          <span style="color:rgba(255,255,255,0.3);">·</span>
-          <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>"
-            style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Software
-            para cotizaciones</a>
-          <span style="color:rgba(255,255,255,0.3);">·</span>
-          <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>"
-            style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Programa
-            para presupuestos</a>
-          <span style="color:rgba(255,255,255,0.3);">·</span>
-          <a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>"
-            style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Cotizaciones
-            por WhatsApp</a>
-          <span style="color:rgba(255,255,255,0.3);">·</span>
-          <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>"
-            style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Para
-            constructoras</a>
-          <span style="color:rgba(255,255,255,0.3);">·</span>
-          <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>"
-            style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-decoration:underline; text-underline-offset:3px;">Para
-            servicios</a>
-        </nav>
+        <!-- Bloque de Confianza y Prueba Social -->
+        <div class="hero-trust-block">
+          <!-- Rating y Avatares -->
+          <div class="hero-trust-rating">
+            <div class="hero-avatar-stack" aria-hidden="true">
+              <span class="hero-avatar-circle av-1" title="Carlos Morales — Contratista">CM</span>
+              <span class="hero-avatar-circle av-2" title="Valeria Romero — Servicios">VR</span>
+              <span class="hero-avatar-circle av-3" title="Jorge Lara — Mantenimiento">JL</span>
+              <span class="hero-avatar-circle av-4" title="Diana Prado — Consultora">DP</span>
+              <span class="hero-avatar-circle av-count">+500</span>
+            </div>
+            <div class="hero-rating-meta">
+              <div class="hero-rating-stars">
+                <span class="stars-icons" aria-label="5 de 5 estrellas">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
+                <strong class="rating-score">4.8 / 5</strong>
+              </div>
+              <span class="rating-subtext">Más de 500 negocios y PyMEs en México</span>
+            </div>
+          </div>
+
+          <!-- Píldoras de Garantía -->
+          <div class="hero-trust-badges">
+            <div class="hero-trust-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>14 días de prueba gratis</span>
+            </div>
+            <div class="hero-trust-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Sin tarjeta de crédito</span>
+            </div>
+            <div class="hero-trust-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Cancela cuando quieras</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Internal SEO links to landing pages (Full-Width Bar) -->
+      <nav class="hero-feature-nav animate-on-scroll fade-in-up" aria-label="Soluciones y páginas especializadas">
+        <span class="hero-feature-label">Explora por especialidad:</span>
+        <div class="hero-feature-chips">
+          <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>" class="hero-feature-chip">
+            <span>Software para cotizaciones</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>" class="hero-feature-chip">
+            <span>Programa para presupuestos</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>" class="hero-feature-chip">
+            <span>Cotizaciones por WhatsApp</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>" class="hero-feature-chip">
+            <span>Para constructoras</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>" class="hero-feature-chip">
+            <span>Para servicios</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </nav>
 
       <!-- Visualization Element (Mockup) -->
       <div class="hero-image-wrapper animate-on-scroll fade-in-up delay-200">
@@ -1582,18 +1911,6 @@
 
       <!-- Section header -->
       <div class="animate-on-scroll fade-in-up" style="text-align: center; max-width: 650px; margin: 0 auto 4rem;">
-        <div style="
-                    display: inline-flex; align-items: center; gap: 8px;
-                    background: rgba(18,58,44,0.08); border: 1px solid rgba(18,58,44,0.2);
-                    border-radius: 999px; padding: 6px 18px; margin-bottom: 1.25rem;
-                ">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#123A2C" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-          </svg>
-          <span
-            style="font-size: 0.75rem; font-weight: 600; color: #123A2C; letter-spacing: 0.08em; text-transform: uppercase;"><?php echo esc_html(get_theme_mod('cloud_badge_text', 'En la Nube · Siempre Disponible')); ?></span>
-        </div>
         <h2 class="text-dark" style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);">
           <?php echo esc_html(get_theme_mod('cloud_title', 'Siempre contigo, desde cualquier lugar.')); ?>
         </h2>
@@ -1879,6 +2196,96 @@
     </style>
   </section>
 
+  <!-- ==================== HOME FAQ SECTION ==================== -->
+  <section class="home-faq-section" id="faq" style="padding: 5.5rem 0 6rem; background: #f8fafc; border-top: 1px solid var(--border-light, #e2e8f0); border-bottom: 1px solid var(--border-light, #e2e8f0);">
+    <div class="container">
+      <div class="section-header-center animate-on-scroll fade-in-up" style="text-align: center; max-width: 750px; margin: 0 auto 3.5rem;">
+        <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.5rem); font-weight: 700; color: #0f172a; letter-spacing: -0.02em; margin-bottom: 0.85rem;">
+          ¿Tienes dudas sobre Cotízalo? Aquí te respondemos
+        </h2>
+        <p style="color: #64748b; font-size: 1.05rem; line-height: 1.6; margin: 0;">
+          Todo lo que necesitas saber sobre cómo nuestro software agiliza tus cotizaciones, impresiona a tus clientes y te ayuda a cerrar más ventas.
+        </p>
+      </div>
+
+      <div class="faq-list animate-on-scroll fade-in-up" style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+        <details class="faq-item" open style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <summary style="font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1.05rem;">
+            ¿Qué es Cotízalo y para qué sirve?
+            <span class="faq-icon" style="font-size: 1.4rem; color: #123A2C; font-weight: 400; line-height: 1; transition: transform 0.2s;">+</span>
+          </summary>
+          <p style="margin-top: 1rem; color: #475569; line-height: 1.7; font-size: 0.96rem; margin-bottom: 0;">
+            Cotízalo es un software en la nube diseñado especialmente para emprendedores, profesionistas independientes y micro, pequeñas y medianas empresas en México y Latinoamérica. Permite crear cotizaciones y presupuestos profesionales en PDF en menos de 2 minutos, enviarlos con un enlace interactivo por WhatsApp o correo, registrar firmas electrónicas y cobrar anticipos en línea.
+          </p>
+        </details>
+
+        <details class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <summary style="font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1.05rem;">
+            ¿Por qué es mejor usar Cotízalo en lugar de Excel o Word?
+            <span class="faq-icon" style="font-size: 1.4rem; color: #123A2C; font-weight: 400; line-height: 1; transition: transform 0.2s;">+</span>
+          </summary>
+          <p style="margin-top: 1rem; color: #475569; line-height: 1.7; font-size: 0.96rem; margin-bottom: 0;">
+            Cotízalo ahorra hasta un 80% del tiempo de elaboración comercial. Elimina fórmulas desconfiguradas, errores de cálculo y documentos con aspecto informal. Tus cotizaciones quedan respaldadas en la nube, con tu logotipo e identidad de marca, y puedes saber en tiempo real el momento exacto en que tu prospecto abre la propuesta para contactarlo cuando tiene mayor interés.
+          </p>
+        </details>
+
+        <details class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <summary style="font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1.05rem;">
+            ¿Cómo reciben y firman las cotizaciones mis clientes?
+            <span class="faq-icon" style="font-size: 1.4rem; color: #123A2C; font-weight: 400; line-height: 1; transition: transform 0.2s;">+</span>
+          </summary>
+          <p style="margin-top: 1rem; color: #475569; line-height: 1.7; font-size: 0.96rem; margin-bottom: 0;">
+            Tus clientes reciben un enlace interactivo y un archivo PDF descargable. Al abrir el enlace desde su celular o computadora (sin necesidad de crear una cuenta ni descargar ninguna aplicación), pueden revisar los conceptos, aprobar la cotización y firmar digitalmente con su dedo o ratón, quedando una constancia de aprobación inmediata.
+          </p>
+        </details>
+
+        <details class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <summary style="font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1.05rem;">
+            ¿Puedo enviar cotizaciones directamente por WhatsApp?
+            <span class="faq-icon" style="font-size: 1.4rem; color: #123A2C; font-weight: 400; line-height: 1; transition: transform 0.2s;">+</span>
+          </summary>
+          <p style="margin-top: 1rem; color: #475569; line-height: 1.7; font-size: 0.96rem; margin-bottom: 0;">
+            Sí. Cotízalo está integrado de forma nativa para generar mensajes profesionales personalizados para WhatsApp con un solo clic. En América Latina, las propuestas enviadas por WhatsApp alcanzan hasta un 78% de apertura frente al 22% del correo tradicional, lo que reduce drásticamente el ciclo de cierre.
+          </p>
+        </details>
+
+        <details class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <summary style="font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1.05rem;">
+            ¿Se requiere tarjeta de crédito para la prueba gratis?
+            <span class="faq-icon" style="font-size: 1.4rem; color: #123A2C; font-weight: 400; line-height: 1; transition: transform 0.2s;">+</span>
+          </summary>
+          <p style="margin-top: 1rem; color: #475569; line-height: 1.7; font-size: 0.96rem; margin-bottom: 0;">
+            No. Puedes crear tu cuenta y usar la plataforma durante 14 días completamente gratis sin ingresar ningún dato bancario. Si al finalizar el periodo decides no continuar, tu cuenta simplemente se pausa sin ningún cargo ni penalización.
+          </p>
+        </details>
+
+        <details class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <summary style="font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1.05rem;">
+            ¿Mis datos y la información de mis clientes están seguros?
+            <span class="faq-icon" style="font-size: 1.4rem; color: #123A2C; font-weight: 400; line-height: 1; transition: transform 0.2s;">+</span>
+          </summary>
+          <p style="margin-top: 1rem; color: #475569; line-height: 1.7; font-size: 0.96rem; margin-bottom: 0;">
+            Totalmente. Utilizamos infraestructura en la nube con cifrado SSL/TLS de 256 bits, copias de seguridad continuas y estrictos protocolos de protección de datos conforme a las mejores prácticas internacionales de privacidad.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <style>
+      .home-faq-section details summary::-webkit-details-marker {
+        display: none;
+      }
+      .home-faq-section details[open] .faq-icon {
+        transform: rotate(45deg);
+        display: inline-block;
+      }
+      .home-faq-section details:hover {
+        border-color: #cbd5e1 !important;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.04) !important;
+      }
+    </style>
+  </section>
+
   <!-- Bottom CTA (Dark Theme) -->
   <section class="cta-section">
     <div class="container animate-on-scroll scale-in">
@@ -1890,9 +2297,14 @@
         <p style="max-width: 600px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.8);">
           <?php echo esc_html(get_theme_mod('cta_desc', 'Únete a la revolución de las ventas digitales y asombra a tus clientes con propuestas modernas.')); ?>
         </p>
-        <div class="hero-buttons">
+        <div class="hero-buttons" style="justify-content: center;">
           <a href="<?php echo esc_url(get_theme_mod('cta_btn_url', 'https://app.cotizalo.net/signup')); ?>"
             class="btn btn-primary btn-lg"><?php echo esc_html(get_theme_mod('cta_btn_text', 'Comienza tu Prueba Gratuita')); ?></a>
+        </div>
+        <div style="margin-top: 1.25rem; font-size: 0.88rem; color: rgba(255,255,255,0.75); display: flex; justify-content: center; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+          <span style="display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 14 días gratis</span>
+          <span style="display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sin tarjeta de crédito</span>
+          <span style="display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Cancela cuando quieras</span>
         </div>
       </div>
     </div>
@@ -1922,7 +2334,6 @@
         <div class="footer-links">
           <h4>Recursos</h4>
           <ul>
-            <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
             <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                 cotizaciones</a></li>
             <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de

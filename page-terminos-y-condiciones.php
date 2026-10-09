@@ -131,7 +131,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
@@ -263,7 +262,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
