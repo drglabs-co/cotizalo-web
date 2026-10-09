@@ -297,9 +297,16 @@
     </div>
   </header>
 
-  <!-- Hero Section (Dark Theme with Gradient) -->
+  <!-- Hero Section (Brand Green Theme) -->
   <section class="hero">
     <style>
+      .hero {
+        background-color: #123A2C !important;
+        background: #123A2C !important;
+      }
+      .hero .bg-shape-1 {
+        display: none !important;
+      }
       /* Hero Trust & Social Proof Block */
       .hero-trust-block {
         margin-top: 1.75rem;
@@ -423,36 +430,41 @@
       }
       .hero-feature-nav {
         width: 100%;
-        margin-top: 3rem;
+        margin-top: 2rem;
         padding-top: 1.5rem;
         border-top: 1px solid rgba(255, 255, 255, 0.12);
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
         position: relative;
         z-index: 10;
       }
       .hero-feature-label {
-        font-size: 0.75rem;
+        font-size: 0.76rem;
         font-weight: 700;
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.55);
         text-transform: uppercase;
         letter-spacing: 0.08em;
       }
       .hero-feature-chips {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
+        gap: 0.65rem;
+        justify-content: center;
         align-items: center;
         width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
       }
       .hero-feature-chip {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.45rem;
-        padding: 0.55rem 1.15rem;
-        font-size: 0.85rem;
+        padding: 0.45rem 1.05rem;
+        font-size: 0.83rem;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.88);
         background: rgba(255, 255, 255, 0.06);
@@ -462,7 +474,7 @@
         backdrop-filter: blur(8px);
         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         white-space: nowrap;
-        flex: 1 1 auto;
+        flex: 0 0 auto;
       }
       .hero-feature-chip svg {
         color: #34d399;
@@ -478,14 +490,77 @@
       .hero-feature-chip:hover svg {
         transform: translateX(3px);
       }
-      @media (min-width: 1101px) {
-        .hero-content {
-          max-width: 50% !important;
-          min-height: 480px;
-          margin-bottom: 2rem !important;
-        }
+      /* Two-Column Hero Grid */
+      .hero-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        align-items: center;
+        gap: 2.5rem;
+        width: 100%;
+      }
+      .hero-main-grid .hero-content {
+        max-width: 100% !important;
+        min-height: auto !important;
+        margin-bottom: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        z-index: 2;
+      }
+      .hero-main-grid .hero-content .display-title {
+        font-size: clamp(2.15rem, 3.4vw, 3.35rem) !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.025em;
+        margin-bottom: 1.25rem !important;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+      .hero-main-grid .hero-content .hero-subtitle {
+        font-size: 1.125rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1.75rem !important;
+        color: rgba(255, 255, 255, 0.82) !important;
+        max-width: 520px;
+      }
+      .hero-main-grid .hero-buttons {
+        margin-bottom: 1.5rem;
+        display: flex;
+        gap: 0.85rem;
+        flex-wrap: wrap;
+      }
+      .hero-main-grid .hero-image-wrapper {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        perspective: 1000px;
+        z-index: 2;
+      }
+      .hero-main-grid .glass-mockup {
+        transform: perspective(1000px) rotateY(-5deg) rotateX(2.5deg) !important;
+        transform-origin: center right !important;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .hero-main-grid .glass-mockup:hover {
+        transform: perspective(1000px) rotateY(-2deg) rotateX(1deg) !important;
       }
       @media (max-width: 1100px) {
+        .hero-main-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2.25rem !important;
+        }
+        .hero-main-grid .hero-content {
+          text-align: center !important;
+          align-items: center !important;
+        }
+        .hero-main-grid .hero-content .hero-subtitle {
+          margin-left: auto;
+          margin-right: auto;
+        }
         .hero-buttons {
           justify-content: center !important;
         }
@@ -499,126 +574,100 @@
         .hero-trust-badges {
           justify-content: center !important;
         }
+        .hero-main-grid .hero-image-wrapper {
+          max-width: 650px !important;
+          margin: 0 auto !important;
+        }
+        .hero-main-grid .glass-mockup {
+          transform: none !important;
+        }
         .hero-feature-nav {
-          align-items: center !important;
-          text-align: center !important;
           margin-top: 2rem !important;
           padding-top: 1.25rem !important;
         }
-        .hero-feature-chips {
-          justify-content: center !important;
-        }
         .hero-feature-chip {
-          flex: 0 1 auto !important;
-          white-space: normal !important;
-          padding: 0.4rem 0.9rem !important;
-          font-size: 0.82rem !important;
+          padding: 0.38rem 0.85rem !important;
+          font-size: 0.8rem !important;
         }
       }
     </style>
     <!-- Background Design Elements for Hero -->
     <div class="bg-shape bg-shape-1"></div>
     <div class="container relative z-10">
-      <div class="hero-content animate-on-scroll fade-in-up">
-        <h1 class="display-title">
-          <?php
-          $hero_h1 = get_theme_mod('hero_title', 'Software de Cotizaciones para Pequeños Negocios en México');
-          if (empty($hero_h1) || trim($hero_h1, " .") === 'Tu portal web para cotizaciones') {
-            $hero_h1 = 'Software de Cotizaciones para Pequeños Negocios en México';
-          }
-          echo esc_html($hero_h1);
-          ?>
-        </h1>
-        <p class="hero-subtitle">
-          <?php echo esc_html(get_theme_mod('hero_subtitle', 'Deja atrás Excel y las imágenes perdidas en WhatsApp. Crea, envía y controla tus cotizaciones desde un solo lugar.')); ?>
-        </p>
-        <div class="hero-buttons">
-          <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://app.cotizalo.net/signup')); ?>"
-            class="btn btn-primary btn-lg group">
-            <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis')); ?>
-            <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#features" class="btn btn-secondary btn-lg">
-            Ver cómo funciona
-          </a>
-        </div>
-        <!-- Bloque de Confianza y Prueba Social -->
-        <div class="hero-trust-block">
-          <!-- Rating y Avatares -->
-          <div class="hero-trust-rating">
-            <div class="hero-avatar-stack" aria-hidden="true">
-              <span class="hero-avatar-circle av-1" title="Carlos Morales — Contratista">CM</span>
-              <span class="hero-avatar-circle av-2" title="Valeria Romero — Servicios">VR</span>
-              <span class="hero-avatar-circle av-3" title="Jorge Lara — Mantenimiento">JL</span>
-              <span class="hero-avatar-circle av-4" title="Diana Prado — Consultora">DP</span>
-              <span class="hero-avatar-circle av-count">+500</span>
-            </div>
-            <div class="hero-rating-meta">
-              <div class="hero-rating-stars">
-                <span class="stars-icons" aria-label="5 de 5 estrellas">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                </span>
-                <strong class="rating-score">4.8 / 5</strong>
+      <div class="hero-main-grid">
+        <div class="hero-content animate-on-scroll fade-in-up">
+          <h1 class="display-title">
+            <?php
+            $hero_h1 = get_theme_mod('hero_title', 'Software de Cotizaciones para Pequeños Negocios en México');
+            if (empty($hero_h1) || trim($hero_h1, " .") === 'Tu portal web para cotizaciones') {
+              $hero_h1 = 'Software de Cotizaciones para Pequeños Negocios en México';
+            }
+            echo esc_html($hero_h1);
+            ?>
+          </h1>
+          <p class="hero-subtitle">
+            <?php echo esc_html(get_theme_mod('hero_subtitle', 'Deja atrás Excel y las imágenes perdidas en WhatsApp. Crea, envía y controla tus cotizaciones desde un solo lugar.')); ?>
+          </p>
+          <div class="hero-buttons">
+            <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://app.cotizalo.net/signup')); ?>"
+              class="btn btn-primary btn-lg group">
+              <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis')); ?>
+              <svg class="icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#features" class="btn btn-secondary btn-lg">
+              Ver cómo funciona
+            </a>
+          </div>
+          <!-- Bloque de Confianza y Prueba Social -->
+          <div class="hero-trust-block">
+            <!-- Rating y Avatares -->
+            <div class="hero-trust-rating">
+              <div class="hero-avatar-stack" aria-hidden="true">
+                <span class="hero-avatar-circle av-1" title="Carlos Morales — Contratista">CM</span>
+                <span class="hero-avatar-circle av-2" title="Valeria Romero — Servicios">VR</span>
+                <span class="hero-avatar-circle av-3" title="Jorge Lara — Mantenimiento">JL</span>
+                <span class="hero-avatar-circle av-4" title="Diana Prado — Consultora">DP</span>
+                <span class="hero-avatar-circle av-count">+500</span>
               </div>
-              <span class="rating-subtext">Más de 500 negocios y PyMEs en México</span>
+              <div class="hero-rating-meta">
+                <div class="hero-rating-stars">
+                  <span class="stars-icons" aria-label="5 de 5 estrellas">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </span>
+                  <strong class="rating-score">4.8 / 5</strong>
+                </div>
+                <span class="rating-subtext">Más de 500 negocios y PyMEs en México</span>
+              </div>
             </div>
-          </div>
 
-          <!-- Píldoras de Garantía -->
-          <div class="hero-trust-badges">
-            <div class="hero-trust-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>14 días de prueba gratis</span>
-            </div>
-            <div class="hero-trust-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Sin tarjeta de crédito</span>
-            </div>
-            <div class="hero-trust-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Cancela cuando quieras</span>
+            <!-- Píldoras de Garantía -->
+            <div class="hero-trust-badges">
+              <div class="hero-trust-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>14 días de prueba gratis</span>
+              </div>
+              <div class="hero-trust-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Sin tarjeta de crédito</span>
+              </div>
+              <div class="hero-trust-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Cancela cuando quieras</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Internal SEO links to landing pages (Full-Width Bar) -->
-      <nav class="hero-feature-nav animate-on-scroll fade-in-up" aria-label="Soluciones y páginas especializadas">
-        <span class="hero-feature-label">Explora por especialidad:</span>
-        <div class="hero-feature-chips">
-          <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>" class="hero-feature-chip">
-            <span>Software para cotizaciones</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-          <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>" class="hero-feature-chip">
-            <span>Programa para presupuestos</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-          <a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>" class="hero-feature-chip">
-            <span>Cotizaciones por WhatsApp</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-          <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>" class="hero-feature-chip">
-            <span>Para constructoras</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-          <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>" class="hero-feature-chip">
-            <span>Para servicios</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-      </nav>
-
-      <!-- Visualization Element (Mockup) -->
-      <div class="hero-image-wrapper animate-on-scroll fade-in-up delay-200">
+        <!-- Visualization Element (Mockup) -->
+        <div class="hero-image-wrapper animate-on-scroll fade-in-up delay-200">
         <div class="glass-mockup"
           style="min-height: auto !important; height: auto !important; background: #ffffff !important;">
           <div class="mockup-header">
@@ -1576,8 +1625,36 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </div> <!-- end .hero-main-grid -->
+
+    <!-- Internal SEO links to landing pages (Full-Width Bar) -->
+    <nav class="hero-feature-nav animate-on-scroll fade-in-up" aria-label="Soluciones y páginas especializadas">
+      <span class="hero-feature-label">Explora por especialidad:</span>
+      <div class="hero-feature-chips">
+        <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>" class="hero-feature-chip">
+          <span>Software para cotizaciones</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>" class="hero-feature-chip">
+          <span>Programa para presupuestos</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>" class="hero-feature-chip">
+          <span>Cotizaciones por WhatsApp</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>" class="hero-feature-chip">
+          <span>Para constructoras</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>" class="hero-feature-chip">
+          <span>Para servicios</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+</section>
 
   <!-- Features Section (Light Theme) -->
   <section id="features" class="features-section relative light-section">
