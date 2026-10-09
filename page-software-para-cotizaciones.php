@@ -184,20 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.7;
         }
 
-        .lp-hero .badge-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: #fff;
-            font-size: 0.875rem;
-            font-weight: 600;
-            padding: 0.4rem 1.1rem;
-            border-radius: var(--radius-full);
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-        }
+
 
         /* Benefits grid */
         .benefits-section {
@@ -466,7 +453,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
@@ -497,7 +483,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Hero -->
     <section class="lp-hero">
         <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <span class="badge-pill">✦ Software de cotizaciones</span>
             <h1>Software para Hacer Cotizaciones para Pequeñas Empresas</h1>
             <p>Olvida el Excel, las imágenes de WhatsApp y los correos sin respuesta. Con Cotízalo creas una cotización
                 profesional en segundos, la envías al instante y sabes exactamente cuándo tu cliente la leyó.</p>
@@ -876,7 +861,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de

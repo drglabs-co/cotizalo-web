@@ -61,8 +61,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@context": "https://schema.org",
         "@graph": [
             {
+                "@type": "WebPage",
+                "@id": "<?php echo esc_url(home_url('/precios/')); ?>#webpage",
+                "url": "<?php echo esc_url(home_url('/precios/')); ?>",
+                "name": "Planes y Precios del Sistema de Cotizaciones | Cotízalo",
+                "description": "Elige el plan ideal para tu negocio en México. Precios transparentes desde $199 MXN sin comisiones ocultas. 14 días de prueba gratis sin tarjeta.",
+                "isPartOf": { "@id": "<?php echo esc_url(home_url('/')); ?>#website" },
+                "breadcrumb": { "@id": "<?php echo esc_url(home_url('/precios/')); ?>#breadcrumb" },
+                "inLanguage": "es-MX"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "<?php echo esc_url(home_url('/precios/')); ?>#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "<?php echo esc_url(home_url('/')); ?>" },
+                    { "@type": "ListItem", "position": 2, "name": "Precios" }
+                ]
+            },
+            {
                 "@type": "Product",
-                "@id": "<?php echo esc_url(get_permalink()); ?>#product",
+                "@id": "<?php echo esc_url(home_url('/precios/')); ?>#product",
                 "name": "Cotízalo - Suscripción Mensual",
                 "description": "Sistema de cotizaciones automatizado para empresas en México. Planes diseñados para profesionales, microempresas y pymes.",
                 "image": "<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg",
@@ -80,7 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "priceCurrency": "MXN",
                             "availability": "https://schema.org/InStock",
                             "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
-                            "url": "<?php echo esc_url(get_permalink()); ?>"
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
                         },
                         {
                             "@type": "Offer",
@@ -89,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "priceCurrency": "MXN",
                             "availability": "https://schema.org/InStock",
                             "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
-                            "url": "<?php echo esc_url(get_permalink()); ?>"
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
                         },
                         {
                             "@type": "Offer",
@@ -98,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "priceCurrency": "MXN",
                             "availability": "https://schema.org/InStock",
                             "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
-                            "url": "<?php echo esc_url(get_permalink()); ?>"
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
                         },
                         {
                             "@type": "Offer",
@@ -107,10 +125,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             "priceCurrency": "MXN",
                             "availability": "https://schema.org/InStock",
                             "priceValidUntil": "<?php echo date('Y-12-31'); ?>",
-                            "url": "<?php echo esc_url(get_permalink()); ?>"
+                            "url": "<?php echo esc_url(home_url('/precios/')); ?>"
                         }
                     ]
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Cómo funciona la prueba gratuita de 14 días?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Al registrarte obtienes acceso inmediato y completo a todas las funcionalidades de Cotízalo durante 14 días. No requerimos tarjeta de crédito para iniciar y no hay cobros sorpresa."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Puedo cambiar de plan o cancelar en cualquier momento?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sí. No existen plazos forzosos ni contratos de permanencia. Puedes subir o bajar de plan, o cancelar tu suscripción con un solo clic directamente desde tu panel de configuración."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué formas de pago aceptan en México?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Aceptamos todas las tarjetas de débito y crédito mexicanas e internacionales (Visa, Mastercard, American Express), así como pagos directos mediante Apple Pay y Google Pay. Todos los pagos son procesados de forma segura con cifrado bancario."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Mis clientes necesitan registrarse o instalar alguna app para ver mis cotizaciones?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Tus clientes reciben un enlace interactivo o PDF por WhatsApp o correo y pueden ver la propuesta, firmarla digitalmente o descargarla desde su celular sin necesidad de crear ninguna cuenta ni instalar nada."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Hay cargos ocultos por cotizaciones enviadas o mensajes de WhatsApp?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No cobramos comisión por propuesta ni cobro extra por mensaje de WhatsApp. El precio de tu plan mensual o anual cubre todo el servicio sin sorpresas."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -144,23 +207,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin: 0 auto 1.5rem;
         }
 
-        .badge-trial {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.5rem 1.25rem;
-            border-radius: var(--radius-full);
-            backdrop-filter: blur(10px);
-        }
-
-        .badge-trial .emoji {
-            font-size: 1.1rem;
-        }
 
         /* ============================================================
            PLANS GRID
@@ -552,6 +598,231 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translateY(-3px) scale(1.06);
             filter: drop-shadow(0 6px 10px rgba(18, 58, 44, 0.15));
         }
+
+        /* Trust Badges under pricing cards */
+        .pricing-trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.25rem 2.25rem;
+            margin-top: 2.75rem;
+            padding: 1.1rem 2rem;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            max-width: 880px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trust-badge-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .trust-badge-item svg {
+            color: #10b981;
+            flex-shrink: 0;
+        }
+
+        /* Comparison Table Section */
+        .pricing-comparison-section {
+            padding: 5.5rem 0 6rem;
+            background: #ffffff;
+        }
+
+        .section-header-center {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 3.5rem;
+        }
+
+
+        .section-header-center h2 {
+            font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.85rem;
+        }
+
+        .section-header-center p {
+            color: var(--text-dark-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .comparison-table-wrapper {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+            min-width: 780px;
+        }
+
+        .comp-table th,
+        .comp-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+
+        .comp-table thead th {
+            background: #f8fafc;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .comp-table th.col-feature {
+            width: 34%;
+        }
+
+        .comp-table th.col-competitor {
+            width: 22%;
+            color: var(--text-dark-muted);
+            font-weight: 600;
+        }
+
+        .comp-table th.col-highlight {
+            width: 26%;
+            background: #123A2C;
+            color: #ffffff;
+            font-size: 1rem;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            position: relative;
+        }
+
+        .comp-table td.col-highlight {
+            background: #f0fdf4;
+            font-weight: 700;
+            color: #14532d;
+            text-align: center;
+            border-left: 2px solid #86efac;
+            border-right: 2px solid #86efac;
+        }
+
+        .comp-table tr:last-child td.col-highlight {
+            border-bottom: 2px solid #86efac;
+        }
+
+        .comp-badge-recommended {
+            display: inline-block;
+            background: #34d399;
+            color: #064e3b;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .comp-check {
+            color: #059669;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .comp-cross {
+            color: #dc2626;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .comp-warn {
+            color: #d97706;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* FAQ Section */
+        .pricing-faq-section {
+            padding: 5.5rem 0 6rem;
+            background: var(--bg-light-alt);
+        }
+
+        .pricing-faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        details.pricing-faq-item {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.6rem;
+            cursor: pointer;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        details.pricing-faq-item:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        details.pricing-faq-item summary {
+            font-weight: 700;
+            color: var(--text-dark);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+        }
+
+        details.pricing-faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.pricing-faq-item summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--primary);
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        details.pricing-faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details.pricing-faq-item p {
+            margin-top: 1rem;
+            color: var(--text-dark-muted);
+            line-height: 1.7;
+            font-size: 0.96rem;
+            margin-bottom: 0;
+        }
     </style>
     <link rel="preload" as="image"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
@@ -586,7 +857,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
@@ -621,17 +891,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="pricing-hero" style="padding-bottom:3rem;">
         <div class="container">
             <div class="animate-on-scroll fade-in-up">
-                <p
-                    style="font-size:0.875rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:1rem;">
-                    <?php echo esc_html(get_theme_mod('precios_hero_label', 'Plan de Suscripción')); ?>
-                </p>
                 <h1><?php echo esc_html(get_theme_mod('precios_hero_title', 'Precios simples y transparentes')); ?></h1>
                 <p><?php echo esc_html(get_theme_mod('precios_hero_desc', 'Sin costos ocultos ni límites de créditos de IA. Interfaz gráfica completa para buscar, editar y dar seguimiento a tus clientes.')); ?>
                 </p>
-                <span class="badge-trial">
-                    <span class="emoji">🎁</span>
-                    <?php echo esc_html(get_theme_mod('precios_hero_badge', '¡Incluye 14 días de prueba gratis!')); ?>
-                </span>
             </div>
         </div>
     </section>
@@ -869,6 +1131,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             </div><!-- /.plans-grid -->
 
+            <!-- Friction-Reduction Trust Badges -->
+            <div class="pricing-trust-badges">
+                <span class="trust-badge-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    14 días de prueba gratis
+                </span>
+                <span class="trust-badge-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Sin tarjeta de crédito
+                </span>
+                <span class="trust-badge-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Listo en 2 minutos
+                </span>
+                <span class="trust-badge-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Cancela cuando quieras
+                </span>
+            </div>
+
             <!-- Payment Methods -->
             <div class="payment-methods-wrap animate-on-scroll fade-in-up">
                 <p class="payment-methods-title">Aceptamos principales tarjetas de crédito, débito, Apple Pay y GPay</p>
@@ -904,37 +1186,123 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </section>
 
-    <!-- ==================== ADMIN ACCOUNT ==================== 
-    <section class="admin-section">
+    <!-- ==================== COMPARISON TABLE SECTION ==================== -->
+    <section class="pricing-comparison-section" id="comparativa">
         <div class="container">
-            <div class="admin-box animate-on-scroll fade-in-up">
-                <h2>Cuenta de Administrador</h2>
-                <div class="admin-divider"></div>
-                <p>El plan Empresarial incluye una poderosa cuenta de administrador con control total sobre accesos y reportes de toda tu organización.</p>
-                <div class="admin-features-grid">
-                    <div class="admin-feature-item">
-                        <div class="icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
-                            </svg>
-                        </div>
-                        <span>Panel de Control</span>
-                    </div>
-                    <div class="admin-feature-item">
-                        <div class="icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
-                            </svg>
-                        </div>
-                        <span>Reportes Completos</span>
-                    </div>
-                </div>
-                <a href="https://app.cotizalo.net/signup" class="btn btn-primary btn-lg" id="btn-admin-cta">
-                    Contratar Plan Empresarial
-                </a>
+            <div class="section-header-center animate-on-scroll fade-in-up">
+                <h2>¿Por qué elegir Cotízalo frente a otras alternativas?</h2>
+                <p>Compara las ventajas de una herramienta diseñada para cerrar ventas en México y Latinoamérica versus hojas de cálculo manuales o complejos CRMs corporativos en dólares.</p>
+            </div>
+
+            <div class="comparison-table-wrapper animate-on-scroll fade-in-up">
+                <table class="comp-table" aria-label="Comparativa de software de cotizaciones">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="col-feature">Funcionalidad / Criterio</th>
+                            <th scope="col" class="col-highlight">
+                                Cotízalo
+                                <span class="comp-badge-recommended">Recomendado</span>
+                            </th>
+                            <th scope="col" class="col-competitor">Excel / Hojas de Cálculo</th>
+                            <th scope="col" class="col-competitor">CRMs Corporativos (HubSpot, PandaDoc)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Precio y divisa</th>
+                            <td class="col-highlight"><strong>Desde $199 MXN/mes</strong> (en pesos, sin sorpresas)</td>
+                            <td>"Gratis" (horas perdidas en formato y fórmulas)</td>
+                            <td>Desde $19 a $45+ USD por usuario/mes (en dólares + IVA)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Envío directo por WhatsApp</th>
+                            <td class="col-highlight"><span class="comp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Enlace interactivo + PDF al instante</span></td>
+                            <td><span class="comp-cross"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Manual y adjuntos pesados</span></td>
+                            <td><span class="comp-warn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Requiere integraciones costosas o de terceros</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Firma digital por el cliente</th>
+                            <td class="col-highlight"><span class="comp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Incluida (desde móvil sin apps)</span></td>
+                            <td><span class="comp-cross"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Imprimir, firmar a mano y escanear</span></td>
+                            <td><span class="comp-warn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Solo en planes caros de nivel superior</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cobro de anticipos en línea</th>
+                            <td class="col-highlight"><span class="comp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Integrado directo en la propuesta</span></td>
+                            <td><span class="comp-cross"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> No disponible</span></td>
+                            <td><span class="comp-warn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Add-ons empresariales adicionales</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Curva de implementación</th>
+                            <td class="col-highlight"><strong>2 minutos</strong> (inicias sin capacitación técnica)</td>
+                            <td>Días diseñando plantillas propensas a errores</td>
+                            <td>Semanas de configuración compleja</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Notificación cuando el cliente abre la cotización</th>
+                            <td class="col-highlight"><span class="comp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Rastreo en tiempo real</span></td>
+                            <td><span class="comp-cross"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> A ciegas (sin saber si la abrieron)</span></td>
+                            <td><span class="comp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Disponible</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Soporte en español para México</th>
+                            <td class="col-highlight"><strong>100% en español</strong> y horario local</td>
+                            <td>Foros comunitarios y tutoriales</td>
+                            <td>Soporte en inglés o por tickets lentos</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Prueba gratis</th>
+                            <td class="col-highlight"><strong>14 días gratis</strong> sin tarjeta</td>
+                            <td>No aplica</td>
+                            <td>Exige tarjeta o funciones bloqueadas</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </section> -->
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section class="pricing-faq-section" id="faq">
+        <div class="container">
+            <div class="section-header-center animate-on-scroll fade-in-up">
+                <h2>Preguntas frecuentes sobre precios y suscripciones</h2>
+                <p>Transparencia total. Respuestas claras para que elijas con total confianza y sin letras chiquitas.</p>
+            </div>
+
+            <div class="pricing-faq-list animate-on-scroll fade-in-up">
+                <details class="pricing-faq-item" open>
+                    <summary>¿Cómo funciona la prueba gratuita de 14 días?</summary>
+                    <p>Al registrarte obtienes acceso inmediato y completo a todas las funcionalidades de Cotízalo durante 14 días. No requerimos tarjeta de crédito para iniciar tu prueba y no hay ningún cobro sorpresa. Puedes crear cotizaciones, personalizarlas con tu logotipo y enviarlas a tus clientes reales desde el primer minuto.</p>
+                </details>
+
+                <details class="pricing-faq-item">
+                    <summary>¿Puedo cambiar de plan o cancelar en cualquier momento?</summary>
+                    <p>Sí, por supuesto. En Cotízalo no existen plazos forzosos ni contratos de permanencia. Puedes subir o bajar de plan en cualquier momento según el volumen de ventas de tu negocio, o cancelar tu suscripción con un solo clic directamente desde tu panel de usuario sin tener que llamar a nadie.</p>
+                </details>
+
+                <details class="pricing-faq-item">
+                    <summary>¿Qué formas de pago aceptan en México?</summary>
+                    <p>Aceptamos todas las tarjetas de débito y crédito mexicanas e internacionales (Visa, Mastercard, American Express), así como pagos directos mediante Apple Pay y Google Pay. Todos los cobros se realizan de forma segura con cifrado bancario de última generación.</p>
+                </details>
+
+                <details class="pricing-faq-item">
+                    <summary>¿Mis clientes necesitan registrarse o instalar alguna app para ver mis cotizaciones?</summary>
+                    <p>No, nunca. Tus clientes reciben un enlace interactivo o PDF por WhatsApp o correo electrónico. Al hacer clic, pueden ver la cotización desde el navegador de su teléfono celular o computadora, firmarla digitalmente o descargarla en PDF sin necesidad de crear ninguna cuenta ni instalar nada.</p>
+                </details>
+
+                <details class="pricing-faq-item">
+                    <summary>¿Hay cargos ocultos por cotizaciones enviadas o mensajes de WhatsApp?</summary>
+                    <p>No. No cobramos comisiones por propuesta generada ni cobros extra por mensaje o enlace enviado. La tarifa de tu suscripción mensual o anual cubre el uso ilimitado de cotizaciones y herramientas de tu plan.</p>
+                </details>
+
+                <details class="pricing-faq-item">
+                    <summary>¿Ofrecen factura fiscal (CFDI) para empresas en México?</summary>
+                    <p>Sí, todos nuestros precios ya incluyen IVA y emitimos tu comprobante fiscal digital por internet (CFDI) con tus datos fiscales de forma automática cada mes para que puedas deducir el gasto de tu negocio al 100%.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
     <!-- ==================== GUARANTEE STRIP ==================== -->
     <div class="guarantee-strip">
@@ -1004,7 +1372,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>

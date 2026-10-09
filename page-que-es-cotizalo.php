@@ -25,7 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
+    <meta property="og:url" content="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">
     <meta property="og:title" content="¿Qué es Cotízalo? Software de Cotizaciones para Emprendedores">
     <meta property="og:description"
         content="Conoce Cotízalo, el software para crear cotizaciones profesionales, enviarlas por WhatsApp y dar seguimiento a clientes sin depender de Excel.">
@@ -61,6 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding-bottom: 4rem;
             text-align: center;
         }
+
 
         .content-box {
             background: var(--bg-light);
@@ -111,21 +112,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@graph": [
             {
                 "@type": "AboutPage",
-                "@id": "<?php echo esc_url(get_permalink()); ?>#webpage",
-                "url": "<?php echo esc_url(get_permalink()); ?>",
+                "@id": "<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>#webpage",
+                "url": "<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>",
                 "name": "¿Qué es Cotízalo? | Digitaliza tus Cotizaciones y Presupuestos",
                 "description": "Descubre cómo Cotízalo ayuda a microempresas y profesionales en México a dejar atrás el Excel. Crea propuestas rápidas, profesionales y con seguimiento automático.",
                 "isPartOf": {
                     "@id": "<?php echo esc_url(home_url('/')); ?>#website"
                 },
                 "breadcrumb": {
-                    "@id": "<?php echo esc_url(get_permalink()); ?>#breadcrumb"
+                    "@id": "<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>#breadcrumb"
                 },
                 "inLanguage": "es-MX"
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "<?php echo esc_url(get_permalink()); ?>#breadcrumb",
+                "@id": "<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
@@ -137,6 +138,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         "@type": "ListItem",
                         "position": 2,
                         "name": "¿Qué es Cotízalo?"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué problema resuelve Cotízalo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Cotízalo elimina el desorden de usar Excel o Word para cotizar. Permite crear cotizaciones profesionales con diseño corporativo en 2 minutos, enviarlas por WhatsApp y saber cuándo el cliente las visualiza."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Mis clientes necesitan instalar algo para ver mis cotizaciones?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Tus clientes reciben un enlace interactivo o PDF descargable que pueden abrir y firmar digitalmente desde cualquier celular o navegador web sin registrarse ni instalar aplicaciones."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Puedo probar Cotízalo gratis?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sí, ofrecemos 14 días de prueba gratuita sin necesidad de ingresar tarjeta de crédito ni compromisos a largo plazo."
+                        }
                     }
                 ]
             }
@@ -176,7 +207,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
@@ -212,10 +242,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="page-hero" style="padding-bottom: 4rem;">
         <div class="bg-shape bg-shape-1"></div>
         <div class="container relative z-10 animate-on-scroll fade-in-up" style="text-align:center;">
-            <span
-                style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:#fff; font-size:0.8rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.35rem 1rem; border-radius:999px; margin-bottom:1.25rem;">
-                Conoce Cotízalo
-            </span>
             <h1 class="display-title-sm" style="margin-bottom: 1rem;">
                 <?php echo esc_html(get_theme_mod('que_es_title', '¿Qué es Cotízalo?')); ?>
             </h1>
@@ -227,6 +253,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 class="btn btn-primary btn-lg">
                 <?php echo esc_html(get_theme_mod('hero_btn_text', 'Empieza gratis — 14 días')); ?>
             </a>
+            <div style="margin-top:1.25rem; font-size:0.88rem; color:rgba(255,255,255,0.8); display:flex; justify-content:center; align-items:center; gap:1.25rem; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 14 días gratis</span>
+                <span style="display:inline-flex; align-items:center; gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sin tarjeta de crédito</span>
+                <span style="display:inline-flex; align-items:center; gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Cancela cuando quieras</span>
+            </div>
         </div>
     </section>
 
@@ -429,8 +460,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 class="btn btn-primary btn-lg">
                 Crear mi cuenta gratis →
             </a>
-            <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.6);">Sin comisiones. Sin
-                contrato. Cancela cuando quieras.</p>
+            <p style="margin-top:1.25rem; font-size:0.875rem; color:rgba(255,255,255,0.75); display:flex; justify-content:center; align-items:center; gap:1.25rem; flex-wrap:wrap;">
+                <span>✓ 14 días de prueba gratis</span>
+                <span>✓ Sin tarjeta de crédito</span>
+                <span>✓ Cancela cuando quieras</span>
+            </p>
         </div>
     </section>
 
@@ -458,7 +492,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/cotizador/')); ?>">Cotizador en línea</a></li>
                         <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
                                 cotizaciones</a></li>
                         <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
