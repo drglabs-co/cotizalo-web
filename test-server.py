@@ -91,7 +91,7 @@ def render_php_template(file_path, request_path):
     # Handle front-page multi-line hero_h1 logic
     content = re.sub(
         r'<\?php\s*\$hero_h1\s*=.*?echo\s+esc_html\(\$hero_h1\);\s*\?>',
-        'Software y Programa para Hacer Cotizaciones Profesionales',
+        'Tu Portal Online para Hacer Cotizaciones Profesionales',
         content,
         flags=re.DOTALL
     )

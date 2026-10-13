@@ -181,7 +181,7 @@ Salida esperada:
 📄 Route: /  (Template: front-page.php)
    • Title (52 chars): Programa para Hacer Cotizaciones en Línea | Cotízalo
    • Description (166 chars): Cotízalo es el programa para hacer cotizaciones y presupuestos profesionales...
-   • H1: Software y Programa para Hacer Cotizaciones Profesionales
+   • H1: Tu Portal Online para Hacer Cotizaciones Profesionales
    • Canonical: ✅ Present
    • OpenGraph: ✅ Present (title + image)
    • JSON-LD Schema: ✅ Present
@@ -209,7 +209,7 @@ Todas las páginas han sido verificadas y cuentan con su configuración SEO comp
 
 | Ruta | Template PHP | Título SEO | H1 Semántico | Meta Descripción | Canonical & OG | Schema JSON-LD |
 |---|---|---|---|---|:---:|:---:|
-| `/` | `front-page.php` | Programa para Hacer Cotizaciones en Línea \| Cotízalo | Software y Programa para Hacer Cotizaciones Profesionales | ✅ 166 caracteres | ✅ | ✅ WebSite, Org, SoftwareApp |
+| `/` | `front-page.php` | Programa para Hacer Cotizaciones en Línea \| Cotízalo | Tu Portal Online para Hacer Cotizaciones Profesionales | ✅ 166 caracteres | ✅ | ✅ WebSite, Org, SoftwareApp |
 | `/precios/` | `page-precios.php` | Planes y Precios del Sistema de Cotizaciones \| Cotízalo | Precios simples y transparentes | ✅ 158 caracteres | ✅ | ✅ SoftwareApplication |
 | `/que-es-cotizalo/` | `page-que-es-cotizalo.php` | ¿Qué es Cotízalo? \| Digitaliza tus Cotizaciones y Presupuestos | ¿Qué es Cotízalo? | ✅ 163 caracteres | ✅ | ✅ About & FAQ |
 | `/soporte/` | `page-soporte.php` | Soporte Técnico y Contacto \| Cotízalo México | Soporte Técnico y Contacto | ✅ 167 caracteres | ✅ | ✅ ContactPoint |
