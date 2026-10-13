@@ -510,7 +510,7 @@
                         <span class="mockup-link-tag">+ Nuevo</span>
                       </div>
                       <div class="mockup-field-box">
-                        <span class="mockup-field-lbl">EMPRESA / PROSPECTO</span>
+                        <span class="mockup-field-lbl">PROSPECTO</span>
                         <div class="mockup-input-sim">
                           <strong>Constructora Norte S.A.</strong>
                         </div>
@@ -526,7 +526,7 @@
                       <div class="mockup-field-box">
                         <div class="mockup-note-box">
                           <span class="mockup-spei-dot"></span>
-                          <span>Anticipo 50% ($14,210) vía SPEI</span>
+                          <span>Anticipo 50% vía SPEI</span>
                         </div>
                       </div>
                     </div>
@@ -564,7 +564,7 @@
                           <td style="text-align: center;" class="tabular-nums">1.00</td>
                           <td style="text-align: right;" class="tabular-nums">8,500.00</td>
                           <td style="text-align: right;" class="tabular-nums">0.00</td>
-                          <td style="text-align: right; font-weight: 700; color: #047857;" class="tabular-nums">$8,500.00</td>
+                          <td style="text-align: right;" class="tabular-nums"><span class="mockup-table-total-badge">$8,500.00</span></td>
                           <td style="text-align: center;">
                             <span class="mockup-delete-btn">
                               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
@@ -582,7 +582,7 @@
                           <td style="text-align: center;" class="tabular-nums">1.00</td>
                           <td style="text-align: right;" class="tabular-nums">16,000.00</td>
                           <td style="text-align: right;" class="tabular-nums">0.00</td>
-                          <td style="text-align: right; font-weight: 700; color: #047857;" class="tabular-nums">$16,000.00</td>
+                          <td style="text-align: right;" class="tabular-nums"><span class="mockup-table-total-badge">$16,000.00</span></td>
                           <td style="text-align: center;">
                             <span class="mockup-delete-btn">
                               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
