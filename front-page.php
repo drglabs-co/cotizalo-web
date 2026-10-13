@@ -491,13 +491,13 @@
                     <div class="mockup-info-card">
                       <div class="mockup-card-badge-row">
                         <span class="mockup-section-dot"></span>
-                        <span class="mockup-section-title">PERFIL & SECUENCIA</span>
-                        <span class="mockup-pill-tag"># Folio Oficial</span>
+                        <span class="mockup-section-title">PERFIL</span>
+                        <span class="mockup-pill-tag"># Folio</span>
                       </div>
                       <div class="mockup-field-box">
-                        <span class="mockup-field-lbl">PERFIL DE FACTURACIÓN</span>
+                        <span class="mockup-field-lbl">FACTURACIÓN</span>
                         <div class="mockup-select-sim">
-                          <strong>Constructora Norte (Prefijo: COT-)</strong>
+                          <strong>Constructora Norte (COT-)</strong>
                           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </div>
                       </div>
@@ -506,13 +506,13 @@
                     <div class="mockup-info-card">
                       <div class="mockup-card-badge-row">
                         <span class="mockup-section-dot"></span>
-                        <span class="mockup-section-title">INFORMACIÓN DEL CLIENTE</span>
-                        <span class="mockup-link-tag">+ Nuevo Cliente</span>
+                        <span class="mockup-section-title">CLIENTE</span>
+                        <span class="mockup-link-tag">+ Nuevo</span>
                       </div>
                       <div class="mockup-field-box">
-                        <span class="mockup-field-lbl">BUSCAR O SELECCIONAR CLIENTE *</span>
+                        <span class="mockup-field-lbl">EMPRESA / PROSPECTO</span>
                         <div class="mockup-input-sim">
-                          <strong>Constructora e Inmobiliaria Norte S.A. de C.V.</strong>
+                          <strong>Constructora Norte S.A.</strong>
                         </div>
                       </div>
                     </div>
@@ -521,12 +521,12 @@
                       <div class="mockup-card-badge-row">
                         <span class="mockup-section-dot"></span>
                         <span class="mockup-section-title">CONDICIONES</span>
-                        <span class="mockup-currency-tag">Moneda: MXN ($)</span>
+                        <span class="mockup-currency-tag">MXN ($)</span>
                       </div>
                       <div class="mockup-field-box">
                         <div class="mockup-note-box">
                           <span class="mockup-spei-dot"></span>
-                          <span>Anticipo 50% ($14,210 MXN) recibido vía SPEI · Saldo contra entrega</span>
+                          <span>Anticipo 50% ($14,210) vía SPEI</span>
                         </div>
                       </div>
                     </div>

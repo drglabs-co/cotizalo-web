@@ -1325,11 +1325,12 @@ header .btn-secondary:hover {
 /* 3 Section Info Cards Grid */
 .mockup-info-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
 }
 
 .mockup-info-card {
+  min-width: 0;
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
@@ -1338,6 +1339,7 @@ header .btn-secondary:hover {
   flex-direction: column;
   gap: 0.35rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
 }
 
 .mockup-card-badge-row {
@@ -1433,6 +1435,14 @@ header .btn-secondary:hover {
   display: flex;
   align-items: center;
   gap: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mockup-note-box span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mockup-spei-dot {
