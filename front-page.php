@@ -659,8 +659,6 @@
             </div>
           </div>
         </div>
-          </div>
-        </div>
       </div>
 
       <!-- Hero Solution Deep Links -->

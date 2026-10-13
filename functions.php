@@ -17,9 +17,9 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.11');
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.12');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
-    wp_enqueue_script('cotizalo-main', get_template_directory_uri() . '/assets/assets/js/main.js', array(), '1.0.11', true);
+    wp_enqueue_script('cotizalo-main', get_template_directory_uri() . '/assets/assets/js/main.js', array(), '1.0.12', true);
 
     // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
     $dropdown_css = '
@@ -421,7 +421,7 @@ function cotizalo_customize_register($wp_customize)
     ));
 
     // Hero Title
-    $wp_customize->add_setting('hero_title', array('default' => 'Software y Programa para Hacer Cotizaciones Profesionales'));
+    $wp_customize->add_setting('hero_title', array('default' => 'Tu Portal Online para Hacer Cotizaciones Profesionales'));
     $wp_customize->add_control('hero_title', array(
         'label' => __('Título Principal', 'cotizalo'),
         'section' => 'cotizalo_hero_section',
