@@ -439,30 +439,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- FAQ Section -->
-        <section style="padding: 5.5rem 0; background: var(--c-bg-subtle);">
+        <section class="faq-section" style="padding: 5.5rem 0; background: var(--c-bg-subtle);">
             <div class="container animate-on-scroll fade-in-up">
-                <h2 class="section-title">Todo lo que quieres saber sobre el software</h2>
-                <div class="faq-list" style="margin-top: 2.5rem;">
-                    <details class="faq-item">
-                        <summary>¿Qué es un software para hacer cotizaciones?</summary>
-                        <p>Es una herramienta digital que te permite crear propuestas de venta o cotizaciones de forma rápida y profesional, enviarlas por WhatsApp, correo o enlace, y dar seguimiento a su estado (vista, aceptada, rechazada). Sustituye el Excel, las fotos de WhatsApp y los documentos de Word desorganizados.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Cotízalo funciona en el celular?</summary>
-                        <p>Sí. Cotízalo es una aplicación web que funciona desde cualquier dispositivo con internet: computadora, tableta o teléfono. No necesitas instalar ninguna app; solo abres el navegador y listo.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo enviar la cotización por WhatsApp?</summary>
-                        <p>Sí. Cotízalo genera un enlace o PDF que puedes compartir directamente por WhatsApp en un clic. Tu cliente puede verlo desde su teléfono sin necesidad de descargar ninguna aplicación.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Cuánto cuesta el software de cotizaciones?</summary>
-                        <p>Los planes de Cotízalo parten desde $199 MXN al mes. Todos incluyen 14 días de prueba gratis sin necesidad de tarjeta de crédito. Puedes cancelar cuando quieras, sin penalizaciones.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo personalizar mis cotizaciones con mi logo y colores?</summary>
-                        <p>Sí. Puedes agregar el logo de tu empresa, tus datos fiscales y personalizar el diseño de tus cotizaciones para que luzcan profesionales y con tu identidad de marca desde el primer día.</p>
-                    </details>
+                <div style="text-align: center; max-width: 720px; margin: 0 auto 3rem auto;">
+                    <span class="feature-badge" style="display: inline-flex; margin-bottom: 0.75rem;">Dudas frecuentes</span>
+                    <h2 class="section-title">Preguntas Frecuentes sobre el Software</h2>
+                    <p class="section-subtitle" style="margin-top: 0.5rem; color: var(--c-text-secondary); font-size: 1.05rem;">
+                        Todo lo que necesitas saber sobre cómo Cotízalo agiliza tus propuestas y te ayuda a cerrar más ventas.
+                    </p>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item open">
+                        <button class="faq-question" type="button" aria-expanded="true">
+                            <span>¿Qué es un software para hacer cotizaciones?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9" /></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Es una herramienta digital en la nube que te permite crear propuestas de venta profesionales en menos de 2 minutos, compartirlas con enlace interactivo o PDF por WhatsApp y correo, y monitorear cuándo tus prospectos las revisan. Sustituye hojas de Excel con fórmulas rotas, fotos informales y documentos de Word desorganizados.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Cotízalo funciona en el celular y tabletas?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9" /></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, al 100%. Cotízalo es una plataforma web responsiva optimizada para teléfonos móviles, tabletas y computadoras. No requieres instalar aplicaciones pesadas desde tiendas de apps: ingresas desde el navegador de tu celular y puedes cotizar directamente en la obra, taller o junta con el cliente.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Cómo se envía la cotización por WhatsApp al cliente?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9" /></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Con un solo clic. Cotízalo genera un mensaje predeterminado con un enlace web interactivo seguro y el archivo PDF listo para descargar. Tu cliente lo abre directamente en WhatsApp sin necesidad de registrarse ni descargar nada.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Cuánto cuesta el software de cotizaciones y cómo funciona la prueba?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9" /></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Los planes de Cotízalo parten desde $199 MXN al mes con facturación transparente. Dispones de 14 días de prueba completa y gratuita, sin necesidad de ingresar tarjeta de crédito. Puedes cancelar en cualquier momento sin penalizaciones.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Puedo personalizar mis cotizaciones con mi logotipo y colores corporativos?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9" /></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Totalmente. Puedes subir el logo de tu empresa, definir tus datos fiscales y bancarios para anticipos, y personalizar términos, notas y condiciones comerciales para que cada presupuesto proyecte seriedad y confianza.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
