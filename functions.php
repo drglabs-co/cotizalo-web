@@ -17,7 +17,7 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.7');
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.8');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
 
     // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
@@ -658,7 +658,7 @@ function cotizalo_customize_register($wp_customize)
     $wp_customize->add_control('plan_inicial_name', array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
     $wp_customize->add_setting('plan_inicial_price', array('default' => '199'));
     $wp_customize->add_control('plan_inicial_price', array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
-    $wp_customize->add_setting('plan_inicial_storage', array('default' => '3 GB de almacenamiento'));
+    $wp_customize->add_setting('plan_inicial_storage', array('default' => '20 GB de almacenamiento'));
     $wp_customize->add_control('plan_inicial_storage', array('label' => __('Almacenamiento', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
     $wp_customize->add_setting('plan_inicial_f1', array('default' => 'Cotizaciones ilimitadas'));
     $wp_customize->add_control('plan_inicial_f1', array('label' => __('Característica 1', 'cotizalo'), 'section' => 'cotizalo_plan_inicial', 'type' => 'text'));
@@ -683,7 +683,7 @@ function cotizalo_customize_register($wp_customize)
     $wp_customize->add_control('plan_basico_name', array('label' => __('Nombre del Plan', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
     $wp_customize->add_setting('plan_basico_price', array('default' => '399'));
     $wp_customize->add_control('plan_basico_price', array('label' => __('Precio (solo número)', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
-    $wp_customize->add_setting('plan_basico_storage', array('default' => '10 GB de almacenamiento'));
+    $wp_customize->add_setting('plan_basico_storage', array('default' => '30 GB de almacenamiento'));
     $wp_customize->add_control('plan_basico_storage', array('label' => __('Almacenamiento', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));
     $wp_customize->add_setting('plan_basico_f1', array('default' => 'Cotizaciones ilimitadas'));
     $wp_customize->add_control('plan_basico_f1', array('label' => __('Característica 1', 'cotizalo'), 'section' => 'cotizalo_plan_basico', 'type' => 'text'));

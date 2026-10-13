@@ -239,6 +239,91 @@ Todas las páginas han sido verificadas y cuentan con su configuración SEO comp
 
 ---
 
+### 1. Paleta de Colores
+
+| Rol / Tono | Código HEX | Equivalencia PANTONE | Función y Uso en Web |
+| --- | --- | --- | --- |
+| **Verde Principal** | `#123A2C`<br> | PANTONE 303 C
+
+ | Base profesional, acentos de marca, isotipo y botones/acciones principales (CTA).
+
+ |
+| **Gris Oscuro** | `#1C2029` (o `#1C2022`)
+
+ | PANTONE Cool Gray 11 C
+
+ | Tono unificado y sobrio, tarjetas secundarias, bordes sutiles o fondos alternos oscuros.
+
+ |
+| **Negro Técnico** | `#0A0E1A`<br> | PANTONE Black 6 C
+
+ | Alto contraste, textos base sobre fondos claros, elementos de navegación o fondos estructurados.
+
+ |
+
+* **Gradiente Oficial:**
+* De Verde a Gris Oscuro: `#123A2C` $\rightarrow$ `#1C2029`.
+
+
+* *Uso sugerido:* Secciones hero, barras de navegación o encabezados de tarjetas destacadas.
+
+
+
+---
+
+### 2. Tipografía
+
+* **Familia Primaria:** **Montserrat** (Sans-serif, moderna y geométrica).
+
+
+* **Bold / Semi-Bold:** Para logotipo, títulos principales (`H1`, `H2`, `H3`) y elementos de énfasis numérico/presupuestario.
+
+
+* **Regular:** Para párrafos, cuerpo de texto (`body`), formularios y tablas de cotización.
+
+
+
+
+
+---
+
+### 3. Logotipo e Identidad Visual
+
+* **Estructura del Logo:**
+* **Logo Principal:** Tipografía en **Negro** (`#0A0E1A`).
+
+
+* **Isotipo / Símbolo:** En **Verde** (`#123A2C`).
+
+
+* **Contraste:** Diseñado para transmitir seriedad, orden y un perfil técnico.
+
+
+
+
+* **Nombre de Marca:** `cotizalo.net`.
+
+
+
+---
+
+### 4. Estilo de Interfaz de Usuario (UI / UX)
+
+* **Propósito y Tono de la Marca:**
+* Identidad técnica, sobria y segura, orientada a microempresas.
+
+
+* El objetivo visual es sustituir la frialdad o desorden de hojas de cálculo tradicionales (Excel) por un entorno limpio, moderno y estructurado.
+
+
+
+
+* **Recomendaciones de Componentes Web:**
+* **Fondos:** Preferencia por espacios limpios (blancos/grises muy claros) combinados con bloques de contraste alto en `#0A0E1A` o degradados de marca.
+
+
+* **Tablas y Tarjetas de Precios:** Datos numéricos ordenados y destacados con pesos tipográficos claros (e.g., Montserrat Bold) para dar sensación de control y claridad financiera.
+
 ## 👤 Autor
 
 **David Ramirez** — PixelZero.mx  
