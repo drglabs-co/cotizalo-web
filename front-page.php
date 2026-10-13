@@ -1077,6 +1077,7 @@
     </div>
   </footer>
 
+  <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/js/main.js?v=1.0.9" defer></script>
   <?php wp_footer(); ?>
 </body>
 

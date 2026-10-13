@@ -17,8 +17,9 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.8');
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.9');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
+    wp_enqueue_script('cotizalo-main', get_template_directory_uri() . '/assets/assets/js/main.js', array(), '1.0.9', true);
 
     // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
     $dropdown_css = '
@@ -188,6 +189,15 @@ function cotizalo_scripts()
 
 }
 add_action('wp_enqueue_scripts', 'cotizalo_scripts');
+
+/**
+ * Fallback style for users with JavaScript disabled or if script loading is delayed
+ */
+function cotizalo_noscript_fallback()
+{
+    echo '<noscript><style>.animate-on-scroll { opacity: 1 !important; transform: none !important; }</style></noscript>' . "\n";
+}
+add_action('wp_head', 'cotizalo_noscript_fallback');
 
 /**
  * Output dropdown JS in wp_footer so it runs on every page template
@@ -823,26 +833,27 @@ add_action('customize_register', 'cotizalo_customize_register');
  * Map custom landing pages, legal pages, and sitemaps so they work seamlessly
  * without requiring page entries in the WordPress database (wp_posts).
  */
-function cotizalo_get_custom_routes() {
+function cotizalo_get_custom_routes()
+{
     return array(
-        'que-es-cotizalo'                             => 'page-que-es-cotizalo.php',
-        'precios'                                     => 'page-precios.php',
-        'soporte'                                     => 'page-soporte.php',
-        'terminos-y-condiciones'                      => 'page-terminos-y-condiciones.php',
-        'aviso-de-privacidad'                         => 'page-aviso-de-privacidad.php',
-        'cotizaciones-por-whatsapp'                   => 'page-cotizaciones-por-whatsapp.php',
-        'seguimiento-de-cotizaciones'                 => 'page-seguimiento-de-cotizaciones.php',
-        'seguimiento-cotizaciones'                    => 'page-seguimiento-de-cotizaciones.php',
-        'programa-para-hacer-presupuestos'             => 'page-programa-para-hacer-presupuestos.php',
-        'software-para-cotizaciones'                  => 'page-software-para-cotizaciones.php',
+        'que-es-cotizalo' => 'page-que-es-cotizalo.php',
+        'precios' => 'page-precios.php',
+        'soporte' => 'page-soporte.php',
+        'terminos-y-condiciones' => 'page-terminos-y-condiciones.php',
+        'aviso-de-privacidad' => 'page-aviso-de-privacidad.php',
+        'cotizaciones-por-whatsapp' => 'page-cotizaciones-por-whatsapp.php',
+        'seguimiento-de-cotizaciones' => 'page-seguimiento-de-cotizaciones.php',
+        'seguimiento-cotizaciones' => 'page-seguimiento-de-cotizaciones.php',
+        'programa-para-hacer-presupuestos' => 'page-programa-para-hacer-presupuestos.php',
+        'software-para-cotizaciones' => 'page-software-para-cotizaciones.php',
         'software-de-cotizaciones-para-constructoras' => 'page-software-cotizaciones-constructoras.php',
-        'software-cotizaciones-constructoras'        => 'page-software-cotizaciones-constructoras.php',
-        'software-de-cotizaciones-para-servicios'     => 'page-software-cotizaciones-servicios.php',
-        'software-cotizaciones-servicios'            => 'page-software-cotizaciones-servicios.php',
-        'sitemap.rss'                                 => 'sitemap-rss.php',
-        'sitemap.xml'                                 => 'sitemap-xml.php',
-        'robots.txt'                                  => 'robots-txt.php',
-        'llms.txt'                                    => 'llms-txt.php',
+        'software-cotizaciones-constructoras' => 'page-software-cotizaciones-constructoras.php',
+        'software-de-cotizaciones-para-servicios' => 'page-software-cotizaciones-servicios.php',
+        'software-cotizaciones-servicios' => 'page-software-cotizaciones-servicios.php',
+        'sitemap.rss' => 'sitemap-rss.php',
+        'sitemap.xml' => 'sitemap-xml.php',
+        'robots.txt' => 'robots-txt.php',
+        'llms.txt' => 'llms-txt.php',
     );
 }
 
@@ -851,11 +862,11 @@ function cotizalo_get_custom_routes() {
  */
 add_filter('pre_handle_404', function ($preempt, $wp_query) {
     $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-    $site_path    = parse_url(home_url(), PHP_URL_PATH);
+    $site_path = parse_url(home_url(), PHP_URL_PATH);
     if ($site_path && $site_path !== '/') {
         $request_path = substr($request_path, strlen($site_path));
     }
-    $uri    = trim($request_path, '/');
+    $uri = trim($request_path, '/');
     $routes = cotizalo_get_custom_routes();
 
     if (isset($routes[$uri]) || $uri === 'favicon.ico') {
@@ -869,11 +880,11 @@ add_filter('pre_handle_404', function ($preempt, $wp_query) {
  */
 add_action('template_redirect', function () {
     $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-    $site_path    = parse_url(home_url(), PHP_URL_PATH);
+    $site_path = parse_url(home_url(), PHP_URL_PATH);
     if ($site_path && $site_path !== '/') {
         $request_path = substr($request_path, strlen($site_path));
     }
-    $uri    = trim($request_path, '/');
+    $uri = trim($request_path, '/');
 
     // Special handler for root favicon.ico requests
     if ($uri === 'favicon.ico') {
@@ -1002,21 +1013,21 @@ add_action('wp_head', function () {
 add_action('wp_footer', function () {
     ?>
     <script>
-    (function(){
-        if(typeof window.dataLayer==='undefined') return;
-        document.addEventListener('click',function(e){
-            var a=e.target.closest('a[href*="wa.me"],a[href*="api.whatsapp.com"]');
-            if(!a) return;
-            window.dataLayer.push({
-                'event':'generate_lead',
-                'lead_source':'whatsapp_click',
-                'page_location':window.location.href,
-                'click_text':(a.textContent||'').trim().substring(0,100),
-                'click_classes':a.className||'',
-                'click_url':a.href
+        (function () {
+            if (typeof window.dataLayer === 'undefined') return;
+            document.addEventListener('click', function (e) {
+                var a = e.target.closest('a[href*="wa.me"],a[href*="api.whatsapp.com"]');
+                if (!a) return;
+                window.dataLayer.push({
+                    'event': 'generate_lead',
+                    'lead_source': 'whatsapp_click',
+                    'page_location': window.location.href,
+                    'click_text': (a.textContent || '').trim().substring(0, 100),
+                    'click_classes': a.className || '',
+                    'click_url': a.href
+                });
             });
-        });
-    })();
+        })();
     </script>
     <?php
 }, 99);
