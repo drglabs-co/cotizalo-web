@@ -282,6 +282,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_inicial_f5', 'Soporte por email')); ?></span>
                         </li>
+                        <li class="plan-feature-item">
+                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><?php echo esc_html(get_theme_mod('plan_inicial_f6', 'Mas de 20 mil cotizaciones')); ?></span>
+                        </li>
                     </ul>
                     <div class="plan-cta-wrapper">
                         <a href="https://app.cotizalo.net/signup?plan=inicial" class="btn btn-secondary">
@@ -328,6 +332,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="plan-feature-item">
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_basico_f6', 'Soporte por email')); ?></span>
+                        </li>
+                        <li class="plan-feature-item">
+                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><?php echo esc_html(get_theme_mod('plan_basico_f7', 'Mas de 40 mil cotizaciones')); ?></span>
                         </li>
                     </ul>
                     <div class="plan-cta-wrapper">
@@ -381,6 +389,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_pro_f7', 'Soporte prioritario por email')); ?></span>
                         </li>
+                        <li class="plan-feature-item">
+                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><?php echo esc_html(get_theme_mod('plan_pro_f8', 'Mas de 60 mil cotizaciones')); ?></span>
+                        </li>
                     </ul>
                     <div class="plan-cta-wrapper">
                         <a href="https://app.cotizalo.net/signup?plan=profesional" class="btn btn-primary">
@@ -431,6 +443,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="plan-feature-item">
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_emp_f7', 'Soporte prioritario por email')); ?></span>
+                        </li>
+                        <li class="plan-feature-item">
+                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><?php echo esc_html(get_theme_mod('plan_emp_f8', 'Mas de 90 mil cotizaciones')); ?></span>
                         </li>
                     </ul>
                     <div class="plan-cta-wrapper">
