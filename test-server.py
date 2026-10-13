@@ -127,6 +127,12 @@ def render_php_template(file_path, request_path):
     content = re.sub(r'<\?php\s+echo\s+(?:esc_html\()?\s*get_the_title\([^)]*\)\s*\)?;\s*\?>', 'Cotízalo', content)
     content = re.sub(r'<\?php\s+echo\s+esc_url\(is_front_page\(\)\s*\?\s*home_url\(\'/\'\)\s*:\s*get_permalink\(\)\);\s*\?>', 'https://cotizalo.net/', content)
 
+    # Simulate simple conditional blocks (like form_success in page-soporte.php)
+    if "enviado=1" in request_path:
+        content = re.sub(r'<\?php\s+if\s*\(\$form_success\)\s*:\s*\?>(.*?)<\?php\s+else\s*:\s*\?>.*?<\?php\s+endif;\s*\?>', r'\1', content, flags=re.DOTALL)
+    else:
+        content = re.sub(r'<\?php\s+if\s*\(\$form_success\)\s*:\s*\?>.*?<\?php\s+else\s*:\s*\?>(.*?)<\?php\s+endif;\s*\?>', r'\1', content, flags=re.DOTALL)
+
     # Clean sitemap php loops
     content = re.sub(r'<\?php\s+if\s*\(.*?get_posts.*?\)\s*\{.*?\}\s*\}\s*\?>', '', content, flags=re.DOTALL)
     content = re.sub(r'<\?php.*?\?>', '', content, flags=re.DOTALL)
@@ -208,6 +214,18 @@ class CotizaloHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         self.handle_req(is_head=False)
+
+    def do_POST(self):
+        parsed = urlparse(self.path)
+        path = unquote(parsed.path)
+        if "/soporte" in path:
+            self.send_response(303)
+            self.send_header("Location", "/soporte/?enviado=1")
+            self.end_headers()
+            return
+        self.send_response(303)
+        self.send_header("Location", self.path)
+        self.end_headers()
 
     def handle_req(self, is_head=False):
         parsed = urlparse(self.path)

@@ -4,67 +4,98 @@
  * Template Post Type: page
  */
 
-$form_success = false;
+$form_success = isset($_GET['enviado']) && $_GET['enviado'] === '1';
 $form_error = '';
+$field_errors = array();
+$old = array('nombre' => '', 'email' => '', 'telefono' => '', 'cuenta_email' => '', 'asunto' => '', 'mensaje' => '');
+$support_email = sanitize_email(get_theme_mod('soporte_email', 'support@cotizalo.net'));
+$asuntos_validos = array('Soporte Técnico', 'Facturación y Planes', 'Reportar un Problema', 'Dudas Generales');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cotizalo_support_submit_hidden'])) {
-    // 1. Verify nonce
+    // Read + sanitize inputs (safe against missing keys)
+    $old['nombre'] = isset($_POST['nombre']) ? sanitize_text_field(wp_unslash($_POST['nombre'])) : '';
+    $old['email'] = isset($_POST['email']) ? sanitize_email(wp_unslash($_POST['email'])) : '';
+    $old['cuenta_email'] = isset($_POST['cuenta_email']) ? sanitize_email(wp_unslash($_POST['cuenta_email'])) : '';
+    $old['telefono'] = isset($_POST['telefono']) ? sanitize_text_field(wp_unslash($_POST['telefono'])) : '';
+    $old['asunto'] = isset($_POST['asunto']) ? sanitize_text_field(wp_unslash($_POST['asunto'])) : '';
+    $old['mensaje'] = isset($_POST['mensaje']) ? sanitize_textarea_field(wp_unslash($_POST['mensaje'])) : '';
+
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? preg_replace('/[^0-9a-fA-F:\.]/', '', $_SERVER['REMOTE_ADDR']) : 'unknown';
+    $rate_key = 'cotizalo_support_' . md5($ip);
+    $started = isset($_POST['form_started']) ? (int) $_POST['form_started'] : 0;
+
     if (!isset($_POST['cotizalo_support_nonce']) || !wp_verify_nonce($_POST['cotizalo_support_nonce'], 'cotizalo_support_submit')) {
-        $form_error = 'Error de seguridad. Por favor, intente de nuevo.';
-    }
-    // 2. Check honeypot (bots)
-    elseif (!empty($_POST['website_url'])) {
-        $form_error = 'Spam detectado.';
+        $form_error = 'Tu sesión expiró. Recarga la página e inténtalo de nuevo.';
+    } elseif (!empty($_POST['website_url']) || ($started > 0 && (time() - $started) < 3)) {
+        // Honeypot filled or submitted unrealistically fast: pretend success, send nothing
+        $form_success = true;
+    } elseif (get_transient($rate_key)) {
+        $form_error = 'Ya enviaste una solicitud hace un momento. Espera un minuto antes de enviar otra.';
     } else {
-        // 3. Retrieve and sanitize inputs
-        $nombre = sanitize_text_field($_POST['nombre']);
-        $email = sanitize_email($_POST['email']);
-        $cuenta_email = isset($_POST['cuenta_email']) ? sanitize_email($_POST['cuenta_email']) : '';
-        $telefono = isset($_POST['telefono']) ? sanitize_text_field($_POST['telefono']) : '';
-        $asunto = sanitize_text_field($_POST['asunto']);
-        $mensaje = esc_textarea($_POST['mensaje']);
+        // Field-level validation
+        if (mb_strlen($old['nombre']) < 3) {
+            $field_errors['nombre'] = 'Escribe tu nombre completo.';
+        }
+        if (empty($old['email']) || !is_email($old['email'])) {
+            $field_errors['email'] = 'Ingresa un correo de contacto válido.';
+        }
+        if (!empty($old['cuenta_email']) && !is_email($old['cuenta_email'])) {
+            $field_errors['cuenta_email'] = 'El correo de la cuenta no es válido.';
+        }
+        if (!empty($old['telefono']) && !preg_match('/^[0-9+\-\s().]{7,20}$/', $old['telefono'])) {
+            $field_errors['telefono'] = 'Ingresa un teléfono válido (7 a 20 dígitos).';
+        }
+        if (!in_array($old['asunto'], $asuntos_validos, true)) {
+            $field_errors['asunto'] = 'Selecciona el tipo de consulta.';
+        }
+        if (mb_strlen($old['mensaje']) < 10) {
+            $field_errors['mensaje'] = 'Cuéntanos un poco más (mínimo 10 caracteres).';
+        } elseif (mb_strlen($old['mensaje']) > 3000) {
+            $field_errors['mensaje'] = 'El mensaje es demasiado largo (máximo 3000 caracteres).';
+        }
 
-        // 4. Validate required fields
-        if (empty($nombre) || empty($email) || empty($asunto) || empty($mensaje)) {
-            $form_error = 'Por favor, complete todos los campos requeridos.';
-        } elseif (!is_email($email)) {
-            $form_error = 'El correo electrónico de contacto no es válido.';
-        } elseif (!empty($cuenta_email) && !is_email($cuenta_email)) {
-            $form_error = 'El correo de la cuenta Cotízalo no es válido.';
+        if (!empty($field_errors)) {
+            $form_error = 'Revisa los campos marcados en rojo.';
         } else {
-            // 5. Construct and send email
-            $to = sanitize_email(get_theme_mod('soporte_email', 'support@cotizalo.net'));
-            $subject = '[' . $asunto . '] Soporte Web - ' . $nombre;
+            $subject = '[' . $old['asunto'] . '] Soporte Web - ' . $old['nombre'];
 
-            $body = "Ha recibido una nueva solicitud de soporte desde el sitio web cotizalo.net:\n\n";
-            $body .= "Nombre: " . $nombre . "\n";
-            $body .= "Correo de contacto: " . $email . "\n";
-            if (!empty($cuenta_email)) {
-                $body .= "Correo de la cuenta Cotízalo: " . $cuenta_email . "\n";
+            $body = "Nueva solicitud de soporte desde cotizalo.net:\n\n";
+            $body .= "Nombre: " . $old['nombre'] . "\n";
+            $body .= "Correo de contacto: " . $old['email'] . "\n";
+            if (!empty($old['cuenta_email'])) {
+                $body .= "Correo de la cuenta Cotízalo: " . $old['cuenta_email'] . "\n";
             }
-            if (!empty($telefono)) {
-                $body .= "Teléfono: " . $telefono . "\n";
+            if (!empty($old['telefono'])) {
+                $body .= "Teléfono: " . $old['telefono'] . "\n";
             }
-            $body .= "Tipo de consulta: " . $asunto . "\n\n";
-            $body .= "Mensaje:\n" . $mensaje . "\n\n";
-            $body .= "---\nEste correo fue enviado automáticamente desde el formulario de soporte de cotizalo.net.";
+            $body .= "Tipo de consulta: " . $old['asunto'] . "\n\n";
+            $body .= "Mensaje:\n" . $old['mensaje'] . "\n\n";
+            $body .= "---\nEnviado automáticamente desde el formulario de soporte de cotizalo.net.";
 
             $headers = array(
                 'Content-Type: text/plain; charset=UTF-8',
                 'From: Cotízalo Web <noreply@cotizalo.net>',
-                'Reply-To: ' . $nombre . ' <' . $email . '>'
+                'Reply-To: ' . $old['nombre'] . ' <' . $old['email'] . '>'
             );
 
-            $sent = wp_mail($to, $subject, $body, $headers);
+            $sent = wp_mail($support_email, $subject, $body, $headers);
 
             if ($sent) {
+                set_transient($rate_key, 1, 60);
+                // Post/Redirect/Get: avoids duplicate emails on refresh
+                $redirect = add_query_arg('enviado', '1', get_permalink());
+                if (!headers_sent()) {
+                    wp_safe_redirect($redirect);
+                    exit;
+                }
                 $form_success = true;
             } else {
-                $form_error = 'Ocurrió un error al enviar su mensaje. Por favor, intente más tarde o escríbanos directamente a support@cotizalo.net.';
+                $form_error = 'No pudimos enviar tu mensaje. Inténtalo más tarde o escríbenos a ' . $support_email . '.';
             }
         }
     }
 }
+$form_started = time();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -105,9 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <!-- Fonts & Favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
@@ -118,190 +147,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="apple-touch-icon"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
 
-    <style>
-        /* Custom Styles for Support Page */
-        .page-hero {
-            padding-top: calc(var(--nav-height) + 4rem);
-            padding-bottom: 5rem;
-            text-align: center;
-        }
+    <!-- Master Design System Styles -->
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css">
 
-        .support-container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: rgba(28, 32, 41, 0.55);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 3rem 2.5rem;
-            text-align: left;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        @media (max-width: 576px) {
-            .support-container {
-                padding: 2rem 1.5rem;
-                margin: 0 1rem;
-            }
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-light-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-label span.required {
-            color: #ef4444;
-            margin-left: 2px;
-        }
-
-        .form-control {
-            width: 100%;
-            background: rgba(10, 14, 26, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: var(--radius-sm);
-            padding: 0.85rem 1rem;
-            color: var(--text-light);
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            outline: none;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(18, 58, 44, 0.4);
-        }
-
-        select.form-control {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.2rem;
-            padding-right: 2.5rem;
-        }
-
-        select.form-control option {
-            background: var(--bg-surface);
-            color: var(--text-light);
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-top: 1rem;
-            cursor: pointer;
-            border: none;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .btn-submit i {
-            transition: transform 0.3s ease;
-        }
-
-        .btn-submit:hover i {
-            transform: translateX(4px);
-        }
-
-        .alert {
-            padding: 1.25rem;
-            border-radius: var(--radius-sm);
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .alert-success {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #34d399;
-        }
-
-        .alert-error {
-            background: rgba(239, 68, 68, 0.15);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #f87171;
-        }
-
-        .success-box {
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        .success-icon {
-            font-size: 4.5rem;
-            color: #10b981;
-            margin-bottom: 1.5rem;
-            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .success-box h2 {
-            font-size: 1.75rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .success-box p {
-            color: var(--text-light-muted);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Honey-pot style to hide from humans */
-        .hp-field {
-            display: none !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            width: 0 !important;
-            overflow: hidden !important;
-        }
-    </style>
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -353,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Nav Section -->
+    <!-- Navigation Header -->
     <header id="navbar">
         <div class="container nav-container">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
@@ -361,31 +209,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
             </a>
             <ul class="nav-links">
-                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es
-                        Cotízalo?</a></li>
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-item nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Recursos
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
-                                cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
-                                cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
-                                para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
-                                WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
-                                constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
-                                servicios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
                     </ul>
                 </li>
             </ul>
@@ -397,7 +237,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" aria-label="Abrir menú" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -405,232 +245,284 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </header>
 
-    <!-- Page Content -->
-    <section class="page-hero">
-        <div class="bg-shape bg-shape-1"></div>
-        <div class="container relative z-10 animate-on-scroll fade-in-up">
-            <h1 class="display-title-sm" style="margin-bottom: 1rem;">
-                <?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?>
-            </h1>
-            <p class="text-muted" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.2rem;">
-                <?php echo esc_html(get_theme_mod('soporte_subtitle', '¿Tienes dudas o necesitas ayuda con tu cuenta? Envíanos tus comentarios y nos pondremos en contacto contigo lo antes posible.')); ?>
-            </p>
-
-            <div class="support-container animate-on-scroll fade-in-up delay-100">
-                <?php if ($form_success): ?>
-                    <div class="success-box">
-                        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-                        <h2>¡Mensaje enviado con éxito!</h2>
-                        <p>Hemos recibido tus comentarios. Un miembro de nuestro equipo de soporte se pondrá en contacto
-                            contigo en tu correo de contacto lo antes posible.</p>
-                        <a href="<?php echo esc_url(home_url('/')); ?>" class="btn btn-primary">Volver al Inicio</a>
-                    </div>
-                <?php else: ?>
-                    <?php if (!empty($form_error)): ?>
-                        <div class="alert alert-error">
-                            <i class="fa-solid fa-triangle-exclamation" style="margin-top: 3px;"></i>
-                            <div><?php echo esc_html($form_error); ?></div>
-                        </div>
-                    <?php endif; ?>
-
-                    <form action="" method="POST" id="support-form">
-                        <!-- Token de seguridad nonce -->
-                        <?php wp_nonce_field('cotizalo_support_submit', 'cotizalo_support_nonce'); ?>
-                        <input type="hidden" name="cotizalo_support_submit_hidden" value="1">
-
-                        <!-- Honeypot Field (Anti-Spam) -->
-                        <div class="hp-field">
-                            <label for="website_url">No llenar este campo:</label>
-                            <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
-                        </div>
-
-                        <!-- Name and Email -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nombre" class="form-label">Nombre Completo <span
-                                        class="required">*</span></label>
-                                <input type="text" name="nombre" id="nombre" class="form-control"
-                                    placeholder="Ej. Juan Pérez" required
-                                    value="<?php echo isset($_POST['nombre']) ? esc_attr($_POST['nombre']) : ''; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Correo de Contacto <span
-                                        class="required">*</span></label>
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="Ej. juan@correo.com" required
-                                    value="<?php echo isset($_POST['email']) ? esc_attr($_POST['email']) : ''; ?>">
-                            </div>
-                        </div>
-
-                        <!-- Phone and App Account Email -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="telefono" class="form-label">Teléfono (Opcional)</label>
-                                <input type="tel" name="telefono" id="telefono" class="form-control"
-                                    placeholder="Ej. 5512345678"
-                                    value="<?php echo isset($_POST['telefono']) ? esc_attr($_POST['telefono']) : ''; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="cuenta_email" class="form-label">Correo de Cuenta Cotízalo (Opcional)</label>
-                                <input type="email" name="cuenta_email" id="cuenta_email" class="form-control"
-                                    placeholder="El correo registrado en la app"
-                                    value="<?php echo isset($_POST['cuenta_email']) ? esc_attr($_POST['cuenta_email']) : ''; ?>">
-                            </div>
-                        </div>
-
-                        <!-- Subject -->
-                        <div class="form-group">
-                            <label for="asunto" class="form-label">Tipo de Consulta / Asunto <span
-                                    class="required">*</span></label>
-                            <select name="asunto" id="asunto" class="form-control" required>
-                                <option value="" disabled selected>Selecciona una opción...</option>
-                                <option value="Soporte Técnico" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Soporte Técnico') ? 'selected' : ''; ?>>Soporte Técnico</option>
-                                <option value="Facturación y Planes" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Facturación y Planes') ? 'selected' : ''; ?>>Facturación y Planes
-                                </option>
-                                <option value="Reportar un Problema" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Reportar un Problema') ? 'selected' : ''; ?>>Reportar un Problema
-                                    (Bug)</option>
-                                <option value="Dudas Generales" <?php echo (isset($_POST['asunto']) && $_POST['asunto'] === 'Dudas Generales') ? 'selected' : ''; ?>>Dudas Generales / Ventas
-                                </option>
-                            </select>
-                        </div>
-
-                        <!-- Message -->
-                        <div class="form-group">
-                            <label for="mensaje" class="form-label">Mensaje o Detalles <span
-                                    class="required">*</span></label>
-                            <textarea name="mensaje" id="mensaje" rows="6" class="form-control"
-                                placeholder="Describe detalladamente tu duda o problema aquí..."
-                                required><?php echo isset($_POST['mensaje']) ? esc_textarea($_POST['mensaje']) : ''; ?></textarea>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </form>
-                <?php endif; ?>
+    <!-- Support Section -->
+    <main>
+        <section class="page-hero support-hero">
+            <div class="container animate-on-scroll">
+                <span class="section-eyebrow">Centro de ayuda</span>
+                <h1>
+                    <?php echo esc_html(get_theme_mod('soporte_title', 'Soporte Técnico y Contacto')); ?>
+                </h1>
+                <p>
+                    <?php echo esc_html(get_theme_mod('soporte_subtitle', '¿Tienes dudas o necesitas ayuda con tu cuenta? Envíanos tus comentarios y nos pondremos en contacto contigo lo antes posible.')); ?>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section class="support-section">
+            <div class="container">
+                <div class="support-layout">
+
+                    <!-- Contact info -->
+                    <aside class="support-aside animate-on-scroll" aria-label="Información de contacto">
+                        <div class="support-info-card">
+                            <span class="support-info-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                            </span>
+                            <div>
+                                <h3>Escríbenos</h3>
+                                <a href="mailto:<?php echo esc_attr($support_email); ?>"><?php echo esc_html($support_email); ?></a>
+                            </div>
+                        </div>
+                        <div class="support-info-card">
+                            <span class="support-info-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                            </span>
+                            <div>
+                                <h3>Tiempo de respuesta</h3>
+                                <p>Menos de 24 horas hábiles, de lunes a viernes.</p>
+                            </div>
+                        </div>
+                        <div class="support-info-card">
+                            <span class="support-info-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><circle cx="12" cy="12" r="9"/><path d="M12 17h.01"/></svg>
+                            </span>
+                            <div>
+                                <h3>Respuestas rápidas</h3>
+                                <p>Revisa las preguntas frecuentes de <a href="<?php echo esc_url(home_url('/precios/')); ?>#faq">planes y pagos</a> o la <a href="<?php echo esc_url(home_url('/')); ?>#faq">página principal</a>.</p>
+                            </div>
+                        </div>
+                        <div class="support-info-card">
+                            <span class="support-info-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </span>
+                            <div>
+                                <h3>Tus datos están seguros</h3>
+                                <p>Solo usamos tu información para responder tu solicitud. Consulta el <a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">aviso de privacidad</a>.</p>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Form card -->
+                    <div class="support-form-wrap animate-on-scroll delay-100">
+                        <?php if ($form_success): ?>
+                            <div class="support-card success-box" role="status">
+                                <div class="success-icon support-success-icon">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <h2>¡Mensaje enviado con éxito!</h2>
+                                <p>Recibimos tu solicitud. Nuestro equipo te responderá al correo que registraste en un lapso no mayor a 24 horas hábiles.</p>
+                                <a href="<?php echo esc_url(home_url('/')); ?>" class="btn btn-primary">Volver al inicio</a>
+                            </div>
+                        <?php else: ?>
+                            <form action="<?php echo esc_url(get_permalink()); ?>" method="POST" id="support-form" class="support-card" novalidate>
+                                <div class="support-card-head">
+                                    <h2>Envíanos tu solicitud</h2>
+                                    <p>Los campos con <span class="required">*</span> son obligatorios.</p>
+                                </div>
+
+                                <?php if (!empty($form_error)): ?>
+                                    <div class="alert alert-error" role="alert">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+                                        <div><?php echo esc_html($form_error); ?></div>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php wp_nonce_field('cotizalo_support_submit', 'cotizalo_support_nonce'); ?>
+                                <input type="hidden" name="cotizalo_support_submit_hidden" value="1">
+                                <input type="hidden" name="form_started" value="<?php echo esc_attr($form_started); ?>">
+
+                                <!-- Honeypot anti-spam -->
+                                <div class="hp-field" aria-hidden="true">
+                                    <label for="website_url">No llenar este campo:</label>
+                                    <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group<?php echo isset($field_errors['nombre']) ? ' has-error' : ''; ?>">
+                                        <label for="nombre" class="form-label">Nombre completo <span class="required">*</span></label>
+                                        <input type="text" name="nombre" id="nombre" class="form-control" autocomplete="name"
+                                            placeholder="Ej. Roberto Sánchez" required minlength="3" maxlength="100"
+                                            value="<?php echo esc_attr($old['nombre']); ?>"
+                                            aria-describedby="err-nombre"<?php echo isset($field_errors['nombre']) ? ' aria-invalid="true"' : ''; ?>>
+                                        <span class="field-error" id="err-nombre"><?php echo isset($field_errors['nombre']) ? esc_html($field_errors['nombre']) : ''; ?></span>
+                                    </div>
+                                    <div class="form-group<?php echo isset($field_errors['email']) ? ' has-error' : ''; ?>">
+                                        <label for="email" class="form-label">Correo de contacto <span class="required">*</span></label>
+                                        <input type="email" name="email" id="email" class="form-control" autocomplete="email"
+                                            placeholder="roberto@empresa.com" required maxlength="120"
+                                            value="<?php echo esc_attr($old['email']); ?>"
+                                            aria-describedby="err-email"<?php echo isset($field_errors['email']) ? ' aria-invalid="true"' : ''; ?>>
+                                        <span class="field-error" id="err-email"><?php echo isset($field_errors['email']) ? esc_html($field_errors['email']) : ''; ?></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group<?php echo isset($field_errors['telefono']) ? ' has-error' : ''; ?>">
+                                        <label for="telefono" class="form-label">Teléfono o WhatsApp <span class="optional">(opcional)</span></label>
+                                        <input type="tel" name="telefono" id="telefono" class="form-control" autocomplete="tel"
+                                            placeholder="Ej. 55 1234 5678" maxlength="20"
+                                            value="<?php echo esc_attr($old['telefono']); ?>"
+                                            aria-describedby="err-telefono"<?php echo isset($field_errors['telefono']) ? ' aria-invalid="true"' : ''; ?>>
+                                        <span class="field-error" id="err-telefono"><?php echo isset($field_errors['telefono']) ? esc_html($field_errors['telefono']) : ''; ?></span>
+                                    </div>
+                                    <div class="form-group<?php echo isset($field_errors['cuenta_email']) ? ' has-error' : ''; ?>">
+                                        <label for="cuenta_email" class="form-label">Correo de tu cuenta Cotízalo <span class="optional">(opcional)</span></label>
+                                        <input type="email" name="cuenta_email" id="cuenta_email" class="form-control"
+                                            placeholder="Si ya tienes cuenta activa" maxlength="120"
+                                            value="<?php echo esc_attr($old['cuenta_email']); ?>"
+                                            aria-describedby="err-cuenta_email"<?php echo isset($field_errors['cuenta_email']) ? ' aria-invalid="true"' : ''; ?>>
+                                        <span class="field-error" id="err-cuenta_email"><?php echo isset($field_errors['cuenta_email']) ? esc_html($field_errors['cuenta_email']) : ''; ?></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group<?php echo isset($field_errors['asunto']) ? ' has-error' : ''; ?>">
+                                    <label for="asunto" class="form-label">Tipo de consulta <span class="required">*</span></label>
+                                    <select name="asunto" id="asunto" class="form-control" required
+                                        aria-describedby="err-asunto"<?php echo isset($field_errors['asunto']) ? ' aria-invalid="true"' : ''; ?>>
+                                        <option value="" disabled selected>Selecciona una opción...</option>
+                                        <option value="Soporte Técnico"<?php echo selected($old['asunto'], 'Soporte Técnico', false); ?>>Soporte técnico en la app</option>
+                                        <option value="Facturación y Planes"<?php echo selected($old['asunto'], 'Facturación y Planes', false); ?>>Facturación y planes</option>
+                                        <option value="Reportar un Problema"<?php echo selected($old['asunto'], 'Reportar un Problema', false); ?>>Reportar un incidente / bug</option>
+                                        <option value="Dudas Generales"<?php echo selected($old['asunto'], 'Dudas Generales', false); ?>>Dudas generales / ventas</option>
+                                    </select>
+                                    <span class="field-error" id="err-asunto"><?php echo isset($field_errors['asunto']) ? esc_html($field_errors['asunto']) : ''; ?></span>
+                                </div>
+
+                                <div class="form-group<?php echo isset($field_errors['mensaje']) ? ' has-error' : ''; ?>">
+                                    <label for="mensaje" class="form-label">Mensaje o detalles <span class="required">*</span></label>
+                                    <textarea name="mensaje" id="mensaje" rows="6" class="form-control" required minlength="10" maxlength="3000"
+                                        placeholder="Describe tu solicitud con el mayor detalle posible: qué intentabas hacer, qué ocurrió y, si aplica, el folio de la cotización."
+                                        aria-describedby="err-mensaje"<?php echo isset($field_errors['mensaje']) ? ' aria-invalid="true"' : ''; ?>><?php echo esc_textarea($old['mensaje']); ?></textarea>
+                                    <div class="field-meta">
+                                        <span class="field-error" id="err-mensaje"><?php echo isset($field_errors['mensaje']) ? esc_html($field_errors['mensaje']) : ''; ?></span>
+                                        <span class="char-counter" id="char-counter" aria-live="polite">0 / 3000</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-submit" id="support-submit">
+                                    <span class="btn-label">Enviar solicitud</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+                                </button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="logo mb-1">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
-                            alt="Cotízalo Logo" style="height: 70px; width: auto; object-fit: contain;" id="footer-logo"
-                            width="260" height="70">
+                            alt="Cotízalo Logo" id="footer-logo" width="223" height="60">
                     </a>
-                    <p class="text-muted mt-1" style="max-width: 300px;">
-                        <?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los equipos de ventas crean, envían y cierran propuestas.')); ?>
+                    <p>
+                        <?php echo esc_html(get_theme_mod('footer_brand_text', 'Transformando la forma en que los negocios y contratistas en México cotizan, envían y cierran propuestas.')); ?>
                     </p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Producto</h4>
-                    <ul>
+                    <ul class="footer-links-list">
                         <li><a href="<?php echo esc_url(home_url('/')); ?>#features">Características</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/precios/')); ?>">Precios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/precios/')); ?>">Planes y Precios</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Recursos</h4>
-                    <ul>
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
-                                cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
-                                cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
-                                para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
-                                WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
-                                constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
-                                servicios</a></li>
+                    <ul class="footer-links-list">
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Compañía</h4>
-                    <ul>
+                    <ul class="footer-links-list">
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a>
-                        </li>
-                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y
-                                Condiciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte Técnico</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?>
-                    <?php echo esc_html(get_theme_mod('footer_copyright', 'PixelZero.mx . Todos los derechos reservados.')); ?>
-                </p>
+                <div>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados.</div>
+                <div>Desarrollado con tecnología de DrG Labs Co.</div>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/js/main.js" defer></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.getElementById('navbar');
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        if (window.scrollY > 50) {
-                            header.classList.add('scrolled');
-                        } else {
-                            header.classList.remove('scrolled');
-                        }
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, { passive: true });
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('support-form');
+            if (!form) return;
 
-            // Logo fallbacks
-            const fallbacks = ['brand-logo', 'footer-logo'];
-            fallbacks.forEach(id => {
-                const img = document.getElementById(id);
-                if (img) {
-                    img.onerror = function () {
-                        this.style.display = 'none';
-                        const parent = this.parentElement;
-                        parent.innerHTML = '<span style="font-weight: 700; font-family: Montserrat; font-size: 1.5rem; color: #fff; display: flex; align-items: center; gap: 8px;"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#123A2C" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>cotizalo.net</span>';
-                    };
-                }
+            var submitBtn = document.getElementById('support-submit');
+            var counter = document.getElementById('char-counter');
+            var msg = document.getElementById('mensaje');
+            var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+            var rules = {
+                nombre: function (v) { return v.trim().length >= 3 ? '' : 'Escribe tu nombre completo.'; },
+                email: function (v) { return emailRe.test(v.trim()) ? '' : 'Ingresa un correo de contacto válido.'; },
+                telefono: function (v) { return !v.trim() || /^[0-9+\-\s().]{7,20}$/.test(v.trim()) ? '' : 'Ingresa un teléfono válido (7 a 20 dígitos).'; },
+                cuenta_email: function (v) { return !v.trim() || emailRe.test(v.trim()) ? '' : 'El correo de la cuenta no es válido.'; },
+                asunto: function (v) { return v ? '' : 'Selecciona el tipo de consulta.'; },
+                mensaje: function (v) { return v.trim().length >= 10 ? '' : 'Cuéntanos un poco más (mínimo 10 caracteres).'; }
+            };
+
+            function validateField(name) {
+                var input = form.elements[name];
+                var group = input.closest('.form-group');
+                var errEl = document.getElementById('err-' + name);
+                var error = rules[name](input.value);
+                group.classList.toggle('has-error', !!error);
+                if (error) { input.setAttribute('aria-invalid', 'true'); } else { input.removeAttribute('aria-invalid'); }
+                errEl.textContent = error;
+                return !error;
+            }
+
+            Object.keys(rules).forEach(function (name) {
+                var input = form.elements[name];
+                input.addEventListener('blur', function () { validateField(name); });
+                input.addEventListener('input', function () {
+                    if (input.closest('.form-group').classList.contains('has-error')) validateField(name);
+                });
             });
 
-            // Animations on scroll
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
-
-            // Client-side validations
-            const form = document.getElementById('support-form');
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    const nombre = document.getElementById('nombre').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const asunto = document.getElementById('asunto').value;
-                    const mensaje = document.getElementById('mensaje').value.trim();
-
-                    if (!nombre || !email || !asunto || !mensaje) {
-                        e.preventDefault();
-                        alert('Por favor, completa todos los campos obligatorios.');
-                    }
-                });
+            function updateCounter() {
+                counter.textContent = msg.value.length + ' / 3000';
+                counter.classList.toggle('near-limit', msg.value.length > 2700);
             }
+            msg.addEventListener('input', updateCounter);
+            updateCounter();
+
+            form.addEventListener('submit', function (e) {
+                var firstInvalid = null;
+                Object.keys(rules).forEach(function (name) {
+                    if (!validateField(name) && !firstInvalid) firstInvalid = form.elements[name];
+                });
+                if (firstInvalid) {
+                    e.preventDefault();
+                    firstInvalid.focus();
+                    return;
+                }
+                // Prevent double submission
+                submitBtn.disabled = true;
+                submitBtn.classList.add('is-loading');
+                submitBtn.querySelector('.btn-label').textContent = 'Enviando...';
+            });
         });
     </script>
     <?php wp_footer(); ?>
