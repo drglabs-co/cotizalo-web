@@ -10,7 +10,7 @@ echo "# Cotízalo\n\n";
 echo "> Sistema de cotizaciones en línea y presupuestos para PyMEs y profesionistas en México.\n\n";
 
 echo "## Páginas Principales\n\n";
-echo "- [" . esc_url(home_url('/')) . "]: Software de cotizaciones para pequeños negocios en México.\n";
+echo "- [" . esc_url(home_url('/')) . "]: Tu Portal Online para Hacer Cotizaciones Profesionales.\n";
 echo "- [" . esc_url(home_url('/precios/')) . "]: Planes y precios transparentes de suscripción.\n";
 echo "- [" . esc_url(home_url('/cotizaciones-por-whatsapp/')) . "]: Envío de cotizaciones directas por WhatsApp con enlace y PDF.\n";
 echo "- [" . esc_url(home_url('/software-para-cotizaciones/')) . "]: Software para hacer cotizaciones para pequeñas empresas en México.\n";
