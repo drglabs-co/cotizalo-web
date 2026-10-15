@@ -177,6 +177,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ]
     }
     </script>
+
+    <!-- Master Design System Stylesheet -->
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=2.1.1">
+
     <?php wp_head(); ?>
 </head>
 
@@ -232,7 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Pricing Hero -->
     <section class="pricing-hero">
-        <div class="container">
+        <div class="container animate-on-scroll">
             <h1>
                 <?php echo esc_html(get_theme_mod('precios_hero_title', 'Precios simples y transparentes')); ?>
             </h1>
@@ -475,33 +479,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             <!-- Payment Methods -->
             <div class="payment-methods animate-on-scroll" aria-label="Métodos de pago aceptados">
-                <span class="payment-label">Pagos seguros</span>
+                <span class="payment-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--c-accent-mint); margin-right:6px; vertical-align:-1px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Pagos 100% seguros y cifrados
+                </span>
                 <ul class="payment-icons">
                     <li class="payment-badge" title="Visa">
-                        <svg viewBox="0 0 48 30" role="img" aria-label="Visa">
-                            <text x="24" y="21" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" font-style="italic" letter-spacing="-0.5" fill="currentColor">VISA</text>
+                        <svg width="54" height="30" viewBox="0 0 54 30" role="img" aria-label="Visa">
+                            <text x="27" y="22" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="900" font-style="italic" letter-spacing="-0.5" fill="currentColor">VISA</text>
                         </svg>
                     </li>
                     <li class="payment-badge" title="Mastercard">
-                        <svg viewBox="0 0 48 30" role="img" aria-label="Mastercard">
-                            <circle cx="19" cy="15" r="8" fill="currentColor"/>
-                            <circle cx="29" cy="15" r="8" fill="#34D399" fill-opacity="0.75"/>
+                        <svg width="54" height="30" viewBox="0 0 54 30" role="img" aria-label="Mastercard">
+                            <circle cx="21" cy="15" r="10" fill="currentColor" fill-opacity="0.9"/>
+                            <circle cx="33" cy="15" r="10" fill="#34D399" fill-opacity="0.85"/>
                         </svg>
                     </li>
                     <li class="payment-badge" title="American Express">
-                        <svg viewBox="0 0 48 30" role="img" aria-label="American Express">
-                            <text x="24" y="19.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="0.3" fill="currentColor">AMEX</text>
+                        <svg width="54" height="30" viewBox="0 0 54 30" role="img" aria-label="American Express">
+                            <rect x="4" y="4" width="46" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 1"/>
+                            <text x="27" y="20" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="11.5" font-weight="900" letter-spacing="0.8" fill="currentColor">AMEX</text>
                         </svg>
                     </li>
                     <li class="payment-badge" title="Google Pay">
-                        <svg viewBox="0 0 48 30" role="img" aria-label="Google Pay">
-                            <text x="24" y="20" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="currentColor">G Pay</text>
+                        <svg width="54" height="30" viewBox="0 0 54 30" role="img" aria-label="Google Pay">
+                            <text x="27" y="21" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="currentColor">G Pay</text>
                         </svg>
                     </li>
                     <li class="payment-badge" title="Apple Pay">
-                        <svg viewBox="0 0 48 30" role="img" aria-label="Apple Pay">
-                            <g transform="translate(5.5 5.9) scale(0.7)" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></g>
-                            <text x="22" y="20" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="currentColor">Pay</text>
+                        <svg width="54" height="30" viewBox="0 0 54 30" role="img" aria-label="Apple Pay">
+                            <g transform="translate(7, 5.5) scale(0.9)" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></g>
+                            <text x="28" y="21" text-anchor="start" font-family="Inter, -apple-system, sans-serif" font-size="13" font-weight="700" fill="currentColor">Pay</text>
                         </svg>
                     </li>
                 </ul>

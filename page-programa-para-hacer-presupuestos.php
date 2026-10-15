@@ -9,11 +9,14 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NG2ZW6L3');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NG2ZW6L3');</script>
     <!-- End Google Tag Manager -->
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +41,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Programa para Hacer Presupuestos para Empresas de Servicios | Cotízalo">
-    <meta name="twitter:description" content="Haz presupuestos profesionales desde tu celular, envíalos por WhatsApp y lleva el historial de cada cliente.">
+    <meta name="twitter:description"
+        content="Haz presupuestos profesionales desde tu celular, envíalos por WhatsApp y lleva el historial de cada cliente.">
     <meta name="twitter:image"
         content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
@@ -136,8 +140,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body <?php body_class(); ?>>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2ZW6L3"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2ZW6L3" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation Header -->
@@ -148,7 +152,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
             </a>
             <ul class="nav-links">
-                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es
+                        Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
                 <li class="nav-dropdown">
@@ -160,12 +165,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
+                                para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
+                                WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
+                                constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                                servicios</a></li>
                     </ul>
                 </li>
             </ul>
@@ -187,12 +198,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="bg-shape bg-shape-1"></div>
             <div class="container relative z-10 animate-on-scroll fade-in-up">
                 <h1>Programa para Hacer Presupuestos para Empresas de Servicios</h1>
-                <p>Di adiós al Excel y las hojas sueltas. Con Cotízalo generas presupuestos profesionales en minutos, los envías por WhatsApp o correo y sabes cuándo tu cliente los revisó.</p>
+                <p>Di adiós al Excel y las hojas sueltas. Con Cotízalo generas presupuestos profesionales en minutos,
+                    los envías por WhatsApp o correo y sabes cuándo tu cliente los revisó.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">
                         Empieza gratis — 14 días
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -201,7 +214,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         Ver planes y precios
                     </a>
                 </div>
-                <p style="margin-top: 1.25rem; font-size: 0.875rem; color: rgba(255,255,255,0.65);">Ideal para freelancers, consultores y empresas de servicios en México.</p>
+                <p style="margin-top: 1.25rem; font-size: 0.875rem; color: rgba(255,255,255,0.65);">Ideal para
+                    freelancers, consultores y empresas de servicios en México.</p>
             </div>
         </section>
 
@@ -209,75 +223,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="benefits-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Todo lo que necesitas para presupuestar</h2>
-                <p class="section-subtitle">Diseñado para profesionales independientes y pequeñas empresas de servicios en México.</p>
+                <p class="section-subtitle">Diseñado para profesionales independientes y pequeñas empresas de servicios
+                    en México.</p>
                 <div class="benefits-grid">
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                                 <polyline points="13 2 13 9 20 9" />
                             </svg>
                         </div>
                         <h3>Presupuestos en PDF en segundos</h3>
-                        <p>Genera propuestas con tu logo, datos fiscales y precios. Descarga el PDF o comparte el enlace directo con tu cliente.</p>
+                        <p>Genera propuestas con tu logo, datos fiscales y precios. Descarga el PDF o comparte el enlace
+                            directo con tu cliente.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="3" width="18" height="18" rx="2" />
                                 <line x1="3" y1="9" x2="21" y2="9" />
                                 <line x1="9" y1="21" x2="9" y2="9" />
                             </svg>
                         </div>
                         <h3>Catálogo de servicios y tarifas</h3>
-                        <p>Guarda tus servicios con precios unitarios y descripciones detalladas. Agrégalos a cualquier presupuesto en un clic, sin teclear de más.</p>
+                        <p>Guarda tus servicios con precios unitarios y descripciones detalladas. Agrégalos a cualquier
+                            presupuesto en un clic, sin teclear de más.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                             </svg>
                         </div>
                         <h3>Seguimiento automático de aperturas</h3>
-                        <p>Sabe en tiempo real cuándo tu cliente abrió el presupuesto. Recibe notificaciones para actuar en el momento más propicio de cierre.</p>
+                        <p>Sabe en tiempo real cuándo tu cliente abrió el presupuesto. Recibe notificaciones para actuar
+                            en el momento más propicio de cierre.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                             </svg>
                         </div>
                         <h3>Envío por WhatsApp o correo</h3>
-                        <p>Comparte el presupuesto en segundos. Tu prospecto lo recibe en su celular sin instalar ninguna app adicional.</p>
+                        <p>Comparte el presupuesto en segundos. Tu prospecto lo recibe en su celular sin instalar
+                            ninguna app adicional.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
                         <h3>Firma digital de autorización</h3>
-                        <p>Tu cliente aprueba el presupuesto con firma digital interactiva desde el mismo enlace, con sello de fecha y hora legal.</p>
+                        <p>Tu cliente aprueba el presupuesto con firma digital interactiva desde el mismo enlace, con
+                            sello de fecha y hora legal.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10" />
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
                         <h3>Historial comercial completo</h3>
-                        <p>Accede a todos tus presupuestos enviados con su estado (abierto, aceptado, vencido) desde un panel centralizado e intuitivo.</p>
+                        <p>Accede a todos tus presupuestos enviados con su estado (abierto, aceptado, vencido) desde un
+                            panel centralizado e intuitivo.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Comparison Section -->
-        <section style="padding: 5.5rem 0; background: #FFFFFF;">
+        <section class="comparison-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Cotízalo vs. Excel para hacer presupuestos</h2>
-                <p class="section-subtitle">Descubre por qué cientos de profesionales ya abandonaron las hojas de cálculo para sus cotizaciones de servicios.</p>
+                <p class="section-subtitle">Descubre por qué cientos de profesionales ya abandonaron las hojas de
+                    cálculo para sus cotizaciones de servicios.</p>
                 <div style="overflow-x:auto;">
                     <table class="compare-table">
                         <thead>
@@ -333,7 +361,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="lp-app-preview">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Así se ve Cotízalo por dentro</h2>
-                <p class="section-subtitle" style="margin-bottom: 2.5rem;">Una interfaz limpia y profesional para gestionar todas tus cotizaciones desde un solo lugar.</p>
+                <p class="section-subtitle" style="margin-bottom: 2.5rem;">Una interfaz limpia y profesional para
+                    gestionar todas tus cotizaciones desde un solo lugar.</p>
                 <div class="app-frame-wrapper">
                     <div class="app-chrome-bar">
                         <div class="chrome-dots">
@@ -342,14 +371,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="chrome-dot g"></span>
                         </div>
                         <div class="chrome-url">
-                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b"
+                                stroke-width="2.5">
                                 <rect x="3" y="11" width="18" height="11" rx="2" />
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                             </svg>
                             app.cotizalo.net
                         </div>
                     </div>
-                    <svg class="app-svg" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; width: 100%; height: auto; display: block;">
+                    <svg class="app-svg" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg"
+                        style="background:#f8fafc; width: 100%; height: auto; display: block;">
                         <!-- Sidebar -->
                         <rect x="0" y="0" width="200" height="480" fill="#123A2C" />
                         <image
@@ -392,28 +423,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <!-- Search + filters -->
                         <g transform="translate(232,64)">
                             <rect width="220" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-                            <text x="26" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10">Buscar servicio, cliente...</text>
+                            <text x="26" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10">Buscar servicio,
+                                cliente...</text>
                         </g>
                         <!-- Table header -->
                         <g transform="translate(232,106)">
                             <rect width="616" height="26" fill="#f8fafc" />
                             <line x1="0" y1="26" x2="616" y2="26" stroke="#e2e8f0" stroke-width="1" />
-                            <text x="10" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700"># FOLIO</text>
-                            <text x="110" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">FECHA</text>
-                            <text x="185" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">CLIENTE</text>
-                            <text x="380" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">TOTAL</text>
-                            <text x="460" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">ESTADO</text>
+                            <text x="10" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700"># FOLIO</text>
+                            <text x="110" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">FECHA</text>
+                            <text x="185" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">CLIENTE</text>
+                            <text x="380" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">TOTAL</text>
+                            <text x="460" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">ESTADO</text>
                         </g>
                         <!-- Row 1 -->
                         <g transform="translate(232,136)">
                             <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
-                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#PRE-2026-088</text>
-                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">21 Sep 2026</text>
-                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Consultoría Estratégica MX</text>
-                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 5200 1122</text>
-                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$34,800.00</text>
-                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1" />
-                            <text x="468" y="23" fill="#15803d" font-family="sans-serif" font-size="9" font-weight="800">ACEPTADO</text>
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11"
+                                font-weight="700">#PRE-2026-088</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">21 Sep
+                                2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10"
+                                font-weight="700">Consultoría Estratégica MX</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 5200
+                                1122</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11"
+                                font-weight="700">$34,800.00</text>
+                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0"
+                                stroke-width="1" />
+                            <text x="468" y="23" fill="#15803d" font-family="sans-serif" font-size="9"
+                                font-weight="800">ACEPTADO</text>
                         </g>
                     </svg>
                 </div>
@@ -421,30 +465,78 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- FAQ Section -->
-        <section style="padding: 5.5rem 0; background: var(--c-bg-subtle);">
+        <section class="faq-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Todo lo que quieres saber sobre hacer presupuestos</h2>
                 <div class="faq-list" style="margin-top: 2.5rem;">
-                    <details class="faq-item">
-                        <summary>¿Cuál es la diferencia entre una cotización y un presupuesto?</summary>
-                        <p>Aunque se usan indistintamente, una cotización es una propuesta de precio que puede cambiar, mientras que un presupuesto suele ser un compromiso más formal de costos. Cotízalo te permite crear ambos con la misma herramienta sin complicaciones.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo usar Cotízalo siendo freelancer o trabajador independiente?</summary>
-                        <p>Sí, Cotízalo está diseñado especialmente para profesionales independientes, freelancers, consultores y microempresas que necesitan presentar presupuestos de forma rápida y profesional sin invertir en software costoso.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Se puede usar en el celular para hacer presupuestos?</summary>
-                        <p>Sí. Cotízalo funciona completamente desde el navegador de tu celular. Puedes crear, editar y enviar presupuestos desde donde estés, sin instalar ninguna aplicación.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Cotízalo reemplaza al Excel para hacer presupuestos?</summary>
-                        <p>Sí. Cotízalo es la alternativa directa al Excel. Guarda tu catálogo de servicios, registra el historial de presupuestos por cliente y genera PDFs profesionales sin fórmulas ni formatos complicados.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo ver si mi cliente revisó el presupuesto?</summary>
-                        <p>Sí. Cotízalo notifica cuando el cliente abre el enlace del presupuesto. Así sabes exactamente si lo leyó y puedes hacer seguimiento en el momento adecuado para cerrar la venta.</p>
-                    </details>
+                    <div class="faq-item open">
+                        <button class="faq-question" type="button" aria-expanded="true">
+                            <span>¿Cuál es la diferencia entre una cotización y un presupuesto?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Aunque se usan indistintamente, una cotización es una propuesta de precio que puede cambiar,
+                            mientras que un presupuesto suele ser un compromiso más formal de costos. Cotízalo te
+                            permite crear ambos con la misma herramienta sin complicaciones.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Puedo usar Cotízalo siendo freelancer o trabajador independiente?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí, Cotízalo está diseñado especialmente para profesionales independientes, freelancers,
+                            consultores y microempresas que necesitan presentar presupuestos de forma rápida y
+                            profesional sin invertir en software costoso.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Se puede usar en el celular para hacer presupuestos?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo funciona completamente desde el navegador de tu celular. Puedes crear, editar y
+                            enviar presupuestos desde donde estés, sin instalar ninguna aplicación.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Cotízalo reemplaza al Excel para hacer presupuestos?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo es la alternativa directa al Excel. Guarda tu catálogo de servicios, registra el
+                            historial de presupuestos por cliente y genera PDFs profesionales sin fórmulas ni formatos
+                            complicados.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Puedo ver si mi cliente revisó el presupuesto?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo notifica cuando el cliente abre el enlace del presupuesto. Así sabes exactamente
+                            si lo leyó y puedes hacer seguimiento en el momento adecuado para cerrar la venta.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -453,7 +545,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="lp-cta">
             <div class="container animate-on-scroll fade-in-up">
                 <h2>Empieza a presupuestar de forma profesional hoy</h2>
-                <p>14 días gratis. Configura tus tarifas y envía tu primera propuesta en menos de 5 minutos.</p>
+                <p>14 días gratis. Configura tus tarifas y envía tu primera propuesta en menos de 5 minutos.</p><br>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">
@@ -464,11 +556,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </a>
                 </div>
                 <div class="related-links" style="margin-top: 2.5rem;">
-                    <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a>
+                    <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                        cotizaciones</a>
                     <span>·</span>
                     <a href="<?php echo esc_url(home_url('/precios/')); ?>">Ver planes y precios</a>
                     <span>·</span>
-                    <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para empresas de servicios</a>
+                    <a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                        empresas de servicios</a>
                 </div>
             </div>
         </section>
@@ -498,12 +592,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
+                                para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
+                                WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
+                                constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                                servicios</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -511,13 +611,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte Técnico</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a>
+                        </li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y
+                                Condiciones</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados. Desarrollado con tecnología de DrG Labs Co.</p>
+                <p>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados. Desarrollado con
+                    tecnología de PixelZero.mx.</p>
             </div>
         </div>
     </footer>

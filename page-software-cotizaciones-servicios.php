@@ -245,7 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Benefits Section -->
-        <section class="benefits-section" style="padding: 5.5rem 0; background: #FFFFFF;">
+        <section class="benefits-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Por qué Cotízalo es el mejor para servicios</h2>
                 <p class="section-subtitle">Diseñado para que gastes menos tiempo cotizando y más tiempo brindando un servicio extraordinario.</p>
@@ -442,30 +442,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section" style="padding: 5.5rem 0; background: var(--c-bg-subtle);">
+        <section class="faq-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Preguntas sobre Cotízalo para empresas de servicios</h2>
                 <div class="faq-list" style="margin-top: 2.5rem;">
-                    <details class="faq-item">
-                        <summary>¿Cotízalo funciona para empresas de servicios profesionales?</summary>
-                        <p>Sí. Cotízalo está diseñado para todo tipo de negocios de servicios: consultoras, agencias de diseño o marketing, despachos legales o contables, empresas de limpieza, instalaciones, eventos y más.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo cotizar servicios por hora o por proyecto con Cotízalo?</summary>
-                        <p>Sí. Puedes agregar servicios con precio por hora, por día, por proyecto o con precio fijo. El catálogo de servicios te permite guardar tus tarifas y agregarlas rápidamente a cada cotización.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Cotízalo sirve para cotizar paquetes de servicios?</summary>
-                        <p>Sí. Puedes agrupar varios servicios en una sola cotización, agregar notas o condiciones específicas por línea y presentar la propuesta de forma clara y profesional al cliente.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo cobrar un anticipo antes de iniciar el servicio?</summary>
-                        <p>Sí. Cotízalo permite cobrar anticipos directamente desde la cotización. Tu cliente paga el porcentaje acordado sin necesidad de transferencias manuales ni seguimiento extra por WhatsApp.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Cotízalo se puede usar sin conocimientos técnicos?</summary>
-                        <p>Sí. Cotízalo está diseñado para que cualquier persona lo use sin curva de aprendizaje. En menos de 5 minutos puedes tener tu primera cotización lista y enviada al cliente.</p>
-                    </details>
+                    <div class="faq-item open">
+                        <button class="faq-question" type="button" aria-expanded="true">
+                            <span>¿Cotízalo funciona para empresas de servicios profesionales?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo está diseñado para todo tipo de negocios de servicios: consultoras, agencias de diseño o marketing, despachos legales o contables, empresas de limpieza, instalaciones, eventos y más.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Puedo cotizar servicios por hora o por proyecto con Cotízalo?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Puedes agregar servicios con precio por hora, por día, por proyecto o con precio fijo. El catálogo de servicios te permite guardar tus tarifas y agregarlas rápidamente a cada cotización.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Cotízalo sirve para cotizar paquetes de servicios?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Puedes agrupar varios servicios en una sola cotización, agregar notas o condiciones específicas por línea y presentar la propuesta de forma clara y profesional al cliente.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Puedo cobrar un anticipo antes de iniciar el servicio?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo permite cobrar anticipos directamente desde la cotización. Tu cliente paga el porcentaje acordado sin necesidad de transferencias manuales ni seguimiento extra por WhatsApp.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Cotízalo se puede usar sin conocimientos técnicos?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo está diseñado para que cualquier persona lo use sin curva de aprendizaje. En menos de 5 minutos puedes tener tu primera cotización lista y enviada al cliente.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -474,7 +514,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="lp-cta">
             <div class="container animate-on-scroll fade-in-up">
                 <h2>Empieza a cotizar tus servicios de forma profesional</h2>
-                <p>14 días gratis. Tu primera propuesta lista en menos de 5 minutos.</p>
+                <p>14 días gratis. Tu primera propuesta lista en menos de 5 minutos.</p><br>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">

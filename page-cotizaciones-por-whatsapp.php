@@ -9,11 +9,14 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NG2ZW6L3');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NG2ZW6L3');</script>
     <!-- End Google Tag Manager -->
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,7 +130,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
 
     <!-- Master Design System Stylesheet -->
-    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=1.0.8">
+    <link rel="stylesheet"
+        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=1.0.8">
 
     <link rel="preload" as="image"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
@@ -137,8 +141,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body <?php body_class(); ?>>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2ZW6L3"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2ZW6L3" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation Header -->
@@ -149,23 +153,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     alt="Cotízalo Logo" id="brand-logo" width="223" height="60">
             </a>
             <ul class="nav-links">
-                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es Cotízalo?</a></li>
+                <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>" class="nav-item">¿Qué es
+                        Cotízalo?</a></li>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>#features" class="nav-item">Características</a></li>
                 <li><a href="<?php echo esc_url(home_url('/precios/')); ?>" class="nav-item">Precios</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-item nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Recursos
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </button>
                     <ul class="nav-dropdown-menu">
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
+                                para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
+                                WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
+                                constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                                servicios</a></li>
                     </ul>
                 </li>
             </ul>
@@ -187,12 +199,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="bg-shape bg-shape-1"></div>
             <div class="container relative z-10 animate-on-scroll fade-in-up">
                 <h1>Cómo Enviar Cotizaciones Profesionales por WhatsApp</h1>
-                <p>Crea la cotización en Cotízalo y compártela por WhatsApp en segundos. Tu cliente la ve desde su celular, puede aceptarla con firma digital y pagar un anticipo, todo sin instalar ninguna app.</p>
+                <p>Crea la cotización en Cotízalo y compártela por WhatsApp en segundos. Tu cliente la ve desde su
+                    celular, puede aceptarla con firma digital y pagar un anticipo, todo sin instalar ninguna app.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">
                         Empieza gratis — 14 días
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -201,7 +215,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         Ver Planes y Tarifas
                     </a>
                 </div>
-                <p style="margin-top: 1.25rem; font-size: 0.875rem; color: rgba(255,255,255,0.65);">Sin comisiones ocultas. Sin contratos forzosos. Cancela cuando quieras.</p>
+                <p style="margin-top: 1.25rem; font-size: 0.875rem; color: rgba(255,255,255,0.65);">Sin comisiones
+                    ocultas. Sin contratos forzosos. Cancela cuando quieras.</p>
             </div>
         </section>
 
@@ -210,45 +225,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2 class="section-title">Cómo funciona enviar cotizaciones por WhatsApp</h2>
-                    <p class="section-subtitle">De la cotización al cierre de la venta, en tres pasos simples y estructurados.</p>
+                    <p class="section-subtitle">De la cotización al cierre de la venta, en tres pasos simples y
+                        estructurados.</p>
                 </div>
                 <div class="flow-steps animate-on-scroll">
                     <div class="flow-step">
                         <div class="flow-step-top">
                             <span class="flow-step-number">01</span>
                             <div class="flow-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                                     <polyline points="13 2 13 9 20 9" />
                                 </svg>
                             </div>
                         </div>
                         <h3>Crea tu cotización</h3>
-                        <p>Agrega tus productos o servicios desde tu catálogo, personaliza precios unitarios y escribe una nota personalizada para tu cliente. Lista en menos de 2 minutos.</p>
+                        <p>Agrega tus productos o servicios desde tu catálogo, personaliza precios unitarios y escribe
+                            una nota personalizada para tu cliente. Lista en menos de 2 minutos.</p>
                     </div>
                     <div class="flow-step">
                         <div class="flow-step-top">
                             <span class="flow-step-number">02</span>
                             <div class="flow-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                 </svg>
                             </div>
                         </div>
                         <h3>Comparte por WhatsApp</h3>
-                        <p>Copia el enlace inteligente o descarga el PDF oficial y envíalo por WhatsApp. Tu cliente lo recibe al instante y puede visualizarlo con un solo tap.</p>
+                        <p>Copia el enlace inteligente o descarga el PDF oficial y envíalo por WhatsApp. Tu cliente lo
+                            recibe al instante y puede visualizarlo con un solo tap.</p>
                     </div>
                     <div class="flow-step">
                         <div class="flow-step-top">
                             <span class="flow-step-number">03</span>
                             <div class="flow-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </div>
                         </div>
                         <h3>Cierra la venta con anticipo</h3>
-                        <p>Recibes un aviso en tiempo real cuando tu cliente abre la propuesta. Puede firmarla digitalmente y transferir su anticipo sin salir de su celular.</p>
+                        <p>Recibes un aviso en tiempo real cuando tu cliente abre la propuesta. Puede firmarla
+                            digitalmente y transferir su anticipo sin salir de su celular.</p>
                     </div>
                 </div>
             </div>
@@ -258,29 +280,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="benefits-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Por qué es superior a una foto o un mensaje de texto</h2>
-                <p class="section-subtitle">Una cotización interactiva enviada por WhatsApp transmite máxima seriedad, agiliza la toma de decisión y facilita el seguimiento.</p>
+                <p class="section-subtitle">Una cotización interactiva enviada por WhatsApp transmite máxima seriedad,
+                    agiliza la toma de decisión y facilita el seguimiento.</p>
                 <div class="benefits-grid">
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
                         <h3>Aspecto 100% profesional</h3>
-                        <p>Tu cotización llega como un documento pulcro con tu logo, datos fiscales, desglose de IVA y condiciones comerciales, no como una nota informal.</p>
+                        <p>Tu cotización llega como un documento pulcro con tu logo, datos fiscales, desglose de IVA y
+                            condiciones comerciales, no como una nota informal.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                             </svg>
                         </div>
                         <h3>Notificación cuando la abren</h3>
-                        <p>Sabes con precisión el minuto en que tu cliente abrió la cotización. Esto te permite llamarle o escribirle en el momento más receptivo para el cierre.</p>
+                        <p>Sabes con precisión el minuto en que tu cliente abrió la cotización. Esto te permite llamarle
+                            o escribirle en el momento más receptivo para el cierre.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                                 <circle cx="9" cy="7" r="4" />
                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -288,11 +316,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </svg>
                         </div>
                         <h3>El cliente no instala nada</h3>
-                        <p>El enlace interactivo abre al instante en el navegador nativo del smartphone (Safari, Chrome). Tu prospecto revisa y autoriza sin contraseñas ni registros.</p>
+                        <p>El enlace interactivo abre al instante en el navegador nativo del smartphone (Safari,
+                            Chrome). Tu prospecto revisa y autoriza sin contraseñas ni registros.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                                 <polyline points="14 2 14 8 20 8" />
                                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -301,27 +331,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </svg>
                         </div>
                         <h3>Firma digital integrada</h3>
-                        <p>Tu cliente puede firmar la propuesta directamente en la pantalla de su teléfono. Queda sellada con fecha, hora y validez de aceptación comercial.</p>
+                        <p>Tu cliente puede firmar la propuesta directamente en la pantalla de su teléfono. Queda
+                            sellada con fecha, hora y validez de aceptación comercial.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
                                 <line x1="1" y1="10" x2="23" y2="10" />
                             </svg>
                         </div>
                         <h3>Cobro de anticipo en línea</h3>
-                        <p>Muestra tus datos SPEI con botón de copiado de CLABE o botón de pago en línea para cobrar el anticipo acordado antes de invertir en insumos o comenzar el servicio.</p>
+                        <p>Muestra tus datos SPEI con botón de copiado de CLABE o botón de pago en línea para cobrar el
+                            anticipo acordado antes de invertir en insumos o comenzar el servicio.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
                         </div>
                         <h3>Historial y control comercial</h3>
-                        <p>Todas las propuestas emitidas quedan sincronizadas en tu panel de control. Filtra por estado de cobranza y no vuelvas a perder un presupuesto en chats dispersos.</p>
+                        <p>Todas las propuestas emitidas quedan sincronizadas en tu panel de control. Filtra por estado
+                            de cobranza y no vuelvas a perder un presupuesto en chats dispersos.</p>
                     </div>
                 </div>
             </div>
@@ -331,7 +366,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="lp-app-preview">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Así se ve Cotízalo por dentro</h2>
-                <p class="section-subtitle" style="margin-bottom: 2.5rem;">Una consola ágil y profesional para gobernar todas tus cotizaciones desde cualquier dispositivo.</p>
+                <p class="section-subtitle" style="margin-bottom: 2.5rem;">Una consola ágil y profesional para gobernar
+                    todas tus cotizaciones desde cualquier dispositivo.</p>
                 <div class="app-frame-wrapper">
                     <div class="app-chrome-bar">
                         <div class="chrome-dots">
@@ -340,14 +376,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="chrome-dot g"></span>
                         </div>
                         <div class="chrome-url">
-                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b"
+                                stroke-width="2.5">
                                 <rect x="3" y="11" width="18" height="11" rx="2" />
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                             </svg>
                             app.cotizalo.net
                         </div>
                     </div>
-                    <svg class="app-svg" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; width: 100%; height: auto; display: block;">
+                    <svg class="app-svg" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg"
+                        style="background:#f8fafc; width: 100%; height: auto; display: block;">
                         <!-- Sidebar -->
                         <rect x="0" y="0" width="200" height="480" fill="#123A2C" />
                         <image
@@ -390,50 +428,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <!-- Search + filters -->
                         <g transform="translate(232,64)">
                             <rect width="220" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-                            <text x="26" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10">Buscar por folio, cliente...</text>
+                            <text x="26" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10">Buscar por folio,
+                                cliente...</text>
                         </g>
                         <!-- Table header -->
                         <g transform="translate(232,106)">
                             <rect width="616" height="26" fill="#f8fafc" />
                             <line x1="0" y1="26" x2="616" y2="26" stroke="#e2e8f0" stroke-width="1" />
-                            <text x="10" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700"># FOLIO</text>
-                            <text x="110" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">FECHA</text>
-                            <text x="185" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">CLIENTE</text>
-                            <text x="380" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">TOTAL</text>
-                            <text x="460" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">ESTADO</text>
+                            <text x="10" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700"># FOLIO</text>
+                            <text x="110" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">FECHA</text>
+                            <text x="185" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">CLIENTE</text>
+                            <text x="380" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">TOTAL</text>
+                            <text x="460" y="17" fill="#475569" font-family="sans-serif" font-size="9"
+                                font-weight="700">ESTADO</text>
                         </g>
                         <!-- Row 1 -->
                         <g transform="translate(232,136)">
                             <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
-                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-042</text>
-                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">20 Sep 2026</text>
-                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Constructora Alpha S.A.</text>
-                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 4123 8900</text>
-                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$48,500.00</text>
-                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1" />
-                            <text x="468" y="23" fill="#15803d" font-family="sans-serif" font-size="9" font-weight="800">ACEPTADA</text>
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11"
+                                font-weight="700">#COT-2026-042</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">20 Sep
+                                2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10"
+                                font-weight="700">Constructora Alpha S.A.</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 4123
+                                8900</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11"
+                                font-weight="700">$48,500.00</text>
+                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0"
+                                stroke-width="1" />
+                            <text x="468" y="23" fill="#15803d" font-family="sans-serif" font-size="9"
+                                font-weight="800">ACEPTADA</text>
                         </g>
                         <!-- Row 2 -->
                         <g transform="translate(232,182)">
                             <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
-                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-041</text>
-                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">18 Sep 2026</text>
-                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Agencia de Diseño Creativo</text>
-                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 81 8345 6789</text>
-                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$12,800.00</text>
-                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#fef9c3" stroke="#fde047" stroke-width="1" />
-                            <text x="467" y="23" fill="#854d0e" font-family="sans-serif" font-size="9" font-weight="800">PENDIENTE</text>
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11"
+                                font-weight="700">#COT-2026-041</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">18 Sep
+                                2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10"
+                                font-weight="700">Agencia de Diseño Creativo</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 81 8345
+                                6789</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11"
+                                font-weight="700">$12,800.00</text>
+                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#fef9c3" stroke="#fde047"
+                                stroke-width="1" />
+                            <text x="467" y="23" fill="#854d0e" font-family="sans-serif" font-size="9"
+                                font-weight="800">PENDIENTE</text>
                         </g>
                         <!-- Row 3 -->
                         <g transform="translate(232,228)">
                             <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
-                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-040</text>
-                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">16 Sep 2026</text>
-                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Servicios Industriales Norte</text>
-                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 33 3612 4578</text>
-                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$95,600.00</text>
-                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dbeafe" stroke="#bfdbfe" stroke-width="1" />
-                            <text x="469" y="23" fill="#1d4ed8" font-family="sans-serif" font-size="9" font-weight="800">PAGADA</text>
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11"
+                                font-weight="700">#COT-2026-040</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">16 Sep
+                                2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10"
+                                font-weight="700">Servicios Industriales Norte</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 33 3612
+                                4578</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11"
+                                font-weight="700">$95,600.00</text>
+                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dbeafe" stroke="#bfdbfe"
+                                stroke-width="1" />
+                            <text x="469" y="23" fill="#1d4ed8" font-family="sans-serif" font-size="9"
+                                font-weight="800">PAGADA</text>
                         </g>
                     </svg>
                 </div>
@@ -441,30 +506,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section" style="padding: 5.5rem 0; background: #FFFFFF;">
+        <section class="faq-section">
             <div class="container animate-on-scroll fade-in-up">
                 <h2 class="section-title">Todo sobre cotizaciones por WhatsApp</h2>
                 <div class="faq-list" style="margin-top: 2.5rem;">
-                    <details class="faq-item">
-                        <summary>¿Cómo se envía una cotización por WhatsApp con Cotízalo?</summary>
-                        <p>Creas la cotización en Cotízalo, copias el enlace generado o descargas el PDF, y lo pegas en tu chat de WhatsApp. Tu cliente lo abre desde su celular sin instalar ninguna aplicación.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Mi cliente puede firmar la cotización que recibe por WhatsApp?</summary>
-                        <p>Sí. El enlace que compartes lleva a tu cliente a una vista interactiva donde puede revisar la cotización, aceptarla con firma digital y hasta pagar un anticipo, todo desde el celular.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Necesito que mi cliente instale alguna app para ver la cotización?</summary>
-                        <p>No. El enlace abre directamente en el navegador del celular de tu cliente. No necesita crear cuenta ni instalar nada. Solo abre el enlace y ya puede ver el documento completo.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Sé cuándo mi cliente abre la cotización enviada por WhatsApp?</summary>
-                        <p>Sí. Cotízalo registra cuándo el cliente abre el enlace y te notifica automáticamente. Así sabes en qué momento hacer seguimiento para cerrar la venta sin parecer invasivo.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>¿Puedo enviar la cotización también por correo electrónico?</summary>
-                        <p>Sí. Cotízalo permite compartir la cotización por WhatsApp, correo electrónico o copiando el enlace directo. Tú eliges el canal más conveniente para cada cliente en cada situación.</p>
-                    </details>
+                    <div class="faq-item open">
+                        <button class="faq-question" type="button" aria-expanded="true">
+                            <span>¿Cómo se envía una cotización por WhatsApp con Cotízalo?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Creas la cotización en Cotízalo, copias el enlace generado o descargas el PDF, y lo pegas en
+                            tu chat de WhatsApp. Tu cliente lo abre desde su celular sin instalar ninguna aplicación.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Mi cliente puede firmar la cotización que recibe por WhatsApp?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. El enlace que compartes lleva a tu cliente a una vista interactiva donde puede revisar la
+                            cotización, aceptarla con firma digital y hasta pagar un anticipo, todo desde el celular.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Necesito que mi cliente instale alguna app para ver la cotización?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            No. El enlace abre directamente en el navegador del celular de tu cliente. No necesita crear
+                            cuenta ni instalar nada. Solo abre el enlace y ya puede ver el documento completo.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Sé cuándo mi cliente abre la cotización enviada por WhatsApp?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo registra cuándo el cliente abre el enlace y te notifica automáticamente. Así
+                            sabes en qué momento hacer seguimiento para cerrar la venta sin parecer invasivo.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>¿Puedo enviar la cotización también por correo electrónico?</span>
+                            <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sí. Cotízalo permite compartir la cotización por WhatsApp, correo electrónico o copiando el
+                            enlace directo. Tú eliges el canal más conveniente para cada cliente en cada situación.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -473,7 +583,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="lp-cta">
             <div class="container animate-on-scroll fade-in-up">
                 <h2>Empieza a cotizar por WhatsApp de forma profesional</h2>
-                <p>14 días gratis. Envía tu primera propuesta interactiva en menos de 5 minutos y moderniza tus ventas hoy mismo.</p>
+                <p>14 días gratis. Envía tu primera propuesta interactiva en menos de 5 minutos y moderniza tus ventas
+                    hoy mismo.</p><br>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">
@@ -484,11 +595,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </a>
                 </div>
                 <div class="related-links" style="margin-top: 2.5rem;">
-                    <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a>
+                    <a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                        cotizaciones</a>
                     <span>·</span>
                     <a href="<?php echo esc_url(home_url('/precios/')); ?>">Ver planes y precios</a>
                     <span>·</span>
-                    <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a>
+                    <a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para
+                        presupuestos</a>
                 </div>
             </div>
         </section>
@@ -518,12 +631,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="footer-links">
                     <h4>Recursos</h4>
                     <ul>
-                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de cotizaciones</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa para presupuestos</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por WhatsApp</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para constructoras</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para servicios</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-para-cotizaciones/')); ?>">Software para
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/seguimiento-de-cotizaciones/')); ?>">Seguimiento de
+                                cotizaciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/programa-para-hacer-presupuestos/')); ?>">Programa
+                                para presupuestos</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/cotizaciones-por-whatsapp/')); ?>">Cotizaciones por
+                                WhatsApp</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-constructoras/')); ?>">Para
+                                constructoras</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/software-de-cotizaciones-para-servicios/')); ?>">Para
+                                servicios</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -531,13 +650,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <ul>
                         <li><a href="<?php echo esc_url(home_url('/que-es-cotizalo/')); ?>">¿Qué es Cotízalo?</a></li>
                         <li><a href="<?php echo esc_url(home_url('/soporte/')); ?>">Soporte Técnico</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y Condiciones</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/aviso-de-privacidad/')); ?>">Aviso de Privacidad</a>
+                        </li>
+                        <li><a href="<?php echo esc_url(home_url('/terminos-y-condiciones/')); ?>">Términos y
+                                Condiciones</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados. Desarrollado con tecnología de DrG Labs Co.</p>
+                <p>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados. Desarrollado con
+                    tecnología de PixelZero.mx.</p>
             </div>
         </div>
     </footer>

@@ -238,6 +238,9 @@
   <link rel="preload" as="image"
     href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
     type="image/png">
+  <!-- Master Design System Stylesheet -->
+  <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=2.1.3">
+
   <?php wp_head(); ?>
 </head>
 
@@ -303,6 +306,7 @@
     <div class="container container-wide">
       <div class="hero-main-grid">
         <div class="hero-content animate-on-scroll">
+
           <h1 class="display-title">
             <?php
             $hero_h1 = get_theme_mod('hero_title', 'Tu Portal Online para Hacer Cotizaciones Profesionales');
@@ -835,22 +839,22 @@
     <div class="container">
       <div class="metrics-grid">
         <div class="metric-item">
-          <div class="metric-number">+50,000</div>
+          <div class="metric-number" data-count="50000" data-prefix="+" data-suffix="">+50,000</div>
           <div class="metric-label">Cotizaciones Emitidas</div>
           <div class="metric-sub">Por emprendedores y PyMEs en México</div>
         </div>
         <div class="metric-item">
-          <div class="metric-number">&lt; 2 min</div>
+          <div class="metric-number" data-count="2" data-prefix="< " data-suffix=" min">&lt; 2 min</div>
           <div class="metric-label">Tiempo Promedio</div>
           <div class="metric-sub">De elaboración y envío por WhatsApp</div>
         </div>
         <div class="metric-item">
-          <div class="metric-number">82%</div>
+          <div class="metric-number" data-count="82" data-prefix="" data-suffix="%">82%</div>
           <div class="metric-label">Tasa de Apertura</div>
           <div class="metric-sub">Frente al 22% del correo electrónico</div>
         </div>
         <div class="metric-item">
-          <div class="metric-number">100%</div>
+          <div class="metric-number" data-count="100" data-prefix="" data-suffix="%">100%</div>
           <div class="metric-label">En la Nube</div>
           <div class="metric-sub">Accesible desde cualquier celular o PC</div>
         </div>
@@ -871,8 +875,8 @@
       </div>
 
       <div class="bento-grid">
-        <!-- Feature 1 -->
-        <div class="bento-card animate-on-scroll delay-100">
+        <!-- Feature 1: Asymmetric Wide Card -->
+        <div class="bento-card bento-card-wide animate-on-scroll delay-100">
           <div class="bento-icon-wrapper">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
@@ -883,6 +887,14 @@
           <p>
             <?php echo esc_html(get_theme_mod('feat_1_desc', 'Genera cotizaciones completas reutilizando plantillas dinámicas y tu catálogo de productos guardados con total precisión comercial.')); ?>
           </p>
+          <div class="bento-micro-visual" aria-hidden="true">
+            <div class="micro-catalogo-tabs">
+              <span class="micro-cat-tab active"><span class="micro-cat-dot"></span> Mobiliario Ejecutivo</span>
+              <span class="micro-cat-tab">Sistemas Certificados</span>
+              <span class="micro-cat-tab">Cancelería Templada</span>
+              <span class="micro-cat-tab" style="margin-left: auto; color: var(--c-accent-mint);">+48 Productos</span>
+            </div>
+          </div>
         </div>
 
         <!-- Feature 2 -->
@@ -896,6 +908,12 @@
           <p>
             <?php echo esc_html(get_theme_mod('feat_2_desc', 'Toda tu información de ventas viaja asegurada con cifrado bancario. Tus datos y los de tus clientes están a salvo en una plataforma estable.')); ?>
           </p>
+          <div class="bento-micro-visual" aria-hidden="true">
+            <div class="micro-security-flex">
+              <span class="micro-sec-badge"><span class="micro-sec-lock-pulse"></span> TLS 256-Bit</span>
+              <span class="micro-sec-pill">Cifrado Bancario Activo</span>
+            </div>
+          </div>
         </div>
 
         <!-- Feature 3 -->
@@ -910,6 +928,19 @@
           <p>
             <?php echo esc_html(get_theme_mod('feat_3_desc', 'Tus clientes pueden aceptar, firmar digitalmente y pagar su depósito desde su celular. La forma más rápida de asegurar tu venta y formalizar el trato.')); ?>
           </p>
+          <div class="bento-micro-visual" aria-hidden="true">
+            <div class="micro-signature-wrap">
+              <div class="micro-sig-header">
+                <span>Firma en pantalla del cliente</span>
+                <span class="micro-sig-status">✓ Autenticada</span>
+              </div>
+              <div class="micro-sig-canvas">
+                <svg class="micro-sig-svg" viewBox="0 0 160 38">
+                  <path d="M 10 24 Q 25 6, 40 22 T 75 16 T 110 28 T 135 12 T 150 20" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Feature 4 -->
@@ -924,6 +955,49 @@
           <p>
             <?php echo esc_html(get_theme_mod('feat_4_desc', 'Consolida tus clientes, catálogo de precios, cotizaciones y recibos de anticipo en una interfaz limpia. Olvídate de usar cinco herramientas distintas para operar.')); ?>
           </p>
+          <div class="bento-micro-visual" aria-hidden="true">
+            <div class="micro-dock-strip">
+              <div class="micro-dock-app">
+                <span class="micro-dock-app-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </span>
+                <span>Catálogo</span>
+              </div>
+              <div class="micro-dock-app">
+                <span class="micro-dock-app-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </span>
+                <span>Clientes</span>
+              </div>
+              <div class="micro-dock-app">
+                <span class="micro-dock-app-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                </span>
+                <span>Cotizaciones</span>
+              </div>
+              <div class="micro-dock-app">
+                <span class="micro-dock-app-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                  </svg>
+                </span>
+                <span>Anticipos</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Feature 5 -->
@@ -938,10 +1012,21 @@
           <p>
             <?php echo esc_html(get_theme_mod('feat_5_desc', 'Localiza al instante cualquier cotización por cliente, folio o fecha. Modifica conceptos o precios con un clic sin tener que rehacer todo desde cero.')); ?>
           </p>
+          <div class="bento-micro-visual" aria-hidden="true">
+            <div class="micro-search-sim">
+              <svg class="micro-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span class="micro-search-text">Constructora Norte</span>
+              <span class="micro-search-cursor"></span>
+              <span class="micro-search-match">Folio #COT-084</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Feature 6 -->
-        <div class="bento-card animate-on-scroll delay-300">
+        <!-- Feature 6: Asymmetric Wide Card -->
+        <div class="bento-card bento-card-wide animate-on-scroll delay-300">
           <div class="bento-icon-wrapper">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -953,6 +1038,24 @@
           <p>
             <?php echo esc_html(get_theme_mod('feat_6_desc', 'Olvídate de quedarte sin créditos en bots de IA o perder cotizaciones en capturas de pantalla. Monitorea el estatus de cada propuesta desde cualquier dispositivo.')); ?>
           </p>
+          <div class="bento-micro-visual" aria-hidden="true">
+            <div class="micro-pipeline-strip">
+              <div class="micro-pipe-step done">
+                <span class="micro-pipe-dot">✓</span>
+                <span>Enviada WhatsApp</span>
+              </div>
+              <span class="micro-pipe-line"></span>
+              <div class="micro-pipe-step done">
+                <span class="micro-pipe-dot">✓</span>
+                <span>Abierta por Cliente</span>
+              </div>
+              <span class="micro-pipe-line"></span>
+              <div class="micro-pipe-step done">
+                <span class="micro-pipe-dot">★</span>
+                <span>Aprobada con Firma</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -974,31 +1077,36 @@
       <div class="comparison-grid">
         <!-- Excel Card -->
         <div class="compare-card excel animate-on-scroll delay-100">
-          <div class="compare-badge">Con Excel e imágenes por chat</div>
-          <h3>La forma tradicional y desordenada</h3>
+          <div class="compare-header">
+            <div class="compare-label-text" style="display: flex; align-items: center; gap: 0.6rem; font-weight: 700; color: #F87171; margin-bottom: 0.65rem;">
+              <span class="compare-icon" style="margin: 0; flex-shrink: 0;">✕</span>
+              <span style="font-weight: 700; color: #F87171;">Con Excel e imágenes por chat</span>
+            </div>
+            <h3 class="compare-title">La forma tradicional y desordenada</h3>
+          </div>
           <div class="compare-list">
-            <div class="compare-item">
+            <div class="compare-item shake-on-hover">
               <span class="compare-icon">✕</span>
               <div>
                 <strong>Archivos perdidos:</strong> Las propuestas se pierden en galerías de fotos o en hilos
                 interminables de mensajes.
               </div>
             </div>
-            <div class="compare-item">
+            <div class="compare-item shake-on-hover">
               <span class="compare-icon">✕</span>
               <div>
                 <strong>Imposible editar:</strong> Si el cliente pide un cambio menor, tienes que rehacer el archivo y
                 reenviarlo.
               </div>
             </div>
-            <div class="compare-item">
+            <div class="compare-item shake-on-hover">
               <span class="compare-icon">✕</span>
               <div>
                 <strong>Fórmulas rotas:</strong> Errores manuales en celdas de Excel que causan presupuestos por debajo
                 del costo real.
               </div>
             </div>
-            <div class="compare-item">
+            <div class="compare-item shake-on-hover">
               <span class="compare-icon">✕</span>
               <div>
                 <strong>Cero seguimiento:</strong> No sabes si el prospecto abrió la propuesta ni cuándo es el momento
@@ -1010,8 +1118,13 @@
 
         <!-- Cotízalo Card -->
         <div class="compare-card cotizalo animate-on-scroll delay-200">
-          <div class="compare-badge">Con la plataforma Cotízalo</div>
-          <h3>El sistema profesional para cerrar ventas</h3>
+          <div class="compare-header">
+            <div class="compare-label-text" style="display: flex; align-items: center; gap: 0.6rem; font-weight: 700; color: var(--c-accent-mint, #34D399); margin-bottom: 0.65rem;">
+              <span class="compare-icon" style="margin: 0; flex-shrink: 0;">✓</span>
+              <span style="font-weight: 700; color: var(--c-accent-mint, #34D399);">Con la plataforma Cotízalo</span>
+            </div>
+            <h3 class="compare-title">El sistema profesional para cerrar ventas</h3>
+          </div>
           <div class="compare-list">
             <div class="compare-item">
               <span class="compare-icon">✓</span>
@@ -1067,22 +1180,27 @@
         </p>
       </div>
 
+      <!-- Connected Progress Track -->
+      <div class="steps-progress-track" aria-hidden="true">
+        <div class="steps-progress-fill"></div>
+      </div>
+
       <div class="steps-grid">
-        <div class="step-card animate-on-scroll delay-100">
+        <div class="step-card animate-on-scroll delay-100" data-step="1">
           <span class="step-num-pill">PASO 01</span>
           <h3>Captura conceptos o usa tus plantillas</h3>
           <p>Selecciona tu cliente, añade los conceptos desde tu catálogo guardado o escribe directamente los servicios
             requeridos con sus importes.</p>
         </div>
 
-        <div class="step-card animate-on-scroll delay-200">
+        <div class="step-card animate-on-scroll delay-200" data-step="2">
           <span class="step-num-pill">PASO 02</span>
           <h3>Envía por WhatsApp o descarga en PDF</h3>
           <p>Genera en un clic el mensaje con enlace interactivo y envía el presupuesto profesional con tu logotipo y
             datos de contacto.</p>
         </div>
 
-        <div class="step-card animate-on-scroll delay-300">
+        <div class="step-card animate-on-scroll delay-300" data-step="3">
           <span class="step-num-pill">PASO 03</span>
           <h3>Tu cliente aprueba, firma y paga su anticipo</h3>
           <p>El cliente revisa los términos desde su celular, firma con su dedo y registra la aceptación de inmediato

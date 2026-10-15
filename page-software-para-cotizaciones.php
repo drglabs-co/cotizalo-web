@@ -305,11 +305,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <p class="section-subtitle">Sin curvas de aprendizaje complejas. Todo pensado para que cierres ventas hoy.</p>
                 </div>
                 <div class="flow-steps animate-on-scroll">
-                    <div class="flow-step">
+                    <div class="flow-step flow-card">
                         <div class="flow-step-top">
-                            <span class="flow-step-number">01</span>
+                            <span class="flow-step-number">PASO 01</span>
                             <div class="flow-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                 </svg>
@@ -318,11 +318,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <h3>Crea tu cotización</h3>
                         <p>Agrega los productos o servicios de tu catálogo, ajusta cantidades y precios, y escribe un mensaje personalizado para tu cliente.</p>
                     </div>
-                    <div class="flow-step">
+                    <div class="flow-step flow-card">
                         <div class="flow-step-top">
-                            <span class="flow-step-number">02</span>
+                            <span class="flow-step-number">PASO 02</span>
                             <div class="flow-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="22" y1="2" x2="11" y2="13"></line>
                                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                 </svg>
@@ -331,11 +331,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <h3>Envíala por WhatsApp o correo</h3>
                         <p>Con un clic generas el enlace compartible o el PDF oficial. Tu cliente lo recibe de forma inmediata en cualquier dispositivo.</p>
                     </div>
-                    <div class="flow-step">
+                    <div class="flow-step flow-card">
                         <div class="flow-step-top">
-                            <span class="flow-step-number">03</span>
+                            <span class="flow-step-number">PASO 03</span>
                             <div class="flow-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </div>
@@ -360,7 +360,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="chrome-dot g"></span>
                         </div>
                         <div class="chrome-url">
-                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <rect x="3" y="11" width="18" height="11" rx="2" />
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                             </svg>
@@ -369,7 +369,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                     <svg class="app-svg" viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" style="background:#f8fafc; width: 100%; height: auto; display: block;">
                         <!-- Sidebar -->
-                        <rect x="0" y="0" width="200" height="480" fill="#123A2C" />
+                        <rect x="0" y="0" width="200" height="480" fill="#0D251C" />
                         <image
                             href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo%20-%20ISOTIPO-8.png"
                             x="14" y="16" height="26" width="26" />
@@ -377,44 +377,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             font-weight="700">Cotízalo</text>
                         <line x1="14" y1="56" x2="186" y2="56" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
                         <!-- Nav items -->
-                        <g transform="translate(10,68)"><text x="34" y="14" fill="rgba(255,255,255,0.65)"
-                                font-family="sans-serif" font-size="11">Panel de Control</text></g>
-                        <g transform="translate(10,102)"><text x="34" y="14" fill="rgba(255,255,255,0.65)"
-                                font-family="sans-serif" font-size="11">Métricas</text></g>
+                        <g transform="translate(10,68)">
+                            <text x="34" y="14" fill="rgba(255,255,255,0.65)" font-family="sans-serif" font-size="11">Panel de Control</text>
+                        </g>
+                        <g transform="translate(10,102)">
+                            <text x="34" y="14" fill="rgba(255,255,255,0.65)" font-family="sans-serif" font-size="11">Métricas</text>
+                        </g>
                         <!-- Active: Cotizaciones -->
                         <g transform="translate(10,136)">
-                            <rect width="180" height="30" rx="6" fill="rgba(74,222,128,0.15)" />
-                            <rect x="0" y="0" width="3" height="30" rx="1.5" fill="#4ade80" />
-                            <text x="34" y="19" fill="#4ade80" font-family="sans-serif" font-size="11"
-                                font-weight="700">Cotizaciones</text>
+                            <rect width="180" height="30" rx="6" fill="rgba(52,211,153,0.18)" />
+                            <rect x="0" y="0" width="3.5" height="30" rx="1.5" fill="#34D399" />
+                            <text x="34" y="19" fill="#34D399" font-family="sans-serif" font-size="11" font-weight="700">Cotizaciones</text>
                         </g>
-                        <g transform="translate(10,170)"><text x="34" y="14" fill="rgba(255,255,255,0.65)"
-                                font-family="sans-serif" font-size="11">Recibos de Anticipo</text></g>
-                        <g transform="translate(10,204)"><text x="34" y="14" fill="rgba(255,255,255,0.65)"
-                                font-family="sans-serif" font-size="11">Clientes</text></g>
-                        <g transform="translate(10,238)"><text x="34" y="14" fill="rgba(255,255,255,0.65)"
-                                font-family="sans-serif" font-size="11">Productos</text></g>
-                        <g transform="translate(10,272)"><text x="34" y="14" fill="rgba(255,255,255,0.65)"
-                                font-family="sans-serif" font-size="11">Configuración</text></g>
+                        <g transform="translate(10,170)">
+                            <text x="34" y="14" fill="rgba(255,255,255,0.65)" font-family="sans-serif" font-size="11">Recibos de Anticipo</text>
+                        </g>
+                        <g transform="translate(10,204)">
+                            <text x="34" y="14" fill="rgba(255,255,255,0.65)" font-family="sans-serif" font-size="11">Clientes</text>
+                        </g>
+                        <g transform="translate(10,238)">
+                            <text x="34" y="14" fill="rgba(255,255,255,0.65)" font-family="sans-serif" font-size="11">Catálogo de Precios</text>
+                        </g>
+                        <g transform="translate(10,272)">
+                            <text x="34" y="14" fill="rgba(255,255,255,0.65)" font-family="sans-serif" font-size="11">Configuración</text>
+                        </g>
+                        <!-- User badge bottom sidebar -->
+                        <g transform="translate(14, 432)">
+                            <circle cx="14" cy="14" r="14" fill="#174A37" />
+                            <text x="14" y="18" text-anchor="middle" fill="#34D399" font-family="sans-serif" font-size="10" font-weight="700">DR</text>
+                            <text x="36" y="13" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="600">David Ramírez</text>
+                            <text x="36" y="24" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="8.5">Plan Pro Activo</text>
+                        </g>
+
                         <!-- Main content -->
-                        <rect x="216" y="12" width="648" height="456" rx="10" fill="#fff" stroke="#e2e8f0"
-                            stroke-width="1" />
+                        <rect x="216" y="12" width="648" height="456" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
                         <!-- Top bar -->
-                        <g transform="translate(232,26)">
-                            <text x="20" y="19" fill="#0f172a" font-family="sans-serif" font-size="15"
-                                font-weight="800">Cotizaciones</text>
-                            <rect x="360" y="0" width="140" height="28" rx="6" fill="#123A2C" />
-                            <text x="372" y="18" fill="#fff" font-family="sans-serif" font-size="10" font-weight="700">+
-                                Crear Nueva Cotización</text>
+                        <g transform="translate(232,24)">
+                            <text x="0" y="20" fill="#0f172a" font-family="sans-serif" font-size="16" font-weight="800">Cotizaciones</text>
+                            <circle cx="120" cy="14" r="3.5" fill="#10B981" />
+                            <text x="130" y="17" fill="#059669" font-family="sans-serif" font-size="9" font-weight="700">TIEMPO REAL</text>
+                            <rect x="475" y="0" width="141" height="28" rx="6" fill="#123A2C" />
+                            <text x="491" y="18" fill="#fff" font-family="sans-serif" font-size="10" font-weight="700">+ Nueva Cotización</text>
                         </g>
                         <!-- Search + filters -->
-                        <g transform="translate(232,64)">
-                            <rect width="220" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-                            <text x="26" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10">Buscar por folio, cliente...</text>
+                        <g transform="translate(232,60)">
+                            <rect width="180" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+                            <text x="10" y="18" fill="#94a3b8" font-family="sans-serif" font-size="9.5">🔍 Buscar por cliente, folio...</text>
+                            <!-- Filter pills -->
+                            <rect x="190" y="0" width="70" height="28" rx="5" fill="#123A2C" />
+                            <text x="225" y="18" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="9.5" font-weight="700">Todas (48)</text>
+                            <rect x="268" y="0" width="90" height="28" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+                            <text x="313" y="18" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="9.5">Aceptadas (32)</text>
+                            <rect x="366" y="0" width="85" height="28" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+                            <text x="408" y="18" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="9.5">Enviadas (12)</text>
+                            <rect x="459" y="0" width="95" height="28" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+                            <text x="506" y="18" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="9.5">Con Anticipo (4)</text>
                         </g>
                         <!-- Table header -->
-                        <g transform="translate(232,106)">
-                            <rect width="616" height="26" fill="#f8fafc" />
+                        <g transform="translate(232,98)">
+                            <rect width="616" height="26" rx="4" fill="#f8fafc" />
                             <line x1="0" y1="26" x2="616" y2="26" stroke="#e2e8f0" stroke-width="1" />
                             <text x="10" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700"># FOLIO</text>
                             <text x="110" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">FECHA</text>
@@ -423,15 +444,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <text x="460" y="17" fill="#475569" font-family="sans-serif" font-size="9" font-weight="700">ESTADO</text>
                         </g>
                         <!-- Row 1 -->
-                        <g transform="translate(232,136)">
+                        <g transform="translate(232,126)">
                             <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
                             <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-042</text>
                             <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">20 Sep 2026</text>
                             <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Constructora Alpha S.A.</text>
                             <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 4123 8900</text>
                             <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$48,500.00</text>
-                            <rect x="460" y="10" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1" />
-                            <text x="468" y="23" fill="#15803d" font-family="sans-serif" font-size="9" font-weight="800">ACEPTADA</text>
+                            <rect x="460" y="11" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1" />
+                            <text x="495" y="24" text-anchor="middle" fill="#15803d" font-family="sans-serif" font-size="8.5" font-weight="800">ACEPTADA</text>
+                        </g>
+                        <!-- Row 2 -->
+                        <g transform="translate(232,168)">
+                            <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-041</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">19 Sep 2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Arquitectura &amp; Diseño Lumina</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 33 1892 4430</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$126,400.00</text>
+                            <rect x="460" y="11" width="84" height="20" rx="4" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+                            <text x="502" y="24" text-anchor="middle" fill="#047857" font-family="sans-serif" font-size="8.5" font-weight="800">ANTICIPO 50%</text>
+                        </g>
+                        <!-- Row 3 -->
+                        <g transform="translate(232,210)">
+                            <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-040</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">18 Sep 2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Desarrollos Residenciales Bajío</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 477 234 5678</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$89,200.00</text>
+                            <rect x="460" y="11" width="80" height="20" rx="4" fill="#fef3c7" stroke="#fde68a" stroke-width="1" />
+                            <text x="500" y="24" text-anchor="middle" fill="#b45309" font-family="sans-serif" font-size="8.5" font-weight="800">ENVIADA WPP</text>
+                        </g>
+                        <!-- Row 4 -->
+                        <g transform="translate(232,252)">
+                            <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-039</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">17 Sep 2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Instalaciones Eléctricas Ortiz</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 81 8345 9911</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$18,750.00</text>
+                            <rect x="460" y="11" width="86" height="20" rx="4" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1" />
+                            <text x="503" y="24" text-anchor="middle" fill="#0369a1" font-family="sans-serif" font-size="8.5" font-weight="800">FIRMADA DIGITAL</text>
+                        </g>
+                        <!-- Row 5 -->
+                        <g transform="translate(232,294)">
+                            <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-038</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">15 Sep 2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Grupo Comercial Vanguardia</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 55 9876 5432</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$64,300.00</text>
+                            <rect x="460" y="11" width="70" height="20" rx="4" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1" />
+                            <text x="495" y="24" text-anchor="middle" fill="#15803d" font-family="sans-serif" font-size="8.5" font-weight="800">ACEPTADA</text>
+                        </g>
+                        <!-- Row 6 -->
+                        <g transform="translate(232,336)">
+                            <line x1="0" y1="42" x2="616" y2="42" stroke="#f1f5f9" stroke-width="1" />
+                            <text x="10" y="24" fill="#123A2C" font-family="sans-serif" font-size="11" font-weight="700">#COT-2026-037</text>
+                            <text x="110" y="24" fill="#334155" font-family="sans-serif" font-size="10">14 Sep 2026</text>
+                            <text x="185" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700">Mantenimiento Industrial Regio</text>
+                            <text x="185" y="30" fill="#64748b" font-family="sans-serif" font-size="8.5">+52 81 1234 5678</text>
+                            <text x="380" y="24" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700">$32,100.00</text>
+                            <rect x="460" y="11" width="78" height="20" rx="4" fill="#f3e8ff" stroke="#e9d5ff" stroke-width="1" />
+                            <text x="499" y="24" text-anchor="middle" fill="#7e22ce" font-family="sans-serif" font-size="8.5" font-weight="800">EN REVISIÓN</text>
+                        </g>
+                        <!-- Table footer / pagination -->
+                        <g transform="translate(232,388)">
+                            <line x1="0" y1="0" x2="616" y2="0" stroke="#e2e8f0" stroke-width="1" />
+                            <text x="10" y="24" fill="#64748b" font-family="sans-serif" font-size="9.5">Mostrando 6 de 48 cotizaciones · Total emitido: $379,250.00 MXN</text>
+                            <rect x="470" y="10" width="24" height="20" rx="4" fill="#123A2C" />
+                            <text x="482" y="23" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="9" font-weight="700">1</text>
+                            <rect x="498" y="10" width="24" height="20" rx="4" fill="#f1f5f9" />
+                            <text x="510" y="23" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="9">2</text>
+                            <rect x="526" y="10" width="24" height="20" rx="4" fill="#f1f5f9" />
+                            <text x="538" y="23" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="9">3</text>
+                            <rect x="554" y="10" width="46" height="20" rx="4" fill="#f1f5f9" />
+                            <text x="577" y="23" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="9" font-weight="600">Sig →</text>
                         </g>
                     </svg>
                 </div>
@@ -439,7 +528,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section" style="padding: 5.5rem 0; background: var(--c-bg-subtle);">
+        <section class="faq-section">
             <div class="container animate-on-scroll fade-in-up">
                 <div style="text-align: center; max-width: 720px; margin: 0 auto 3rem auto;">
                     <span class="feature-badge" style="display: inline-flex; margin-bottom: 0.75rem;">Dudas frecuentes</span>
@@ -507,7 +596,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="lp-cta">
             <div class="container animate-on-scroll fade-in-up">
                 <h2>Empieza a cotizar de forma profesional hoy</h2>
-                <p>14 días gratis. Configura tu catálogo y emite tu primera propuesta en menos de 5 minutos.</p>
+                <p>14 días gratis. Configura tu catálogo y emite tu primera propuesta en menos de 5 minutos.</p><br>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">
@@ -571,7 +660,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados. Desarrollado con tecnología de DrG Labs Co.</p>
+                <p>&copy; <?php echo date('Y'); ?> Cotízalo.net — Todos los derechos reservados. Desarrollado con tecnología de PixelZero.mx.</p>
             </div>
         </div>
     </footer>

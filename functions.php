@@ -17,7 +17,7 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '1.0.13');
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '2.3.0');
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
     wp_enqueue_script('cotizalo-main', get_template_directory_uri() . '/assets/assets/js/main.js', array(), '1.0.13', true);
 
@@ -151,37 +151,37 @@ function cotizalo_scripts()
         }
         /* App mockup section */
         .lp-app-preview {
-            background: #fff;
-            padding: 5rem 0 4rem;
+            background: #080B14 !important;
+            padding: 6.5rem 0 5.5rem;
         }
         .lp-app-preview .app-frame-wrapper {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.06);
-            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 35px 100px -20px rgba(0,0,0,0.85), 0 0 60px -10px rgba(52,211,153,0.18);
+            border: 1px solid rgba(255,255,255,0.12);
         }
         .lp-app-preview .app-chrome-bar {
-            background: #e8eaed;
-            padding: 0.55rem 1rem;
+            background: #0E1420 !important;
+            padding: 0.7rem 1.15rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08) !important;
         }
-        .lp-app-preview .chrome-dots { display: flex; gap: 6px; }
+        .lp-app-preview .chrome-dots { display: flex; gap: 7px; }
         .lp-app-preview .chrome-dot {
-            width: 12px; height: 12px; border-radius: 50%;
+            width: 11px; height: 11px; border-radius: 50%;
         }
-        .lp-app-preview .chrome-dot.r { background: #ef4444; }
-        .lp-app-preview .chrome-dot.y { background: #f59e0b; }
-        .lp-app-preview .chrome-dot.g { background: #10b981; }
+        .lp-app-preview .chrome-dot.r { background: #FF5F56; }
+        .lp-app-preview .chrome-dot.y { background: #FFBD2E; }
+        .lp-app-preview .chrome-dot.g { background: #27C93F; }
         .lp-app-preview .chrome-url {
-            flex: 1; background: #fff; border-radius: 20px;
-            padding: 0.3rem 0.9rem; font-size: 0.8rem;
-            color: #64748b; display: flex; align-items: center; gap: 6px;
-            border: 1px solid #cbd5e1; max-width: 340px; margin: 0 auto;
+            flex: 1; background: rgba(255,255,255,0.05) !important; border-radius: 20px;
+            padding: 0.35rem 1rem; font-size: 0.78rem;
+            color: #94a3b8 !important; display: flex; align-items: center; justify-content: center; gap: 7px;
+            border: 1px solid rgba(255,255,255,0.08) !important; max-width: 320px; margin: 0 auto;
         }
         .lp-app-preview svg.app-svg { display: block; width: 100%; height: auto; }
     ';

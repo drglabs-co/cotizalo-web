@@ -109,14 +109,14 @@ def render_php_template(file_path, request_path):
 
     wp_head_mock = (
         '<!-- Mock wp_head -->\n'
-        '  <link rel="stylesheet" href="/assets/assets/css/styles.css">\n'
+        '  <link rel="stylesheet" href="/assets/assets/css/styles.css?v=2.2.0">\n'
         '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">\n'
     )
     content = re.sub(r'<\?php\s+wp_head\(\);\s*\?>', wp_head_mock, content)
 
     wp_footer_mock = (
         '<!-- Mock wp_footer -->\n'
-        '  <script src="/assets/assets/js/main.js"></script>\n'
+        '  <script src="/assets/assets/js/main.js?v=2.0.0"></script>\n'
     )
     content = re.sub(r'<\?php\s+wp_footer\(\);\s*\?>', wp_footer_mock, content)
 
@@ -208,6 +208,12 @@ def audit_seo():
 class CotizaloHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=BASE_DIR, **kwargs)
+
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
+        super().end_headers()
 
     def do_HEAD(self):
         self.handle_req(is_head=True)

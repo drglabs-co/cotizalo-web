@@ -126,6 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preload" as="image"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
         type="image/png">
+    <!-- Master Design System Stylesheet -->
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=2.2.0">
+
     <?php wp_head(); ?>
 </head>
 
@@ -300,7 +303,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </h2>
                 <p class="cta-desc">
                     14 días gratis. Configura tu cuenta y emite tu primer presupuesto en menos de cinco minutos.
-                </p>
+                </p><br>
                 <div class="cta-buttons">
                     <a href="<?php echo esc_url(get_theme_mod('nav_signup_url', 'https://app.cotizalo.net/signup')); ?>"
                         class="btn btn-primary btn-lg">
