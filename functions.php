@@ -17,9 +17,23 @@ add_action('after_setup_theme', 'cotizalo_theme_setup');
  */
 function cotizalo_scripts()
 {
-    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . '/assets/assets/css/styles.css', array(), '2.3.0');
+    $asset_ver = '2.3.1';
+    $min = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min';
+
+    // Minified asset paths with fallback to unminified if not yet generated
+    $css_path = "/assets/assets/css/styles{$min}.css";
+    if (!file_exists(get_template_directory() . $css_path)) {
+        $css_path = '/assets/assets/css/styles.css';
+    }
+
+    $js_path = "/assets/assets/js/main{$min}.js";
+    if (!file_exists(get_template_directory() . $js_path)) {
+        $js_path = '/assets/assets/js/main.js';
+    }
+
+    wp_enqueue_style('cotizalo-style', get_template_directory_uri() . $css_path, array(), $asset_ver);
     wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
-    wp_enqueue_script('cotizalo-main', get_template_directory_uri() . '/assets/assets/js/main.js', array(), '1.0.13', true);
+    wp_enqueue_script('cotizalo-main', get_template_directory_uri() . $js_path, array(), $asset_ver, true);
 
     // Dropdown "Recursos" & Sticky Nav styles — applied globally to all page templates
     $dropdown_css = '
@@ -186,9 +200,20 @@ function cotizalo_scripts()
         .lp-app-preview svg.app-svg { display: block; width: 100%; height: auto; }
     ';
     wp_add_inline_style('cotizalo-style', $dropdown_css);
-
 }
 add_action('wp_enqueue_scripts', 'cotizalo_scripts');
+
+/**
+ * Add defer attribute to cotizalo-main script for optimal non-blocking loading
+ */
+function cotizalo_defer_scripts($tag, $handle, $src)
+{
+    if ('cotizalo-main' === $handle && false === strpos($tag, 'defer')) {
+        $tag = str_replace('<script ', '<script defer ', $tag);
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'cotizalo_defer_scripts', 10, 3);
 
 /**
  * Fallback style for users with JavaScript disabled or if script loading is delayed

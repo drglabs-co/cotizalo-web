@@ -47,8 +47,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="apple-touch-icon"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
 
-    <!-- Design System Stylesheet -->
-    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css">
     <?php wp_head(); ?>
 </head>
 
@@ -235,8 +233,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </footer>
 
-    <!-- Scripts dynamically linked -->
-    <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/js/main.js" defer></script>
     <?php wp_footer(); ?>
 </body>
 

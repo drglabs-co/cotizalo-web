@@ -121,10 +121,6 @@
     }
     </script>
 
-    <!-- Master Design System Stylesheet -->
-    <link rel="stylesheet"
-        href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=2.1.2">
-
     <link rel="preload" as="image"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
         type="image/png">
@@ -599,8 +595,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/js/main.js" defer></script>
     <?php wp_footer(); ?>
 </body>
 

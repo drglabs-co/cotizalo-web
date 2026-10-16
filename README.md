@@ -65,9 +65,11 @@ cotizalo-web/ (raíz del repositorio Git)
 │   └── assets/
 │       └── assets/                          # ⚠️ Doble nivel 'assets/assets/' preservado intencionalmente
 │           ├── css/
-│           │   └── styles.css               # Sistema de diseño completo (CSS modular y responsivo)
+│           │   ├── styles.css               # Sistema de diseño completo (fuente legible para desarrollo)
+│           │   └── styles.min.css           # CSS minificado para producción (ultra-rápido, SEO optimizado)
 │           ├── js/
-│           │   └── main.js                  # Lógica JS: header sticky, observer de animaciones
+│           │   ├── main.js                  # Lógica JS: header sticky, animaciones, cálculos (fuente)
+│           │   └── main.min.js              # JS minificado para producción (ultra-rápido, SEO optimizado)
 │           ├── logos/
 │           │   ├── ISOTIPO/
 │           │   │   ├── Cotizalo-5.png       # ⭐ Isotipo oficial (usado en favicon, apple-touch-icon, JSON-LD)

@@ -150,8 +150,6 @@ $form_started = time();
     <link rel="apple-touch-icon"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png?v=3">
 
-    <!-- Master Design System Styles -->
-    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css">
 
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
@@ -529,8 +527,6 @@ $form_started = time();
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var form = document.getElementById('support-form');

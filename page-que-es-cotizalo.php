@@ -126,9 +126,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preload" as="image"
         href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/LOGOTIPO3/Cotizalo-8.png?v=2"
         type="image/png">
-    <!-- Master Design System Stylesheet -->
-    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/css/styles.css?v=2.2.0">
-
     <?php wp_head(); ?>
 </head>
 
@@ -365,7 +362,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </footer>
 
-    <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/js/main.js?v=1.0.9" defer></script>
     <?php wp_footer(); ?>
 </body>
 

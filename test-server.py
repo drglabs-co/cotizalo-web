@@ -107,16 +107,19 @@ def render_php_template(file_path, request_path):
     content = re.sub(r'<\?php\s+bloginfo\(\s*[\'"]charset[\'"]\s*\);\s*\?>', 'UTF-8', content)
     content = re.sub(r'<\?php\s+body_class\(\);\s*\?>', 'class="cotizalo-page"', content)
 
+    css_asset = "/assets/assets/css/styles.min.css?v=2.3.1" if os.path.exists(os.path.join(BASE_DIR, "assets/assets/css/styles.min.css")) else "/assets/assets/css/styles.css?v=2.3.1"
+    js_asset = "/assets/assets/js/main.min.js?v=2.3.1" if os.path.exists(os.path.join(BASE_DIR, "assets/assets/js/main.min.js")) else "/assets/assets/js/main.js?v=2.3.1"
+
     wp_head_mock = (
         '<!-- Mock wp_head -->\n'
-        '  <link rel="stylesheet" href="/assets/assets/css/styles.css?v=2.2.0">\n'
+        f'  <link rel="stylesheet" href="{css_asset}">\n'
         '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">\n'
     )
     content = re.sub(r'<\?php\s+wp_head\(\);\s*\?>', wp_head_mock, content)
 
     wp_footer_mock = (
         '<!-- Mock wp_footer -->\n'
-        '  <script src="/assets/assets/js/main.js?v=2.0.0"></script>\n'
+        f'  <script src="{js_asset}" defer></script>\n'
     )
     content = re.sub(r'<\?php\s+wp_footer\(\);\s*\?>', wp_footer_mock, content)
 
