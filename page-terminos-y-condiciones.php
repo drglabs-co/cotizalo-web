@@ -33,7 +33,9 @@
     <meta property="og:description"
         content="Conoce nuestros Términos y Condiciones de Uso. Reglas, responsabilidades y licencias del software de cotizaciones en línea en México.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
@@ -42,7 +44,7 @@
     <meta name="twitter:description"
         content="Conoce nuestros Términos y Condiciones de Uso. Reglas, responsabilidades y licencias del software de cotizaciones en línea en México.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <!-- Google Fonts & Favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

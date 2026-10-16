@@ -5,10 +5,12 @@
   "scripts": {
     "build:css": "npx esbuild assets/assets/css/styles.css --minify --outfile=assets/assets/css/styles.min.css",
     "build:js": "npx esbuild assets/assets/js/main.js --minify --target=es2018 --outfile=assets/assets/js/main.min.js",
-    "build": "npm run build:css && npm run build:js",
+    "build:switcher": "npx esbuild assets/assets/js/language-switcher.js --minify --target=es2018 --outfile=assets/assets/js/language-switcher.min.js",
+    "build": "npm run build:css && npm run build:js && npm run build:switcher",
     "watch:css": "npx esbuild assets/assets/css/styles.css --minify --outfile=assets/assets/css/styles.min.css --watch",
     "watch:js": "npx esbuild assets/assets/js/main.js --minify --target=es2018 --outfile=assets/assets/js/main.min.js --watch",
-    "watch": "npm run build && npx esbuild assets/assets/css/styles.css --minify --outfile=assets/assets/css/styles.min.css --watch & npx esbuild assets/assets/js/main.js --minify --target=es2018 --outfile=assets/assets/js/main.min.js --watch"
+    "watch:switcher": "npx esbuild assets/assets/js/language-switcher.js --minify --target=es2018 --outfile=assets/assets/js/language-switcher.min.js --watch",
+    "watch": "npm run build && npx esbuild assets/assets/css/styles.css --minify --outfile=assets/assets/css/styles.min.css --watch & npx esbuild assets/assets/js/main.js --minify --target=es2018 --outfile=assets/assets/js/main.min.js --watch & npx esbuild assets/assets/js/language-switcher.js --minify --target=es2018 --outfile=assets/assets/js/language-switcher.min.js --watch"
   },
   "devDependencies": {
     "esbuild": "^0.28.0"

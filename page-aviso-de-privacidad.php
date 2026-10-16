@@ -25,8 +25,6 @@
     <title>Aviso de Privacidad | Cotízalo</title>
     <meta name="description"
         content="Conoce nuestro Aviso de Privacidad. Protegemos tus datos personales y comerciales con altos estándares de seguridad técnica en México.">
-    <meta name="keywords" content="aviso de privacidad cotizalo, privacidad datos, proteccion de datos mexico">
-
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>">
@@ -34,7 +32,9 @@
     <meta property="og:description"
         content="Conoce nuestro Aviso de Privacidad. Protegemos tus datos personales y comerciales con altos estándares de seguridad técnica en México.">
     <meta property="og:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
 
     <!-- Twitter / X -->
@@ -43,7 +43,7 @@
     <meta name="twitter:description"
         content="Conoce nuestro Aviso de Privacidad. Protegemos tus datos personales y comerciales con altos estándares de seguridad técnica en México.">
     <meta name="twitter:image"
-        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/logos/ISOTIPO/Cotizalo-5.png">
+        content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/assets/og-social.jpg">
 
     <!-- Google Fonts & Favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

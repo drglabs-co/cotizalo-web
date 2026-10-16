@@ -69,7 +69,9 @@ cotizalo-web/ (raíz del repositorio Git)
 │           │   └── styles.min.css           # CSS minificado para producción (ultra-rápido, SEO optimizado)
 │           ├── js/
 │           │   ├── main.js                  # Lógica JS: header sticky, animaciones, cálculos (fuente)
-│           │   └── main.min.js              # JS minificado para producción (ultra-rápido, SEO optimizado)
+│           │   ├── main.min.js              # JS minificado para producción (ultra-rápido, SEO optimizado)
+│           │   ├── language-switcher.js     # Switcher de idioma compatible (fuente)
+│           │   └── language-switcher.min.js # Switcher minificado para cumplir auditorías PageSpeed y SEO
 │           ├── logos/
 │           │   ├── ISOTIPO/
 │           │   │   ├── Cotizalo-5.png       # ⭐ Isotipo oficial (usado en favicon, apple-touch-icon, JSON-LD)
@@ -325,6 +327,35 @@ Todas las páginas han sido verificadas y cuentan con su configuración SEO comp
 
 
 * **Tablas y Tarjetas de Precios:** Datos numéricos ordenados y destacados con pesos tipográficos claros (e.g., Montserrat Bold) para dar sensación de control y claridad financiera.
+
+---
+
+## ⚡ Pipeline de Minificación y Optimización SEO
+
+El repositorio incluye un sistema automatizado para garantizar puntuaciones perfectas en auditorías técnicas de SEO y PageSpeed:
+
+### 1. Compilación y Minificación de Assets (`package.json`)
+Utiliza `esbuild` para generar versiones minificadas ultra-ligeras de todos los estilos y scripts:
+```bash
+npm run build           # Minifica CSS (styles.min.css), JS principal (main.min.js) y language switcher (language-switcher.min.js)
+npm run build:css       # Minifica exclusivamente los estilos CSS
+npm run build:js        # Minifica el archivo JavaScript principal
+npm run build:switcher  # Minifica el script language-switcher
+npm run watch           # Monitorea cambios en vivo y recompila automáticamente
+```
+
+### 2. Resolución de Conflictos de Metadatos y Plugins SEO
+El tema cuenta con metadatos OpenGraph, Twitter Cards, títulos y descripciones personalizados de alta conversión en cada plantilla. Para evitar la duplicación de etiquetas (`og:locale`, `og:type`, `og:title`, `og:description`, `og:url`, `og:image`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`, `og:site_name`) producidas por plugins como **All in One SEO (AIOSEO)** o Yoast:
+- Se implementan filtros en `functions.php` (`aioseo_disable`, `aioseo_facebook_tags`, `aioseo_twitter_tags`, `aioseo_disable_title_rewrites`, `aioseo_description`, `aioseo_canonical_url`, `aioseo_robots_meta`, `aioseo_schema_disable`) que suprimen la duplicación en el frontend público mientras mantienen AIOSEO funcional en el panel de administración.
+- Se sustituye automáticamente cualquier llamada a scripts sin minificar de plugins externos (como `language-switcher.js`) por su versión optimizada y minificada servida con el atributo `defer`.
+
+### 3. Auditoría Local de SEO
+Para auditar todos los templates y verificar que no existan etiquetas duplicadas ni assets sin minificar:
+```bash
+python3 test-server.py --audit
+```
+
+---
 
 ## 👤 Autor
 

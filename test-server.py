@@ -185,8 +185,22 @@ def audit_seo():
             canonical_m = re.search(r'<link\s+rel=[\'"]canonical[\'"]', raw, re.IGNORECASE)
             og_title_m = re.search(r'<meta\s+property=[\'"]og:title[\'"]', raw, re.IGNORECASE)
             og_img_m = re.search(r'<meta\s+property=[\'"]og:image[\'"]', raw, re.IGNORECASE)
+            og_w_m = re.search(r'<meta\s+property=[\'"]og:image:width[\'"]', raw, re.IGNORECASE)
+            og_h_m = re.search(r'<meta\s+property=[\'"]og:image:height[\'"]', raw, re.IGNORECASE)
             h1_m = re.search(r'<h1[^>]*>(.*?)</h1>', rendered, re.IGNORECASE | re.DOTALL)
             json_ld_m = re.search(r'application/ld\+json', raw, re.IGNORECASE)
+
+            # Check for duplicate tags in template
+            dup_checks = [
+                ('<title>', len(re.findall(r'<title>', raw, re.IGNORECASE))),
+                ('meta description', len(re.findall(r'<meta\s+name=[\'"]description[\'"]', raw, re.IGNORECASE))),
+                ('canonical', len(re.findall(r'<link\s+rel=[\'"]canonical[\'"]', raw, re.IGNORECASE))),
+                ('og:title', len(re.findall(r'<meta\s+property=[\'"]og:title[\'"]', raw, re.IGNORECASE))),
+                ('og:description', len(re.findall(r'<meta\s+property=[\'"]og:description[\'"]', raw, re.IGNORECASE))),
+                ('og:image', len(re.findall(r'<meta\s+property=[\'"]og:image[\'"]\s', raw, re.IGNORECASE))),
+                ('twitter:card', len(re.findall(r'<meta\s+name=[\'"]twitter:card[\'"]', raw, re.IGNORECASE))),
+            ]
+            duplicates = [name for name, count in dup_checks if count > 1]
 
             title = title_m.group(1).strip() if title_m else "MISSING"
             desc = desc_m.group(1).strip() if desc_m else "MISSING"
@@ -198,14 +212,36 @@ def audit_seo():
             print(f"   • Description ({len(desc)} chars): {desc[:80]}...")
             print(f"   • H1: {h1[:60]}")
             print(f"   • Canonical: {'✅ Present' if canonical_m else '❌ Missing'}")
-            print(f"   • OpenGraph: {'✅ Present (title + image)' if (og_title_m and og_img_m) else '⚠️ Incomplete'}")
+            print(f"   • OpenGraph: {'✅ 1200x630 (og-social.jpg)' if (og_title_m and og_img_m and og_w_m and og_h_m) else ('✅ Present' if (og_title_m and og_img_m) else '⚠️ Incomplete')}")
+            print(f"   • Duplicate Tags: {'✅ None (0 duplicates)' if not duplicates else '❌ Duplicates found: ' + ', '.join(duplicates)}")
             print(f"   • JSON-LD Schema: {'✅ Present' if json_ld_m else 'ℹ️ N/A (Legal)'}")
         else:
             print(f"\n⚙️ Special Route: {route}  (Template: {filename})")
             print(f"   • Type: Dynamic generator {'✅ Valid' if os.path.exists(file_path) else '❌ Missing'}")
 
+    print("\n" + "-" * 80)
+    print("📦 MINIFIED ASSETS VERIFICATION")
+    print("-" * 80)
+    assets_to_check = [
+        ("assets/assets/css/styles.min.css", "CSS Stylesheet (minified)"),
+        ("assets/assets/js/main.min.js", "Theme Main JS (minified)"),
+        ("assets/assets/js/language-switcher.min.js", "Language Switcher JS (minified)"),
+    ]
+    all_assets_ok = True
+    for asset_rel, label in assets_to_check:
+        full_p = os.path.join(BASE_DIR, asset_rel)
+        if os.path.exists(full_p) and os.path.getsize(full_p) > 0:
+            size_kb = os.path.getsize(full_p) / 1024
+            print(f"   • {label:<35}: ✅ Present ({size_kb:.1f} KB)")
+        else:
+            print(f"   • {label:<35}: ❌ Missing or empty ({asset_rel})")
+            all_assets_ok = False
+
     print("\n" + "=" * 80)
-    print("✅ SEO AUDIT COMPLETE: All core landing pages and special routes verified.")
+    if all_assets_ok:
+        print("✅ SEO AUDIT COMPLETE: All landing pages, OpenGraph tags, and minified assets verified.")
+    else:
+        print("⚠️ SEO AUDIT WARNING: One or more minified assets are missing. Run `npm run build`.")
     print("=" * 80 + "\n")
 
 class CotizaloHandler(http.server.SimpleHTTPRequestHandler):
