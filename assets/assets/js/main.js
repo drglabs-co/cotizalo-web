@@ -31,23 +31,53 @@ if (!window.__cotizaloMainInitialized) {
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const navContainer = document.querySelector('.nav-container');
         if (mobileBtn && navContainer && header) {
-            mobileBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const isOpen = header.classList.contains('menu-open');
-                mobileBtn.classList.toggle('open', !isOpen);
-                header.classList.toggle('menu-open', !isOpen);
-                navContainer.classList.toggle('menu-open', !isOpen);
-                document.body.style.overflow = !isOpen ? 'hidden' : '';
+            const closeMobileMenu = () => {
+                mobileBtn.classList.remove('open');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+                header.classList.remove('menu-open');
+                navContainer.classList.remove('menu-open');
+                document.body.style.overflow = '';
+            };
+
+            const toggleMobileMenu = (e) => {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                const willOpen = !header.classList.contains('menu-open');
+                mobileBtn.classList.toggle('open', willOpen);
+                mobileBtn.setAttribute('aria-expanded', String(willOpen));
+                header.classList.toggle('menu-open', willOpen);
+                navContainer.classList.toggle('menu-open', willOpen);
+                document.body.style.overflow = willOpen ? 'hidden' : '';
+            };
+
+            mobileBtn.addEventListener('click', toggleMobileMenu);
+            mobileBtn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleMobileMenu();
+                }
             });
 
+            // Close when clicking nav links or buttons (excluding dropdown toggle accordion)
             navContainer.querySelectorAll('.nav-item:not(.nav-dropdown-toggle), .nav-dropdown-menu a, .btn-nav').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileBtn.classList.remove('open');
-                    header.classList.remove('menu-open');
-                    navContainer.classList.remove('menu-open');
-                    document.body.style.overflow = '';
-                });
+                link.addEventListener('click', closeMobileMenu);
             });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && header.classList.contains('menu-open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Auto-close when resizing to desktop (> 900px)
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900 && header.classList.contains('menu-open')) {
+                    closeMobileMenu();
+                }
+            }, { passive: true });
         }
 
         // -----------------------------------------------------
@@ -58,23 +88,27 @@ if (!window.__cotizaloMainInitialized) {
                 e.preventDefault();
                 e.stopPropagation();
                 const dropdown = btn.closest('.nav-dropdown');
+                if (!dropdown) return;
                 const isOpen = dropdown.classList.contains('open');
 
-                document.querySelectorAll('.nav-dropdown').forEach(d => {
-                    d.classList.remove('open');
-                    const t = d.querySelector('.nav-dropdown-toggle');
-                    if (t) t.setAttribute('aria-expanded', 'false');
-                });
-
-                if (!isOpen) {
-                    dropdown.classList.add('open');
-                    btn.setAttribute('aria-expanded', 'true');
+                // On desktop, close sibling dropdowns
+                if (window.innerWidth > 900) {
+                    document.querySelectorAll('.nav-dropdown').forEach(d => {
+                        if (d !== dropdown) {
+                            d.classList.remove('open');
+                            const t = d.querySelector('.nav-dropdown-toggle');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                        }
+                    });
                 }
+
+                dropdown.classList.toggle('open', !isOpen);
+                btn.setAttribute('aria-expanded', String(!isOpen));
             });
         });
 
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-dropdown')) {
+            if (!e.target.closest('.nav-dropdown') && window.innerWidth > 900) {
                 document.querySelectorAll('.nav-dropdown').forEach(d => {
                     d.classList.remove('open');
                     const t = d.querySelector('.nav-dropdown-toggle');

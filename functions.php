@@ -123,16 +123,42 @@ function cotizalo_scripts()
 
         /* Mobile: dropdown shows as stacked list inside open menu */
         @media (max-width: 900px) {
-            .nav-dropdown-menu {
-                position: static; transform: none;
-                background: rgba(255,255,255,0.05);
-                border: none; border-radius: 8px;
-                box-shadow: none; margin: 0.25rem 0.5rem 0.25rem;
-                padding: 0.25rem 0;
-                min-width: unset; width: calc(100% - 1rem);
+            .nav-dropdown {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                align-items: stretch !important;
             }
-            .nav-dropdown-menu::before { display: none; }
-            .nav-dropdown-menu a { padding: 0.5rem 1rem; font-size: 0.9rem; }
+            .nav-dropdown-toggle {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+            }
+            .nav-dropdown-menu {
+                position: static !important;
+                transform: none !important;
+                background: rgba(255, 255, 255, 0.05) !important;
+                border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                border-radius: 8px !important;
+                box-shadow: none !important;
+                margin: 0.35rem 0 0.5rem 0 !important;
+                padding: 0.4rem !important;
+                min-width: unset !important;
+                width: 100% !important;
+            }
+            .nav-dropdown.open > .nav-dropdown-menu {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.25rem !important;
+            }
+            .nav-dropdown-menu::before,
+            .nav-dropdown-menu::after { display: none !important; }
+            .nav-dropdown-menu a {
+                padding: 0.6rem 1rem !important;
+                font-size: 0.92rem !important;
+                border-radius: 6px !important;
+            }
         }
 
         /* ─── Button contrast fixes for dark-background sections ─── */
@@ -224,114 +250,7 @@ function cotizalo_noscript_fallback()
 }
 add_action('wp_head', 'cotizalo_noscript_fallback');
 
-/**
- * Output dropdown JS in wp_footer so it runs on every page template
- * regardless of whether jQuery is enqueued.
- */
-function cotizalo_dropdown_js()
-{
-    ?>
-    <script>
-        (function () {
-            function initDropdowns() {
-                document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
-                    // Avoid double-binding
-                    if (btn.dataset.ddInit) return;
-                    btn.dataset.ddInit = '1';
-                    btn.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        var dropdown = btn.closest('.nav-dropdown');
-                        var isOpen = dropdown.classList.contains('open');
-                        document.querySelectorAll('.nav-dropdown').forEach(function (d) {
-                            d.classList.remove('open');
-                            var t = d.querySelector('.nav-dropdown-toggle');
-                            if (t) t.setAttribute('aria-expanded', 'false');
-                        });
-                        if (!isOpen) {
-                            dropdown.classList.add('open');
-                            btn.setAttribute('aria-expanded', 'true');
-                        }
-                    });
-                });
-                document.addEventListener('click', function (e) {
-                    if (!e.target.closest('.nav-dropdown')) {
-                        document.querySelectorAll('.nav-dropdown').forEach(function (d) {
-                            d.classList.remove('open');
-                            var t = d.querySelector('.nav-dropdown-toggle');
-                            if (t) t.setAttribute('aria-expanded', 'false');
-                        });
-                    }
-                }, { capture: false });
-            }
-            function initHeaderScroll() {
-                var header = document.getElementById('navbar') || document.querySelector('header');
-                if (!header || header.dataset.scrollInit) return;
-                header.dataset.scrollInit = '1';
-                var ticking = false;
-                function updateHeader() {
-                    if (window.scrollY > 20) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                }
-                window.addEventListener('scroll', function () {
-                    if (!ticking) {
-                        window.requestAnimationFrame(function () {
-                            updateHeader();
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                }, { passive: true });
-                updateHeader();
-            }
 
-            function initMobileMenu() {
-                var mobileBtn = document.querySelector('.mobile-menu-btn');
-                var navContainer = document.querySelector('.nav-container');
-                var header = document.getElementById('navbar') || document.querySelector('header');
-                var navLinks = document.querySelector('.nav-links');
-                if (!mobileBtn || !navContainer || !header || mobileBtn.dataset.menuInit) return;
-                mobileBtn.dataset.menuInit = '1';
-
-                mobileBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    var isOpen = navContainer.classList.contains('menu-open') || (navLinks && navLinks.classList.contains('active'));
-                    mobileBtn.classList.toggle('open', !isOpen);
-                    header.classList.toggle('menu-open', !isOpen);
-                    navContainer.classList.toggle('menu-open', !isOpen);
-                    if (navLinks) navLinks.classList.toggle('active', !isOpen);
-                });
-
-                navContainer.querySelectorAll('.nav-item:not(.nav-dropdown-toggle), .nav-dropdown-menu a, .btn-nav').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        mobileBtn.classList.remove('open');
-                        header.classList.remove('menu-open');
-                        navContainer.classList.remove('menu-open');
-                        if (navLinks) navLinks.classList.remove('active');
-                    });
-                });
-            }
-
-            function initAll() {
-                initDropdowns();
-                initHeaderScroll();
-                initMobileMenu();
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initAll);
-            } else {
-                initAll();
-            }
-        })();
-    </script>
-    <?php
-}
-add_action('wp_footer', 'cotizalo_dropdown_js');
 
 
 /**
