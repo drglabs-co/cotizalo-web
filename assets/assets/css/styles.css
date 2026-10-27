@@ -370,19 +370,26 @@ header.navbar.scrolled {
   transition: all var(--trans-fast);
 }
 
-.nav-dropdown:hover .nav-dropdown-toggle,
-.nav-dropdown.open .nav-dropdown-toggle {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
-}
-
 .nav-dropdown-toggle svg {
   transition: transform var(--trans-fast);
 }
 
-.nav-dropdown:hover .nav-dropdown-toggle svg,
-.nav-dropdown.open .nav-dropdown-toggle svg {
-  transform: rotate(180deg);
+@media (min-width: 901px) {
+  .nav-dropdown:hover .nav-dropdown-toggle,
+  .nav-dropdown.open .nav-dropdown-toggle {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-dropdown:hover .nav-dropdown-toggle svg,
+  .nav-dropdown.open .nav-dropdown-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+  }
 }
 
 .nav-dropdown-menu {
@@ -407,11 +414,6 @@ header.navbar.scrolled {
 @keyframes navFadeIn {
   from { opacity: 0; transform: translate(-50%, -6px); }
   to { opacity: 1; transform: translate(-50%, 0); }
-}
-
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown.open .nav-dropdown-menu {
-  display: block;
 }
 
 .nav-dropdown-menu li a {
@@ -3895,45 +3897,70 @@ details.faq-item p {
     text-align: left;
     font-family: inherit;
     box-sizing: border-box;
+    transition: background var(--trans-fast), color var(--trans-fast);
   }
 
+  /* Chevron rotation strictly controlled by .open class in mobile (prevents Firefox sticky hover) */
   header.menu-open .nav-dropdown-toggle svg,
   header#navbar.menu-open .nav-dropdown-toggle svg,
-  .nav-container.menu-open .nav-dropdown-toggle svg {
-    transition: transform var(--trans-fast);
+  .nav-container.menu-open .nav-dropdown-toggle svg,
+  .nav-dropdown:not(.open) .nav-dropdown-toggle svg {
+    transform: rotate(0deg) !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
   }
 
   header.menu-open .nav-dropdown.open .nav-dropdown-toggle svg,
   header#navbar.menu-open .nav-dropdown.open .nav-dropdown-toggle svg,
   .nav-container.menu-open .nav-dropdown.open .nav-dropdown-toggle svg {
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
   }
 
-  header.menu-open .nav-dropdown-menu,
-  header#navbar.menu-open .nav-dropdown-menu,
-  .nav-container.menu-open .nav-dropdown-menu {
-    display: none;
-    position: static;
-    transform: none;
-    width: 100%;
-    margin: 0.35rem 0 0.5rem 0;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-md);
-    box-shadow: none;
-    list-style: none;
-    animation: none;
-    box-sizing: border-box;
+  header.menu-open .nav-dropdown.open .nav-dropdown-toggle,
+  header#navbar.menu-open .nav-dropdown.open .nav-dropdown-toggle,
+  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-toggle {
+    background: rgba(255, 255, 255, 0.08);
+    color: #34D399;
   }
 
+  /* When NOT open, collapse menu completely (prevents Firefox sticky hover from keeping it visible) */
+  header.menu-open .nav-dropdown:not(.open) .nav-dropdown-menu,
+  header#navbar.menu-open .nav-dropdown:not(.open) .nav-dropdown-menu,
+  .nav-container.menu-open .nav-dropdown:not(.open) .nav-dropdown-menu,
+  .nav-dropdown:not(.open) .nav-dropdown-menu {
+    display: none !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* When open, display cleanly as stacked list in document flow */
   header.menu-open .nav-dropdown.open .nav-dropdown-menu,
   header#navbar.menu-open .nav-dropdown.open .nav-dropdown-menu,
   .nav-container.menu-open .nav-dropdown.open .nav-dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    display: flex !important;
+    flex-direction: column !important;
+    position: static !important;
+    transform: none !important;
+    max-height: 500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    width: 100% !important;
+    margin: 0.35rem 0 0.5rem 0 !important;
+    padding: 0.5rem !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: none !important;
+    list-style: none !important;
+    animation: none !important;
+    box-sizing: border-box !important;
+    gap: 0.25rem !important;
   }
 
   header.menu-open .nav-dropdown-menu li,

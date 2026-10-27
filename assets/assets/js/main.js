@@ -104,6 +104,9 @@ if (!window.__cotizaloMainInitialized) {
 
                 dropdown.classList.toggle('open', !isOpen);
                 btn.setAttribute('aria-expanded', String(!isOpen));
+
+                // In Firefox, clear focus to prevent sticky hover/focus pseudo-classes
+                btn.blur();
             });
         });
 

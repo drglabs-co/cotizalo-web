@@ -62,13 +62,15 @@ function cotizalo_scripts()
             transition: opacity 0.2s ease, color 0.2s ease;
         }
         .nav-dropdown-toggle svg { transition: transform 0.2s; flex-shrink: 0; }
-        .nav-dropdown:hover .nav-dropdown-toggle,
-        .nav-dropdown.open .nav-dropdown-toggle {
-            opacity: 1;
-            color: #ffffff !important;
+        @media (min-width: 901px) {
+            .nav-dropdown:hover .nav-dropdown-toggle,
+            .nav-dropdown.open .nav-dropdown-toggle {
+                opacity: 1;
+                color: #ffffff !important;
+            }
+            .nav-dropdown:hover .nav-dropdown-toggle svg,
+            .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
         }
-        .nav-dropdown:hover .nav-dropdown-toggle svg,
-        .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
         .nav-dropdown-menu {
             display: none;
             position: absolute;
@@ -135,7 +137,18 @@ function cotizalo_scripts()
                 justify-content: space-between !important;
                 width: 100% !important;
             }
-            .nav-dropdown-menu {
+            .nav-dropdown:not(.open) .nav-dropdown-toggle svg {
+                transform: rotate(0deg) !important;
+            }
+            .nav-dropdown.open .nav-dropdown-toggle svg {
+                transform: rotate(180deg) !important;
+            }
+            .nav-dropdown:not(.open) .nav-dropdown-menu {
+                display: none !important;
+            }
+            .nav-dropdown.open > .nav-dropdown-menu {
+                display: flex !important;
+                flex-direction: column !important;
                 position: static !important;
                 transform: none !important;
                 background: rgba(255, 255, 255, 0.05) !important;
@@ -146,10 +159,6 @@ function cotizalo_scripts()
                 padding: 0.4rem !important;
                 min-width: unset !important;
                 width: 100% !important;
-            }
-            .nav-dropdown.open > .nav-dropdown-menu {
-                display: flex !important;
-                flex-direction: column !important;
                 gap: 0.25rem !important;
             }
             .nav-dropdown-menu::before,
