@@ -37,6 +37,12 @@ if (!window.__cotizaloMainInitialized) {
                 header.classList.remove('menu-open');
                 navContainer.classList.remove('menu-open');
                 document.body.style.overflow = '';
+                // Reset mobile dropdown accordion states when closing menu
+                document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+                    d.classList.remove('open');
+                    const t = d.querySelector('.nav-dropdown-toggle');
+                    if (t) t.setAttribute('aria-expanded', 'false');
+                });
             };
 
             const toggleMobileMenu = (e) => {

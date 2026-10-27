@@ -3877,6 +3877,8 @@ details.faq-item p {
     flex-direction: column;
     width: 100%;
     align-items: stretch;
+    margin: 0;
+    padding: 0;
   }
 
   header.menu-open .nav-dropdown-toggle,
@@ -3891,108 +3893,153 @@ details.faq-item p {
     color: #FFFFFF;
     padding: 12px 16px;
     border-radius: var(--radius-md);
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
     text-align: left;
     font-family: inherit;
     box-sizing: border-box;
-    transition: background var(--trans-fast), color var(--trans-fast);
+    outline: none;
+    transition: background 0.25s ease, color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* Chevron rotation strictly controlled by .open class in mobile (prevents Firefox sticky hover) */
+  /* Chevron rotation strictly synchronized with accordion transition (0.32s) */
   header.menu-open .nav-dropdown-toggle svg,
   header#navbar.menu-open .nav-dropdown-toggle svg,
   .nav-container.menu-open .nav-dropdown-toggle svg,
-  .nav-dropdown:not(.open) .nav-dropdown-toggle svg {
+  .nav-dropdown .nav-dropdown-toggle svg {
     transform: rotate(0deg) !important;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
     flex-shrink: 0;
   }
 
   header.menu-open .nav-dropdown.open .nav-dropdown-toggle svg,
   header#navbar.menu-open .nav-dropdown.open .nav-dropdown-toggle svg,
-  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-toggle svg {
+  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-toggle svg,
+  .nav-dropdown.open .nav-dropdown-toggle svg,
+  .nav-dropdown-toggle[aria-expanded="true"] svg {
     transform: rotate(180deg) !important;
   }
 
+  /* Active/open toggle highlight */
   header.menu-open .nav-dropdown.open .nav-dropdown-toggle,
   header#navbar.menu-open .nav-dropdown.open .nav-dropdown-toggle,
-  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-toggle {
-    background: rgba(255, 255, 255, 0.08);
-    color: #34D399;
+  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-toggle,
+  .nav-dropdown.open .nav-dropdown-toggle,
+  .nav-dropdown-toggle[aria-expanded="true"] {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #34D399 !important;
   }
 
-  /* When NOT open, collapse menu completely (prevents Firefox sticky hover from keeping it visible) */
-  header.menu-open .nav-dropdown:not(.open) .nav-dropdown-menu,
-  header#navbar.menu-open .nav-dropdown:not(.open) .nav-dropdown-menu,
-  .nav-container.menu-open .nav-dropdown:not(.open) .nav-dropdown-menu,
-  .nav-dropdown:not(.open) .nav-dropdown-menu {
-    display: none !important;
-    max-height: 0 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
+  /* When collapsed: force reset color & background in Firefox (prevents sticky hover/focus on click) */
+  header.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle,
+  header#navbar.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle,
+  .nav-container.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle {
+    background: transparent !important;
+    color: #FFFFFF !important;
   }
 
-  /* When open, display cleanly as stacked list in document flow */
-  header.menu-open .nav-dropdown.open .nav-dropdown-menu,
-  header#navbar.menu-open .nav-dropdown.open .nav-dropdown-menu,
-  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-menu {
+  header.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle:hover,
+  header.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle:focus,
+  header#navbar.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle:hover,
+  header#navbar.menu-open .nav-dropdown:not(.open) .nav-dropdown-toggle:focus {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Submenu accordion: smooth max-height + opacity transition (never display: none) */
+  header.menu-open .nav-dropdown-menu,
+  header#navbar.menu-open .nav-dropdown-menu,
+  .nav-container.menu-open .nav-dropdown-menu,
+  .nav-dropdown-menu {
     display: flex !important;
     flex-direction: column !important;
     position: static !important;
     transform: none !important;
-    max-height: 500px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
     width: 100% !important;
-    margin: 0.35rem 0 0.5rem 0 !important;
-    padding: 0.5rem !important;
+    min-width: 0 !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 0.5rem !important;
     background: rgba(255, 255, 255, 0.04) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid transparent !important;
     border-radius: var(--radius-md) !important;
     box-shadow: none !important;
     list-style: none !important;
     animation: none !important;
     box-sizing: border-box !important;
     gap: 0.25rem !important;
+    transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease,
+                padding 0.32s ease,
+                margin 0.32s ease,
+                border-color 0.32s ease,
+                visibility 0.32s step-end !important;
+  }
+
+  .nav-dropdown-menu::before,
+  .nav-dropdown-menu::after {
+    display: none !important;
+  }
+
+  /* When accordion is open: expands smoothly */
+  header.menu-open .nav-dropdown.open .nav-dropdown-menu,
+  header#navbar.menu-open .nav-dropdown.open .nav-dropdown-menu,
+  .nav-container.menu-open .nav-dropdown.open .nav-dropdown-menu,
+  .nav-dropdown.open > .nav-dropdown-menu {
+    max-height: 500px !important;
+    opacity: 1 !important;
+    overflow: hidden !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    margin: 0.35rem 0 0.5rem 0 !important;
+    padding: 0.5rem !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.28s ease,
+                padding 0.35s ease,
+                margin 0.35s ease,
+                border-color 0.35s ease,
+                visibility 0s linear !important;
   }
 
   header.menu-open .nav-dropdown-menu li,
   header#navbar.menu-open .nav-dropdown-menu li,
   .nav-container.menu-open .nav-dropdown-menu li {
-    width: 100%;
-    list-style: none;
+    width: 100% !important;
+    list-style: none !important;
+    margin: 0 !important;
   }
 
   header.menu-open .nav-dropdown-menu li a,
   header#navbar.menu-open .nav-dropdown-menu li a,
   .nav-container.menu-open .nav-dropdown-menu li a {
-    display: block;
-    padding: 10px 14px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    transition: background var(--trans-fast), color var(--trans-fast), transform var(--trans-fast);
-    white-space: normal;
+    display: block !important;
+    padding: 10px 14px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    border-radius: var(--radius-sm) !important;
+    text-decoration: none !important;
+    transition: background var(--trans-fast), color var(--trans-fast), transform var(--trans-fast) !important;
+    white-space: normal !important;
   }
 
   header.menu-open .nav-dropdown-menu li a:hover,
+  header.menu-open .nav-dropdown-menu li a:focus,
   header.menu-open .nav-dropdown-menu li a:active,
   header#navbar.menu-open .nav-dropdown-menu li a:hover,
   header#navbar.menu-open .nav-dropdown-menu li a:active,
   .nav-container.menu-open .nav-dropdown-menu li a:hover,
   .nav-container.menu-open .nav-dropdown-menu li a:active {
-    background: rgba(52, 211, 153, 0.15);
-    color: #34D399;
-    transform: translateX(4px);
+    background: rgba(52, 211, 153, 0.15) !important;
+    color: #34D399 !important;
+    transform: translateX(4px) !important;
   }
 
   header.menu-open .nav-buttons,
