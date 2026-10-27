@@ -259,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="plan-storage-tag">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
-                            <?php echo esc_html(get_theme_mod('plan_inicial_storage', '20 GB de almacenamiento')); ?>
+                            <?php echo esc_html(get_theme_mod('plan_inicial_storage', 'Mas de 20 mil cotizaciones')); ?>
                         </div>
                     </div>
                     <ul class="plan-features-list">
@@ -283,10 +283,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_inicial_f5', 'Soporte por email')); ?></span>
                         </li>
-                        <li class="plan-feature-item">
-                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><?php echo esc_html(get_theme_mod('plan_inicial_f6', 'Mas de 20 mil cotizaciones')); ?></span>
-                        </li>
                     </ul>
                     <div class="plan-cta-wrapper">
                         <a href="https://app.cotizalo.net/signup?plan=inicial" class="btn btn-secondary">
@@ -306,7 +302,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="plan-storage-tag">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
-                            <?php echo esc_html(get_theme_mod('plan_basico_storage', '30 GB de almacenamiento')); ?>
+                            <?php echo esc_html(get_theme_mod('plan_basico_storage', 'Mas de 40 mil cotizaciones')); ?>
                         </div>
                     </div>
                     <ul class="plan-features-list">
@@ -334,10 +330,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_basico_f6', 'Soporte por email')); ?></span>
                         </li>
-                        <li class="plan-feature-item">
-                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><?php echo esc_html(get_theme_mod('plan_basico_f7', 'Mas de 40 mil cotizaciones')); ?></span>
-                        </li>
                     </ul>
                     <div class="plan-cta-wrapper">
                         <a href="https://app.cotizalo.net/signup?plan=basico" class="btn btn-secondary">
@@ -358,7 +350,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="plan-storage-tag">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
-                            <?php echo esc_html(get_theme_mod('plan_pro_storage', '50 GB de almacenamiento')); ?>
+                            <?php echo esc_html(get_theme_mod('plan_pro_storage', 'Mas de 60 mil cotizaciones')); ?>
                         </div>
                     </div>
                     <ul class="plan-features-list">
@@ -390,10 +382,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_pro_f7', 'Soporte prioritario por email')); ?></span>
                         </li>
-                        <li class="plan-feature-item">
-                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><?php echo esc_html(get_theme_mod('plan_pro_f8', 'Mas de 60 mil cotizaciones')); ?></span>
-                        </li>
                     </ul>
                     <div class="plan-cta-wrapper">
                         <a href="https://app.cotizalo.net/signup?plan=profesional" class="btn btn-primary">
@@ -413,7 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="plan-storage-tag">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
-                            <?php echo esc_html(get_theme_mod('plan_emp_storage', '80 GB de almacenamiento')); ?>
+                            <?php echo esc_html(get_theme_mod('plan_emp_storage', 'Mas de 80 mil cotizaciones')); ?>
                         </div>
                     </div>
                     <ul class="plan-features-list">
@@ -444,10 +432,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="plan-feature-item">
                             <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                             <span><?php echo esc_html(get_theme_mod('plan_emp_f7', 'Soporte prioritario por email')); ?></span>
-                        </li>
-                        <li class="plan-feature-item">
-                            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><?php echo esc_html(get_theme_mod('plan_emp_f8', 'Mas de 90 mil cotizaciones')); ?></span>
                         </li>
                     </ul>
                     <div class="plan-cta-wrapper">
